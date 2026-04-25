@@ -1,0 +1,93 @@
+{
+  "phase": "4",
+  "title": "MiniFreak Hardware Peripheral Analysis",
+  "firmware": "fw4.0.1.2229",
+  "date": "2026-04-24",
+  "audio_hardware": {
+    "sai_peripherals": {
+      "SAI2_ChA": "0x40015804",
+      "SAI2_ChB": "0x40015824",
+      "SAI2_base": "0x40015800",
+      "unknown_1": "0x40015c00",
+      "unknown_2": "0x40015c04",
+      "unknown_3": "0x40015c24",
+      "unknown_4": "0x40016000",
+      "unknown_5": "0x40016004"
+    },
+    "dma_streams": {
+      "DMA2_Stream0": "0x40020410",
+      "DMA2_Stream4": "0x40020470",
+      "DMA2_Stream7": "0x400204B8"
+    },
+    "gpio_pins": {
+      "GPIOE": {
+        "address": "0x58021000",
+        "pins_sai2": [
+          "PE4 (AF6)",
+          "PE5 (AF6)",
+          "PE6 (AF6)"
+        ]
+      },
+      "GPIOD": {
+        "address": "0x58020c00",
+        "pins_audio": [
+          "PD1 (AF10)",
+          "PD11 (AF10)",
+          "PD12 (AF10)",
+          "PD13 (AF10)",
+          "PD0 (AF6)",
+          "PD4 (AF6)"
+        ]
+      }
+    },
+    "sample_rate": 48000,
+    "clock_config": "FUN_08129144 computes SAI clock dividers using FP math",
+    "rcc_status": "DAT_081296e4 = 0x58024400 (RCC D3 domain)"
+  },
+  "firmware_architecture": {
+    "cm4_role": "SAI/DMA configuration, GPIO setup, peripheral management, HSEM sync",
+    "cm7_role": "Audio DSP processing (float/short/NEON), no direct peripheral access",
+    "fx_core": "DSP56362, separate binary, no STM32 peripheral access",
+    "inter_core": "No HSEM/IPCC/AXI SRAM references detected by Ghidra - likely indirect pointer access"
+  },
+  "key_functions": {
+    "cm4": {
+      "FUN_08121cfc": "Audio init orchestrator (234B)",
+      "FUN_081220f4": "SAI config setup - 48kHz (94B)",
+      "FUN_08129a98": "SAI peripheral initialization (922B)",
+      "FUN_0812215c": "SAI clock + GPIO + DMA setup (~1200B)",
+      "FUN_081293f4": "SAI status/interrupt handler (~1700B)",
+      "FUN_08129144": "SAI clock divider computation (FP math)",
+      "FUN_08128fec": "SAI DMA callback",
+      "FUN_081259e0": "GPIO pin configuration (generic)",
+      "FUN_08124990": "DMA stream configuration (generic)",
+      "FUN_0812853c": "Peripheral clock enable (generic)",
+      "FUN_081239ec": "HSEM take (1070B)",
+      "FUN_0812421c": "HSEM release (522B)",
+      "FUN_0812f518": "SAI wrapper - peripheral 1 (6B)",
+      "FUN_0812f584": "SAI wrapper - peripheral 2 (6B)"
+    },
+    "cm7": {
+      "FUN_080359f4": "Largest function (18232B) - likely main audio DSP",
+      "FUN_0803e6f8": "Audio DSP (10332B) - float+short+vector, score=12",
+      "FUN_0803a490": "Audio DSP (7610B) - float+short+vector, score=12",
+      "FUN_08054708": "Audio DSP (7480B) - float+short+vector, score=12",
+      "FUN_080321d4": "Audio DSP (8350B) - float+short+vector, score=11",
+      "FUN_08016968": "Audio DSP (2334B) - float+short+vector, score=13, uses 0x3f800000 (1.0f)",
+      "FUN_08056528": "Audio DSP (2276B) - float+short+vector, score=12",
+      "FUN_0801b8b0": "Audio DSP (2260B) - float+short+vector, score=12",
+      "FUN_08056ed0": "Audio DSP (2766B) - float+short+vector, score=12",
+      "FUN_0805c408": "Audio DSP (2700B) - float+short+vector, score=10",
+      "FUN_0805a040": "Audio DSP (3840B) - float+vector, score=10",
+      "FUN_08034338": "Audio DSP (5046B) - float+short, score=6"
+    }
+  },
+  "findings": {
+    "spi_sai_dac_mystery": "SAI found (SAI2 at 0x40015800) but was previously missed because ref_scan searched I2C addresses, not SAI. The function FUN_08129a98 was misidentified as I2C1 - it's actually SAI init.",
+    "no_i2c_codec": "No I2C references detected in CM4. Audio codec may be SPI-controlled, always-on hardware-default, or controlled via FX core.",
+    "no_codec_strings": "No audio codec chip names (AK/WM/CS/PCM/TLV/ES) found in any binary.",
+    "cm7_no_peripheral_refs": "CM7 has zero SAI/DMA/HSEM/IPCC/SRAM references - all access is through indirect pointers.",
+    "audio_gpio": "SAI2 uses PE4/5/6 (AF6) for ChA, PD11/12/13 (AF10) for additional audio. Total 11 GPIO pins identified for audio.",
+    "dma_channels": "3 DMA2 streams (0, 4, 7) used for audio - likely TX, RX, and a third channel (codec control or monitoring)."
+  }
+}

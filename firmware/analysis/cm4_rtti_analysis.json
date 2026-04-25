@@ -1,0 +1,36 @@
+{
+  "rtti_matches": [],
+  "plaits_patterns": [],
+  "vtable_candidates": [],
+  "preset_enum_candidates": [],
+  "protobuf_candidates": [
+    {
+      "address": "0008de2c",
+      "value": "varint overflow"
+    },
+    {
+      "address": "0008de3c",
+      "value": "invalid wire_type"
+    },
+    {
+      "address": "0008de68",
+      "value": "zero tag"
+    },
+    {
+      "address": "0008de88",
+      "value": "wrong size for fixed count field"
+    },
+    {
+      "address": "0008deac",
+      "value": "missing required field"
+    },
+    {
+      "address": "0008df58",
+      "value": "invalid field descriptor"
+    },
+    {
+      "address": "0008df98",
+      "value": "invalid field type"
+    }
+  ]
+}

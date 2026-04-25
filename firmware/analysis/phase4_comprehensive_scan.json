@@ -1,0 +1,1296 @@
+{
+  "raw_scan": {
+    "CM4": {
+      "ADC1": {
+        "count": 8,
+        "offsets": [
+          "0x89c06",
+          "0x8b271",
+          "0x8bfa1",
+          "0x92441",
+          "0x92565",
+          "0x9279d",
+          "0x9283d",
+          "0x94b81"
+        ]
+      },
+      "BDMA": {
+        "count": 6,
+        "offsets": [
+          "0x1578",
+          "0x16a8",
+          "0x2cb4",
+          "0x3394",
+          "0x37ac",
+          "0x5c04"
+        ]
+      },
+      "COMP": {
+        "count": 8,
+        "offsets": [
+          "0x89c06",
+          "0x8b271",
+          "0x8bfa1",
+          "0x92441",
+          "0x92565",
+          "0x9279d",
+          "0x9283d",
+          "0x94b81"
+        ]
+      },
+      "DMA1": {
+        "count": 8,
+        "offsets": [
+          "0x89c06",
+          "0x8b271",
+          "0x8bfa1",
+          "0x92441",
+          "0x92565",
+          "0x9279d",
+          "0x9283d",
+          "0x94b81"
+        ]
+      },
+      "DMAMUX1": {
+        "count": 6,
+        "offsets": [
+          "0x1570",
+          "0x1b30",
+          "0x2008",
+          "0x2cbc",
+          "0x5c08",
+          "0x2ef3c"
+        ]
+      },
+      "EXTI": {
+        "count": 8,
+        "offsets": [
+          "0x89c06",
+          "0x8b271",
+          "0x8bfa1",
+          "0x92441",
+          "0x92565",
+          "0x9279d",
+          "0x9283d",
+          "0x94b81"
+        ]
+      },
+      "GPIOA": {
+        "count": 6,
+        "offsets": [
+          "0x1578",
+          "0x16a8",
+          "0x2cb4",
+          "0x3394",
+          "0x37ac",
+          "0x5c04"
+        ]
+      },
+      "GPIOB": {
+        "count": 13,
+        "offsets": [
+          "0x157c",
+          "0x1b34",
+          "0x1c48",
+          "0x1ffc",
+          "0x2cb8",
+          "0x11074",
+          "0x11084",
+          "0x1109c",
+          "0x110ac",
+          "0x110b8"
+        ]
+      },
+      "GPIOC": {
+        "count": 6,
+        "offsets": [
+          "0x1570",
+          "0x1b30",
+          "0x2008",
+          "0x2cbc",
+          "0x5c08",
+          "0x2ef3c"
+        ]
+      },
+      "GPIOD": {
+        "count": 14,
+        "offsets": [
+          "0x1b3c",
+          "0x2468",
+          "0x2cc0",
+          "0x3528",
+          "0x36ac",
+          "0x5c0c",
+          "0x110fc",
+          "0x1110c",
+          "0x11124",
+          "0x11134"
+        ]
+      },
+      "GPIOE": {
+        "count": 9,
+        "offsets": [
+          "0x1b2c",
+          "0x2004",
+          "0x2458",
+          "0x25f4",
+          "0x5c10",
+          "0x27d28",
+          "0x81da4",
+          "0x81dec",
+          "0x81e74"
+        ]
+      },
+      "GPIOF": {
+        "count": 4,
+        "offsets": [
+          "0x1580",
+          "0x2478",
+          "0x2cc4",
+          "0x5c14"
+        ]
+      },
+      "GPIOG": {
+        "count": 36,
+        "offsets": [
+          "0x1b38",
+          "0x5c18",
+          "0x10ef4",
+          "0x10f04",
+          "0x10f1c",
+          "0x10f2c",
+          "0x10f38",
+          "0x10f48",
+          "0x10f60",
+          "0x10f70"
+        ]
+      },
+      "GPIOH": {
+        "count": 1,
+        "offsets": [
+          "0x5c1c"
+        ]
+      },
+      "GPIOI": {
+        "count": 1,
+        "offsets": [
+          "0x5c20"
+        ]
+      },
+      "GPIOJ": {
+        "count": 1,
+        "offsets": [
+          "0x5c24"
+        ]
+      },
+      "HSEM": {
+        "count": 5,
+        "offsets": [
+          "0x137c",
+          "0x1568",
+          "0x3da0",
+          "0x3e48",
+          "0x4438"
+        ]
+      },
+      "I2C1": {
+        "count": 1,
+        "offsets": [
+          "0x9a40"
+        ]
+      },
+      "I2C2": {
+        "count": 4,
+        "offsets": [
+          "0x9a12",
+          "0x7a615",
+          "0x7a617",
+          "0x7a619"
+        ]
+      },
+      "IPCC": {
+        "count": 6,
+        "offsets": [
+          "0x1570",
+          "0x1b30",
+          "0x2008",
+          "0x2cbc",
+          "0x5c08",
+          "0x2ef3c"
+        ]
+      },
+      "OPAMP": {
+        "count": 8,
+        "offsets": [
+          "0x89c06",
+          "0x8b271",
+          "0x8bfa1",
+          "0x92441",
+          "0x92565",
+          "0x9279d",
+          "0x9283d",
+          "0x94b81"
+        ]
+      },
+      "PWR": {
+        "count": 8,
+        "offsets": [
+          "0x89c06",
+          "0x8b271",
+          "0x8bfa1",
+          "0x92441",
+          "0x92565",
+          "0x9279d",
+          "0x9283d",
+          "0x94b81"
+        ]
+      },
+      "RCC": {
+        "count": 36,
+        "offsets": [
+          "0x156c",
+          "0x16a0",
+          "0x1920",
+          "0x1b28",
+          "0x1c44",
+          "0x1cf8",
+          "0x1df0",
+          "0x1e20",
+          "0x1ff8",
+          "0x2454"
+        ]
+      },
+      "SYSCFG": {
+        "count": 8,
+        "offsets": [
+          "0x89c06",
+          "0x8b271",
+          "0x8bfa1",
+          "0x92441",
+          "0x92565",
+          "0x9279d",
+          "0x9283d",
+          "0x94b81"
+        ]
+      },
+      "TIM1": {
+        "count": 8,
+        "offsets": [
+          "0x89c06",
+          "0x8b271",
+          "0x8bfa1",
+          "0x92441",
+          "0x92565",
+          "0x9279d",
+          "0x9283d",
+          "0x94b81"
+        ]
+      },
+      "TIM12": {
+        "count": 3,
+        "offsets": [
+          "0x2a80",
+          "0x2ca8",
+          "0x314c"
+        ]
+      },
+      "TIM15": {
+        "count": 3,
+        "offsets": [
+          "0x1c80",
+          "0x1cf4",
+          "0x6438"
+        ]
+      },
+      "TIM2": {
+        "count": 28,
+        "offsets": [
+          "0xcb3c",
+          "0x89c69",
+          "0x8db88",
+          "0x8dc74",
+          "0x8dc7a",
+          "0x8dc7e",
+          "0x8dc82",
+          "0x8dc86",
+          "0x8dc8c",
+          "0x8e845"
+        ]
+      },
+      "TIM3": {
+        "count": 5,
+        "offsets": [
+          "0x2a74",
+          "0x2c9c",
+          "0x2e94",
+          "0xa620",
+          "0xae60"
+        ]
+      },
+      "TIM4": {
+        "count": 3,
+        "offsets": [
+          "0x2a78",
+          "0x2ca0",
+          "0x2f88"
+        ]
+      },
+      "TIM5": {
+        "count": 3,
+        "offsets": [
+          "0x2a7c",
+          "0x2ca4",
+          "0x30a0"
+        ]
+      },
+      "USART1": {
+        "count": 8,
+        "offsets": [
+          "0x89c06",
+          "0x8b271",
+          "0x8bfa1",
+          "0x92441",
+          "0x92565",
+          "0x9279d",
+          "0x9283d",
+          "0x94b81"
+        ]
+      },
+      "USART3": {
+        "count": 1,
+        "offsets": [
+          "0x3cb33"
+        ]
+      },
+      "VREFBUF": {
+        "count": 1,
+        "offsets": [
+          "0x43a25"
+        ]
+      }
+    },
+    "CM7": {
+      "ADC1": {
+        "count": 3,
+        "offsets": [
+          "0x61e39",
+          "0x61ee1",
+          "0x6b881"
+        ]
+      },
+      "BDMA": {
+        "count": 1,
+        "offsets": [
+          "0x9020"
+        ]
+      },
+      "COMP": {
+        "count": 3,
+        "offsets": [
+          "0x61e39",
+          "0x61ee1",
+          "0x6b881"
+        ]
+      },
+      "DMA1": {
+        "count": 3,
+        "offsets": [
+          "0x61e39",
+          "0x61ee1",
+          "0x6b881"
+        ]
+      },
+      "DMAMUX1": {
+        "count": 4,
+        "offsets": [
+          "0x7bf0",
+          "0x8514",
+          "0x9024",
+          "0xb6a0"
+        ]
+      },
+      "EXTI": {
+        "count": 3,
+        "offsets": [
+          "0x61e39",
+          "0x61ee1",
+          "0x6b881"
+        ]
+      },
+      "FLASH": {
+        "count": 2,
+        "offsets": [
+          "0x7acc",
+          "0x8e34"
+        ]
+      },
+      "FMC": {
+        "count": 1,
+        "offsets": [
+          "0x7af4"
+        ]
+      },
+      "GPIOA": {
+        "count": 1,
+        "offsets": [
+          "0x9020"
+        ]
+      },
+      "GPIOC": {
+        "count": 4,
+        "offsets": [
+          "0x7bf0",
+          "0x8514",
+          "0x9024",
+          "0xb6a0"
+        ]
+      },
+      "GPIOD": {
+        "count": 1,
+        "offsets": [
+          "0x8518"
+        ]
+      },
+      "GPIOE": {
+        "count": 1,
+        "offsets": [
+          "0x851c"
+        ]
+      },
+      "GPIOF": {
+        "count": 1,
+        "offsets": [
+          "0x8520"
+        ]
+      },
+      "GPIOG": {
+        "count": 1,
+        "offsets": [
+          "0x8528"
+        ]
+      },
+      "GPIOH": {
+        "count": 1,
+        "offsets": [
+          "0x852c"
+        ]
+      },
+      "GPIOI": {
+        "count": 1,
+        "offsets": [
+          "0x8530"
+        ]
+      },
+      "GPIOJ": {
+        "count": 1,
+        "offsets": [
+          "0x8534"
+        ]
+      },
+      "IPCC": {
+        "count": 4,
+        "offsets": [
+          "0x7bf0",
+          "0x8514",
+          "0x9024",
+          "0xb6a0"
+        ]
+      },
+      "OPAMP": {
+        "count": 3,
+        "offsets": [
+          "0x61e39",
+          "0x61ee1",
+          "0x6b881"
+        ]
+      },
+      "PWR": {
+        "count": 3,
+        "offsets": [
+          "0x61e39",
+          "0x61ee1",
+          "0x6b881"
+        ]
+      },
+      "RCC": {
+        "count": 29,
+        "offsets": [
+          "0x7ad0",
+          "0x7b30",
+          "0x7bec",
+          "0x7e58",
+          "0x7ea8",
+          "0x7ee0",
+          "0x80ec",
+          "0x850c",
+          "0x88c0",
+          "0x8ba8"
+        ]
+      },
+      "SPI1": {
+        "count": 1,
+        "offsets": [
+          "0x39a51"
+        ]
+      },
+      "SYSCFG": {
+        "count": 3,
+        "offsets": [
+          "0x61e39",
+          "0x61ee1",
+          "0x6b881"
+        ]
+      },
+      "TIM1": {
+        "count": 3,
+        "offsets": [
+          "0x61e39",
+          "0x61ee1",
+          "0x6b881"
+        ]
+      },
+      "TIM14": {
+        "count": 1,
+        "offsets": [
+          "0x484d6"
+        ]
+      },
+      "TIM2": {
+        "count": 34,
+        "offsets": [
+          "0x61c50",
+          "0x62096",
+          "0x6d144",
+          "0x6d2f8",
+          "0x6d330",
+          "0x726c0",
+          "0x72b08",
+          "0x766d7",
+          "0x766e7",
+          "0x766f7"
+        ]
+      },
+      "USART1": {
+        "count": 3,
+        "offsets": [
+          "0x61e39",
+          "0x61ee1",
+          "0x6b881"
+        ]
+      }
+    },
+    "FX": {
+      "ADC1": {
+        "count": 1,
+        "offsets": [
+          "0x1d5e1"
+        ]
+      },
+      "BDMA": {
+        "count": 7,
+        "offsets": [
+          "0xc74",
+          "0xe8c",
+          "0x3e94",
+          "0x15c3c",
+          "0x170c4",
+          "0x17208",
+          "0x172fc"
+        ]
+      },
+      "COMP": {
+        "count": 1,
+        "offsets": [
+          "0x1d5e1"
+        ]
+      },
+      "DMA1": {
+        "count": 1,
+        "offsets": [
+          "0x1d5e1"
+        ]
+      },
+      "DMAMUX1": {
+        "count": 4,
+        "offsets": [
+          "0xba0",
+          "0xe88",
+          "0x15c48",
+          "0x1702c"
+        ]
+      },
+      "EXTI": {
+        "count": 1,
+        "offsets": [
+          "0x1d5e1"
+        ]
+      },
+      "FLASH": {
+        "count": 1,
+        "offsets": [
+          "0x1068"
+        ]
+      },
+      "GPIOA": {
+        "count": 7,
+        "offsets": [
+          "0xc74",
+          "0xe8c",
+          "0x3e94",
+          "0x15c3c",
+          "0x170c4",
+          "0x17208",
+          "0x172fc"
+        ]
+      },
+      "GPIOB": {
+        "count": 13,
+        "offsets": [
+          "0xba4",
+          "0xe80",
+          "0x1934",
+          "0x5f8c",
+          "0x5f9c",
+          "0x5fb4",
+          "0x5fc8",
+          "0x5fd8",
+          "0x5fe8",
+          "0x6000"
+        ]
+      },
+      "GPIOC": {
+        "count": 4,
+        "offsets": [
+          "0xba0",
+          "0xe88",
+          "0x15c48",
+          "0x1702c"
+        ]
+      },
+      "GPIOD": {
+        "count": 2,
+        "offsets": [
+          "0xe90",
+          "0x1600"
+        ]
+      },
+      "GPIOE": {
+        "count": 3,
+        "offsets": [
+          "0xe84",
+          "0x1610",
+          "0x15c44"
+        ]
+      },
+      "HSEM": {
+        "count": 3,
+        "offsets": [
+          "0x24a0",
+          "0x2a1c",
+          "0x2bdc"
+        ]
+      },
+      "I2C1": {
+        "count": 1,
+        "offsets": [
+          "0x4be8"
+        ]
+      },
+      "I2C2": {
+        "count": 1,
+        "offsets": [
+          "0x4bea"
+        ]
+      },
+      "IPCC": {
+        "count": 4,
+        "offsets": [
+          "0xba0",
+          "0xe88",
+          "0x15c48",
+          "0x1702c"
+        ]
+      },
+      "OPAMP": {
+        "count": 1,
+        "offsets": [
+          "0x1d5e1"
+        ]
+      },
+      "PWR": {
+        "count": 1,
+        "offsets": [
+          "0x1d5e1"
+        ]
+      },
+      "RCC": {
+        "count": 26,
+        "offsets": [
+          "0xb9c",
+          "0xc70",
+          "0xd0c",
+          "0xe7c",
+          "0xf0c",
+          "0x1070",
+          "0x116c",
+          "0x12cc",
+          "0x15fc",
+          "0x1658"
+        ]
+      },
+      "SYSCFG": {
+        "count": 1,
+        "offsets": [
+          "0x1d5e1"
+        ]
+      },
+      "TIM1": {
+        "count": 1,
+        "offsets": [
+          "0x1d5e1"
+        ]
+      },
+      "TIM14": {
+        "count": 2,
+        "offsets": [
+          "0x973a",
+          "0x1b37d"
+        ]
+      },
+      "TIM15": {
+        "count": 3,
+        "offsets": [
+          "0xec8",
+          "0xf04",
+          "0x3fa0"
+        ]
+      },
+      "TIM2": {
+        "count": 18,
+        "offsets": [
+          "0x7dd9",
+          "0x1c5f3",
+          "0x1c60b",
+          "0x1c6fb",
+          "0x1c836",
+          "0x1c9d4",
+          "0x1ca64",
+          "0x1ca84",
+          "0x1cabc",
+          "0x1d519"
+        ]
+      },
+      "USART1": {
+        "count": 1,
+        "offsets": [
+          "0x1d5e1"
+        ]
+      }
+    },
+    "UI_SCREEN": {
+      "QUADSPI": {
+        "count": 1,
+        "offsets": [
+          "0xb00f"
+        ]
+      },
+      "TIM14": {
+        "count": 4,
+        "offsets": [
+          "0x2e0c",
+          "0x2e7c",
+          "0x5f68",
+          "0x60b8"
+        ]
+      },
+      "TIM2": {
+        "count": 11,
+        "offsets": [
+          "0x1e779",
+          "0x20aaa",
+          "0x20b6e",
+          "0x21175",
+          "0x211df",
+          "0x21344",
+          "0x21535",
+          "0x21f7b",
+          "0x23571",
+          "0x29019"
+        ]
+      },
+      "TIM3": {
+        "count": 4,
+        "offsets": [
+          "0x5f64",
+          "0x5fd0",
+          "0x60b4",
+          "0x6330"
+        ]
+      },
+      "TIM6": {
+        "count": 1,
+        "offsets": [
+          "0x21d8e"
+        ]
+      },
+      "TIM7": {
+        "count": 2,
+        "offsets": [
+          "0x2d90",
+          "0x2e78"
+        ]
+      }
+    },
+    "UI_MATRIX": {
+      "TIM14": {
+        "count": 2,
+        "offsets": [
+          "0x585c",
+          "0x8a89"
+        ]
+      },
+      "TIM2": {
+        "count": 1,
+        "offsets": [
+          "0x10355"
+        ]
+      },
+      "TIM3": {
+        "count": 3,
+        "offsets": [
+          "0x5858",
+          "0x58c4",
+          "0x5938"
+        ]
+      },
+      "TIM6": {
+        "count": 2,
+        "offsets": [
+          "0xbbc",
+          "0xc78"
+        ]
+      },
+      "TIM7": {
+        "count": 2,
+        "offsets": [
+          "0xc14",
+          "0xc7c"
+        ]
+      }
+    },
+    "UI_RIBBON": {
+      "ADC1": {
+        "count": 2,
+        "offsets": [
+          "0xfe41",
+          "0xfe99"
+        ]
+      },
+      "COMP": {
+        "count": 2,
+        "offsets": [
+          "0xfe41",
+          "0xfe99"
+        ]
+      },
+      "DMA1": {
+        "count": 2,
+        "offsets": [
+          "0xfe41",
+          "0xfe99"
+        ]
+      },
+      "EXTI": {
+        "count": 2,
+        "offsets": [
+          "0xfe41",
+          "0xfe99"
+        ]
+      },
+      "OPAMP": {
+        "count": 2,
+        "offsets": [
+          "0xfe41",
+          "0xfe99"
+        ]
+      },
+      "PWR": {
+        "count": 2,
+        "offsets": [
+          "0xfe41",
+          "0xfe99"
+        ]
+      },
+      "SYSCFG": {
+        "count": 2,
+        "offsets": [
+          "0xfe41",
+          "0xfe99"
+        ]
+      },
+      "TIM1": {
+        "count": 2,
+        "offsets": [
+          "0xfe41",
+          "0xfe99"
+        ]
+      },
+      "TIM14": {
+        "count": 1,
+        "offsets": [
+          "0x5b64"
+        ]
+      },
+      "TIM2": {
+        "count": 1,
+        "offsets": [
+          "0xff5d"
+        ]
+      },
+      "TIM3": {
+        "count": 3,
+        "offsets": [
+          "0x5b60",
+          "0x5bcc",
+          "0x5c40"
+        ]
+      },
+      "TIM7": {
+        "count": 2,
+        "offsets": [
+          "0xcdc",
+          "0xd14"
+        ]
+      },
+      "USART1": {
+        "count": 2,
+        "offsets": [
+          "0xfe41",
+          "0xfe99"
+        ]
+      }
+    },
+    "UI_KBD": {
+      "TIM14": {
+        "count": 1,
+        "offsets": [
+          "0x27ec"
+        ]
+      },
+      "TIM2": {
+        "count": 1,
+        "offsets": [
+          "0x9a75"
+        ]
+      },
+      "TIM3": {
+        "count": 4,
+        "offsets": [
+          "0x27e8",
+          "0x2854",
+          "0x28b8",
+          "0x2ab8"
+        ]
+      },
+      "TIM7": {
+        "count": 2,
+        "offsets": [
+          "0x9dc",
+          "0xac8"
+        ]
+      }
+    }
+  },
+  "i2c_devices": {
+    "CM4": {},
+    "CM7": {},
+    "FX": {
+      "CS4344 (0x4E)": [
+        "7bit:0x4E x95"
+      ],
+      "CS4350 (0x4E)": [
+        "7bit:0x4E x95"
+      ],
+      "CS42L52 (0x4A)": [
+        "R:0x95 x80"
+      ],
+      "MCP23017 (0x27)": [
+        "W:0x4E x95"
+      ],
+      "PCA9535 (0x27)": [
+        "W:0x4E x95"
+      ],
+      "24C64 (0x50)": [
+        "R:0xA1 x83"
+      ],
+      "24C256 (0x50)": [
+        "R:0xA1 x83"
+      ]
+    },
+    "UI_SCREEN": {
+      "24C64 (0x52)": [
+        "R:0xA5 x92"
+      ],
+      "24C64 (0x53)": [
+        "W:0xA6 x92",
+        "R:0xA7 x76"
+      ],
+      "24C256 (0x52)": [
+        "R:0xA5 x92"
+      ],
+      "24C256 (0x53)": [
+        "W:0xA6 x92",
+        "R:0xA7 x76"
+      ]
+    },
+    "UI_MATRIX": {
+      "PCM5102A (0x4C)": [
+        "7bit:0x4C x99"
+      ],
+      "PCM5101 (0x4C)": [
+        "7bit:0x4C x99"
+      ],
+      "AK4458 (0x60)": [
+        "R:0xC1 x59"
+      ],
+      "WM8741 (0x1A)": [
+        "W:0x34 x89",
+        "R:0x35 x83"
+      ],
+      "WM8742 (0x1A)": [
+        "W:0x34 x89",
+        "R:0x35 x83"
+      ],
+      "CS4344 (0x4E)": [
+        "R:0x9D x46"
+      ],
+      "CS4350 (0x4E)": [
+        "R:0x9D x46"
+      ],
+      "AK5574 (0x60)": [
+        "R:0xC1 x59"
+      ],
+      "PCM1802 (0x4C)": [
+        "7bit:0x4C x99"
+      ],
+      "WM8731 (0x1A)": [
+        "W:0x34 x89",
+        "R:0x35 x83"
+      ],
+      "WM8776 (0x34)": [
+        "7bit:0x34 x89"
+      ],
+      "PCM3060 (0x8C)": [
+        "7bit:0x8C x96"
+      ],
+      "CS42L52 (0x4A)": [
+        "W:0x94 x77",
+        "R:0x95 x49"
+      ],
+      "NAU8822 (0x1A)": [
+        "W:0x34 x89",
+        "R:0x35 x83"
+      ],
+      "MCP23017 (0x26)": [
+        "W:0x4C x99",
+        "R:0x4D x97"
+      ],
+      "PCA9535 (0x26)": [
+        "W:0x4C x99",
+        "R:0x4D x97"
+      ],
+      "24C64 (0x52)": [
+        "R:0xA5 x52"
+      ],
+      "24C64 (0x53)": [
+        "W:0xA6 x62",
+        "R:0xA7 x62"
+      ],
+      "24C256 (0x52)": [
+        "R:0xA5 x52"
+      ],
+      "24C256 (0x53)": [
+        "W:0xA6 x62",
+        "R:0xA7 x62"
+      ]
+    },
+    "UI_RIBBON": {
+      "AK4458 (0x60)": [
+        "R:0xC1 x57"
+      ],
+      "CS4344 (0x4E)": [
+        "R:0x9D x98"
+      ],
+      "CS4350 (0x4E)": [
+        "R:0x9D x98"
+      ],
+      "AK5574 (0x60)": [
+        "R:0xC1 x57"
+      ],
+      "PCM3060 (0x8C)": [
+        "7bit:0x8C x73"
+      ],
+      "CS42L52 (0x4A)": [
+        "W:0x94 x86",
+        "R:0x95 x47"
+      ],
+      "MCP23017 (0x22)": [
+        "R:0x45 x96"
+      ],
+      "PCA9535 (0x22)": [
+        "R:0x45 x96"
+      ],
+      "24C64 (0x52)": [
+        "W:0xA4 x96",
+        "R:0xA5 x61"
+      ],
+      "24C64 (0x53)": [
+        "W:0xA6 x55",
+        "R:0xA7 x54"
+      ],
+      "24C256 (0x52)": [
+        "W:0xA4 x96",
+        "R:0xA5 x61"
+      ],
+      "24C256 (0x53)": [
+        "W:0xA6 x55",
+        "R:0xA7 x54"
+      ]
+    },
+    "UI_KBD": {
+      "PCM5102A (0x4C)": [
+        "7bit:0x4C x68"
+      ],
+      "PCM5101 (0x4C)": [
+        "7bit:0x4C x68"
+      ],
+      "AK4490 (0x48)": [
+        "W:0x90 x96"
+      ],
+      "AK4493 (0x48)": [
+        "W:0x90 x96"
+      ],
+      "AK4458 (0x60)": [
+        "R:0xC1 x27"
+      ],
+      "AK4388 (0x48)": [
+        "W:0x90 x96"
+      ],
+      "WM8741 (0x1A)": [
+        "W:0x34 x67",
+        "R:0x35 x74"
+      ],
+      "WM8742 (0x1A)": [
+        "W:0x34 x67",
+        "R:0x35 x74"
+      ],
+      "CS4344 (0x4E)": [
+        "R:0x9D x59",
+        "7bit:0x4E x75"
+      ],
+      "CS4350 (0x4E)": [
+        "R:0x9D x59",
+        "7bit:0x4E x75"
+      ],
+      "ES9038 (0x48)": [
+        "W:0x90 x96"
+      ],
+      "ES9018 (0x48)": [
+        "W:0x90 x96"
+      ],
+      "AK5574 (0x60)": [
+        "R:0xC1 x27"
+      ],
+      "PCM1802 (0x4C)": [
+        "7bit:0x4C x68"
+      ],
+      "ADS1115 (0x48)": [
+        "W:0x90 x96"
+      ],
+      "WM8731 (0x1A)": [
+        "W:0x34 x67",
+        "R:0x35 x74"
+      ],
+      "WM8776 (0x34)": [
+        "7bit:0x34 x67"
+      ],
+      "CS4271 (0x48)": [
+        "W:0x90 x96"
+      ],
+      "PCM3060 (0x8C)": [
+        "7bit:0x8C x38"
+      ],
+      "PCM3168A (0x44)": [
+        "W:0x88 x87",
+        "R:0x89 x99"
+      ],
+      "CS42L52 (0x4A)": [
+        "W:0x94 x47",
+        "R:0x95 x46"
+      ],
+      "NAU8822 (0x1A)": [
+        "W:0x34 x67",
+        "R:0x35 x74"
+      ],
+      "MCP23017 (0x22)": [
+        "R:0x45 x61"
+      ],
+      "MCP23017 (0x26)": [
+        "W:0x4C x68",
+        "R:0x4D x83",
+        "7bit:0x26 x73"
+      ],
+      "MCP23017 (0x27)": [
+        "W:0x4E x75",
+        "R:0x4F x59",
+        "7bit:0x27 x64"
+      ],
+      "PCA9535 (0x22)": [
+        "R:0x45 x61"
+      ],
+      "PCA9535 (0x26)": [
+        "W:0x4C x68",
+        "R:0x4D x83",
+        "7bit:0x26 x73"
+      ],
+      "PCA9535 (0x27)": [
+        "W:0x4E x75",
+        "R:0x4F x59",
+        "7bit:0x27 x64"
+      ],
+      "24C64 (0x50)": [
+        "W:0xA0 x89",
+        "R:0xA1 x92"
+      ],
+      "24C64 (0x52)": [
+        "W:0xA4 x60",
+        "R:0xA5 x49"
+      ],
+      "24C64 (0x53)": [
+        "W:0xA6 x36",
+        "R:0xA7 x25"
+      ],
+      "24C256 (0x50)": [
+        "W:0xA0 x89",
+        "R:0xA1 x92"
+      ],
+      "24C256 (0x52)": [
+        "W:0xA4 x60",
+        "R:0xA5 x49"
+      ],
+      "24C256 (0x53)": [
+        "W:0xA6 x36",
+        "R:0xA7 x25"
+      ]
+    }
+  },
+  "image_bases": {
+    "CM4": "0x8120000",
+    "CM7": "0x8000000",
+    "FX": "0x80018c0",
+    "UI_SCREEN": "0x8003018",
+    "UI_MATRIX": "0x8000dec",
+    "UI_RIBBON": "0x8000e84",
+    "UI_KBD": "0x8000c40"
+  }
+}

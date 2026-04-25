@@ -1,0 +1,219 @@
+{
+  "init_decompiled": {
+    "0x0800b4f4": "\nundefined4 * FUN_0800b4f4(undefined4 *param_1,undefined4 param_2,undefined4 param_3)\n\n{\n  undefined4 uVar1;\n  \n  param_1[4] = param_3;\n  param_1[5] = 0x3f800000;\n  param_1[6] = 0x3f800000;\n  param_1[7] = 0x3f800000;\n  param_1[0xb] = 0x3f800000;\n  param_1[0xe] = 0x3f800000;\n  uVar1 = DAT_0800b548;\n  param_1[0xf] = 0x47000000;\n  *param_1 = uVar1;\n  param_1[0x10] = 0x37800000;\n  param_1[8] = 0x41800000;\n  uVar1 = DAT_0800b54c;\n  param_1[0x11] = 0x38000000;\n  param_1[9] = uVar1;\n  param_1[0xc] = 0;\n  param_1[0xd] = 0;\n  FUN_0800b4c4(param_1 + 0x16);\n  uVar1 = FUN_0800b3de(param_2);\n  *(undefined1 *)(param_1 + 0x2e) = 0;\n  param_1[0x2d] = uVar1;\n  return param_1;\n}\n\n",
+    "0x0800bba0": "\nint * FUN_0800bba0(int *param_1,int param_2,undefined4 param_3,int param_4)\n\n{\n  int *piVar1;\n  int iVar2;\n  int iVar3;\n  int iVar4;\n  undefined4 uVar5;\n  \n  param_1[0xe] = param_4;\n  piVar1 = DAT_0800bc74;\n  iVar3 = DAT_0800bc70;\n  iVar2 = DAT_0800bc6c;\n  param_1[0xf] = 0x3f800000;\n  param_1[0x10] = 0x3f800000;\n  param_1[4] = param_2;\n  *param_1 = iVar2;\n  param_1[5] = iVar3;\n  iVar2 = piVar1[1];\n  iVar3 = piVar1[2];\n  iVar4 = piVar1[3];\n  param_1[0x11] = *piVar1;\n  param_1[0x12] = iVar2;\n  param_1[0x13] = iVar3;\n  param_1[0x14] = iVar4;\n  iVar2 = piVar1[5];\n  iVar3 = piVar1[6];\n  iVar4 = piVar1[7];\n  param_1[0x15] = piVar1[4];\n  param_1[0x16] = iVar2;\n  param_1[0x17] = iVar3;\n  param_1[0x18] = iVar4;\n  iVar2 = piVar1[8];\n  param_1[0x19] = iVar2;\n  *(undefined1 *)(param_1 + 0x1a) = 0;\n  FUN_0801ad6c(param_1 + 0x1b,0,0x140,iVar2,param_1,param_2,param_3);\n  uVar5 = DAT_0800bc78;\n  param_1[0x1b] = 0x3f800000;\n  param_1[0x1c] = 0x3f800000;\n  param_1[0x2b] = 0x3f800000;\n  param_1[0x2c] = 0x3f800000;\n  param_1[0x3b] = 0x3f800000;\n  param_1[0x3c] = 0x3f800000;\n  param_1[0x4b] = 0x3f800000;\n  param_1[0x4c] = 0x3f800000;\n  param_1[0x5b] = 0x3f800000;\n  param_1[0x5c] = 0x3f800000;\n  FUN_0800bb60(param_1 + 0x6b);\n  FUN_0800bb60(uVar5,param_1 + 0x72);\n  FUN_0800bb60(uVar5,param_1 + 0x79);\n  uVar5 = DAT_0800bc7c;\n  FUN_0800bb60(param_1 + 0x80);\n  FUN_0800bb60(uVar5,param_1 + 0x87);\n  iVar2 = DAT_0800bc80;\n  *(undefined1 *)(param_1 + 0x8f) = 0;\n  param_1[5] = iVar2;\n  param_1[0xf] = 0x3f800000;\n  param_1[0x8e] = iVar2 + 0x3c;\n  iVar2 = DAT_0800bc84;\n  param_1[0x10] = 0x3f800000;\n  *param_1 = iVar2;\n  *(undefined1 *)(param_1 + 0x91) = 0;\n  param_1[0x90] = iVar2 + 0x40;\n  return param_1;\n}\n\n",
+    "0x0800bc88": "\nint * FUN_0800bc88(int *param_1,int param_2,undefined4 param_3,int param_4)\n\n{\n  int *piVar1;\n  int iVar2;\n  int iVar3;\n  int iVar4;\n  undefined4 uVar5;\n  \n  param_1[0xd] = param_4;\n  piVar1 = DAT_0800bd5c;\n  iVar3 = DAT_0800bd58;\n  iVar2 = DAT_0800bd54;\n  param_1[0xe] = 0x3f800000;\n  param_1[0xf] = 0x3f800000;\n  param_1[4] = param_2;\n  *param_1 = iVar2;\n  param_1[5] = iVar3;\n  iVar2 = piVar1[1];\n  iVar3 = piVar1[2];\n  iVar4 = piVar1[3];\n  param_1[0x10] = *piVar1;\n  param_1[0x11] = iVar2;\n  param_1[0x12] = iVar3;\n  param_1[0x13] = iVar4;\n  iVar2 = piVar1[5];\n  iVar3 = piVar1[6];\n  iVar4 = piVar1[7];\n  param_1[0x14] = piVar1[4];\n  param_1[0x15] = iVar2;\n  param_1[0x16] = iVar3;\n  param_1[0x17] = iVar4;\n  iVar2 = piVar1[8];\n  param_1[0x18] = iVar2;\n  *(undefined1 *)(param_1 + 0x19) = 0;\n  FUN_0801ad6c(param_1 + 0x1a,0,0x140,iVar2,param_1,param_2,param_3);\n  uVar5 = DAT_0800bd60;\n  param_1[0x1a] = 0x3f800000;\n  param_1[0x1b] = 0x3f800000;\n  param_1[0x2a] = 0x3f800000;\n  param_1[0x2b] = 0x3f800000;\n  param_1[0x3a] = 0x3f800000;\n  param_1[0x3b] = 0x3f800000;\n  param_1[0x4a] = 0x3f800000;\n  param_1[0x4b] = 0x3f800000;\n  param_1[0x5a] = 0x3f800000;\n  param_1[0x5b] = 0x3f800000;\n  FUN_0800bb60(param_1 + 0x6a);\n  FUN_0800bb60(uVar5,param_1 + 0x71);\n  FUN_0800bb60(uVar5,param_1 + 0x78);\n  uVar5 = DAT_0800bd64;\n  FUN_0800bb60(param_1 + 0x7f);\n  FUN_0800bb60(uVar5,param_1 + 0x86);\n  iVar2 = DAT_0800bd68;\n  *(undefined1 *)(param_1 + 0x8e) = 0;\n  param_1[5] = iVar2;\n  param_1[0xe] = 0x3f800000;\n  param_1[0x8d] = iVar2 + 0x38;\n  iVar2 = DAT_0800bd6c;\n  param_1[0xf] = 0x3f800000;\n  *param_1 = iVar2;\n  *(undefined1 *)(param_1 + 0x90) = 0;\n  param_1[0x8f] = iVar2 + 0x40;\n  return param_1;\n}\n\n",
+    "0x0800c5d0": "\nint * FUN_0800c5d0(int *param_1,int param_2,undefined4 *param_3,int param_4)\n\n{\n  int iVar1;\n  undefined4 uVar2;\n  \n  uVar2 = *param_3;\n  *param_1 = DAT_0800c698;\n  param_1[0x10] = param_4 + 0x78;\n  iVar1 = DAT_0800c69c;\n  param_1[5] = param_2;\n  param_1[6] = iVar1;\n  param_1[0x11] = 0x3f800000;\n  param_1[0x13] = 0;\n  param_1[0x14] = 0;\n  param_1[0x16] = 0;\n  iVar1 = DAT_0800c6a0;\n  param_1[0x12] = 0x3f800000;\n  param_1[0x17] = iVar1;\n  *(undefined1 *)(param_1 + 0x15) = 0;\n  param_1[0x18] = 6;\n  param_1[0x19] = 0;\n  param_1[0x1a] = 0;\n  param_1[0x1b] = 0;\n  param_1[0x1c] = 0;\n  param_1[0x1d] = 0;\n  param_1[0x1e] = 0;\n  FUN_0801ad6c(param_1 + 0x1f,0,0x60);\n  FUN_0801ad6c(param_1 + 0x37,0,0x60);\n  *(undefined2 *)(param_1 + 0x4f) = 1;\n  FUN_0800b4c4(param_1 + 0x50);\n  FUN_0800b4c4(param_1 + 0x67);\n  iVar1 = FUN_0800b3de(uVar2);\n  param_1[0x7e] = iVar1;\n  iVar1 = FUN_0800b3de(uVar2);\n  param_1[0x7f] = iVar1;\n  iVar1 = FUN_0800b3de(uVar2);\n  param_1[0x80] = iVar1;\n  *(undefined1 *)(param_1 + 0x81) = 0;\n  FUN_0800c3f8(param_1 + 0x82,param_4,0x56ce);\n  iVar1 = DAT_0800c6a4;\n  *(undefined1 *)(param_1 + 0xde) = 0;\n  param_1[6] = iVar1;\n  param_1[0x11] = 0x3f800000;\n  param_1[0xdd] = iVar1 + 0x3c;\n  iVar1 = DAT_0800c6a8;\n  param_1[0x12] = 0x3f800000;\n  *param_1 = iVar1;\n  *(undefined1 *)(param_1 + 0xe0) = 0;\n  param_1[0xdf] = iVar1 + 0x40;\n  return param_1;\n}\n\n",
+    "0x0800c6ac": "\nint * FUN_0800c6ac(int *param_1,int param_2,undefined4 param_3,undefined4 *param_4,int param_5)\n\n{\n  int iVar1;\n  undefined4 uVar2;\n  int iVar3;\n  undefined4 uVar4;\n  uint in_fpscr;\n  float fVar5;\n  \n  uVar2 = DAT_0800c838;\n  iVar1 = DAT_0800c834;\n  uVar4 = *param_4;\n  param_1[4] = param_2;\n  param_1[0x12] = param_5 + 0x78;\n  iVar3 = DAT_0800c83c;\n  *param_1 = iVar1;\n  param_1[5] = iVar3;\n  param_1[0x13] = 0x3f800000;\n  *(undefined1 *)(param_1 + 0x1a) = 2;\n  iVar1 = DAT_0800c840;\n  param_1[0x14] = 0x3f800000;\n  param_1[0x1d] = iVar1;\n  iVar1 = DAT_0800c844;\n  param_1[0x15] = 0;\n  param_1[0x1e] = iVar1;\n  param_1[0x16] = 0;\n  param_1[0x17] = 0;\n  param_1[0x18] = 0;\n  param_1[0x19] = 0;\n  param_1[0x1b] = 0x3f800000;\n  *(undefined2 *)(param_1 + 0x1c) = 0;\n  *(undefined1 *)(param_1 + 0x1f) = 0;\n  param_1[0x20] = 0;\n  param_1[0x21] = 0;\n  FUN_0800b3e8();\n  FUN_0800b3e8(uVar2,param_1 + 0x29);\n  FUN_0800b3e8(DAT_0800c848,param_1 + 0x30);\n  FUN_0800b4c4(param_1 + 0x37);\n  FUN_0800b4c4(param_1 + 0x4e);\n  param_1[0x66] = 0;\n  fVar5 = (float)VectorUnsignedToFloat((uint)*(byte *)(param_1 + 0x1a),(byte)(in_fpscr >> 0x15) & 3)\n  ;\n  param_1[0x69] = 0;\n  param_1[0x6a] = 0;\n  param_1[0x6b] = 0;\n  param_1[0x6c] = 0;\n  param_1[0x6d] = 0;\n  param_1[0x6e] = 0;\n  param_1[0x67] = 0;\n  param_1[0x68] = 0;\n  param_1[0x65] = (int)(1.0 / fVar5);\n  FUN_0801ad6c(param_1 + 0x6f,0,0x10);\n  FUN_0801ad6c(param_1 + 0x73,0,0x10);\n  FUN_0800c260(param_1 + 0x77,uVar4);\n  FUN_0800c260(param_1 + 0x7c,uVar4);\n  FUN_0800c288(param_1 + 0x81,uVar4);\n  FUN_0800c288(param_1 + 0x86,uVar4);\n  FUN_0800c2b0(param_1 + 0x8b,uVar4);\n  FUN_0800c2b0(param_1 + 0x90,uVar4);\n  FUN_0801ad6c(param_1 + 0x95,0,0x10);\n  FUN_0800c3f8(param_1 + 0x99,param_5,0x56ce);\n  FUN_0800c3f8(param_1 + 0xf4,param_5,0x56ce);\n  iVar1 = DAT_0800c84c;\n  *(undefined1 *)(param_1 + 0x150) = 0;\n  param_1[5] = iVar1;\n  param_1[0x13] = 0x3f800000;\n  param_1[0x14f] = iVar1 + 0x3c;\n  iVar1 = DAT_0800c850;\n  param_1[0x14] = 0x3f800000;\n  *param_1 = iVa... [98 chars truncated]",
+    "0x0800c87c": "\nint * FUN_0800c87c(int *param_1,int param_2,undefined4 param_3,undefined4 *param_4,int param_5)\n\n{\n  undefined4 uVar1;\n  int iVar2;\n  undefined4 uVar3;\n  uint in_fpscr;\n  float fVar4;\n  \n  uVar1 = DAT_0800c9e8;\n  uVar3 = *param_4;\n  *param_1 = DAT_0800c9e4;\n  param_1[0x14] = param_5 + 0x78;\n  iVar2 = DAT_0800c9ec;\n  param_1[5] = param_2;\n  param_1[6] = iVar2;\n  param_1[0x15] = 0x3f800000;\n  *(undefined1 *)(param_1 + 0x1c) = 1;\n  iVar2 = DAT_0800c9f0;\n  param_1[0x16] = 0x3f800000;\n  param_1[0x1f] = iVar2;\n  iVar2 = DAT_0800c9f4;\n  param_1[0x17] = 0;\n  param_1[0x20] = iVar2;\n  param_1[0x18] = 0;\n  param_1[0x19] = 0;\n  param_1[0x1a] = 0;\n  param_1[0x1b] = 0;\n  param_1[0x1d] = 0x3f800000;\n  *(undefined2 *)(param_1 + 0x1e) = 0;\n  *(undefined1 *)(param_1 + 0x21) = 0;\n  param_1[0x22] = 0;\n  param_1[0x23] = 0;\n  FUN_0800b3e8();\n  FUN_0800b3e8(uVar1,param_1 + 0x2b);\n  FUN_0800b3e8(DAT_0800c9f8,param_1 + 0x32);\n  FUN_0800b4c4(param_1 + 0x39);\n  FUN_0800b4c4(param_1 + 0x50);\n  param_1[0x68] = 0;\n  param_1[0x69] = 0;\n  fVar4 = (float)VectorUnsignedToFloat((uint)*(byte *)(param_1 + 0x1c),(byte)(in_fpscr >> 0x15) & 3)\n  ;\n  param_1[0x6a] = 0;\n  param_1[0x6b] = 0;\n  param_1[0x6c] = 0;\n  param_1[0x6d] = 0;\n  param_1[0x6e] = 0;\n  param_1[0x6f] = 0;\n  param_1[0x70] = 0;\n  param_1[0x71] = 0;\n  param_1[0x72] = 0;\n  param_1[0x73] = 0;\n  param_1[0x67] = (int)(1.0 / fVar4);\n  FUN_0800c854(param_1 + 0x74,uVar3);\n  FUN_0800c854(param_1 + 0x79,uVar3);\n  FUN_0800c2b0(param_1 + 0x7e,uVar3);\n  FUN_0800c2b0(param_1 + 0x83,uVar3);\n  FUN_0800c2b0(param_1 + 0x88,uVar3);\n  FUN_0800c2b0(param_1 + 0x8d,uVar3);\n  param_1[0x92] = 0;\n  param_1[0x93] = 0;\n  FUN_0800c3f8(param_1 + 0x94,param_5,0x56ce);\n  iVar2 = DAT_0800c9fc;\n  param_1[0xef] = 0;\n  param_1[6] = iVar2;\n  *(undefined1 *)(param_1 + 0xf1) = 0;\n  param_1[0xf0] = iVar2 + 0x3c;\n  iVar2 = DAT_0800ca00;\n  param_1[0x15] = 0x3f800000;\n  *param_1 = iVar2;\n  param_1[0x16] = 0x3f800000;\n  *(undefined1 *)(param_1 + 0xf3) = 0;\n  param_1[0xf2] = iVar2 + 0... [26 chars truncated]",
+    "0x0800bdd0": "\nint * FUN_0800bdd0(int *param_1,int param_2,undefined4 *param_3,int param_4)\n\n{\n  int iVar1;\n  int iVar2;\n  undefined4 uVar3;\n  \n  uVar3 = *param_3;\n  *param_1 = DAT_0800bf40;\n  iVar1 = DAT_0800bf44;\n  param_1[0xd] = param_4 + 0x60;\n  iVar2 = DAT_0800bf48;\n  param_1[4] = param_2;\n  param_1[5] = iVar2;\n  param_1[0xe] = 0x3f800000;\n  param_1[0xf] = 0x3f800000;\n  param_1[0x10] = iVar1;\n  param_1[0x11] = iVar1;\n  param_1[0x12] = iVar1;\n  param_1[0x13] = 0x3f800000;\n  *(undefined2 *)(param_1 + 0x14) = 0;\n  param_1[0x15] = iVar1;\n  *(undefined2 *)(param_1 + 0x16) = 0;\n  param_1[0x17] = iVar1;\n  FUN_0800bd70(param_1 + 0x18,param_4);\n  FUN_0800bd70(param_1 + 0x36,param_4 + 0x30);\n  param_1[0x56] = 0;\n  param_1[0x5d] = iVar1;\n  param_1[0x5e] = iVar1;\n  param_1[0x54] = 0;\n  param_1[0x55] = 0;\n  param_1[0x57] = 0;\n  param_1[0x58] = 0;\n  FUN_0800b4c4(param_1 + 0x5f);\n  iVar2 = FUN_0800b3de(uVar3);\n  param_1[0x76] = iVar2;\n  iVar2 = FUN_0800b3de(uVar3);\n  uVar3 = DAT_0800bf4c;\n  param_1[0x77] = iVar2;\n  FUN_0800b3e8(uVar3,param_1 + 0x78);\n  param_1[0x7f] = DAT_0800bf50;\n  param_1[0x80] = DAT_0800bf54;\n  FUN_08009b98(param_1 + 0x81);\n  FUN_08009e88(param_1 + 0xa5);\n  FUN_0800a134(param_1 + 0xb5);\n  uVar3 = DAT_0800bf5c;\n  param_1[0xcf] = DAT_0800bf58;\n  FUN_0800a408(uVar3,iVar1,iVar1,0x3f800000,0x3f800000,param_1 + 0xd0);\n  uVar3 = DAT_0800bf64;\n  param_1[0xd7] = DAT_0800bf60;\n  param_1[0xd8] = iVar1;\n  param_1[0xd9] = 0x3f800000;\n  FUN_080082f0(uVar3,param_1 + 0xd7);\n  param_1[0xdf] = (int)(param_1 + 0xcf);\n  param_1[0xda] = (int)(param_1 + 0x7f);\n  param_1[0xe0] = iVar1;\n  param_1[0xe1] = iVar1;\n  param_1[0xe2] = iVar1;\n  param_1[0xe3] = iVar1;\n  param_1[0xe4] = 0x3f800000;\n  *(undefined1 *)(param_1 + 0xe6) = 0;\n  param_1[0xe] = 0x3f800000;\n  param_1[0xf] = 0x3f800000;\n  *(undefined1 *)(param_1 + 0xe8) = 0;\n  param_1[0xdb] = (int)(param_1 + 0x80);\n  param_1[0xdc] = (int)(param_1 + 0x81);\n  iVar1 = DAT_0800bf68;\n  param_1[5] = DAT_0800bf68;\n  param_1[0xe5] = iVar1 + 0x3c;\n  iVa... [181 chars truncated]"
+  },
+  "ca04_full_code": "\nint FUN_0800ca04(int param_1,undefined4 *param_2,undefined4 *param_3,undefined4 param_4,\n                undefined4 param_5,int param_6)\n\n{\n  undefined4 uVar1;\n  undefined4 uVar2;\n  undefined4 uVar3;\n  undefined4 uVar4;\n  int iVar5;\n  undefined4 *puVar6;\n  code *pcVar7;\n  undefined4 *puVar8;\n  int *piVar9;\n  int *piVar10;\n  int iVar11;\n  int iVar12;\n  int iVar13;\n  int iVar14;\n  int iVar15;\n  int iVar16;\n  int iVar17;\n  undefined4 *local_3c [2];\n  \n  iVar5 = param_6;\n  iVar12 = DAT_0800cde8;\n  iVar14 = DAT_0800cde8 + 0x3c;\n  *(undefined4 *)(param_1 + 0x9c) = 0;\n  piVar9 = (int *)(param_1 + 0xa0);\n  local_3c[0] = param_2;\n  do {\n    piVar9[5] = 0x3f800000;\n    piVar10 = piVar9 + 0x12;\n    piVar9[4] = (int)(piVar9 + 9);\n    piVar9[6] = 0x3f800000;\n    *(undefined1 *)(piVar9 + 8) = 0;\n    *piVar9 = iVar12;\n    piVar9[7] = iVar14;\n    FUN_0800a698();\n    uVar4 = DAT_0800cdf0;\n    uVar1 = DAT_0800cdec;\n    iVar13 = DAT_0800cdc4;\n    piVar9 = piVar10;\n  } while (piVar10 != (int *)(param_1 + 0x178));\n  iVar12 = DAT_0800cdc4 + 0x38;\n  FUN_0800b4f4(piVar10,local_3c[0],iVar5);\n  *(int *)(param_1 + 0x178) = iVar13;\n  *(int *)(param_1 + 0x234) = iVar12;\n  *(undefined4 *)(param_1 + 0x18c) = uVar1;\n  *(undefined4 *)(param_1 + 400) = uVar4;\n  *(undefined1 *)(param_1 + 0x238) = 0;\n  FUN_0800b4f4(param_1 + 0x23c,local_3c[0],iVar5);\n  *(int *)(param_1 + 0x23c) = iVar13;\n  *(int *)(param_1 + 0x2f8) = iVar12;\n  *(undefined4 *)(param_1 + 0x250) = uVar1;\n  *(undefined4 *)(param_1 + 0x254) = uVar4;\n  *(undefined1 *)(param_1 + 0x2fc) = 0;\n  FUN_0800b4f4(param_1 + 0x300,local_3c[0],iVar5);\n  *(undefined4 *)(param_1 + 0x318) = uVar4;\n  iVar11 = iVar5 + 0x978;\n  *(int *)(param_1 + 0x300) = iVar13;\n  *(int *)(param_1 + 0x3bc) = iVar12;\n  *(undefined4 *)(param_1 + 0x314) = uVar1;\n  *(undefined1 *)(param_1 + 0x3c0) = 0;\n  iVar13 = iVar5 + 0x9a8;\n  FUN_0800bba0(param_1 + 0x3c4,iVar11,local_3c);\n  FUN_0800bba0(param_1 + 0x60c,iVar11,local_3c,iVar5 + 0x24);\n  iVar14 = iVar5 + 0x204;\n  FUN_0800bba0... [11047 chars truncated]",
+  "call_offsets": {
+    "unknown": [
+      "FUN_0800ca04",
+      "FUN_0800a698",
+      "FUN_0800b4f4",
+      "FUN_0800b3d6",
+      "FUN_0800b3d6",
+      "FUN_0800b3d6",
+      "FUN_0800b3de",
+      "FUN_0801ad6c"
+    ],
+    "0x23c": [
+      "FUN_0800b4f4"
+    ],
+    "0x300": [
+      "FUN_0800b4f4"
+    ],
+    "0x3c4": [
+      "FUN_0800bba0"
+    ],
+    "0x60c": [
+      "FUN_0800bba0"
+    ],
+    "0x854": [
+      "FUN_0800bba0"
+    ],
+    "0xa9c": [
+      "FUN_0800bc88"
+    ],
+    "0xce0": [
+      "FUN_0800bc88"
+    ],
+    "0xf24": [
+      "FUN_0800bc88"
+    ],
+    "0x1168": [
+      "FUN_0800c5d0"
+    ],
+    "0x14ec": [
+      "FUN_0800c5d0"
+    ],
+    "0x1870": [
+      "FUN_0800c5d0"
+    ],
+    "0x1bf4": [
+      "FUN_0800c6ac"
+    ],
+    "0x2140": [
+      "FUN_0800c6ac"
+    ],
+    "0x268c": [
+      "FUN_0800c6ac"
+    ],
+    "0x2bd8": [
+      "FUN_0800c87c"
+    ],
+    "0x2fa8": [
+      "FUN_0800c87c"
+    ],
+    "0x3378": [
+      "FUN_0800c87c"
+    ],
+    "0x3748": [
+      "FUN_0800bdd0"
+    ],
+    "0x3aec": [
+      "FUN_0800bdd0"
+    ],
+    "0x3e90": [
+      "FUN_0800bdd0"
+    ],
+    "0x42a4": [
+      "FUN_0800bf70"
+    ],
+    "0x42d8": [
+      "FUN_0800bf70"
+    ],
+    "0x430c": [
+      "FUN_0800bf70"
+    ],
+    "0x4340": [
+      "FUN_0800bf70"
+    ],
+    "0x4374": [
+      "FUN_0800bf70"
+    ],
+    "0x43a8": [
+      "FUN_0800bf70"
+    ],
+    "0x43dc": [
+      "FUN_0800bf70"
+    ],
+    "0x4410": [
+      "FUN_0800bf70"
+    ],
+    "0x4468": [
+      "FUN_0800b4c4"
+    ],
+    "0x44c4": [
+      "FUN_0800b3e8"
+    ],
+    "0x44e0": [
+      "FUN_0800bf90"
+    ],
+    "0x45e0": [
+      "FUN_0800bf90"
+    ],
+    "0x46e0": [
+      "FUN_0800bf90"
+    ],
+    "0x48a4": [
+      "FUN_0800b3e8"
+    ],
+    "0x48c0": [
+      "FUN_0800b3e8"
+    ],
+    "0x48dc": [
+      "FUN_0800b3e8"
+    ],
+    "0x48f8": [
+      "FUN_0800b780"
+    ],
+    "0x492c": [
+      "FUN_0800b780"
+    ],
+    "0x4984": [
+      "FUN_0800b7a0"
+    ],
+    "0x4c88": [
+      "FUN_0800c070"
+    ],
+    "0x5354": [
+      "FUN_0800c070"
+    ],
+    "0x5a20": [
+      "FUN_0800c070"
+    ],
+    "0x68e0": [
+      "FUN_0800b3e8"
+    ],
+    "0x68fc": [
+      "FUN_0800bb60"
+    ],
+    "0x6918": [
+      "FUN_0800bb60"
+    ],
+    "0x6934": [
+      "FUN_0800bb60"
+    ],
+    "0x6950": [
+      "FUN_0800bb60"
+    ],
+    "0x684c": [
+      "FUN_0800c21c"
+    ],
+    "0x685c": [
+      "FUN_0800c21c"
+    ],
+    "0x686c": [
+      "FUN_0800c21c"
+    ]
+  },
+  "type_selectors": [],
+  "init_xrefs": {
+    "0x0800b4f4": [
+      {
+        "name": "FUN_0800ca04",
+        "address": "0800ca04"
+      }
+    ],
+    "0x0800bba0": [
+      {
+        "name": "FUN_0800ca04",
+        "address": "0800ca04"
+      }
+    ],
+    "0x0800bc88": [
+      {
+        "name": "FUN_0800ca04",
+        "address": "0800ca04"
+      }
+    ],
+    "0x0800c5d0": [
+      {
+        "name": "FUN_0800ca04",
+        "address": "0800ca04"
+      }
+    ],
+    "0x0800c6ac": [
+      {
+        "name": "FUN_0800ca04",
+        "address": "0800ca04"
+      }
+    ],
+    "0x0800c87c": [
+      {
+        "name": "FUN_0800ca04",
+        "address": "0800ca04"
+      }
+    ],
+    "0x0800bdd0": [
+      {
+        "name": "FUN_0800ca04",
+        "address": "0800ca04"
+      }
+    ]
+  }
+}

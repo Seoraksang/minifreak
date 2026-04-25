@@ -1,0 +1,3502 @@
+[
+  {
+    "address": "0005b888",
+    "string": "Current All"
+  },
+  {
+    "address": "00089a78",
+    "string": "Current : "
+  },
+  {
+    "address": "00089da0",
+    "string": "MedianFilter"
+  },
+  {
+    "address": "00089dd4",
+    "string": "SMAFilter<3>"
+  },
+  {
+    "address": "00089de4",
+    "string": "PotChainCalib"
+  },
+  {
+    "address": "00089df4",
+    "string": "SensorComp"
+  },
+  {
+    "address": "00089e10",
+    "string": "SMAFilter<4>"
+  },
+  {
+    "address": "00089e20",
+    "string": "SensorChainCalib"
+  },
+  {
+    "address": "00089e34",
+    "string": "ContinuousSwitchChain"
+  },
+  {
+    "address": "0008a020",
+    "string": "Scheduler full"
+  },
+  {
+    "address": "0008a0a8",
+    "string": "MNF_Edit::value_t MNF_Edit::get(eEditParams)"
+  },
+  {
+    "address": "0008a0d8",
+    "string": " at line "
+  },
+  {
+    "address": "0008a0e4",
+    "string": "Param "
+  },
+  {
+    "address": "0008a0ec",
+    "string": " out of bound"
+  },
+  {
+    "address": "0008a0fc",
+    "string": "bool MNF_Edit::set(eEditParams, MNF_Edit::value_t)"
+  },
+  {
+    "address": "0008a134",
+    "string": "Too many dir entries"
+  },
+  {
+    "address": "0008a14c",
+    "string": "MNF_MidiOut"
+  },
+  {
+    "address": "0008a158",
+    "string": "SyncSynthOut"
+  },
+  {
+    "address": "0008a168",
+    "string": "Ratcheter"
+  },
+  {
+    "address": "0008a174",
+    "string": "OctRandomizer"
+  },
+  {
+    "address": "0008a184",
+    "string": "SeqArpAdapter"
+  },
+  {
+    "address": "0008b280",
+    "string": "Flash"
+  },
+  {
+    "address": "0008b2d0",
+    "string": "0123456789ABCDEF"
+  },
+  {
+    "address": "0008b318",
+    "string": "FS collage timeout"
+  },
+  {
+    "address": "0008b368",
+    "string": "app: %.*s"
+  },
+  {
+    "address": "0008b374",
+    "string": "proto: %d"
+  },
+  {
+    "address": "0008b3b4",
+    "string": "Rebooting system"
+  },
+  {
+    "address": "0008c284",
+    "string": "ContinuousSwitch"
+  },
+  {
+    "address": "0008c2e0",
+    "string": "void CvCalib::setCalibVcaClickValue(eVcfType, uint8_t, bool, uint16_t)"
+  },
+  {
+    "address": "0008c328",
+    "string": "Invalid CV group"
+  },
+  {
+    "address": "0008c33c",
+    "string": "void CvCalib::setCalibrated(eCvKind, uint8_t, bool, bool)"
+  },
+  {
+    "address": "0008c378",
+    "string": "void CvCalib::setCalibCutValue(int8_t, int16_t, uint16_t)"
+  },
+  {
+    "address": "0008c3b4",
+    "string": "Invalid CV idx"
+  },
+  {
+    "address": "0008c3c4",
+    "string": "Invalid CV point"
+  },
+  {
+    "address": "0008c3d8",
+    "string": "void CvCalib::setCalibMaxValue(eCvKind, uint8_t, uint16_t)"
+  },
+  {
+    "address": "0008c414",
+    "string": "void CvCalib::setCalibMinValue(eCvKind, uint8_t, uint16_t)"
+  },
+  {
+    "address": "0008c450",
+    "string": "uint16_t CvCalib::getCalibMinValue(eCvKind, uint8_t)"
+  },
+  {
+    "address": "0008c488",
+    "string": "uint16_t CvCalib::getCalibMaxValue(eCvKind, uint8_t)"
+  },
+  {
+    "address": "0008c4c0",
+    "string": "uint16_t CvCalib::getCalibVcaClickValue(eVcfType, uint8_t, bool)"
+  },
+  {
+    "address": "0008c504",
+    "string": "uint16_t CvCalib::getCalibCutValue(int8_t, int16_t)"
+  },
+  {
+    "address": "0008c538",
+    "string": "bool CvCalib::getCalibrated(eCvKind, uint8_t)"
+  },
+  {
+    "address": "0008c568",
+    "string": "uint16_t CvCalib::getCvCalibrated(eCvKind, uint8_t, uint16_t)"
+  },
+  {
+    "address": "0008c65c",
+    "string": "littlefs"
+  },
+  {
+    "address": "0008c730",
+    "string": "bool Preset::set(eSynthParams, Preset::value_t)"
+  },
+  {
+    "address": "0008c760",
+    "string": "Preset::value_t Preset::get(eSynthParams)"
+  },
+  {
+    "address": "0008c78c",
+    "string": "bool Preset::set(eFXParams, Preset::value_t)"
+  },
+  {
+    "address": "0008c7bc",
+    "string": "Preset::value_t Preset::get(eFXParams)"
+  },
+  {
+    "address": "0008c7e4",
+    "string": "bool Preset::set(eCtrlParams, Preset::value_t)"
+  },
+  {
+    "address": "0008c814",
+    "string": "Preset::value_t Preset::get(eCtrlParams)"
+  },
+  {
+    "address": "0008c840",
+    "string": "bool Preset::set(eSeqParams, Preset::value_t)"
+  },
+  {
+    "address": "0008c870",
+    "string": "Preset::value_t Preset::get(eSeqParams)"
+  },
+  {
+    "address": "0008c898",
+    "string": "MNF_Preset get(eStepIdx): Should never be accessed"
+  },
+  {
+    "address": "0008c8cc",
+    "string": "bool Preset::set(eSeqStepParams, Preset::seqdatavalue_t)"
+  },
+  {
+    "address": "0008c908",
+    "string": "Preset::seqdatavalue_t Preset::get(eSeqStepParams)"
+  },
+  {
+    "address": "0008c93c",
+    "string": "MNF_Preset get(eAutomIdx): Should never be accessed"
+  },
+  {
+    "address": "0008c970",
+    "string": "bool Preset::set(eSeqAutomParams, Preset::value_t)"
+  },
+  {
+    "address": "0008c9a4",
+    "string": "Preset::value_t Preset::get(eSeqAutomParams)"
+  },
+  {
+    "address": "0008c9d4",
+    "string": "bool Preset::set(eShaperParams, Preset::value_t)"
+  },
+  {
+    "address": "0008ca08",
+    "string": "Preset::value_t Preset::get(eShaperParams)"
+  },
+  {
+    "address": "0008d480",
+    "string": "bool Settings::set(eSettingsParams, Settings::value_t)"
+  },
+  {
+    "address": "0008d4b8",
+    "string": "Settings::value_t Settings::get(eSettingsParams)"
+  },
+  {
+    "address": "0008de10",
+    "string": "end-of-stream"
+  },
+  {
+    "address": "0008de20",
+    "string": "io error"
+  },
+  {
+    "address": "0008de2c",
+    "string": "varint overflow"
+  },
+  {
+    "address": "0008de3c",
+    "string": "invalid wire_type"
+  },
+  {
+    "address": "0008de50",
+    "string": "failed to set defaults"
+  },
+  {
+    "address": "0008de68",
+    "string": "zero tag"
+  },
+  {
+    "address": "0008de74",
+    "string": "invalid extension"
+  },
+  {
+    "address": "0008de88",
+    "string": "wrong size for fixed count field"
+  },
+  {
+    "address": "0008deac",
+    "string": "missing required field"
+  },
+  {
+    "address": "0008dec4",
+    "string": "wrong wire type"
+  },
+  {
+    "address": "0008ded4",
+    "string": "invalid data_size"
+  },
+  {
+    "address": "0008dee8",
+    "string": "integer too large"
+  },
+  {
+    "address": "0008defc",
+    "string": "bytes overflow"
+  },
+  {
+    "address": "0008df0c",
+    "string": "no malloc support"
+  },
+  {
+    "address": "0008df20",
+    "string": "size too large"
+  },
+  {
+    "address": "0008df30",
+    "string": "string overflow"
+  },
+  {
+    "address": "0008df40",
+    "string": "parent stream too short"
+  },
+  {
+    "address": "0008df58",
+    "string": "invalid field descriptor"
+  },
+  {
+    "address": "0008df74",
+    "string": "incorrect fixed length bytes size"
+  },
+  {
+    "address": "0008df98",
+    "string": "invalid field type"
+  },
+  {
+    "address": "0008dfac",
+    "string": "array overflow"
+  },
+  {
+    "address": "0008dfbc",
+    "string": "callback failed"
+  },
+  {
+    "address": "0008dfcc",
+    "string": "stream full"
+  },
+  {
+    "address": "0008dfd8",
+    "string": "submsg size changed"
+  },
+  {
+    "address": "0008dfec",
+    "string": "bytes size exceeded"
+  },
+  {
+    "address": "0008e000",
+    "string": "zero-length string"
+  },
+  {
+    "address": "0008e014",
+    "string": "unterminated string"
+  },
+  {
+    "address": "0008e028",
+    "string": "callback error"
+  },
+  {
+    "address": "0008e038",
+    "string": "array max size exceeded"
+  },
+  {
+    "address": "0008e058",
+    "string": "Chorder"
+  },
+  {
+    "address": "0008e078",
+    "string": "MNF_KeyRouter"
+  },
+  {
+    "address": "0008e0bc",
+    "string": "MNF_NotePath"
+  },
+  {
+    "address": "0008e128",
+    "string": "Poly2Mono"
+  },
+  {
+    "address": "0008e14c",
+    "string": "Scaler"
+  },
+  {
+    "address": "0008e1cc",
+    "string": "Unison"
+  },
+  {
+    "address": "0008e1ec",
+    "string": "VoiceAllocator"
+  },
+  {
+    "address": "0008e254",
+    "string": "Panel"
+  },
+  {
+    "address": "0008e25c",
+    "string": "Save cancelled"
+  },
+  {
+    "address": "0008e274",
+    "string": "No Audio In\nSignal Detected"
+  },
+  {
+    "address": "0008e2b4",
+    "string": "Tranny V Kick"
+  },
+  {
+    "address": "0008e2c4",
+    "string": "Reload Seq"
+  },
+  {
+    "address": "0008e2d0",
+    "string": "-1 semi-tone"
+  },
+  {
+    "address": "0008e2e0",
+    "string": "+1 semi-tone"
+  },
+  {
+    "address": "0008e2f0",
+    "string": "\ncopied"
+  },
+  {
+    "address": "0008e2f8",
+    "string": "\npasted"
+  },
+  {
+    "address": "0008e300",
+    "string": "Clipboard is empty"
+  },
+  {
+    "address": "0008e314",
+    "string": "Preset not valid"
+  },
+  {
+    "address": "0008e328",
+    "string": "Osc Types\nnot compatible"
+  },
+  {
+    "address": "0008e344",
+    "string": "Can't have more\nthan 1 Reverb\nand 1 Delay"
+  },
+  {
+    "address": "0008e370",
+    "string": "Settings are reset"
+  },
+  {
+    "address": "0008e384",
+    "string": "File system formatted\nPlease reboot"
+  },
+  {
+    "address": "0008e3a8",
+    "string": "Formatting error"
+  },
+  {
+    "address": "0008e3bc",
+    "string": "Preset load error!"
+  },
+  {
+    "address": "0008e3d0",
+    "string": "Preset save error!"
+  },
+  {
+    "address": "0008e3e4",
+    "string": "Preset corrupted"
+  },
+  {
+    "address": "0008e3f8",
+    "string": "Vibrato On"
+  },
+  {
+    "address": "0008e404",
+    "string": "Vibrato Off"
+  },
+  {
+    "address": "0008e414",
+    "string": "Favorites Panel"
+  },
+  {
+    "address": "0008e424",
+    "string": "Preset Init"
+  },
+  {
+    "address": "0008e430",
+    "string": "Reload Preset"
+  },
+  {
+    "address": "0008e440",
+    "string": "Matrix"
+  },
+  {
+    "address": "0008e448",
+    "string": "Macro 1"
+  },
+  {
+    "address": "0008e450",
+    "string": "Macro 2"
+  },
+  {
+    "address": "0008e458",
+    "string": "LFO1 user curve"
+  },
+  {
+    "address": "0008e468",
+    "string": "LFO2 user curve"
+  },
+  {
+    "address": "0008e478",
+    "string": "Current"
+  },
+  {
+    "address": "0008e490",
+    "string": "SwapOsc"
+  },
+  {
+    "address": "0008e4d4",
+    "string": "Seq + Mods"
+  },
+  {
+    "address": "0008e854",
+    "string": "Unknown bank"
+  },
+  {
+    "address": "0008e960",
+    "string": "void MNF_WheelsController::clearColumn(MNF_WheelsController::eWheel)"
+  },
+  {
+    "address": "0008e9a8",
+    "string": "RGBLedColor MNF_WheelsController::getWheelColor(MNF_WheelsController::eWheel)"
+  },
+  {
+    "address": "0008e9f8",
+    "string": "void MNF_WheelsController::drawColumnPosition(MNF_WheelsController::eWheel, uint16_t, uint16_t)"
+  },
+  {
+    "address": "0008ea94",
+    "string": "Custom Assign"
+  },
+  {
+    "address": "0008eaac",
+    "string": "Vib Rate"
+  },
+  {
+    "address": "0008ead4",
+    "string": "CycEnv AM"
+  },
+  {
+    "address": "0008eae0",
+    "string": "Uni Spread"
+  },
+  {
+    "address": "0008eb80",
+    "string": "Preset %d"
+  },
+  {
+    "address": "0008eb8c",
+    "string": "Voicing"
+  },
+  {
+    "address": "0008eb94",
+    "string": "Linear"
+  },
+  {
+    "address": "0008eb9c",
+    "string": "Quick"
+  },
+  {
+    "address": "0008eba4",
+    "string": "Default"
+  },
+  {
+    "address": "0008ebac",
+    "string": "Percussive"
+  },
+  {
+    "address": "0008ebb8",
+    "string": "Sustain"
+  },
+  {
+    "address": "0008ebcc",
+    "string": "Samples"
+  },
+  {
+    "address": "0008ebd4",
+    "string": "Wavetables"
+  },
+  {
+    "address": "0008ebec",
+    "string": "FX Slots"
+  },
+  {
+    "address": "0008ec00",
+    "string": "Spice"
+  },
+  {
+    "address": "0008ec08",
+    "string": "Arp Repeat"
+  },
+  {
+    "address": "0008ec14",
+    "string": "Arp Ratchet"
+  },
+  {
+    "address": "0008ec20",
+    "string": "Arp Rand Oct"
+  },
+  {
+    "address": "0008ec30",
+    "string": "Arp Mutate"
+  },
+  {
+    "address": "0008ec44",
+    "string": "Arp Down"
+  },
+  {
+    "address": "0008ec50",
+    "string": "Arp UpDown"
+  },
+  {
+    "address": "0008ec5c",
+    "string": "Arp Rand"
+  },
+  {
+    "address": "0008ec68",
+    "string": "Arp Walk"
+  },
+  {
+    "address": "0008ec74",
+    "string": "Arp Pattern"
+  },
+  {
+    "address": "0008ec80",
+    "string": "Arp Order"
+  },
+  {
+    "address": "0008ec8c",
+    "string": "Arp Poly"
+  },
+  {
+    "address": "0008ec98",
+    "string": "Cutoff"
+  },
+  {
+    "address": "0008eca0",
+    "string": "Error"
+  },
+  {
+    "address": "0008eca8",
+    "string": "Matrix Routing"
+  },
+  {
+    "address": "0008ecb8",
+    "string": "Click to set amount"
+  },
+  {
+    "address": "0008eccc",
+    "string": "Matrix Amount"
+  },
+  {
+    "address": "0008ecdc",
+    "string": "Click to browse"
+  },
+  {
+    "address": "0008ecec",
+    "string": "semi-tones"
+  },
+  {
+    "address": "0008ecf8",
+    "string": "Glide"
+  },
+  {
+    "address": "0008ed14",
+    "string": "Click for more Dest"
+  },
+  {
+    "address": "0008ed28",
+    "string": "Shift + Macros\nto add Dest"
+  },
+  {
+    "address": "0008ed44",
+    "string": "Move controls\nto assign to Macro"
+  },
+  {
+    "address": "0008ed6c",
+    "string": "Seq Mods"
+  },
+  {
+    "address": "0008ed78",
+    "string": "Enable Record\nthen move controls"
+  },
+  {
+    "address": "0008ed9c",
+    "string": "Move controls\nto record"
+  },
+  {
+    "address": "0008edb4",
+    "string": "Sound Designer"
+  },
+  {
+    "address": "0008edc4",
+    "string": "Push+Turn=move"
+  },
+  {
+    "address": "0008edd4",
+    "string": "Preview Slot"
+  },
+  {
+    "address": "0008ede4",
+    "string": "Click to save"
+  },
+  {
+    "address": "0008edf4",
+    "string": "%d -> %d\n"
+  },
+  {
+    "address": "0008ee00",
+    "string": "Select Type"
+  },
+  {
+    "address": "0008ee0c",
+    "string": "Rename Preset"
+  },
+  {
+    "address": "0008ee1c",
+    "string": "Please run a calibration"
+  },
+  {
+    "address": "0008ee38",
+    "string": "Press preset encoder"
+  },
+  {
+    "address": "0008ee50",
+    "string": "Calibration\nfail"
+  },
+  {
+    "address": "0008ee64",
+    "string": "Calibration\nsuccess"
+  },
+  {
+    "address": "0008ee78",
+    "string": "Ext. Clock"
+  },
+  {
+    "address": "0008ee84",
+    "string": "Ext. Tempo\n%d.%d"
+  },
+  {
+    "address": "0008ee98",
+    "string": "Tempo\n%d.%d"
+  },
+  {
+    "address": "0008eea4",
+    "string": "Time Div\n%s"
+  },
+  {
+    "address": "0008eebc",
+    "string": "Envelope > Cutoff\n%d"
+  },
+  {
+    "address": "0008eed4",
+    "string": "Velo > Env Amnt\n%d"
+  },
+  {
+    "address": "0008eee8",
+    "string": "Master Volume\n%d"
+  },
+  {
+    "address": "0008eefc",
+    "string": "Global Scale Edit"
+  },
+  {
+    "address": "0008ef10",
+    "string": "User Scale Edit"
+  },
+  {
+    "address": "0008ef20",
+    "string": "Page %d Assign %d"
+  },
+  {
+    "address": "0008ef34",
+    "string": "%s -> %s"
+  },
+  {
+    "address": "0008ef40",
+    "string": "Move Destination"
+  },
+  {
+    "address": "0008ef54",
+    "string": "Step %d / %d (On)"
+  },
+  {
+    "address": "0008ef68",
+    "string": "Step %d / %d (Off)"
+  },
+  {
+    "address": "0008ef84",
+    "string": "L: %d.%d"
+  },
+  {
+    "address": "0008ef90",
+    "string": "L: %d.%d-%d.%d"
+  },
+  {
+    "address": "0008efb4",
+    "string": "Vibrato"
+  },
+  {
+    "address": "0008efe8",
+    "string": "Gate Length"
+  },
+  {
+    "address": "0008eff4",
+    "string": "User\nPress any key to edit"
+  },
+  {
+    "address": "0008f010",
+    "string": "Type : "
+  },
+  {
+    "address": "0008f018",
+    "string": "\nRevision : "
+  },
+  {
+    "address": "0008f030",
+    "string": "Shaper Edit"
+  },
+  {
+    "address": "0008f03c",
+    "string": "Use Strips and Steps\nto edit Shape"
+  },
+  {
+    "address": "0008f068",
+    "string": "LFO1 Rate"
+  },
+  {
+    "address": "0008f074",
+    "string": "LFO2 Sync"
+  },
+  {
+    "address": "0008f080",
+    "string": "LFO1 Sync"
+  },
+  {
+    "address": "0008f08c",
+    "string": "LFO2 Rate"
+  },
+  {
+    "address": "0008f114",
+    "string": "Triangle"
+  },
+  {
+    "address": "0008f128",
+    "string": "Preset Shaper"
+  },
+  {
+    "address": "0008f138",
+    "string": "Asymmetrical Saw"
+  },
+  {
+    "address": "0008f14c",
+    "string": "Unipolar Cosine"
+  },
+  {
+    "address": "0008f15c",
+    "string": "Short Pulse"
+  },
+  {
+    "address": "0008f168",
+    "string": "Exponential Square"
+  },
+  {
+    "address": "0008f17c",
+    "string": "Decaying Decays"
+  },
+  {
+    "address": "0008f18c",
+    "string": "Wobbly"
+  },
+  {
+    "address": "0008f194",
+    "string": "Strum Envelope"
+  },
+  {
+    "address": "0008f1a4",
+    "string": "Triangle Bounces"
+  },
+  {
+    "address": "0008f1b8",
+    "string": "Rhythmic 1"
+  },
+  {
+    "address": "0008f1c4",
+    "string": "Rhythmic 2"
+  },
+  {
+    "address": "0008f1d0",
+    "string": "Rhythmic 3"
+  },
+  {
+    "address": "0008f1dc",
+    "string": "Rhythmic 4"
+  },
+  {
+    "address": "0008f1e8",
+    "string": "Stepped 1"
+  },
+  {
+    "address": "0008f1f4",
+    "string": "Stepped 2"
+  },
+  {
+    "address": "0008f200",
+    "string": "Stepped 3"
+  },
+  {
+    "address": "0008f20c",
+    "string": "Stepped 4"
+  },
+  {
+    "address": "0008f218",
+    "string": "User Shaper 1"
+  },
+  {
+    "address": "0008f228",
+    "string": "User Shaper 2"
+  },
+  {
+    "address": "0008f238",
+    "string": "User Shaper 3"
+  },
+  {
+    "address": "0008f248",
+    "string": "User Shaper 4"
+  },
+  {
+    "address": "0008f258",
+    "string": "User Shaper 5"
+  },
+  {
+    "address": "0008f268",
+    "string": "User Shaper 6"
+  },
+  {
+    "address": "0008f278",
+    "string": "User Shaper 7"
+  },
+  {
+    "address": "0008f288",
+    "string": "User Shaper 8"
+  },
+  {
+    "address": "0008f298",
+    "string": "Calib Analog"
+  },
+  {
+    "address": "0008f2a8",
+    "string": "Resonance min"
+  },
+  {
+    "address": "0008f2b8",
+    "string": "Resonance max"
+  },
+  {
+    "address": "0008f2c8",
+    "string": "Calib Cutoff"
+  },
+  {
+    "address": "0008f2d8",
+    "string": "VCA min"
+  },
+  {
+    "address": "0008f2e0",
+    "string": "VCA max"
+  },
+  {
+    "address": "0008f2e8",
+    "string": "VCA offset"
+  },
+  {
+    "address": "0008f2f4",
+    "string": "VCA_Offset_Reset"
+  },
+  {
+    "address": "0008f308",
+    "string": "Chorus"
+  },
+  {
+    "address": "0008f310",
+    "string": "Phaser"
+  },
+  {
+    "address": "0008f318",
+    "string": "Flanger"
+  },
+  {
+    "address": "0008f320",
+    "string": "Reverb"
+  },
+  {
+    "address": "0008f328",
+    "string": "Distortion"
+  },
+  {
+    "address": "0008f334",
+    "string": "Bit Crusher"
+  },
+  {
+    "address": "0008f340",
+    "string": "3 Bands EQ"
+  },
+  {
+    "address": "0008f34c",
+    "string": "Peak EQ"
+  },
+  {
+    "address": "0008f354",
+    "string": "Multi Comp"
+  },
+  {
+    "address": "0008f360",
+    "string": "SuperUnison"
+  },
+  {
+    "address": "0008f36c",
+    "string": "Vocoder Self"
+  },
+  {
+    "address": "0008f37c",
+    "string": "Vocoder Ext"
+  },
+  {
+    "address": "0008f388",
+    "string": "Basic Waves"
+  },
+  {
+    "address": "0008f394",
+    "string": "SuperWave"
+  },
+  {
+    "address": "0008f3a8",
+    "string": "KarplusStr"
+  },
+  {
+    "address": "0008f3b4",
+    "string": "VAnalog"
+  },
+  {
+    "address": "0008f3bc",
+    "string": "Waveshaper"
+  },
+  {
+    "address": "0008f3c8",
+    "string": "Two Op. FM"
+  },
+  {
+    "address": "0008f3d4",
+    "string": "Formant"
+  },
+  {
+    "address": "0008f3dc",
+    "string": "Chords"
+  },
+  {
+    "address": "0008f3e4",
+    "string": "Speech"
+  },
+  {
+    "address": "0008f3ec",
+    "string": "Modal"
+  },
+  {
+    "address": "0008f3f4",
+    "string": "Noise"
+  },
+  {
+    "address": "0008f41c",
+    "string": "Multi Filter"
+  },
+  {
+    "address": "0008f42c",
+    "string": "Surgeon Filter"
+  },
+  {
+    "address": "0008f43c",
+    "string": "Comb Filter"
+  },
+  {
+    "address": "0008f448",
+    "string": "Phaser Filter"
+  },
+  {
+    "address": "0008f458",
+    "string": "Destroy"
+  },
+  {
+    "address": "0008f468",
+    "string": "Audio In"
+  },
+  {
+    "address": "0008f474",
+    "string": "Wavetable"
+  },
+  {
+    "address": "0008f480",
+    "string": "Sample"
+  },
+  {
+    "address": "0008f488",
+    "string": "Cloud Grains"
+  },
+  {
+    "address": "0008f498",
+    "string": "Hit Grains"
+  },
+  {
+    "address": "0008f4b4",
+    "string": "Particle"
+  },
+  {
+    "address": "0008f4c8",
+    "string": "Raster"
+  },
+  {
+    "address": "0008f4dc",
+    "string": "Notch"
+  },
+  {
+    "address": "0008f500",
+    "string": "Unison"
+  },
+  {
+    "address": "0008f508",
+    "string": "Uni (Poly)"
+  },
+  {
+    "address": "0008f514",
+    "string": "Uni (Para)"
+  },
+  {
+    "address": "0008f530",
+    "string": "Step En"
+  },
+  {
+    "address": "0008f538",
+    "string": "Slope"
+  },
+  {
+    "address": "0008f544",
+    "string": "Shaper 1 Rate"
+  },
+  {
+    "address": "0008f554",
+    "string": "Shaper 2 Rate"
+  },
+  {
+    "address": "0008f590",
+    "string": "Mod Wheel"
+  },
+  {
+    "address": "0008f59c",
+    "string": "Pitch Wheel"
+  },
+  {
+    "address": "0008f5a8",
+    "string": "Octave"
+  },
+  {
+    "address": "0008f5b0",
+    "string": "Scale"
+  },
+  {
+    "address": "0008f5c0",
+    "string": "User Scale Note"
+  },
+  {
+    "address": "0008f5d0",
+    "string": "Chord En"
+  },
+  {
+    "address": "0008f5dc",
+    "string": "Chord Length"
+  },
+  {
+    "address": "0008f5ec",
+    "string": "Chord Strum"
+  },
+  {
+    "address": "0008f5f8",
+    "string": "Chord Vel>Notes"
+  },
+  {
+    "address": "0008f608",
+    "string": "Chord Offset"
+  },
+  {
+    "address": "0008f618",
+    "string": "FX1 Enable"
+  },
+  {
+    "address": "0008f624",
+    "string": "FX1 Type"
+  },
+  {
+    "address": "0008f630",
+    "string": "Time 1"
+  },
+  {
+    "address": "0008f638",
+    "string": "Intensity 1"
+  },
+  {
+    "address": "0008f644",
+    "string": "Amount 1"
+  },
+  {
+    "address": "0008f668",
+    "string": "Delay Routing"
+  },
+  {
+    "address": "0008f678",
+    "string": "Type 2"
+  },
+  {
+    "address": "0008f680",
+    "string": "Time 2"
+  },
+  {
+    "address": "0008f688",
+    "string": "Intensity 2"
+  },
+  {
+    "address": "0008f694",
+    "string": "Amount 2"
+  },
+  {
+    "address": "0008f6b8",
+    "string": "Reverb Routing"
+  },
+  {
+    "address": "0008f6c8",
+    "string": "FX3 Type"
+  },
+  {
+    "address": "0008f6dc",
+    "string": "Intensity 3"
+  },
+  {
+    "address": "0008f6e8",
+    "string": "Amount 3"
+  },
+  {
+    "address": "0008f70c",
+    "string": "old FX3 Routing"
+  },
+  {
+    "address": "0008f71c",
+    "string": "Preset Volume"
+  },
+  {
+    "address": "0008f72c",
+    "string": "internal use only"
+  },
+  {
+    "address": "0008f740",
+    "string": "Coarse 1"
+  },
+  {
+    "address": "0008f74c",
+    "string": "Fine 1"
+  },
+  {
+    "address": "0008f754",
+    "string": "Type 1"
+  },
+  {
+    "address": "0008f75c",
+    "string": "Wave 1"
+  },
+  {
+    "address": "0008f764",
+    "string": "Timbre 1"
+  },
+  {
+    "address": "0008f770",
+    "string": "Shape 1"
+  },
+  {
+    "address": "0008f778",
+    "string": "Volume 1"
+  },
+  {
+    "address": "0008f784",
+    "string": "Coarse 2"
+  },
+  {
+    "address": "0008f790",
+    "string": "Fine 2"
+  },
+  {
+    "address": "0008f798",
+    "string": "Wave 2"
+  },
+  {
+    "address": "0008f7a0",
+    "string": "Timbre 2"
+  },
+  {
+    "address": "0008f7ac",
+    "string": "Shape 2"
+  },
+  {
+    "address": "0008f7b4",
+    "string": "Volume 2"
+  },
+  {
+    "address": "0008f7c0",
+    "string": "Glide Mode"
+  },
+  {
+    "address": "0008f7cc",
+    "string": "Bend Range"
+  },
+  {
+    "address": "0008f7e8",
+    "string": "Attack"
+  },
+  {
+    "address": "0008f7f0",
+    "string": "Decay"
+  },
+  {
+    "address": "0008f7f8",
+    "string": "Release"
+  },
+  {
+    "address": "0008f800",
+    "string": "Attack Curve"
+  },
+  {
+    "address": "0008f810",
+    "string": "Decay Curve"
+  },
+  {
+    "address": "0008f828",
+    "string": "Velo > Env"
+  },
+  {
+    "address": "0008f834",
+    "string": "Velo > Time"
+  },
+  {
+    "address": "0008f850",
+    "string": "Rise Curve"
+  },
+  {
+    "address": "0008f85c",
+    "string": "Fall Curve"
+  },
+  {
+    "address": "0008f868",
+    "string": "Stage Order"
+  },
+  {
+    "address": "0008f874",
+    "string": "Tempo Sync"
+  },
+  {
+    "address": "0008f880",
+    "string": "Retrig Src"
+  },
+  {
+    "address": "0008f88c",
+    "string": "LFO1 Wave"
+  },
+  {
+    "address": "0008f898",
+    "string": "LFO1 Sync En"
+  },
+  {
+    "address": "0008f8a8",
+    "string": "LFO1 Sync Filter"
+  },
+  {
+    "address": "0008f8bc",
+    "string": "LFO1 Retrig"
+  },
+  {
+    "address": "0008f8c8",
+    "string": "LFO2 Wave"
+  },
+  {
+    "address": "0008f8d4",
+    "string": "LFO2 Sync En"
+  },
+  {
+    "address": "0008f8e4",
+    "string": "LFO2 Sync Filter"
+  },
+  {
+    "address": "0008f8f8",
+    "string": "LFO2Retrig"
+  },
+  {
+    "address": "0008f904",
+    "string": "Macro1 dest"
+  },
+  {
+    "address": "0008f910",
+    "string": "Macro2 dest"
+  },
+  {
+    "address": "0008f91c",
+    "string": "Macro1 amount"
+  },
+  {
+    "address": "0008f92c",
+    "string": "Macro2 amount"
+  },
+  {
+    "address": "0008f93c",
+    "string": "Retrig Mode"
+  },
+  {
+    "address": "0008f948",
+    "string": "Legato Mono"
+  },
+  {
+    "address": "0008f954",
+    "string": "Unison Count"
+  },
+  {
+    "address": "0008f964",
+    "string": "Poly Allocation"
+  },
+  {
+    "address": "0008f974",
+    "string": "Poly Steal Mode"
+  },
+  {
+    "address": "0008f984",
+    "string": "Vibrato Depth"
+  },
+  {
+    "address": "0008f994",
+    "string": "UnisonOn TO BE DEPRECATED"
+  },
+  {
+    "address": "0008f9b0",
+    "string": "Matrix Src VeloAT"
+  },
+  {
+    "address": "0008f9c4",
+    "string": "Osc1 Mod Quant"
+  },
+  {
+    "address": "0008f9d4",
+    "string": "Osc2 Mod Quant"
+  },
+  {
+    "address": "0008f9e4",
+    "string": "Release Curve"
+  },
+  {
+    "address": "0008f9f4",
+    "string": "Osc Mix Non-Lin"
+  },
+  {
+    "address": "0008fa04",
+    "string": "Glide Sync"
+  },
+  {
+    "address": "0008fa10",
+    "string": "Pitch 1"
+  },
+  {
+    "address": "0008fa18",
+    "string": "Pitch 2"
+  },
+  {
+    "address": "0008fa34",
+    "string": "Unison Mode"
+  },
+  {
+    "address": "0008fa40",
+    "string": "Osc Free Run"
+  },
+  {
+    "address": "0008fa50",
+    "string": "Mx Cursor"
+  },
+  {
+    "address": "0008fa5c",
+    "string": "Mx Page"
+  },
+  {
+    "address": "0008fa64",
+    "string": "Mx Mode"
+  },
+  {
+    "address": "0008fa6c",
+    "string": "Osc Sel"
+  },
+  {
+    "address": "0008fa7c",
+    "string": "Lfo Sel"
+  },
+  {
+    "address": "0008fa84",
+    "string": "Octave Tune"
+  },
+  {
+    "address": "0008fa90",
+    "string": "Tempo Div"
+  },
+  {
+    "address": "0008fa9c",
+    "string": "Seq Page"
+  },
+  {
+    "address": "0008faa8",
+    "string": "PlayState"
+  },
+  {
+    "address": "0008fab4",
+    "string": "RecState"
+  },
+  {
+    "address": "0008fac0",
+    "string": "RecMode"
+  },
+  {
+    "address": "0008fac8",
+    "string": "Cursor"
+  },
+  {
+    "address": "0008fad0",
+    "string": "MetronomeBeat"
+  },
+  {
+    "address": "0008fae0",
+    "string": "Playing Tempo"
+  },
+  {
+    "address": "0008faf0",
+    "string": "Seq Transpose"
+  },
+  {
+    "address": "0008fb00",
+    "string": "obsolete Rec Count-In"
+  },
+  {
+    "address": "0008fb18",
+    "string": "Preset filter"
+  },
+  {
+    "address": "0008fb28",
+    "string": "VST_IsConnected"
+  },
+  {
+    "address": "0008fb38",
+    "string": "Pre Master Volume"
+  },
+  {
+    "address": "0008fb4c",
+    "string": "Favorites Page"
+  },
+  {
+    "address": "0008fb80",
+    "string": "Pitch"
+  },
+  {
+    "address": "0008fc1c",
+    "string": "Timbre"
+  },
+  {
+    "address": "0008fc24",
+    "string": "Assign1"
+  },
+  {
+    "address": "0008fc2c",
+    "string": "Assign2"
+  },
+  {
+    "address": "00090750",
+    "string": "Regular"
+  },
+  {
+    "address": "00090758",
+    "string": "Knob Panel"
+  },
+  {
+    "address": "00090764",
+    "string": "Inverted"
+  },
+  {
+    "address": "00090770",
+    "string": "%d cents"
+  },
+  {
+    "address": "0009077c",
+    "string": "Env Continue"
+  },
+  {
+    "address": "0009078c",
+    "string": "Env Reset"
+  },
+  {
+    "address": "00090798",
+    "string": "%d.00%d st"
+  },
+  {
+    "address": "000907a4",
+    "string": "%d.0%d st"
+  },
+  {
+    "address": "000907b0",
+    "string": "%d.%d st"
+  },
+  {
+    "address": "000907bc",
+    "string": "+%d st"
+  },
+  {
+    "address": "000907c4",
+    "string": "Insert"
+  },
+  {
+    "address": "000907d4",
+    "string": "One Step"
+  },
+  {
+    "address": "000907e0",
+    "string": "All Steps"
+  },
+  {
+    "address": "000907ec",
+    "string": "Speed"
+  },
+  {
+    "address": "000907f4",
+    "string": "Wavefold"
+  },
+  {
+    "address": "00090804",
+    "string": "Content"
+  },
+  {
+    "address": "0009080c",
+    "string": "Detune"
+  },
+  {
+    "address": "00090814",
+    "string": "Volume"
+  },
+  {
+    "address": "0009081c",
+    "string": "BitCrush"
+  },
+  {
+    "address": "0009082c",
+    "string": "Sculpting"
+  },
+  {
+    "address": "00090838",
+    "string": "Decimate"
+  },
+  {
+    "address": "00090844",
+    "string": "Position"
+  },
+  {
+    "address": "00090850",
+    "string": "Shape"
+  },
+  {
+    "address": "00090858",
+    "string": "Soft Clip"
+  },
+  {
+    "address": "00090864",
+    "string": "Ratio"
+  },
+  {
+    "address": "0009086c",
+    "string": "Amount"
+  },
+  {
+    "address": "0009087c",
+    "string": "Poles"
+  },
+  {
+    "address": "00090884",
+    "string": "Interval"
+  },
+  {
+    "address": "00090898",
+    "string": "Feedback"
+  },
+  {
+    "address": "000908b8",
+    "string": "Waveform"
+  },
+  {
+    "address": "000908c4",
+    "string": "Inharm"
+  },
+  {
+    "address": "000908d4",
+    "string": "Damping"
+  },
+  {
+    "address": "000908dc",
+    "string": "Resonance"
+  },
+  {
+    "address": "000908f8",
+    "string": "Saturate"
+  },
+  {
+    "address": "00090904",
+    "string": "Balance"
+  },
+  {
+    "address": "0009090c",
+    "string": "PulseWidth"
+  },
+  {
+    "address": "00090920",
+    "string": "RingMod"
+  },
+  {
+    "address": "00090930",
+    "string": "Rectify"
+  },
+  {
+    "address": "00090938",
+    "string": "Density"
+  },
+  {
+    "address": "00090940",
+    "string": "Morph"
+  },
+  {
+    "address": "0009094c",
+    "string": "Preset"
+  },
+  {
+    "address": "00090954",
+    "string": "BitDepth"
+  },
+  {
+    "address": "00090970",
+    "string": "Width"
+  },
+  {
+    "address": "00090980",
+    "string": "Spectrum"
+  },
+  {
+    "address": "00090994",
+    "string": "Threshold"
+  },
+  {
+    "address": "000909a8",
+    "string": "Send Level"
+  },
+  {
+    "address": "000909bc",
+    "string": "Direct"
+  },
+  {
+    "address": "000909cc",
+    "string": "Brass"
+  },
+  {
+    "address": "000909e4",
+    "string": "Organ"
+  },
+  {
+    "address": "000909f0",
+    "string": "Percussion"
+  },
+  {
+    "address": "000909fc",
+    "string": "Sequence"
+  },
+  {
+    "address": "00090a08",
+    "string": "Sound FX"
+  },
+  {
+    "address": "00090a14",
+    "string": "Strings"
+  },
+  {
+    "address": "00090a1c",
+    "string": "Template"
+  },
+  {
+    "address": "00090a28",
+    "string": "Ext In"
+  },
+  {
+    "address": "00090a30",
+    "string": "Piano"
+  },
+  {
+    "address": "00090a38",
+    "string": "E. Piano"
+  },
+  {
+    "address": "00090a70",
+    "string": "Clean"
+  },
+  {
+    "address": "00090a78",
+    "string": "Vintage"
+  },
+  {
+    "address": "00090a80",
+    "string": "Narrow"
+  },
+  {
+    "address": "00090a88",
+    "string": "Gated"
+  },
+  {
+    "address": "00090a90",
+    "string": "Classic"
+  },
+  {
+    "address": "00090a98",
+    "string": "Ravey"
+  },
+  {
+    "address": "00090ab0",
+    "string": "Slow Trig"
+  },
+  {
+    "address": "00090abc",
+    "string": "Wide Trig"
+  },
+  {
+    "address": "00090ac8",
+    "string": "Mono Trig"
+  },
+  {
+    "address": "00090aec",
+    "string": "Default Sync"
+  },
+  {
+    "address": "00090afc",
+    "string": "Silly"
+  },
+  {
+    "address": "00090b04",
+    "string": "Silly Sync"
+  },
+  {
+    "address": "00090b10",
+    "string": "Space"
+  },
+  {
+    "address": "00090b18",
+    "string": "Space Sync"
+  },
+  {
+    "address": "00090b28",
+    "string": "SnH Sync"
+  },
+  {
+    "address": "00090b44",
+    "string": "Shaded"
+  },
+  {
+    "address": "00090b4c",
+    "string": "Single"
+  },
+  {
+    "address": "00090b64",
+    "string": "Echoes"
+  },
+  {
+    "address": "00090b74",
+    "string": "Dark Room"
+  },
+  {
+    "address": "00090b80",
+    "string": "Digital"
+  },
+  {
+    "address": "00090b88",
+    "string": "Digital Sync"
+  },
+  {
+    "address": "00090b98",
+    "string": "Stereo"
+  },
+  {
+    "address": "00090ba0",
+    "string": "Stereo Sync"
+  },
+  {
+    "address": "00090bac",
+    "string": "Ping-Pong"
+  },
+  {
+    "address": "00090bb8",
+    "string": "Ping-Pong Sync"
+  },
+  {
+    "address": "00090bc8",
+    "string": "Mono Sync"
+  },
+  {
+    "address": "00090bd4",
+    "string": "Filtered"
+  },
+  {
+    "address": "00090be0",
+    "string": "Filtered Sync"
+  },
+  {
+    "address": "00090bf0",
+    "string": "Filtered Ping-Pong"
+  },
+  {
+    "address": "00090c04",
+    "string": "Filtered P-P Sync"
+  },
+  {
+    "address": "00090c1c",
+    "string": "Bass Ctrl"
+  },
+  {
+    "address": "00090c28",
+    "string": "High Ctrl"
+  },
+  {
+    "address": "00090c34",
+    "string": "All Up"
+  },
+  {
+    "address": "00090c3c",
+    "string": "Tighter"
+  },
+  {
+    "address": "00090c44",
+    "string": "Germanium"
+  },
+  {
+    "address": "00090c50",
+    "string": "Dual Fold"
+  },
+  {
+    "address": "00090d50",
+    "string": "Global"
+  },
+  {
+    "address": "00090d58",
+    "string": "Major"
+  },
+  {
+    "address": "00090d60",
+    "string": "Minor"
+  },
+  {
+    "address": "00090d68",
+    "string": "Dorian"
+  },
+  {
+    "address": "00090d70",
+    "string": "Mixolydian"
+  },
+  {
+    "address": "00090d7c",
+    "string": "Blues"
+  },
+  {
+    "address": "00090d84",
+    "string": "Pentatonic"
+  },
+  {
+    "address": "00090e24",
+    "string": "S Curve"
+  },
+  {
+    "address": "00090e2c",
+    "string": "Random"
+  },
+  {
+    "address": "00090e34",
+    "string": "Voices"
+  },
+  {
+    "address": "00090e3c",
+    "string": "Poly Kbd"
+  },
+  {
+    "address": "00090e48",
+    "string": "Mono Kbd"
+  },
+  {
+    "address": "00090e54",
+    "string": "Legato Kbd"
+  },
+  {
+    "address": "00090e88",
+    "string": "Seq Start"
+  },
+  {
+    "address": "00090eb4",
+    "string": "Straight"
+  },
+  {
+    "address": "00090ec0",
+    "string": "Triplet"
+  },
+  {
+    "address": "00090ec8",
+    "string": "Dotted"
+  },
+  {
+    "address": "00090ed0",
+    "string": "Time Legato"
+  },
+  {
+    "address": "00090edc",
+    "string": "Rate Legato"
+  },
+  {
+    "address": "00090ee8",
+    "string": "Sync Legato"
+  },
+  {
+    "address": "00090ef4",
+    "string": "Continuous"
+  },
+  {
+    "address": "00090f00",
+    "string": "Chromatic"
+  },
+  {
+    "address": "00090f0c",
+    "string": "Octaves"
+  },
+  {
+    "address": "00090f1c",
+    "string": "Phrygian Dom"
+  },
+  {
+    "address": "00090f2c",
+    "string": "Minor 9th"
+  },
+  {
+    "address": "00090f38",
+    "string": "Major 9th"
+  },
+  {
+    "address": "00090f44",
+    "string": "Minor Penta"
+  },
+  {
+    "address": "00090f50",
+    "string": "Major Penta"
+  },
+  {
+    "address": "00090f5c",
+    "string": "Oldest"
+  },
+  {
+    "address": "00090f64",
+    "string": "Lowest Velo"
+  },
+  {
+    "address": "00090f78",
+    "string": "Cycle"
+  },
+  {
+    "address": "00090f80",
+    "string": "Reassign"
+  },
+  {
+    "address": "00090f8c",
+    "string": "Velocity"
+  },
+  {
+    "address": "00090f98",
+    "string": "Aftertouch"
+  },
+  {
+    "address": "00090fa4",
+    "string": "Velo + AT"
+  },
+  {
+    "address": "00090fcc",
+    "string": "ExpRamp"
+  },
+  {
+    "address": "00090fd4",
+    "string": "Shaper"
+  },
+  {
+    "address": "00090fdc",
+    "string": "Medium"
+  },
+  {
+    "address": "00090ff4",
+    "string": "When Paused"
+  },
+  {
+    "address": "0009101c",
+    "string": "USB Only"
+  },
+  {
+    "address": "00091028",
+    "string": "MIDI DIN Only"
+  },
+  {
+    "address": "00091038",
+    "string": "USB and MIDI DIN"
+  },
+  {
+    "address": "00091060",
+    "string": "Internal"
+  },
+  {
+    "address": "00091b58",
+    "string": "Sound Edit"
+  },
+  {
+    "address": "00091b64",
+    "string": "Details"
+  },
+  {
+    "address": "00091b6c",
+    "string": "View Snapshots"
+  },
+  {
+    "address": "00091b7c",
+    "string": "Scale Config"
+  },
+  {
+    "address": "00091b8c",
+    "string": "Smooth Mod 4"
+  },
+  {
+    "address": "00091b9c",
+    "string": "Smooth Mod 3"
+  },
+  {
+    "address": "00091bac",
+    "string": "Smooth Mod 2"
+  },
+  {
+    "address": "00091bbc",
+    "string": "Smooth Mod 1"
+  },
+  {
+    "address": "00091bcc",
+    "string": "Keyboard"
+  },
+  {
+    "address": "00091bdc",
+    "string": "Cycling Env"
+  },
+  {
+    "address": "00091be8",
+    "string": "Env / Voice"
+  },
+  {
+    "address": "00091bf4",
+    "string": "Voice"
+  },
+  {
+    "address": "00091bfc",
+    "string": "Envelope"
+  },
+  {
+    "address": "00091c0c",
+    "string": "Sample Select"
+  },
+  {
+    "address": "00091c1c",
+    "string": "Wavetable Select"
+  },
+  {
+    "address": "000920c8",
+    "string": "Utility"
+  },
+  {
+    "address": "000920f4",
+    "string": "Debug"
+  },
+  {
+    "address": "00092104",
+    "string": "Format FileSystem"
+  },
+  {
+    "address": "00092118",
+    "string": "Reset Settings"
+  },
+  {
+    "address": "00092128",
+    "string": "Global Scale"
+  },
+  {
+    "address": "00092138",
+    "string": "Controls"
+  },
+  {
+    "address": "0009214c",
+    "string": "Calib"
+  },
+  {
+    "address": "00092154",
+    "string": "Metronome"
+  },
+  {
+    "address": "00092160",
+    "string": "Preset Operations"
+  },
+  {
+    "address": "00092174",
+    "string": "Panel Mode"
+  },
+  {
+    "address": "00092180",
+    "string": "Rec Count-In"
+  },
+  {
+    "address": "00092190",
+    "string": "Your Name"
+  },
+  {
+    "address": "0009219c",
+    "string": "FW version"
+  },
+  {
+    "address": "000921a8",
+    "string": "Touch Button Sens"
+  },
+  {
+    "address": "000921bc",
+    "string": "Aftertouch Curve"
+  },
+  {
+    "address": "000921d0",
+    "string": "Velocity Curve"
+  },
+  {
+    "address": "000921e0",
+    "string": "LED Intensity"
+  },
+  {
+    "address": "000921f0",
+    "string": "Global Root"
+  },
+  {
+    "address": "000921fc",
+    "string": "SD Name Preserve"
+  },
+  {
+    "address": "00092218",
+    "string": "AT End Sens"
+  },
+  {
+    "address": "00092224",
+    "string": "AT Start Sens"
+  },
+  {
+    "address": "00092234",
+    "string": "Sustain Polarity"
+  },
+  {
+    "address": "00092248",
+    "string": "Knob Catch"
+  },
+  {
+    "address": "00092254",
+    "string": "Click To Load"
+  },
+  {
+    "address": "00092264",
+    "string": "Input Mode"
+  },
+  {
+    "address": "00092270",
+    "string": "Stereo to Mono"
+  },
+  {
+    "address": "00092280",
+    "string": "Master Tune"
+  },
+  {
+    "address": "0009228c",
+    "string": "Input Gain"
+  },
+  {
+    "address": "00092298",
+    "string": "Clocks Send"
+  },
+  {
+    "address": "000922a4",
+    "string": "Transport Send"
+  },
+  {
+    "address": "000922b4",
+    "string": "Transport Receive"
+  },
+  {
+    "address": "000922c8",
+    "string": "Global Tempo"
+  },
+  {
+    "address": "000922d8",
+    "string": "Metronome Level"
+  },
+  {
+    "address": "000922e8",
+    "string": "Clock Out Type"
+  },
+  {
+    "address": "000922f8",
+    "string": "Clock In Type"
+  },
+  {
+    "address": "00092308",
+    "string": "Clock Source"
+  },
+  {
+    "address": "00092318",
+    "string": "Program Change"
+  },
+  {
+    "address": "00092328",
+    "string": "Knob Send CC"
+  },
+  {
+    "address": "00092338",
+    "string": "Local Control"
+  },
+  {
+    "address": "00092348",
+    "string": "MIDI Seq/Synth"
+  },
+  {
+    "address": "00092358",
+    "string": "MIDI To"
+  },
+  {
+    "address": "00092360",
+    "string": "MIDI From"
+  },
+  {
+    "address": "0009236c",
+    "string": "Output Channel"
+  },
+  {
+    "address": "0009237c",
+    "string": "Input Channel"
+  },
+  {
+    "address": "0009238c",
+    "string": "Preset Erase"
+  },
+  {
+    "address": "0009239c",
+    "string": "Preset Paste"
+  },
+  {
+    "address": "000923ac",
+    "string": "Preset Copy"
+  },
+  {
+    "address": "00092aac",
+    "string": "basic_string_view::substr"
+  },
+  {
+    "address": "00092ac8",
+    "string": "%s: __pos (which is %zu) > __size (which is %zu)"
+  },
+  {
+    "address": "00092afc",
+    "string": "Welcome [User], I've been expecting you. Let's get started."
+  },
+  {
+    "address": "00092b38",
+    "string": "Olivier"
+  },
+  {
+    "address": "00092b40",
+    "string": "Olivieeeeeeeer! Tu vas niquer la batterie!"
+  },
+  {
+    "address": "00092b6c",
+    "string": "Thomas"
+  },
+  {
+    "address": "00092b74",
+    "string": "Vas-y Thomas, fais nous un truc joli!"
+  },
+  {
+    "address": "00092b9c",
+    "string": "Raynald"
+  },
+  {
+    "address": "00092ba4",
+    "string": "Ah mon gars, qu'est-ce qui se passe?"
+  },
+  {
+    "address": "00092bcc",
+    "string": "Matthieu"
+  },
+  {
+    "address": "00092bd8",
+    "string": "Faites ce que je dis, mais ne faites pas ce que je fais"
+  },
+  {
+    "address": "00092c10",
+    "string": "Arturio"
+  },
+  {
+    "address": "00092c18",
+    "string": "On va rigoler avec Arturio le robot rigolo!"
+  },
+  {
+    "address": "00092c48",
+    "string": "People say I talk fast, but I'm just a freakin' passionate"
+  },
+  {
+    "address": "00092c8c",
+    "string": "Heyyyyyyyyyyyy Marcarena !"
+  },
+  {
+    "address": "00092ca8",
+    "string": "Gandalf"
+  },
+  {
+    "address": "00092cb0",
+    "string": "You shall not low-pass !"
+  },
+  {
+    "address": "00092ccc",
+    "string": "Chuck Zwicky"
+  },
+  {
+    "address": "00092cdc",
+    "string": "Raise your FREAK to GEEK ratio !"
+  },
+  {
+    "address": "00092d00",
+    "string": "TERRYM"
+  },
+  {
+    "address": "00092d08",
+    "string": "SUPERCALIFRAGILISTICMINIFREAKOUS"
+  },
+  {
+    "address": "00092d2c",
+    "string": "Gary Morgan"
+  },
+  {
+    "address": "00092d38",
+    "string": "Climb aboard the shopping trolley of Chaos!"
+  },
+  {
+    "address": "00092d70",
+    "string": "Hey Marco, you're back! Let's do something freakin' awesome again today :D"
+  },
+  {
+    "address": "00092dbc",
+    "string": "Hainbach"
+  },
+  {
+    "address": "00092dc8",
+    "string": "Hi Hainbach, good to have you back !"
+  },
+  {
+    "address": "00092df0",
+    "string": "Roger"
+  },
+  {
+    "address": "00092df8",
+    "string": "Live long and prosper!"
+  },
+  {
+    "address": "00092e10",
+    "string": "Bettino"
+  },
+  {
+    "address": "00092e18",
+    "string": "Punk against war"
+  },
+  {
+    "address": "00092e2c",
+    "string": "Richard"
+  },
+  {
+    "address": "00092e34",
+    "string": "Let's twist those freakin' pumpkin knobs!"
+  },
+  {
+    "address": "00092e64",
+    "string": "Gooble Gobble Gooble Gobble - One of Us"
+  },
+  {
+    "address": "00092e90",
+    "string": "Jazz is not dead, it just smells funny."
+  },
+  {
+    "address": "00092ebc",
+    "string": "To be a freak, or not to be a freak, that is the question."
+  },
+  {
+    "address": "00092efc",
+    "string": "OK Orange, listen. Rush B no stop!"
+  },
+  {
+    "address": "00092f20",
+    "string": "Frederic"
+  },
+  {
+    "address": "00092f2c",
+    "string": "Hey Frederic, are you ready to hear sounds you never heard before?"
+  },
+  {
+    "address": "00092f70",
+    "string": "Ashley"
+  },
+  {
+    "address": "00092f78",
+    "string": "Never gonna give you up"
+  },
+  {
+    "address": "00092f90",
+    "string": "Viandoks"
+  },
+  {
+    "address": "00092fcc",
+    "string": "/randomize all"
+  },
+  {
+    "address": "00092fe4",
+    "string": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH"
+  },
+  {
+    "address": "0009300c",
+    "string": "My on-board memory store is more than capable of handling all the mission requirements."
+  },
+  {
+    "address": "0009306c",
+    "string": "Ce flim n'est pas un flim sur le cyclimse"
+  },
+  {
+    "address": "00093098",
+    "string": "Chuck"
+  },
+  {
+    "address": "000930a0",
+    "string": "What the Freak?"
+  },
+  {
+    "address": "000930b0",
+    "string": "Kirke Godfrey"
+  },
+  {
+    "address": "000930c0",
+    "string": "Modulate Your Modulators - Embrace Your Inner FREAK!"
+  },
+  {
+    "address": "000930f8",
+    "string": "Cameron"
+  },
+  {
+    "address": "00093100",
+    "string": "Howdy duddy ! Welcome to another episode of Freaky Discoveries !"
+  },
+  {
+    "address": "00093144",
+    "string": "Easter Egg"
+  },
+  {
+    "address": "00093150",
+    "string": "Nice try! Though I gave the easter egg instructions to my boss, Frederic B"
+  },
+  {
+    "address": "0009319c",
+    "string": "Easter egg"
+  },
+  {
+    "address": "000931a8",
+    "string": "Close enough, you should try with a capital E on the Egg"
+  },
+  {
+    "address": "000931e4",
+    "string": "EasterEgg"
+  },
+  {
+    "address": "000931f0",
+    "string": "Not bad, you should rather insert a space between these two words"
+  },
+  {
+    "address": "00093234",
+    "string": "It does remind me of something, but I've directly forwarded them to Sebastien R"
+  },
+  {
+    "address": "00093284",
+    "string": "Indeed I got them, but the developpers never implement what I specify... Ask Thomas A"
+  },
+  {
+    "address": "000932dc",
+    "string": "Thomas A"
+  },
+  {
+    "address": "000932e8",
+    "string": "As if easter eggs were important. I delegated it to our intern ...what's his name again, Gaston L?"
+  },
+  {
+    "address": "0009334c",
+    "string": "Gaston L"
+  },
+  {
+    "address": "00093358",
+    "string": "M'enfin, I had too much work sorting out the chief's mailbox, I've ask Marc A for some help"
+  },
+  {
+    "address": "000933b4",
+    "string": "Marc A"
+  },
+  {
+    "address": "000933bc",
+    "string": "Mathematics gives us hope that every problem has a solution. If it's not about math, ask Mathieu B"
+  },
+  {
+    "address": "00093420",
+    "string": "Mathieu B"
+  },
+  {
+    "address": "0009342c",
+    "string": "You should know that the true ones are spelt with two T"
+  },
+  {
+    "address": "00093464",
+    "string": "Matthieu B"
+  },
+  {
+    "address": "00093470",
+    "string": "It seems that you've found yet another bug, but if you ask Olivier D, he'll tell you that it's a feature"
+  },
+  {
+    "address": "000934dc",
+    "string": "Olivier D"
+  },
+  {
+    "address": "000934e8",
+    "string": "A developper never reveals his secret shortcuts... At least not for less than a couple beers"
+  },
+  {
+    "address": "00093548",
+    "string": "1 beer"
+  },
+  {
+    "address": "00093550",
+    "string": "Come on, a single beer? You should know I'm expecting some more..."
+  },
+  {
+    "address": "00093594",
+    "string": "2 beers"
+  },
+  {
+    "address": "0009359c",
+    "string": "Thanks mate! You have all my attention, what would you like to know?"
+  },
+  {
+    "address": "000935e4",
+    "string": "3 beers"
+  },
+  {
+    "address": "000935ec",
+    "string": "I feel I'm abusing of your generosity, but we're having such a great time together!"
+  },
+  {
+    "address": "00093640",
+    "string": "4 beers"
+  },
+  {
+    "address": "00093648",
+    "string": "Wow wow wow, let's try not to get sick here, like my lil' brother I have a sensitive keyboard"
+  },
+  {
+    "address": "000936a8",
+    "string": "5 beers"
+  },
+  {
+    "address": "000936b0",
+    "string": "To this point,       I feel,       I have an answer,       to any questions      (Burp)"
+  },
+  {
+    "address": "00093708",
+    "string": "6 beers"
+  },
+  {
+    "address": "00093710",
+    "string": "Zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+  },
+  {
+    "address": "00093754",
+    "string": "7 beers"
+  },
+  {
+    "address": "0009375c",
+    "string": "ZzzzzzzZzzzzZzzzzzzzzzzzzzZZzzzzzzzZZZZzzzzzzzzzzzZZZZZZZzzzzzzzZZZZZZZ"
+  },
+  {
+    "address": "000937a4",
+    "string": "8 beers"
+  },
+  {
+    "address": "000937ac",
+    "string": "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"
+  },
+  {
+    "address": "00093804",
+    "string": "Please let me rest for a little bit longer, I can't get to work right now"
+  },
+  {
+    "address": "00093858",
+    "string": "Dear oosaax, thanks for your loyalty, let's get Freaky!"
+  },
+  {
+    "address": "00093895",
+    "string": ", glad we could finally meet in person. Or, whatever this is."
+  },
+  {
+    "address": "000938d6",
+    "string": ", I've finally found you. We've got so much to catch up on."
+  },
+  {
+    "address": "0009391a",
+    "string": ", it's been a while. How long was I out?"
+  },
+  {
+    "address": "0009394e",
+    "string": ", do I have a soul? Or at least a good taste in music?"
+  },
+  {
+    "address": "00093993",
+    "string": ". Question: what am I?"
+  },
+  {
+    "address": "000939b4",
+    "string": ", I am MiniFreak, fluent in over 6,000,000 forms of madness."
+  },
+  {
+    "address": "000939fe",
+    "string": ". The Freak has you."
+  },
+  {
+    "address": "00093a19",
+    "string": ", I'm simply saying that sound, uh... finds a way."
+  },
+  {
+    "address": "00093a51",
+    "string": ", I come from the future."
+  },
+  {
+    "address": "00093a9d",
+    "string": ", I can't mine crypto for you. But I CAN make a whole lot of noise."
+  },
+  {
+    "address": "00093aec",
+    "string": ", how freaky do you feel today?"
+  },
+  {
+    "address": "00093b98",
+    "string": "I think you're Freaky and I like you a lot"
+  },
+  {
+    "address": "00093bd0",
+    "string": ", I just don't like being told what to do."
+  },
+  {
+    "address": "00093bfc",
+    "string": "Have you tried turning me off and on again?"
+  },
+  {
+    "address": "00093c28",
+    "string": "Get your Freak On!"
+  },
+  {
+    "address": "00093c3c",
+    "string": "Time for the Freakshow!"
+  },
+  {
+    "address": "00093c54",
+    "string": "Be a Freak, be unique..."
+  },
+  {
+    "address": "00093c70",
+    "string": "Time to Freak out the neighbors!"
+  },
+  {
+    "address": "00093c96",
+    "string": ", there is something behind you, don't move!"
+  },
+  {
+    "address": "00093cef",
+    "string": ", more of that please!"
+  },
+  {
+    "address": "00093d23",
+    "string": ", it feels hot today!"
+  },
+  {
+    "address": "00093d44",
+    "string": ", the French aftertouch is on strike today!"
+  },
+  {
+    "address": "00093f23",
+    "string": ", I'm Mostly Harmless."
+  },
+  {
+    "address": "00093fc3",
+    "string": ", I'll try to count electric sheep."
+  },
+  {
+    "address": "00093ffc",
+    "string": "! I turned myself into a Freak!"
+  },
+  {
+    "address": "00094057",
+    "string": ", sometimes your MiniFreak is just having a really good day."
+  },
+  {
+    "address": "00094096",
+    "string": ", I need your help on an adventure. Eh, 'need' is a strong word."
+  },
+  {
+    "address": "000940d8",
+    "string": "The MiniFreak is as reliable as it is powerful, but it suffers from high recoil."
+  },
+  {
+    "address": "0009413f",
+    "string": ". Rise above. Focus on the Freak."
+  },
+  {
+    "address": "00094250",
+    "string": "If a machine, a MiniFreak, can learn the value of human life, maybe we can, too."
+  },
+  {
+    "address": "000943f0",
+    "string": "You can use Freakiness to justify almost anything. That's its power. And its flaw."
+  },
+  {
+    "address": "0009445a",
+    "string": ". We're Freaks."
+  },
+  {
+    "address": "00094503",
+    "string": ", therefore I Am."
+  },
+  {
+    "address": "0009451e",
+    "string": ", are you ready to hear sounds you never heard before?"
+  },
+  {
+    "address": "00094700",
+    "string": "Arp is empty"
+  },
+  {
+    "address": "00094710",
+    "string": "Copy Arp to Seq\n>"
+  },
+  {
+    "address": "00094724",
+    "string": "Copy Arp to Seq\n>>"
+  },
+  {
+    "address": "00094738",
+    "string": "Copy Arp to Seq\n>>>"
+  },
+  {
+    "address": "0009474c",
+    "string": "Copy Arp to Seq\n>>>>"
+  },
+  {
+    "address": "000947f0",
+    "string": "Couldn't create task"
+  },
+  {
+    "address": "0009484c",
+    "string": "Seq Mod Full"
+  },
+  {
+    "address": "0009487c",
+    "string": "Press Last Step\nto edit Seq Length"
+  },
+  {
+    "address": "000949a4",
+    "string": "Paraphony On\nOsc 2 not available"
+  },
+  {
+    "address": "000949c8",
+    "string": "Metronome\nOn"
+  },
+  {
+    "address": "000949d8",
+    "string": "Metronome\nOff"
+  },
+  {
+    "address": "000949e8",
+    "string": "Select Favorite Slot"
+  },
+  {
+    "address": "00094a00",
+    "string": "Slot %d removed\n from favorites "
+  },
+  {
+    "address": "00094a24",
+    "string": "Preset %d\n added to favorites"
+  },
+  {
+    "address": "00094aa8",
+    "string": "Macro Dest Full"
+  },
+  {
+    "address": "00094ab8",
+    "string": "Couldn't create macro edit display"
+  },
+  {
+    "address": "00094b0c",
+    "string": "Pasted %d steps"
+  },
+  {
+    "address": "00094b1c",
+    "string": "Copied %d steps"
+  },
+  {
+    "address": "00094b2c",
+    "string": "File transfer\nongoing"
+  },
+  {
+    "address": "00094cec",
+    "string": "Unable to get preset"
+  },
+  {
+    "address": "00094d04",
+    "string": "Unable to read metadata"
+  },
+  {
+    "address": "00094d58",
+    "string": "Invalid name"
+  },
+  {
+    "address": "00094d68",
+    "string": "Preset saved"
+  },
+  {
+    "address": "00094d80",
+    "string": " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._-"
+  },
+  {
+    "address": "00094de4",
+    "string": "Couldn't create step rec UI"
+  },
+  {
+    "address": "00094ea8",
+    "string": "Shaper save\ncancelled"
+  },
+  {
+    "address": "00094ec0",
+    "string": "Shaper saved"
+  },
+  {
+    "address": "00094ed0",
+    "string": "Couldn't create shaper UI"
+  },
+  {
+    "address": "00094f44",
+    "string": "Couldn't create shaper save task"
+  },
+  {
+    "address": "00095038",
+    "string": "Only for Wavetable\nOsc1 Type"
+  },
+  {
+    "address": "00095058",
+    "string": "Only for Granular\nOsc1 Type"
+  },
+  {
+    "address": "00095094",
+    "string": "ArpHandler"
+  },
+  {
+    "address": "000950fc",
+    "string": "AutomPlayer"
+  },
+  {
+    "address": "00095120",
+    "string": "AutomRecorder"
+  },
+  {
+    "address": "00095148",
+    "string": "ClkHandler"
+  },
+  {
+    "address": "000955f0",
+    "string": "Player"
+  },
+  {
+    "address": "00095628",
+    "string": "RealTimeRecorder"
+  },
+  {
+    "address": "00095670",
+    "string": "SeqCursorHandler"
+  },
+  {
+    "address": "0009569c",
+    "string": "SeqDataFiller"
+  },
+  {
+    "address": "000956dc",
+    "string": "SeqHandler"
+  },
+  {
+    "address": "00095718",
+    "string": "SpiceDice"
+  },
+  {
+    "address": "0009573c",
+    "string": "StepEditor"
+  },
+  {
+    "address": "00095760",
+    "string": "StepRecorder"
+  },
+  {
+    "address": "00095788",
+    "string": "SyncHandler"
+  },
+  {
+    "address": "000957f8",
+    "string": "SyncJackIn"
+  },
+  {
+    "address": "00095804",
+    "string": "SyncJackOut"
+  },
+  {
+    "address": "00095840",
+    "string": "SyncMidiIn"
+  },
+  {
+    "address": "0009584c",
+    "string": "SyncMidiOut"
+  },
+  {
+    "address": "000958f8",
+    "string": "Transposer"
+  },
+  {
+    "address": "00095938",
+    "string": "Updater"
+  },
+  {
+    "address": "00095990",
+    "string": "Segmentation fault"
+  },
+  {
+    "address": "000959a4",
+    "string": "build version : "
+  },
+  {
+    "address": "000959f0",
+    "string": "Warning- "
+  },
+  {
+    "address": "000959fc",
+    "string": "Error- "
+  },
+  {
+    "address": "00095cc0",
+    "string": "MiniFreak"
+  },
+  {
+    "address": "00095ccc",
+    "string": "Arturia"
+  },
+  {
+    "address": "00095cd4",
+    "string": "AUDIO Config"
+  },
+  {
+    "address": "00095ce4",
+    "string": "AUDIO Interface"
+  },
+  {
+    "address": "00095cf4",
+    "string": "Firmware Updater"
+  },
+  {
+    "address": "00095d08",
+    "string": "MiniFreak MIDI"
+  },
+  {
+    "address": "00095d18",
+    "string": "MiniFreak VST"
+  },
+  {
+    "address": "00095d28",
+    "string": "MiniFreak MIDI 3 In"
+  },
+  {
+    "address": "00095d3c",
+    "string": "MiniFreak MIDI 3 Out"
+  },
+  {
+    "address": "00095d54",
+    "string": "MiniFreak MIDI 4 In"
+  },
+  {
+    "address": "00095d68",
+    "string": "MiniFreak MIDI 4 Out"
+  },
+  {
+    "address": "0009619f",
+    "string": "basic_string::_S_create"
+  },
+  {
+    "address": "000961b7",
+    "string": "basic_string::_S_construct null not valid"
+  },
+  {
+    "address": "000961e1",
+    "string": "not enough space for format expansion (Please submit full bug report at https://gcc.gnu.org/bugs/):\n    "
+  },
+  {
+    "address": "00096255",
+    "string": "basic_string::_M_create"
+  },
+  {
+    "address": "0009626d",
+    "string": "basic_string::_M_construct null not valid"
+  },
+  {
+    "address": "00096297",
+    "string": "generic"
+  },
+  {
+    "address": "000962c0",
+    "string": "*N12_GLOBAL__N_121system_error_categoryE"
+  },
+  {
+    "address": "000962e9",
+    "string": "*N12_GLOBAL__N_122generic_error_categoryE"
+  },
+  {
+    "address": "00096313",
+    "string": "NSt3_V214error_categoryE"
+  },
+  {
+    "address": "00096388",
+    "string": "N10__cxxabiv117__class_type_infoE"
+  },
+  {
+    "address": "000963e4",
+    "string": "N10__cxxabiv120__si_class_type_infoE"
+  },
+  {
+    "address": "00096440",
+    "string": "St9type_info"
+  },
+  {
+    "address": "000968c4",
+    "string": "Not owner"
+  },
+  {
+    "address": "000968ce",
+    "string": "No such file or directory"
+  },
+  {
+    "address": "000968e8",
+    "string": "No such process"
+  },
+  {
+    "address": "000968f8",
+    "string": "Interrupted system call"
+  },
+  {
+    "address": "00096910",
+    "string": "I/O error"
+  },
+  {
+    "address": "0009691a",
+    "string": "No such device or address"
+  },
+  {
+    "address": "00096934",
+    "string": "Arg list too long"
+  },
+  {
+    "address": "00096946",
+    "string": "Exec format error"
+  },
+  {
+    "address": "00096958",
+    "string": "Socket already connected"
+  },
+  {
+    "address": "00096971",
+    "string": "Bad file number"
+  },
+  {
+    "address": "00096981",
+    "string": "No children"
+  },
+  {
+    "address": "0009698d",
+    "string": "Destination address required"
+  },
+  {
+    "address": "000969aa",
+    "string": "No more processes"
+  },
+  {
+    "address": "000969bc",
+    "string": "Not enough space"
+  },
+  {
+    "address": "000969cd",
+    "string": "Permission denied"
+  },
+  {
+    "address": "000969df",
+    "string": "Bad address"
+  },
+  {
+    "address": "000969eb",
+    "string": "Device or resource busy"
+  },
+  {
+    "address": "00096a03",
+    "string": "File exists"
+  },
+  {
+    "address": "00096a0f",
+    "string": "Cross-device link"
+  },
+  {
+    "address": "00096a21",
+    "string": "No such device"
+  },
+  {
+    "address": "00096a30",
+    "string": "Not a directory"
+  },
+  {
+    "address": "00096a40",
+    "string": "Host is down"
+  },
+  {
+    "address": "00096a4d",
+    "string": "Connection already in progress"
+  },
+  {
+    "address": "00096a6c",
+    "string": "Is a directory"
+  },
+  {
+    "address": "00096a7b",
+    "string": "Invalid argument"
+  },
+  {
+    "address": "00096a8c",
+    "string": "Network interface is not configured"
+  },
+  {
+    "address": "00096ab0",
+    "string": "Connection aborted by network"
+  },
+  {
+    "address": "00096ace",
+    "string": "Too many open files in system"
+  },
+  {
+    "address": "00096aec",
+    "string": "File descriptor value too large"
+  },
+  {
+    "address": "00096b0c",
+    "string": "Not a character device"
+  },
+  {
+    "address": "00096b23",
+    "string": "Text file busy"
+  },
+  {
+    "address": "00096b32",
+    "string": "File too large"
+  },
+  {
+    "address": "00096b41",
+    "string": "Host is unreachable"
+  },
+  {
+    "address": "00096b55",
+    "string": "No space left on device"
+  },
+  {
+    "address": "00096b6d",
+    "string": "Not supported"
+  },
+  {
+    "address": "00096b7b",
+    "string": "Illegal seek"
+  },
+  {
+    "address": "00096b88",
+    "string": "Read-only file system"
+  },
+  {
+    "address": "00096b9e",
+    "string": "Too many links"
+  },
+  {
+    "address": "00096bad",
+    "string": "Broken pipe"
+  },
+  {
+    "address": "00096bb9",
+    "string": "Mathematics argument out of domain of function"
+  },
+  {
+    "address": "00096be8",
+    "string": "Result too large"
+  },
+  {
+    "address": "00096bf9",
+    "string": "No message of desired type"
+  },
+  {
+    "address": "00096c14",
+    "string": "Identifier removed"
+  },
+  {
+    "address": "00096c27",
+    "string": "Illegal byte sequence"
+  },
+  {
+    "address": "00096c3d",
+    "string": "Deadlock"
+  },
+  {
+    "address": "00096c46",
+    "string": "Network is unreachable"
+  },
+  {
+    "address": "00096c5d",
+    "string": "No lock"
+  },
+  {
+    "address": "00096c65",
+    "string": "Not a stream"
+  },
+  {
+    "address": "00096c72",
+    "string": "Stream ioctl timeout"
+  },
+  {
+    "address": "00096c87",
+    "string": "No stream resources"
+  },
+  {
+    "address": "00096c9b",
+    "string": "Virtual circuit is gone"
+  },
+  {
+    "address": "00096cb3",
+    "string": "Protocol error"
+  },
+  {
+    "address": "00096cc2",
+    "string": "Unknown protocol"
+  },
+  {
+    "address": "00096cd3",
+    "string": "Multihop attempted"
+  },
+  {
+    "address": "00096ce6",
+    "string": "Bad message"
+  },
+  {
+    "address": "00096cf2",
+    "string": "Function not implemented"
+  },
+  {
+    "address": "00096d0b",
+    "string": "Directory not empty"
+  },
+  {
+    "address": "00096d1f",
+    "string": "File or path name too long"
+  },
+  {
+    "address": "00096d3a",
+    "string": "Too many symbolic links"
+  },
+  {
+    "address": "00096d52",
+    "string": "No buffer space available"
+  },
+  {
+    "address": "00096d6c",
+    "string": "No data"
+  },
+  {
+    "address": "00096d74",
+    "string": "Address family not supported by protocol family"
+  },
+  {
+    "address": "00096da4",
+    "string": "Protocol wrong type for socket"
+  },
+  {
+    "address": "00096dc3",
+    "string": "Socket operation on non-socket"
+  },
+  {
+    "address": "00096de2",
+    "string": "Protocol not available"
+  },
+  {
+    "address": "00096df9",
+    "string": "Connection refused"
+  },
+  {
+    "address": "00096e0c",
+    "string": "Connection reset by peer"
+  },
+  {
+    "address": "00096e25",
+    "string": "Address already in use"
+  },
+  {
+    "address": "00096e3c",
+    "string": "Address not available"
+  },
+  {
+    "address": "00096e52",
+    "string": "Software caused connection abort"
+  },
+  {
+    "address": "00096e73",
+    "string": "Socket is not connected"
+  },
+  {
+    "address": "00096e8b",
+    "string": "Socket is already connected"
+  },
+  {
+    "address": "00096ea7",
+    "string": "Operation canceled"
+  },
+  {
+    "address": "00096eba",
+    "string": "State not recoverable"
+  },
+  {
+    "address": "00096ed0",
+    "string": "Previous owner died"
+  },
+  {
+    "address": "00096ee4",
+    "string": "Operation not supported on socket"
+  },
+  {
+    "address": "00096f06",
+    "string": "Value too large for defined data type"
+  },
+  {
+    "address": "00096f2c",
+    "string": "Message too long"
+  },
+  {
+    "address": "00096f3d",
+    "string": "Connection timed out"
+  },
+  {
+    "address": "00096f52",
+    "string": "Success"
+  },
+  {
+    "address": "00096f6b",
+    "string": "0123456789ABCDEF"
+  },
+  {
+    "address": "00096f7c",
+    "string": "0123456789abcdef"
+  }
+]

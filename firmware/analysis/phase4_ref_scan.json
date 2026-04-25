@@ -1,0 +1,311 @@
+{
+  "results": {
+    "CM4": {
+      "I2C1": {
+        "FUN_08129a98": {
+          "address": "08129a98",
+          "size": 922,
+          "offsets": [
+            "0x0"
+          ]
+        }
+      },
+      "USART1": {
+        "FUN_081259e0": {
+          "address": "081259e0",
+          "size": 546,
+          "offsets": [
+            "0x0",
+            "0x0",
+            "0x4",
+            "0x4"
+          ]
+        }
+      },
+      "ADC1": {
+        "FUN_081259e0": {
+          "address": "081259e0",
+          "size": 546,
+          "offsets": [
+            "0x0",
+            "0x0",
+            "0x4",
+            "0x4",
+            "0xc0",
+            "0xc0",
+            "0xc4",
+            "0xc4"
+          ]
+        }
+      },
+      "HSEM": {
+        "FUN_0812421c": {
+          "address": "0812421c",
+          "size": 522,
+          "offsets": [
+            "0x8"
+          ]
+        },
+        "FUN_081239ec": {
+          "address": "081239ec",
+          "size": 1070,
+          "offsets": [
+            "0x8"
+          ]
+        }
+      },
+      "IPCC": {
+        "FUN_0814ef28": {
+          "address": "0814ef28",
+          "size": 16,
+          "offsets": [
+            "0x18",
+            "0x18"
+          ]
+        }
+      },
+      "GPIOC": {
+        "FUN_0814ef28": {
+          "address": "0814ef28",
+          "size": 16,
+          "offsets": [
+            "0x18",
+            "0x18"
+          ]
+        }
+      },
+      "GPIOE": {
+        "FUN_081a1d20": {
+          "address": "081a1d20",
+          "size": 130,
+          "offsets": [
+            "0x10",
+            "0x10",
+            "0x18",
+            "0x18"
+          ]
+        },
+        "FUN_081a1da8": {
+          "address": "081a1da8",
+          "size": 68,
+          "offsets": [
+            "0x10",
+            "0x10",
+            "0x18",
+            "0x18"
+          ]
+        },
+        "FUN_081a1df0": {
+          "address": "081a1df0",
+          "size": 130,
+          "offsets": [
+            "0x10",
+            "0x10",
+            "0x18",
+            "0x18"
+          ]
+        },
+        "FUN_08121e78": {
+          "address": "08121e78",
+          "size": 378,
+          "offsets": [
+            "0x18",
+            "0x18"
+          ]
+        }
+      }
+    },
+    "CM7": {
+      "USART1": {
+        "FUN_080082c4": {
+          "address": "080082c4",
+          "size": 584,
+          "offsets": [
+            "0x0",
+            "0x0",
+            "0x4",
+            "0x4"
+          ]
+        }
+      },
+      "ADC1": {
+        "FUN_080082c4": {
+          "address": "080082c4",
+          "size": 584,
+          "offsets": [
+            "0x0",
+            "0x0",
+            "0x4",
+            "0x4",
+            "0x80",
+            "0x80",
+            "0x84",
+            "0x84"
+          ]
+        }
+      }
+    },
+    "FX": {},
+    "UI_SCREEN": {}
+  },
+  "decompiled": {
+    "CM4": {
+      "I2C1": {
+        "FUN_08129a98": {
+          "address": "08129a98",
+          "size": 922,
+          "ref_offsets": [
+            "0x0"
+          ],
+          "decompiled": "\nundefined4 FUN_08129a98(int *param_1)\n\n{\n  undefined4 uVar1;\n  uint uVar2;\n  uint *puVar3;\n  int iVar4;\n  uint uVar5;\n  uint uVar6;\n  uint uVar7;\n  uint uVar8;\n  undefined4 uVar9;\n  int iVar10;\n  uint uVar11;\n  uint uVar12;\n  int iVar13;\n  uint uVar14;\n  uint uVar15;\n  uint uVar16;\n  undefined4 *puVar17;\n  undefined4 uVar18;\n  uint uVar19;\n  undefined4 uVar20;\n  bool bVar21;\n  \n  if (param_1 == (int *)0x0) {\n    return 1;\n  }\n  FUN_08123934();\n  if (((char)param_1[0xe] == '\\x01') &&\n     ((((*param_1 != DAT_08129ae0 && (*param_1 != DAT_08129ae0 + 0x17fefc00)) || (param_1[1] != 1))\n      || (param_1[0x11] != 0)))) {\n    return 1;\n  }\n  puVar3 = (uint *)*param_1;\n  puVar17 = DAT_08129a14;\n  if ((((puVar3 != DAT_08129a0c) && (puVar3 != DAT_08129a0c + 8)) &&\n      ((puVar17 = DAT_08129a20, puVar3 != DAT_08129a0c + 0x100 &&\n       ((puVar3 != DAT_08129a0c + 0x108 && (puVar17 = DAT_08129a3c, puVar3 != DAT_08129a0c + 0x200))\n       )))) && ((puVar3 != DAT_08129a0c + 0x208 &&\n                ((puVar17 = DAT_08129a40, puVar3 != DAT_08129a10 && (puVar3 != DAT_08129a10 + 8)))))\n     ) {\n    return 1;\n  }\n  if (*(char *)((int)param_1 + 0x91) == '\\0') {\n    *(undefined1 *)(param_1 + 0x24) = 0;\n    FUN_0812215c(param_1);\n    puVar3 = (uint *)*param_1;\n  }\n  iVar13 = (uint)((ulonglong)DAT_08129a1c * (ulonglong)*DAT_08129a18 >> 0x2c) << 2;\n  *puVar3 = *puVar3 & 0xfffeffff;\n  do {\n    if (iVar13 == 0) {\n      param_1[0x25] = param_1[0x25] | 0x40;\n      return 1;\n    }\n    iVar13 = iVar13 + -1;\n  } while ((*puVar3 & 0x10000) != 0);\n  *(undefined1 *)((int)param_1 + 0x91) = 2;\n  if (param_1[3] == 1) {\n    uVar1 = 0x13;\n    uVar18 = 0x12;\n    uVar20 = 0x11;\n    uVar9 = 0x10;\n  }\n  else if (param_1[3] == 2) {\n    uVar1 = 0x23;\n    uVar18 = 0x22;\n    uVar20 = 0x21;\n    uVar9 = 0x20;\n  }\n  else {\n    uVar18 = 2;\n    uVar1 = 3;\n    uVar20 = 1;\n    uVar9 = 0;\n  }\n  switch(param_1[2]) {\n  case 1:\n    uVar19 = 0x400;\n    break;\n  case 3:\n    uVar19 = 0x800;\n    uVar9 = uVar20;\n    break;\n  case 4:\n    uVar9 = uVar18;\n  case 2:\n    uVar19 = 0x800;\n    break;\n  case 5:\n    uVar19 = 0x800;\n    uVar9 = uVar1;\n    break;\n  default:\n    uVar19 = 0;\n  }\n  iVar13 = param_1[8];\n  *puVar17 = uVar9;\n  if (iVar13 != 0) {\n    if ((puVar3 == DAT_08129a0c) || (puVar3 == DAT_08129a0c + 8)) {\n      iVar13 = FUN_081293f4(0x100);\n      puVar3 = (uint *)*param_1;\n    }\n    else {\n      iVar13 = 0;\n    }\n    if ((puVar3 == DAT_08129a24) || (puVar3 == DAT_08129a24 + 8)) {\n      iVar13 = FUN_081293f4(0x200);\n      puVar3 = (uint *)*param_1;\n    }\n    if ((puVar3 == DAT_08129a28) || (puVar3 == DAT_08129a28 + 8)) {\n      iVar13 = FUN_081293f4(0x200);\n      puVar3 = (uint *)*param_1;\n    }\n    if (puVar3 == DAT_08129a10) {\n      iVar13 = FUN_081293f4(0x400);\n      puVar3 = (uint *)*param_1;\n    }\n    if (puVar3 == DAT_08129a2c) {\n      iVar13 = FUN_081293f4(0x800);\n    }\n    if (param_1[6] == 0x80000) {\n      iVar4 = param_1[0x11];\n      if (iVar4 == 4) {\n        iVar10 = 0x40;\n      }\n      else if (iVar4 == 8) {\n        iVar10 = 0x100;\n      }\n      else {\n        iVar10 = param_1[0x15];\n      }\n      uVar14 = (uint)(iVar13 * 10) / (uint)(param_1[8] * iVar10);\n    }\n    else {\n      iVar4 = param_1[0x11];\n      if (param_1[10] == 0x4000000) {\n        iVar10 = 2;\n      }\n      else {\n        iVar10 = 1;\n      }\n      uVar14 = (uint)(iVar13 * 10) / (uint)(param_1[8] * iVar10 * 0x100);\n    }\n    uVar11 = (uint)((ulonglong)DAT_08129a30 * (ulonglong)uVar14 >> 0x23);\n    if (uVar14 + uVar11 * -10 == 9) {\n      uVar11 = uVar11 + 1;\n    }\n    param_1[9] = uVar11;\n    if (iVar4 == 4) {\n      param_1[9] = uVar11 >> 1;\n    }\n  }\n  if ((param_1[1] & 0xfffffffdU) == 0) {\n    if (param_1[0x14] == 1) {\n      uVar14 = 0;\n    }\n    else {\n      uVar14 = 0x200;\n    }\n  }\n  else {\n    uVar14 = 0;\n    if (param_1[0x14] == 1) {\n      uVar14 = 0x200;\n    }\n  }\n  uVar11 = FUN_08123934();\n  uVar15 = param_1[1];\n  uVar2 = param_1[0x11];\n  uVar5 = param_1[0x12];\n  if (uVar11 < 0x2000) {\n    puVar3 = (uint *)*param_1;\n    uVar8 = param_1[0x13] | uVar5 | uVar15 | uVar2 | param_1[0xb] | param_1[5];\n    uVar11 = param_1[6];\n    *puVar3 = DAT_08129a44 & *puVar3;\n    uVar16 = param_1[10];\n  }\n  else {\n    uVar12 = param_1[0x13];\n    puVar3 = (uint *)*param_1;\n    uVar6 = param_1[0xb];\n    uVar7 = param_1[5];\n    uVar8 = param_1[6];\n    uVar11 = param_1[10];\n    *puVar3 = DAT_08129a34 & *puVar3;\n    uVar16 = param_1[4];\n    uVar8 = uVar12 | uVar5 | uVar15 | uVar2 | uVar6 | uVar7 | uVar8;\n  }\n  *puVar3 = uVar8 | uVar11 | uVar16 | *puVar3 | param_1[9] << 0x14 | uVar19 | uVar14;\n  uVar11 = param_1[7];\n  uVar19 = param_1[0xc];\n  uVar14 = param_1[0xd];\n  puVar3[1] = puVar3[1] & 0xffff1ff0;\n  puVar3[1] = uVar11 | uVar19 | uVar14 | puVar3[1];\n  uVar14 = param_1[0x17];\n  uVar19 = param_1[0x18];\n  uVar11 = param_1[0x19];\n  iVar13 = param_1[0x15];\n  puVar3[2] = DAT_08129a38 & puVar3[2];\n  puVar3[2] = uVar11 | uVar14 | uVar19 | iVar13 - 1U | (param_1[0x16] + -1) * 0x100 | puVar3[2];\n  uVar14 = param_1[0x1a];\n  uVar19 = param_1[0x1b];\n  iVar13 = param_1[0x1d];\n  puVar3[3] = puVar3[3] & 0xf020;\n  bVar21 = puVar3 == DAT_08129a0c;\n  puVar3[3] = uVar14 | uVar19 | iVar13 << 0x10 | (param_1[0x1c] + -1) * 0x100 | puVar3[3];\n  if (((bVar21) || (puVar3 == DAT_08129a10)) &&\n     (puVar17[0x11] = puVar17[0x11] & 0xfffffffe, (char)param_1[0xe] == '\\x01')) {\n    puVar17[0x11] = param_1[0x10] | (param_1[0xf] + -1) * 0x10;\n    puVar17[0x11] = puVar17[0x11] | 1;\n  }\n  param_1[0x25] = 0;\n  *(undefined1 *)(param_1 + 0x24) = 0;\n  *(undefined1 *)((int)param_1 + 0x91) = 1;\n  return 0;\n}\n\n"
+        }
+      },
+      "USART1": {
+        "FUN_081259e0": {
+          "address": "081259e0",
+          "size": 546,
+          "ref_offsets": [
+            "0x0",
+            "0x0",
+            "0x4",
+            "0x4"
+          ],
+          "decompiled": "\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nvoid FUN_081259e0(uint *param_1,uint *param_2)\n\n{\n  int iVar1;\n  uint *puVar2;\n  uint uVar3;\n  uint uVar4;\n  uint uVar5;\n  uint uVar6;\n  int iVar7;\n  uint uVar8;\n  int iVar9;\n  uint uVar10;\n  uint uVar11;\n  uint local_38;\n  \n  puVar2 = DAT_08125c2c;\n  iVar1 = DAT_08125c28;\n  uVar5 = *param_2;\n  if (uVar5 != 0) {\n    uVar4 = 0;\n    do {\n      uVar11 = 1 << (uVar4 & 0xff);\n      uVar10 = uVar11 & uVar5;\n      if (uVar10 != 0) {\n        uVar6 = param_2[1];\n        uVar3 = uVar6 & 3;\n        uVar8 = uVar4 << 1;\n        if (uVar3 - 1 < 2) {\n          local_38 = 3 << (uVar8 & 0xff);\n          param_1[2] = param_2[3] << (uVar8 & 0xff) | param_1[2] & ~local_38;\n          param_1[1] = ((uVar6 << 0x1b) >> 0x1f) << (uVar4 & 0xff) | param_1[1] & ~uVar11;\nLAB_08125b56:\n          local_38 = ~local_38;\n          param_1[3] = param_2[2] << (uVar8 & 0xff) | param_1[3] & local_38;\n          if (uVar3 == 2) {\n            iVar7 = (uVar4 & 7) << 2;\n            uVar3 = 2 << (uVar8 & 0xff);\n            param_1[(uVar4 >> 3) + 8] =\n                 param_2[4] << iVar7 | param_1[(uVar4 >> 3) + 8] & ~(0xf << iVar7);\n          }\n          else {\n            uVar3 = uVar3 << (uVar8 & 0xff);\n          }\n        }\n        else {\n          if (uVar3 != 3) {\n            local_38 = 3 << (uVar8 & 0xff);\n            goto LAB_08125b56;\n          }\n          uVar3 = 3 << (uVar8 & 0xff);\n          local_38 = ~uVar3;\n        }\n        *param_1 = uVar3 | local_38 & *param_1;\n        if ((uVar6 & 0x30000) != 0) {\n          *(uint *)(iVar1 + 0xf4) = *(uint *)(iVar1 + 0xf4) | 2;\n          iVar7 = (uVar4 & 3) << 2;\n          uVar11 = *(uint *)((uVar4 & 0xfffffffc) + 0x58000408) & ~(0xf << iVar7);\n          if (param_1 != DAT_08125c04) {\n            if (param_1 == DAT_08125c04 + 0x100) {\n              uVar11 = uVar11 | 1 << iVar7;\n            }\n            else if (param_1 == DAT_08125c08) {\n              uVar11 = uVar11 | 2 << iVar7;\n            }\n            else if (param_1 == DAT_08125c0c) {\n              uVar11 = uVar11 | 3 << iVar7;\n            }\n            else if (param_1 == DAT_08125c10) {\n              uVar11 = uVar11 | 4 << iVar7;\n            }\n            else if (param_1 == DAT_08125c14) {\n              uVar11 = uVar11 | 5 << iVar7;\n            }\n            else if (param_1 == DAT_08125c18) {\n              uVar11 = uVar11 | 6 << iVar7;\n            }\n            else if (param_1 == DAT_08125c1c) {\n              uVar11 = uVar11 | 7 << iVar7;\n            }\n            else if (param_1 == DAT_08125c20) {\n              uVar11 = uVar11 | 8 << iVar7;\n            }\n            else {\n              if (param_1 == DAT_08125c24) {\n                iVar9 = 9;\n              }\n              else {\n                iVar9 = 10;\n              }\n              uVar11 = uVar11 | iVar9 << iVar7;\n            }\n          }\n          *(uint *)((uVar4 & 0xfffffffc) + 0x58000408) = uVar11;\n          uVar11 = ~uVar10;\n          if ((int)(uVar6 << 0xb) < 0) {\n            _DAT_58000000 = uVar10 | _DAT_58000000;\n          }\n          else {\n            _DAT_58000000 = _DAT_58000000 & uVar11;\n          }\n          if ((int)(uVar6 << 10) < 0) {\n            _DAT_58000004 = uVar10 | _DAT_58000004;\n          }\n          else {\n            _DAT_58000004 = _DAT_58000004 & uVar11;\n          }\n          if ((int)(uVar6 << 0xe) < 0) {\n            uVar3 = uVar10 | puVar2[1];\n          }\n          else {\n            uVar3 = puVar2[1] & uVar11;\n          }\n          puVar2[1] = uVar3;\n          if ((int)(uVar6 << 0xf) < 0) {\n            uVar11 = uVar10 | *puVar2;\n          }\n          else {\n            uVar11 = *puVar2 & uVar11;\n          }\n          *puVar2 = uVar11;\n        }\n      }\n      uVar4 = uVar4 + 1;\n    } while (uVar5 >> (uVar4 & 0xff) != 0);\n  }\n  return;\n}\n\n"
+        }
+      },
+      "ADC1": {
+        "FUN_081259e0": {
+          "address": "081259e0",
+          "size": 546,
+          "ref_offsets": [
+            "0x0",
+            "0x0",
+            "0x4",
+            "0x4",
+            "0xc0",
+            "0xc0",
+            "0xc4",
+            "0xc4"
+          ],
+          "decompiled": "\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nvoid FUN_081259e0(uint *param_1,uint *param_2)\n\n{\n  int iVar1;\n  uint *puVar2;\n  uint uVar3;\n  uint uVar4;\n  uint uVar5;\n  uint uVar6;\n  int iVar7;\n  uint uVar8;\n  int iVar9;\n  uint uVar10;\n  uint uVar11;\n  uint local_38;\n  \n  puVar2 = DAT_08125c2c;\n  iVar1 = DAT_08125c28;\n  uVar5 = *param_2;\n  if (uVar5 != 0) {\n    uVar4 = 0;\n    do {\n      uVar11 = 1 << (uVar4 & 0xff);\n      uVar10 = uVar11 & uVar5;\n      if (uVar10 != 0) {\n        uVar6 = param_2[1];\n        uVar3 = uVar6 & 3;\n        uVar8 = uVar4 << 1;\n        if (uVar3 - 1 < 2) {\n          local_38 = 3 << (uVar8 & 0xff);\n          param_1[2] = param_2[3] << (uVar8 & 0xff) | param_1[2] & ~local_38;\n          param_1[1] = ((uVar6 << 0x1b) >> 0x1f) << (uVar4 & 0xff) | param_1[1] & ~uVar11;\nLAB_08125b56:\n          local_38 = ~local_38;\n          param_1[3] = param_2[2] << (uVar8 & 0xff) | param_1[3] & local_38;\n          if (uVar3 == 2) {\n            iVar7 = (uVar4 & 7) << 2;\n            uVar3 = 2 << (uVar8 & 0xff);\n            param_1[(uVar4 >> 3) + 8] =\n                 param_2[4] << iVar7 | param_1[(uVar4 >> 3) + 8] & ~(0xf << iVar7);\n          }\n          else {\n            uVar3 = uVar3 << (uVar8 & 0xff);\n          }\n        }\n        else {\n          if (uVar3 != 3) {\n            local_38 = 3 << (uVar8 & 0xff);\n            goto LAB_08125b56;\n          }\n          uVar3 = 3 << (uVar8 & 0xff);\n          local_38 = ~uVar3;\n        }\n        *param_1 = uVar3 | local_38 & *param_1;\n        if ((uVar6 & 0x30000) != 0) {\n          *(uint *)(iVar1 + 0xf4) = *(uint *)(iVar1 + 0xf4) | 2;\n          iVar7 = (uVar4 & 3) << 2;\n          uVar11 = *(uint *)((uVar4 & 0xfffffffc) + 0x58000408) & ~(0xf << iVar7);\n          if (param_1 != DAT_08125c04) {\n            if (param_1 == DAT_08125c04 + 0x100) {\n              uVar11 = uVar11 | 1 << iVar7;\n            }\n            else if (param_1 == DAT_08125c08) {\n              uVar11 = uVar11 | 2 << iVar7;\n            }\n            else if (param_1 == DAT_08125c0c) {\n              uVar11 = uVar11 | 3 << iVar7;\n            }\n            else if (param_1 == DAT_08125c10) {\n              uVar11 = uVar11 | 4 << iVar7;\n            }\n            else if (param_1 == DAT_08125c14) {\n              uVar11 = uVar11 | 5 << iVar7;\n            }\n            else if (param_1 == DAT_08125c18) {\n              uVar11 = uVar11 | 6 << iVar7;\n            }\n            else if (param_1 == DAT_08125c1c) {\n              uVar11 = uVar11 | 7 << iVar7;\n            }\n            else if (param_1 == DAT_08125c20) {\n              uVar11 = uVar11 | 8 << iVar7;\n            }\n            else {\n              if (param_1 == DAT_08125c24) {\n                iVar9 = 9;\n              }\n              else {\n                iVar9 = 10;\n              }\n              uVar11 = uVar11 | iVar9 << iVar7;\n            }\n          }\n          *(uint *)((uVar4 & 0xfffffffc) + 0x58000408) = uVar11;\n          uVar11 = ~uVar10;\n          if ((int)(uVar6 << 0xb) < 0) {\n            _DAT_58000000 = uVar10 | _DAT_58000000;\n          }\n          else {\n            _DAT_58000000 = _DAT_58000000 & uVar11;\n          }\n          if ((int)(uVar6 << 10) < 0) {\n            _DAT_58000004 = uVar10 | _DAT_58000004;\n          }\n          else {\n            _DAT_58000004 = _DAT_58000004 & uVar11;\n          }\n          if ((int)(uVar6 << 0xe) < 0) {\n            uVar3 = uVar10 | puVar2[1];\n          }\n          else {\n            uVar3 = puVar2[1] & uVar11;\n          }\n          puVar2[1] = uVar3;\n          if ((int)(uVar6 << 0xf) < 0) {\n            uVar11 = uVar10 | *puVar2;\n          }\n          else {\n            uVar11 = *puVar2 & uVar11;\n          }\n          *puVar2 = uVar11;\n        }\n      }\n      uVar4 = uVar4 + 1;\n    } while (uVar5 >> (uVar4 & 0xff) != 0);\n  }\n  return;\n}\n\n"
+        }
+      },
+      "HSEM": {
+        "FUN_081239ec": {
+          "address": "081239ec",
+          "size": 1070,
+          "ref_offsets": [
+            "0x8"
+          ],
+          "decompiled": "\nundefined8 FUN_081239ec(undefined4 *param_1,uint *param_2)\n\n{\n  byte bVar1;\n  longlong lVar2;\n  byte bVar3;\n  byte bVar4;\n  byte bVar5;\n  uint *puVar6;\n  uint *puVar7;\n  uint *puVar8;\n  uint uVar9;\n  uint *puVar10;\n  int iVar11;\n  int iVar12;\n  uint uVar13;\n  uint uVar14;\n  uint uVar15;\n  bool bVar16;\n  \n  if (*(char *)(param_1 + 0x14) == '\\x01') {\n    return CONCAT44(param_2,2);\n  }\n  puVar10 = (uint *)*param_1;\n  uVar9 = 1;\n  *(undefined1 *)(param_1 + 0x14) = 1;\n  if ((int)(puVar10[2] << 0x1d) < 0) {\n    param_1[0x15] = param_1[0x15] | 0x20;\n    goto LAB_08123a94;\n  }\n  uVar13 = *param_2;\n  if ((uVar13 & 0xfffff) == 0) {\n    uVar13 = (uVar13 << 1) >> 0x1b;\n    uVar9 = 1 << uVar13;\n  }\n  else {\n    bVar3 = (byte)uVar13;\n    bVar4 = (byte)(uVar13 >> 8);\n    bVar5 = (byte)(uVar13 >> 0x10);\n    bVar1 = (byte)(uVar13 >> 0x18);\n    uVar14 = (uint)(byte)((((((((bVar3 & 1) << 1 | bVar3 >> 1 & 1) << 1 | bVar3 >> 2 & 1) << 1 |\n                             bVar3 >> 3 & 1) << 1 | bVar3 >> 4 & 1) << 1 | bVar3 >> 5 & 1) << 1 |\n                          bVar3 >> 6 & 1) << 1 | bVar3 >> 7) << 0x18 |\n             (uint)(byte)((((((((bVar4 & 1) << 1 | bVar4 >> 1 & 1) << 1 | bVar4 >> 2 & 1) << 1 |\n                             bVar4 >> 3 & 1) << 1 | bVar4 >> 4 & 1) << 1 | bVar4 >> 5 & 1) << 1 |\n                          bVar4 >> 6 & 1) << 1 | bVar4 >> 7) << 0x10 |\n             (uint)(byte)((((((((bVar5 & 1) << 1 | bVar5 >> 1 & 1) << 1 | bVar5 >> 2 & 1) << 1 |\n                             bVar5 >> 3 & 1) << 1 | bVar5 >> 4 & 1) << 1 | bVar5 >> 5 & 1) << 1 |\n                          bVar5 >> 6 & 1) << 1 | bVar5 >> 7) << 8 |\n             (uint)(byte)((((((((bVar1 & 1) << 1 | bVar1 >> 1 & 1) << 1 | bVar1 >> 2 & 1) << 1 |\n                             bVar1 >> 3 & 1) << 1 | bVar1 >> 4 & 1) << 1 | bVar1 >> 5 & 1) << 1 |\n                          bVar1 >> 6 & 1) << 1 | bVar1 >> 7);\n    if (uVar14 != 0) {\n      uVar9 = 1 << LZCOUNT(uVar14);\n    }\n    uVar13 = (uVar13 << 1) >> 0x1b;\n  }\n  uVar14 = param_2[1];\n  uVar15 = uVar14 >> 6 & 0xc;\n  puVar10[7] = uVar9 | puVar10[7];\n  uVar14 = uVar14 & 0x1f;\n  *(uint *)((int)puVar10 + uVar15 + 0x30) =\n       uVar13 << uVar14 | *(uint *)((int)puVar10 + uVar15 + 0x30) & ~(0x1f << uVar14);\n  if ((-1 < (int)(puVar10[2] << 0x1d)) && ((puVar10[2] & 8) == 0)) {\n    uVar13 = *param_2 >> 0x17 & 4;\n    uVar9 = (*param_2 << 7) >> 0x1b;\n    *(uint *)((int)puVar10 + uVar13 + 0x14) =\n         *(uint *)((int)puVar10 + uVar13 + 0x14) & ~(7 << uVar9) | param_2[2] << uVar9;\n    if ((*DAT_08123d94 & 0xf0000000) == 0x10000000) {\n      uVar9 = param_2[5] << (((puVar10[3] << 0x1b) >> 0x1d) << 1);\n    }\n    else {\n      bVar16 = (puVar10[3] & 0x10) == 0;\n      if (bVar16) {\n        uVar9 = (puVar10[3] << 0x1b) >> 0x1d;\n      }\n      else {\n        uVar9 = puVar10[3] >> 1;\n      }\n      if (bVar16) {\n        uVar9 = uVar9 << 1;\n      }\n      else {\n        uVar9 = uVar9 & 8;\n      }\n      uVar9 = param_2[5] << (uVar9 & 0xff);\n    }\n    uVar13 = param_2[4];\n    if (uVar13 == 4) {\n      uVar9 = *param_2 * 0x4000000;\n      if ((puVar10[0x18] & 0x7c000000) == *param_2 * 0x4000000) {\n        puVar10[0x18] = puVar10[0x18] & 0x7fffffff;\n      }\n      if (uVar9 == (puVar10[0x19] & 0x7c000000)) {\n        puVar10[0x19] = puVar10[0x19] & 0x7fffffff;\n      }\n      if (uVar9 == (puVar10[0x1a] & 0x7c000000)) {\n        puVar10[0x1a] = puVar10[0x1a] & 0x7fffffff;\n      }\n      if (uVar9 == (puVar10[0x1b] & 0x7c000000)) {\n        puVar10[0x1b] = puVar10[0x1b] & 0x7fffffff;\n      }\n    }\n    else {\n      puVar10[uVar13 + 0x18] = *param_2 & 0x7c000000 | puVar10[uVar13 + 0x18] & 0x80000000 | uVar9;\n      if (*(char *)((int)param_2 + 0x19) == '\\x01') {\n        uVar9 = 0x80000000;\n      }\n      else {\n        uVar9 = 0;\n      }\n      puVar10[param_2[4] + 0x18] = puVar10[param_2[4] + 0x18] & 0x7fffffff | uVar9;\n      uVar9 = 0;\n      if ((char)param_2[6] == '\\x01') {\n        uVar9 = 0x800 << (param_2[4] & 0x1f);\n      }\n      puVar10[4] = uVar9 | puVar10[4] & 0xffff87ff;\n    }\n  }\n  if (-1 < (int)(puVar10[2] << 0x1f)) {\n    uVar9 = *param_2;\n    bVar16 = param_2[3] == DAT_08123db8;\n    puVar10[0x30] = DAT_08123d90 >> (param_2[3] & 0x18) & uVar9 | puVar10[0x30] & ~(uVar9 & 0xfffff)\n    ;\n    if (bVar16) {\n      if ((uVar9 & 0xfffff) == 0) {\n        uVar9 = (uVar9 >> 0x1a) + 1 & 0x1f;\n        if (uVar9 < 10) {\n          uVar13 = 1 << uVar9;\n          uVar9 = uVar9 * 0x300000;\n        }\n        else {\n          uVar13 = 1 << uVar9;\n          uVar9 = (uVar9 * 3 + -0x1e) * 0x100000 | 0x2000000;\n        }\n      }\n      else {\n        bVar3 = (byte)uVar9;\n        bVar4 = (byte)(uVar9 >> 8);\n        bVar5 = (byte)(uVar9 >> 0x10);\n        bVar1 = (byte)(uVar9 >> 0x18);\n        uVar9 = (uint)(byte)((((((((bVar3 & 1) << 1 | bVar3 >> 1 & 1) << 1 | bVar3 >> 2 & 1) << 1 |\n                                bVar3 >> 3 & 1) << 1 | bVar3 >> 4 & 1) << 1 | bVar3 >> 5 & 1) << 1 |\n                             bVar3 >> 6 & 1) << 1 | bVar3 >> 7) << 0x18 |\n                (uint)(byte)((((((((bVar4 & 1) << 1 | bVar4 >> 1 & 1) << 1 | bVar4 >> 2 & 1) << 1 |\n                                bVar4 >> 3 & 1) << 1 | bVar4 >> 4 & 1) << 1 | bVar4 >> 5 & 1) << 1 |\n                             bVar4 >> 6 & 1) << 1 | bVar4 >> 7) << 0x10 |\n                (uint)(byte)((((((((bVar5 & 1) << 1 | bVar5 >> 1 & 1) << 1 | bVar5 >> 2 & 1) << 1 |\n                                bVar5 >> 3 & 1) << 1 | bVar5 >> 4 & 1) << 1 | bVar5 >> 5 & 1) << 1 |\n                             bVar5 >> 6 & 1) << 1 | bVar5 >> 7) << 8 |\n                (uint)(byte)((((((((bVar1 & 1) << 1 | bVar1 >> 1 & 1) << 1 | bVar1 >> 2 & 1) << 1 |\n                                bVar1 >> 3 & 1) << 1 | bVar1 >> 4 & 1) << 1 | bVar1 >> 5 & 1) << 1 |\n                             bVar1 >> 6 & 1) << 1 | bVar1 >> 7);\n        if ((uVar9 == 0) || ((LZCOUNT(uVar9) + 1U & 0x1f) < 10)) {\n          uVar9 = (uint)(byte)((((((((bVar3 & 1) << 1 | bVar3 >> 1 & 1) << 1 | bVar3 >> 2 & 1) << 1\n                              "
+        },
+        "FUN_0812421c": {
+          "address": "0812421c",
+          "size": 522,
+          "ref_offsets": [
+            "0x8"
+          ],
+          "decompiled": "\nbool FUN_0812421c(int *param_1)\n\n{\n  longlong lVar1;\n  int iVar2;\n  int iVar3;\n  uint uVar4;\n  int iVar5;\n  uint uVar6;\n  bool bVar7;\n  \n  if (param_1 == (int *)0x0) {\n    return true;\n  }\n  if (param_1[0x15] == 0) {\n    FUN_08121394();\n    param_1[0x16] = 0;\n    *(undefined1 *)(param_1 + 0x14) = 0;\n  }\n  iVar3 = *param_1;\n  if (*(int *)(iVar3 + 8) << 2 < 0) {\n    *(uint *)(iVar3 + 8) = *(uint *)(iVar3 + 8) & 0x5fffffc0;\n  }\n  iVar2 = *(int *)(iVar3 + 8) << 3;\n  if (-1 < iVar2) {\n    lVar1 = (ulonglong)DAT_0812442c * (ulonglong)(*DAT_08124428 >> 6);\n    iVar2 = (int)lVar1;\n    *(uint *)(iVar3 + 8) = *(uint *)(iVar3 + 8) & 0x6fffffc0 | 0x10000000;\n    for (iVar5 = (uint)((ulonglong)lVar1 >> 0x26) + 1; iVar5 != 0; iVar5 = iVar5 + -1) {\n    }\n  }\n  bVar7 = *(int *)(iVar3 + 8) << 3 < 0;\n  if (bVar7) {\n    uVar6 = *(uint *)(iVar3 + 8);\n    iVar5 = param_1[0x15];\n  }\n  else {\n    param_1[0x15] = param_1[0x15] | 0x10;\n    param_1[0x16] = param_1[0x16] | 1;\n    uVar6 = *(uint *)(iVar3 + 8);\n    iVar5 = param_1[0x15];\n  }\n  if (((uVar6 & 4) == 0) && (-1 < iVar5 << 0x1b)) {\n    param_1[0x15] = param_1[0x15] & 0xfffffefdU | 2;\n    if (-1 < *(int *)(iVar3 + 8) << 0x1f) {\n      iVar5 = DAT_08124448;\n      if (iVar3 == DAT_08124430) {\n        uVar6 = *(uint *)(iVar3 + 8) | *(uint *)(DAT_08124434 + 8);\n      }\n      else if (iVar3 == DAT_08124434) {\n        uVar6 = *(uint *)(DAT_08124430 + 8) | *(uint *)(iVar3 + 8);\n      }\n      else {\n        uVar6 = *(uint *)(DAT_08124438 + 8);\n        iVar5 = DAT_0812443c;\n      }\n      if (-1 < (int)(uVar6 << 0x1f)) {\n        *(uint *)(iVar5 + 8) = *(uint *)(iVar5 + 8) & 0xffc0ffff | param_1[1];\n      }\n    }\n    uVar6 = FUN_08123934(iVar2);\n    uVar4 = (uint)*(byte *)(param_1 + 7);\n    if ((uVar6 < 0x1004) || (param_1[2] != 0x10)) {\n      uVar6 = uVar4 << 0x10 | (uint)*(byte *)((int)param_1 + 0x15) << 0xd | param_1[0xc] |\n              param_1[2];\n    }\n    else {\n      uVar6 = uVar4 << 0x10 | (uint)*(byte *)((int)param_1 + 0x15) << 0xd | param_1[0xc] | 0x1c;\n    }\n    if (uVar4 == 1) {\n      uVar6 = uVar6 | (param_1[8] + -1) * 0x20000;\n    }\n    if (param_1[9] != 0) {\n      uVar6 = uVar6 | param_1[9] & 0x3e0U | param_1[10];\n    }\n    iVar3 = *param_1;\n    *(uint *)(iVar3 + 0xc) = uVar6 | DAT_08124440 & *(uint *)(iVar3 + 0xc);\n    if ((-1 < *(int *)(iVar3 + 8) << 0x1d) && (-1 < *(int *)(iVar3 + 8) << 0x1c)) {\n      *(uint *)(iVar3 + 0xc) =\n           *(uint *)(iVar3 + 0xc) & 0xffffbffc | (uint)*(byte *)(param_1 + 5) << 0xe | param_1[0xb];\n      if ((char)param_1[0xe] == '\\x01') {\n        *(uint *)(iVar3 + 0x10) =\n             param_1[0x10] | param_1[0x11] | (param_1[0xf] + -1) * 0x10000 | param_1[0x12] |\n             DAT_08124444 & *(uint *)(iVar3 + 0x10) | 1;\n      }\n      else {\n        *(uint *)(iVar3 + 0x10) = *(uint *)(iVar3 + 0x10) & 0xfffffffe;\n      }\n      *(uint *)(iVar3 + 0x10) = *(uint *)(iVar3 + 0x10) & 0xfffffff | param_1[0xd];\n      FUN_08124098(param_1);\n      iVar3 = *param_1;\n    }\n    if (param_1[3] == 1) {\n      *(uint *)(iVar3 + 0x30) = param_1[6] - 1U | *(uint *)(iVar3 + 0x30) & 0xfffffff0;\n    }\n    else {\n      *(uint *)(iVar3 + 0x30) = *(uint *)(iVar3 + 0x30) & 0xfffffff0;\n    }\n    param_1[0x15] = param_1[0x15] & 0xfffffffcU | 1;\n    return !bVar7;\n  }\n  param_1[0x15] = param_1[0x15] | 0x10;\n  return true;\n}\n\n"
+        }
+      },
+      "IPCC": {
+        "FUN_0814ef28": {
+          "address": "0814ef28",
+          "size": 16,
+          "ref_offsets": [
+            "0x18",
+            "0x18"
+          ],
+          "decompiled": "\nvoid FUN_0814ef28(undefined4 param_1,int param_2)\n\n{\n  *(uint *)(DAT_0814ef3c + 0x18) =\n       *(uint *)(DAT_0814ef3c + 0x18) | *(uint *)(DAT_0814ef38 + param_2 * 4);\n  return;\n}\n\n"
+        }
+      },
+      "GPIOC": {
+        "FUN_0814ef28": {
+          "address": "0814ef28",
+          "size": 16,
+          "ref_offsets": [
+            "0x18",
+            "0x18"
+          ],
+          "decompiled": "\nvoid FUN_0814ef28(undefined4 param_1,int param_2)\n\n{\n  *(uint *)(DAT_0814ef3c + 0x18) =\n       *(uint *)(DAT_0814ef3c + 0x18) | *(uint *)(DAT_0814ef38 + param_2 * 4);\n  return;\n}\n\n"
+        }
+      },
+      "GPIOE": {
+        "FUN_08121e78": {
+          "address": "08121e78",
+          "size": 378,
+          "ref_offsets": [
+            "0x18",
+            "0x18"
+          ],
+          "decompiled": "\nvoid FUN_08121e78(int *param_1)\n\n{\n  undefined4 uVar1;\n  undefined4 *puVar2;\n  int iVar3;\n  uint uVar4;\n  uint uVar5;\n  undefined4 local_e8;\n  undefined4 uStack_e4;\n  undefined4 local_e0;\n  undefined4 uStack_dc;\n  undefined4 local_d8;\n  undefined4 local_d4 [18];\n  undefined4 local_8c;\n  \n  local_e8 = 0;\n  uStack_e4 = 0;\n  local_e0 = 0;\n  uStack_dc = 0;\n  local_d8 = 0;\n  FUN_081a8538(local_d4,0,0xbc);\n  if (*param_1 != DAT_08121ff4) {\n    return;\n  }\n  local_8c = 0;\n  local_d4[0] = 0x2000000;\n  iVar3 = FUN_0812853c(local_d4);\n  if (iVar3 != 0) {\n    FUN_08121dfc();\n  }\n  puVar2 = DAT_08122000;\n  uVar1 = DAT_08121ffc;\n  iVar3 = DAT_08121ff8;\n  *(uint *)(DAT_08121ff8 + 0xd4) = *(uint *)(DAT_08121ff8 + 0xd4) | 0x4000;\n  *(uint *)(iVar3 + 0xe0) = *(uint *)(iVar3 + 0xe0) | 2;\n  uVar4 = *(uint *)(iVar3 + 0xe0);\n  *(uint *)(iVar3 + 0xe0) = *(uint *)(iVar3 + 0xe0) | 0x10;\n  uVar5 = *(uint *)(iVar3 + 0xe0);\n  *(uint *)(iVar3 + 0xe0) = *(uint *)(iVar3 + 0xe0) | 4;\n  local_e8 = 4;\n  uStack_e4 = 2;\n  local_e0 = 0;\n  uStack_dc = 1;\n  local_d8 = 9;\n  FUN_081259e0(uVar1,&local_e8,4,2,*(uint *)(iVar3 + 0xd4) & 0x4000,uVar4 & 2,uVar5 & 0x10,\n               *(uint *)(iVar3 + 0xe0) & 4);\n  local_e8 = 0x780;\n  uStack_e4 = 2;\n  local_e0 = 0;\n  uStack_dc = 1;\n  local_d8 = 10;\n  FUN_081259e0(DAT_08122004,&local_e8);\n  local_d8 = 9;\n  local_e0 = 0;\n  uStack_dc = 1;\n  local_e8 = 0x800;\n  uStack_e4 = 2;\n  FUN_081259e0(DAT_08122008,&local_e8);\n  *puVar2 = DAT_0812200c;\n  puVar2[1] = 0x16;\n  puVar2[3] = 0xc0;\n  puVar2[5] = 0x202;\n  puVar2[6] = 0x808;\n  puVar2[7] = 0x20;\n  puVar2[8] = 0x80;\n  puVar2[9] = 0x2000000;\n  puVar2[10] = 4;\n  puVar2[0xb] = 0;\n  puVar2[0xc] = 0;\n  puVar2[0xd] = 0;\n  puVar2[0xe] = 0;\n  puVar2[2] = 0;\n  puVar2[4] = 0;\n  iVar3 = FUN_081264c0(puVar2);\n  if (iVar3 != 0) {\n    FUN_08121dfc();\n  }\n  iVar3 = FUN_081265b4(DAT_08122000,0);\n  if (iVar3 != 0) {\n    FUN_08121dfc();\n  }\n  param_1[0xf] = (int)puVar2;\n  puVar2[0x10] = param_1;\n  FUN_08124518(0x5c,1,0);\n  FUN_08124588(0x5c);\n  *(uint *)(DAT_08122004 + 0x18) = *(uint *)(DAT_08122004 + 0x18) | 0x7800000;\n  return;\n}\n\n"
+        },
+        "FUN_081a1d20": {
+          "address": "081a1d20",
+          "size": 130,
+          "ref_offsets": [
+            "0x10",
+            "0x10",
+            "0x18",
+            "0x18"
+          ],
+          "decompiled": "\nundefined4 FUN_081a1d20(void)\n\n{\n  int iVar1;\n  int iVar2;\n  undefined4 local_28;\n  undefined4 uStack_24;\n  undefined4 local_20;\n  undefined4 uStack_1c;\n  undefined4 local_18;\n  \n  FUN_081245a4(0x28);\n  local_28 = 0x2000;\n  uStack_24 = 0;\n  local_18 = 0;\n  local_20 = 0;\n  uStack_1c = 0;\n  FUN_081259e0(DAT_081a1da4,&local_28);\n  iVar1 = DAT_081a1da4;\n  iVar2 = 3;\n  while( true ) {\n    *(undefined4 *)(iVar1 + 0x18) = 0x800;\n    FUN_08123910(3);\n    if (-1 < *(int *)(iVar1 + 0x10) << 0x11) {\n      return 2;\n    }\n    *(undefined4 *)(iVar1 + 0x18) = 0x8000000;\n    FUN_08123910(3);\n    if (*(int *)(iVar1 + 0x10) << 0x11 < 0) break;\n    iVar2 = iVar2 + -1;\n    if (iVar2 == 0) {\n      local_28 = 0x2000;\n      uStack_24 = 1;\n      local_20 = 0;\n      uStack_1c = 0;\n      FUN_081259e0(DAT_081a1da4,&local_28);\n      FUN_08124588(0x28);\n      return 0;\n    }\n  }\n  return 2;\n}\n\n"
+        },
+        "FUN_081a1da8": {
+          "address": "081a1da8",
+          "size": 68,
+          "ref_offsets": [
+            "0x10",
+            "0x10",
+            "0x18",
+            "0x18"
+          ],
+          "decompiled": "\nundefined4 FUN_081a1da8(void)\n\n{\n  int iVar1;\n  int iVar2;\n  \n  FUN_081245a4(0x28);\n  iVar1 = DAT_081a1dec;\n  iVar2 = 3;\n  while( true ) {\n    *(undefined4 *)(iVar1 + 0x18) = 0x1000;\n    FUN_08123910(3);\n    if (-1 < *(int *)(iVar1 + 0x10) << 0x10) {\n      return 3;\n    }\n    *(undefined4 *)(iVar1 + 0x18) = 0x10000000;\n    FUN_08123910(3);\n    if (*(int *)(iVar1 + 0x10) << 0x10 < 0) break;\n    iVar2 = iVar2 + -1;\n    if (iVar2 == 0) {\n      FUN_08124588(0x28);\n      return 0;\n    }\n  }\n  return 3;\n}\n\n"
+        },
+        "FUN_081a1df0": {
+          "address": "081a1df0",
+          "size": 130,
+          "ref_offsets": [
+            "0x10",
+            "0x10",
+            "0x18",
+            "0x18"
+          ],
+          "decompiled": "\nundefined4 FUN_081a1df0(void)\n\n{\n  int iVar1;\n  int iVar2;\n  undefined4 local_28;\n  undefined4 uStack_24;\n  undefined4 local_20;\n  undefined4 uStack_1c;\n  undefined4 local_18;\n  \n  FUN_081245a4(0x28);\n  local_28 = 0x800;\n  uStack_24 = 0;\n  local_18 = 0;\n  local_20 = 0;\n  uStack_1c = 0;\n  FUN_081259e0(DAT_081a1e74,&local_28);\n  iVar1 = DAT_081a1e74;\n  iVar2 = 3;\n  while( true ) {\n    *(undefined4 *)(iVar1 + 0x18) = 0x2000;\n    FUN_08123910(3);\n    if (-1 < *(int *)(iVar1 + 0x10) << 0x11) {\n      return 4;\n    }\n    *(undefined4 *)(iVar1 + 0x18) = 0x20000000;\n    FUN_08123910(3);\n    if (*(int *)(iVar1 + 0x10) << 0x11 < 0) break;\n    iVar2 = iVar2 + -1;\n    if (iVar2 == 0) {\n      local_28 = 0x800;\n      uStack_24 = 1;\n      local_20 = 0;\n      uStack_1c = 0;\n      FUN_081259e0(DAT_081a1e74,&local_28);\n      FUN_08124588(0x28);\n      return 0;\n    }\n  }\n  return 4;\n}\n\n"
+        }
+      }
+    },
+    "CM7": {
+      "USART1": {
+        "FUN_080082c4": {
+          "address": "080082c4",
+          "size": 584,
+          "ref_offsets": [
+            "0x0",
+            "0x0",
+            "0x4",
+            "0x4"
+          ],
+          "decompiled": "\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nvoid FUN_080082c4(uint *param_1,uint *param_2)\n\n{\n  uint *puVar1;\n  uint uVar2;\n  int iVar3;\n  uint uVar4;\n  uint uVar5;\n  uint uVar6;\n  uint uVar7;\n  int iVar8;\n  uint uVar9;\n  uint uVar10;\n  uint uVar11;\n  int iVar12;\n  \n  puVar1 = DAT_08008524;\n  uVar6 = *param_2;\n  if (uVar6 != 0) {\n    uVar4 = 0;\n    do {\n      uVar2 = 1 << (uVar4 & 0xff);\n      uVar10 = uVar2 & uVar6;\n      if (uVar10 != 0) {\n        uVar9 = param_2[1];\n        uVar11 = uVar9 & 3;\n        uVar5 = uVar4 << 1;\n        if (uVar11 - 1 < 2) {\n          uVar7 = 3 << (uVar5 & 0xff);\n          param_1[2] = param_2[3] << (uVar5 & 0xff) | param_1[2] & ~uVar7;\n          param_1[1] = ((uVar9 << 0x1b) >> 0x1f) << (uVar4 & 0xff) | param_1[1] & ~uVar2;\nLAB_08008450:\n          uVar7 = ~uVar7;\n          param_1[3] = param_2[2] << (uVar5 & 0xff) | param_1[3] & uVar7;\n          if (uVar11 == 2) {\n            uVar11 = 2 << (uVar5 & 0xff);\n            iVar12 = (uVar4 & 7) << 2;\n            param_1[(uVar4 >> 3) + 8] =\n                 param_2[4] << iVar12 | param_1[(uVar4 >> 3) + 8] & ~(0xf << iVar12);\n          }\n          else {\n            uVar11 = uVar11 << (uVar5 & 0xff);\n          }\n        }\n        else {\n          if (uVar11 != 3) {\n            uVar7 = 3 << (uVar5 & 0xff);\n            goto LAB_08008450;\n          }\n          uVar11 = 3 << (uVar5 & 0xff);\n          uVar7 = ~uVar11;\n        }\n        *param_1 = uVar11 | uVar7 & *param_1;\n        iVar8 = DAT_08008510;\n        iVar12 = DAT_0800850c;\n        if ((uVar9 & 0x30000) != 0) {\n          iVar3 = (uVar4 & 3) << 2;\n          *(uint *)(DAT_0800850c + 0xf4) = *(uint *)(DAT_0800850c + 0xf4) | 2;\n          iVar8 = iVar8 + (uVar4 & 0xfffffffc);\n          uVar2 = *(uint *)(iVar8 + 8) & ~(0xf << iVar3);\n          if (param_1 != (uint *)(iVar12 + -0x4400)) {\n            if (param_1 == (uint *)(iVar12 + -0x4000)) {\n              uVar2 = uVar2 | 1 << iVar3;\n            }\n            else if (param_1 == DAT_08008514) {\n              uVar2 = uVar2 | 2 << iVar3;\n            }\n            else if (param_1 == DAT_08008518) {\n              uVar2 = uVar2 | 3 << iVar3;\n            }\n            else if (param_1 == DAT_0800851c) {\n              uVar2 = uVar2 | 4 << iVar3;\n            }\n            else if (param_1 == DAT_08008520) {\n              uVar2 = uVar2 | 5 << iVar3;\n            }\n            else if (param_1 == DAT_08008528) {\n              uVar2 = uVar2 | 6 << iVar3;\n            }\n            else if (param_1 == DAT_0800852c) {\n              uVar2 = uVar2 | 7 << iVar3;\n            }\n            else if (param_1 == DAT_08008530) {\n              uVar2 = uVar2 | 8 << iVar3;\n            }\n            else {\n              if (param_1 == DAT_08008534) {\n                iVar12 = 9;\n              }\n              else {\n                iVar12 = 10;\n              }\n              uVar2 = uVar2 | iVar12 << iVar3;\n            }\n          }\n          *(uint *)(iVar8 + 8) = uVar2;\n          uVar2 = ~uVar10;\n          if ((int)(uVar9 << 0xb) < 0) {\n            _DAT_58000000 = uVar10 | _DAT_58000000;\n          }\n          else {\n            _DAT_58000000 = _DAT_58000000 & uVar2;\n          }\n          if ((int)(uVar9 << 10) < 0) {\n            _DAT_58000004 = uVar10 | _DAT_58000004;\n          }\n          else {\n            _DAT_58000004 = _DAT_58000004 & uVar2;\n          }\n          if ((int)(uVar9 << 0xe) < 0) {\n            uVar5 = uVar10 | puVar1[1];\n          }\n          else {\n            uVar5 = puVar1[1] & uVar2;\n          }\n          puVar1[1] = uVar5;\n          if ((int)(uVar9 << 0xf) < 0) {\n            uVar2 = uVar10 | *puVar1;\n          }\n          else {\n            uVar2 = *puVar1 & uVar2;\n          }\n          *puVar1 = uVar2;\n        }\n      }\n      uVar4 = uVar4 + 1;\n    } while (uVar6 >> (uVar4 & 0xff) != 0);\n  }\n  return;\n}\n\n"
+        }
+      },
+      "ADC1": {
+        "FUN_080082c4": {
+          "address": "080082c4",
+          "size": 584,
+          "ref_offsets": [
+            "0x0",
+            "0x0",
+            "0x4",
+            "0x4",
+            "0x80",
+            "0x80",
+            "0x84",
+            "0x84"
+          ],
+          "decompiled": "\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nvoid FUN_080082c4(uint *param_1,uint *param_2)\n\n{\n  uint *puVar1;\n  uint uVar2;\n  int iVar3;\n  uint uVar4;\n  uint uVar5;\n  uint uVar6;\n  uint uVar7;\n  int iVar8;\n  uint uVar9;\n  uint uVar10;\n  uint uVar11;\n  int iVar12;\n  \n  puVar1 = DAT_08008524;\n  uVar6 = *param_2;\n  if (uVar6 != 0) {\n    uVar4 = 0;\n    do {\n      uVar2 = 1 << (uVar4 & 0xff);\n      uVar10 = uVar2 & uVar6;\n      if (uVar10 != 0) {\n        uVar9 = param_2[1];\n        uVar11 = uVar9 & 3;\n        uVar5 = uVar4 << 1;\n        if (uVar11 - 1 < 2) {\n          uVar7 = 3 << (uVar5 & 0xff);\n          param_1[2] = param_2[3] << (uVar5 & 0xff) | param_1[2] & ~uVar7;\n          param_1[1] = ((uVar9 << 0x1b) >> 0x1f) << (uVar4 & 0xff) | param_1[1] & ~uVar2;\nLAB_08008450:\n          uVar7 = ~uVar7;\n          param_1[3] = param_2[2] << (uVar5 & 0xff) | param_1[3] & uVar7;\n          if (uVar11 == 2) {\n            uVar11 = 2 << (uVar5 & 0xff);\n            iVar12 = (uVar4 & 7) << 2;\n            param_1[(uVar4 >> 3) + 8] =\n                 param_2[4] << iVar12 | param_1[(uVar4 >> 3) + 8] & ~(0xf << iVar12);\n          }\n          else {\n            uVar11 = uVar11 << (uVar5 & 0xff);\n          }\n        }\n        else {\n          if (uVar11 != 3) {\n            uVar7 = 3 << (uVar5 & 0xff);\n            goto LAB_08008450;\n          }\n          uVar11 = 3 << (uVar5 & 0xff);\n          uVar7 = ~uVar11;\n        }\n        *param_1 = uVar11 | uVar7 & *param_1;\n        iVar8 = DAT_08008510;\n        iVar12 = DAT_0800850c;\n        if ((uVar9 & 0x30000) != 0) {\n          iVar3 = (uVar4 & 3) << 2;\n          *(uint *)(DAT_0800850c + 0xf4) = *(uint *)(DAT_0800850c + 0xf4) | 2;\n          iVar8 = iVar8 + (uVar4 & 0xfffffffc);\n          uVar2 = *(uint *)(iVar8 + 8) & ~(0xf << iVar3);\n          if (param_1 != (uint *)(iVar12 + -0x4400)) {\n            if (param_1 == (uint *)(iVar12 + -0x4000)) {\n              uVar2 = uVar2 | 1 << iVar3;\n            }\n            else if (param_1 == DAT_08008514) {\n              uVar2 = uVar2 | 2 << iVar3;\n            }\n            else if (param_1 == DAT_08008518) {\n              uVar2 = uVar2 | 3 << iVar3;\n            }\n            else if (param_1 == DAT_0800851c) {\n              uVar2 = uVar2 | 4 << iVar3;\n            }\n            else if (param_1 == DAT_08008520) {\n              uVar2 = uVar2 | 5 << iVar3;\n            }\n            else if (param_1 == DAT_08008528) {\n              uVar2 = uVar2 | 6 << iVar3;\n            }\n            else if (param_1 == DAT_0800852c) {\n              uVar2 = uVar2 | 7 << iVar3;\n            }\n            else if (param_1 == DAT_08008530) {\n              uVar2 = uVar2 | 8 << iVar3;\n            }\n            else {\n              if (param_1 == DAT_08008534) {\n                iVar12 = 9;\n              }\n              else {\n                iVar12 = 10;\n              }\n              uVar2 = uVar2 | iVar12 << iVar3;\n            }\n          }\n          *(uint *)(iVar8 + 8) = uVar2;\n          uVar2 = ~uVar10;\n          if ((int)(uVar9 << 0xb) < 0) {\n            _DAT_58000000 = uVar10 | _DAT_58000000;\n          }\n          else {\n            _DAT_58000000 = _DAT_58000000 & uVar2;\n          }\n          if ((int)(uVar9 << 10) < 0) {\n            _DAT_58000004 = uVar10 | _DAT_58000004;\n          }\n          else {\n            _DAT_58000004 = _DAT_58000004 & uVar2;\n          }\n          if ((int)(uVar9 << 0xe) < 0) {\n            uVar5 = uVar10 | puVar1[1];\n          }\n          else {\n            uVar5 = puVar1[1] & uVar2;\n          }\n          puVar1[1] = uVar5;\n          if ((int)(uVar9 << 0xf) < 0) {\n            uVar2 = uVar10 | *puVar1;\n          }\n          else {\n            uVar2 = *puVar1 & uVar2;\n          }\n          *puVar1 = uVar2;\n        }\n      }\n      uVar4 = uVar4 + 1;\n    } while (uVar6 >> (uVar4 & 0xff) != 0);\n  }\n  return;\n}\n\n"
+        }
+      }
+    }
+  }
+}

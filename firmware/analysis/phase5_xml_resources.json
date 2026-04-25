@@ -1,0 +1,528 @@
+{
+  "analysis_metadata": {
+    "phase": 5,
+    "title": "XML Resource Files Analysis - MiniFreak V Plugin",
+    "date": "2026-04-24",
+    "source_path": "/home/jth/hoon/minifreak/reference/minifreak_v_extracted/commonappdata/Arturia/MiniFreak V/resources/",
+    "instrument_version": "4.0.2.6369",
+    "copyright": "Arturia (c) 2025"
+  },
+
+  "file_summaries": {
+    "minifreak_internal_params.xml": {
+      "size_bytes": 370964,
+      "total_lines": 7171,
+      "param_count": 2363,
+      "syntax_version": "2",
+      "auto_generated": true,
+      "description": "Complete internal parameter definitions for the MiniFreak synthesizer engine. This is the master parameter registry."
+    },
+    "minifreak_vst_params.xml": {
+      "size_bytes": 35353,
+      "total_lines": 554,
+      "param_count": 148,
+      "syntax_version": "2",
+      "auto_generated": true,
+      "description": "VST-exposed parameters - subset of internal params exposed to DAW hosts via VST/AU interface. These have 'realtimemidi' attribute."
+    },
+    "minifreak_feedback_params.xml": {
+      "size_bytes": 12890,
+      "total_lines": 160,
+      "param_count": 138,
+      "syntax_version": "2",
+      "auto_generated": true,
+      "description": "Hardware feedback parameters - mirrors of VST params with _Feedback suffix for sending current state back to hardware unit."
+    },
+    "minifreak_fx_presets_params.xml": {
+      "size_bytes": 13984,
+      "total_lines": 277,
+      "param_count": 33,
+      "syntax_version": "2",
+      "auto_generated": true,
+      "description": "FX preset sub-parameter definitions for Opt1/Opt2/Opt3 of each effect type."
+    },
+    "minifreak_mod_dests.xml": {
+      "size_bytes": 4573,
+      "total_lines": 163,
+      "item_count": 140,
+      "syntax_version": "2",
+      "auto_generated": true,
+      "description": "Modulation matrix destination list - all possible modulation targets."
+    },
+    "minifreak_autom_dests.xml": {
+      "size_bytes": 1826,
+      "total_lines": 66,
+      "item_count": 42,
+      "syntax_version": "2",
+      "auto_generated": true,
+      "description": "Automation destination list - subset of mod dests available for step sequencer automation."
+    },
+    "Reference_ParamNames.xml": {
+      "size_bytes": 1053250,
+      "total_lines": 13323,
+      "description": "Human-readable display name mapping for every parameter ID. Maps internal param names to UI display names."
+    },
+    "MiniFreak V.xml": {
+      "size_bytes": 34806,
+      "total_lines": 751,
+      "instrument_version": "4.0.2.6369",
+      "description": "Main application configuration - ties together all XML parameter files, defines processor library, item lists, VST/internal parameter assembly."
+    },
+    "MiniFreak V_actions.xml": {
+      "size_bytes": 6151,
+      "total_lines": 118,
+      "description": "Action bindings - proxy parameters, parameter swappers, sample manager, FX routing, LFO shaper connections."
+    },
+    "log.conf": {
+      "size_bytes": 2886,
+      "total_lines": 81,
+      "description": "Logging configuration with 5 severity levels (debug, info, notice, warning, error) and 50+ log categories including USB, comm, hwvst, collage."
+    }
+  },
+
+  "xml_schema_structure": {
+    "root_tag": "rootnode",
+    "syntax_version_attr": "syntax_version",
+    "primary_tags": [
+      "param",
+      "item_list",
+      "item",
+      "processor",
+      "vst",
+      "internal",
+      "block",
+      "xmlfile_parameters",
+      "proxy_param",
+      "discrete_param_swapper",
+      "param_forcer",
+      "samplesmanager",
+      "for"
+    ],
+    "param_attributes": {
+      "name": "Unique parameter identifier string",
+      "display_name": "Human-readable UI label",
+      "text_desc": "Description tooltip text",
+      "resetable": "Whether double-click resets to default (0/1)",
+      "defaultvalnorm": "Default value as normalized 0.0-1.0",
+      "defaultvalmapped": "Default value in mapped units",
+      "default_item": "Default selected item index for list params",
+      "mapping-min": "Minimum mapped value",
+      "mapping-max": "Maximum mapped value",
+      "mapping": "Mapping function (e.g., BipolarVariableCenterInvPow, Exp)",
+      "unit": "Unit string (dB, Hz, cts, st)",
+      "realtimemidi": "Whether param responds to realtime MIDI (0/1)",
+      "transmittedtoprocessor": "Whether sent to DSP processor (0/1)",
+      "notsetmodified": "Whether changes mark preset as modified (0/1)",
+      "savedinpreset": "Whether saved in preset file (0/1)",
+      "savedinpreffile": "Whether saved in preferences file (0/1)",
+      "enginelistener": "Whether engine listens for changes",
+      "ignoreonload": "Whether ignored during preset load",
+      "datasize": "Data size specification (e.g., '8*4*138' for arrays)",
+      "stream": "Stream index for oscilloscope data (0/1)",
+      "is_audio_sample_object": "Whether param holds audio sample data",
+      "is_audio_sample_path": "Whether param holds audio sample path"
+    },
+    "item_attributes": {
+      "text": "Display text string",
+      "processorvalue": "Integer value sent to processor",
+      "from": "Range start (inclusive integer)",
+      "to": "Range end (inclusive integer)"
+    },
+    "block_attributes": {
+      "name": "Block group name",
+      "nbblock": "Number of instances to create",
+      "display_name": "Display label",
+      "name_list": "Reference to item_list for instance naming",
+      "display_name_list": "Reference to item_list for display naming"
+    },
+    "item_list_attributes": {
+      "name": "Unique list identifier",
+      "version": "Firmware version this list applies to"
+    }
+  },
+
+  "parameter_categories": {
+    "oscillator_1": {
+      "prefix": "Osc1_",
+      "params": [
+        {"name": "Osc1_CoarseTune", "display": "Osc1 Coarse", "range": [-1, 1], "default_norm": 0.5, "midi_cc": true, "description": "Sets the Coarse Tune of Oscillator 1"},
+        {"name": "Osc1_Type", "display": "Osc1 Type", "enum": true, "description": "Browses through oscillator Types"},
+        {"name": "Osc1_Param1", "display": "Osc1 Wave", "range": [0, 1], "default_norm": 0.5, "description": "Wave parameter of Oscillator 1"},
+        {"name": "Osc1_Param2", "display": "Osc1 Timbre", "range": [0, 1], "default_norm": 0, "description": "Timbre parameter of Oscillator 1"},
+        {"name": "Osc1_Param3", "display": "Osc1 Shape", "range": [0, 1], "default_norm": 0, "description": "Shape parameter of Oscillator 1"},
+        {"name": "Osc1_Volume", "display": "Osc1 Volume", "range": [0, 1], "default_norm": 1.0, "description": "Sets the output volume of Oscillator 1"},
+        {"name": "Osc1_FineTune", "display": "Osc1 Fine", "range": [-1, 1], "default_norm": 0.5, "description": "Sets the Fine Tune of Oscillator 1"},
+        {"name": "Osc1_Opt1", "display": "Opt1 1", "range": [0, 1], "default_norm": 0},
+        {"name": "Osc1_Opt2", "display": "Opt2 1", "range": [0, 1], "default_norm": 0},
+        {"name": "Osc1_Opt3", "display": "Opt3 1", "range": [0, 1], "default_norm": 0},
+        {"name": "Osc1_TuneModQuantize", "display": "Osc1 Mod Quant", "enum": true, "description": "When active, modulation of Pitch is quantized"}
+      ],
+      "osc1_types_by_version": {
+        "V0.0.0": ["Basic Waves", "SuperWave", "Harmo", "KarplusStr", "VAnalog", "Waveshaper", "Two Op. FM", "Formant", "Speech", "Modal", "Noise", "Bass", "SawX", "Harm", "Audio In"],
+        "V1.9.0": ["Basic Waves", "SuperWave", "Harmo", "KarplusStr", "VAnalog", "Waveshaper", "Two Op. FM", "Formant", "Speech", "Modal", "Noise", "Bass", "SawX", "Harm", "Audio In", "Wavetable"],
+        "V2.9.0": ["Basic Waves", "SuperWave", "Harmo", "KarplusStr", "VAnalog", "Waveshaper", "Two Op. FM", "Formant", "Speech", "Modal", "Noise", "Bass", "SawX", "Harm", "Audio In", "Wavetable", "Sample", "Cloud Grains", "Hit Grains", "Frozen", "Skan", "Particle", "Lick", "Raster"]
+      }
+    },
+    "oscillator_2": {
+      "prefix": "Osc2_",
+      "params": [
+        {"name": "Osc2_CoarseTune", "display": "Osc2 Coarse", "range": [-1, 1], "default_norm": 0.5, "midi_cc": true, "description": "Sets the Coarse Tune of Oscillator 2"},
+        {"name": "Osc2_Type", "display": "Osc2 Type", "enum": true, "description": "Browses through Oscillator and Filter Types"},
+        {"name": "Osc2_Param1", "display": "Osc2 Wave", "range": [0, 1], "default_norm": 0.5, "description": "Wave parameter of Oscillator 2"},
+        {"name": "Osc2_Param2", "display": "Osc2 Timbre", "range": [0, 1], "default_norm": 0, "description": "Timbre parameter of Oscillator 2"},
+        {"name": "Osc2_Param3", "display": "Osc2 Shape", "range": [0, 1], "default_norm": 0, "description": "Shape parameter of Oscillator 2"},
+        {"name": "Osc2_Volume", "display": "Osc2 Volume", "range": [0, 1], "default_norm": 0, "description": "Sets the output volume of Oscillator 2"},
+        {"name": "Osc2_FineTune", "display": "Osc2 Fine", "range": [-1, 1], "default_norm": 0.5, "description": "Sets the Fine Tune of Oscillator 2"},
+        {"name": "Osc2_TuneModQuantize", "display": "Osc2 Mod Quant", "enum": true}
+      ],
+      "osc2_types_by_version": {
+        "V0.0.0": ["Basic Waves", "SuperWave", "Harmo", "KarplusStr", "VAnalog", "Waveshaper", "Two Op. FM", "Formant", "Chords", "Speech", "Modal", "Noise", "Bass", "SawX", "Harm", "FM / RM", "Multi Filter", "Surgeon Filter", "Comb Filter", "Phaser Filter", "Destroy"],
+        "V1.9.0": ["Basic Waves", "SuperWave", "Harmo", "KarplusStr", "VAnalog", "Waveshaper", "Two Op. FM", "Formant", "Chords", "Speech", "Modal", "Noise", "Bass", "SawX", "Harm", "FM / RM", "Multi Filter", "Surgeon Filter", "Comb Filter", "Phaser Filter", "Destroy", "Dummy"],
+        "V2.9.0": ["Basic Waves", "SuperWave", "Harmo", "KarplusStr", "VAnalog", "Waveshaper", "Two Op. FM", "Formant", "Chords", "Speech", "Modal", "Noise", "Bass", "SawX", "Harm", "FM / RM", "Multi Filter", "Surgeon Filter", "Comb Filter", "Phaser Filter", "Destroy", "Dummy x9"]
+      }
+    },
+    "oscillator_shared": {
+      "prefix": "Osc_",
+      "params": [
+        {"name": "Osc_Glide", "display": "Glide", "range": [0, 1], "default_norm": 0, "description": "Time to go from current voice pitch to new voice pitch"},
+        {"name": "Osc_GlideMode", "display": "Glide Mode", "enum_values": ["Time", "Time Legato", "Rate", "Rate Legato", "Sync", "Sync Legato"]},
+        {"name": "Osc_Glide_Sync", "display": "Glide Sync", "enum_values": ["Off", "1/32t", "1/32", "1/16t", "1/16", "1/8t", "1/8", "1/4t", "1/4", "1/2t", "1/2", "1/1"]},
+        {"name": "Osc_BendRange", "display": "Bend Range", "range": [1, 12], "default_norm": 0.091, "description": "Amount of pitch modulation from pitch bend"},
+        {"name": "Osc_Mixer_NonLinearity", "display": "Osc Mix Non-Lin", "range": [0, 1], "default_norm": 0},
+        {"name": "Osc_Freerun", "display": "Osc Free Run", "enum_values": ["Off", "On"], "description": "Phase key-retrig option"}
+      ]
+    },
+    "filter": {
+      "prefix": "Vcf_",
+      "params": [
+        {"name": "Vcf_Type", "display": "Filter Type", "enum_values": ["LP", "BP", "HP", "Notch", "LP1", "HP1", "Notch2"], "description": "Selects the type of filter"},
+        {"name": "Vcf_Cutoff", "display": "Cutoff", "range": [0, 1], "default_norm": 1.0, "description": "Cutoff frequency of the VA filter"},
+        {"name": "Vcf_Resonance", "display": "Reso", "range": [0, 1], "default_norm": 0, "description": "Resonance of the VA filter"},
+        {"name": "Vcf_EnvAmount", "display": "Env Amt", "range": [-1, 1], "default_norm": 0.5, "description": "Modulation of Cutoff with ADSR envelope"}
+      ]
+    },
+    "amplifier": {
+      "prefix": "Vca_",
+      "params": [
+        {"name": "Vca_Mod", "display": "VCA", "range": [0, 1], "default_norm": 0}
+      ]
+    },
+    "envelope_adsr": {
+      "prefix": "Env_",
+      "params": [
+        {"name": "Env_Attack", "display": "Attack", "range": [0, 1], "default_norm": 0, "description": "Time needed to go from start to maximum level"},
+        {"name": "Env_Decay", "display": "Decay", "range": [0, 1], "default_norm": 0.5, "description": "Time needed to go from maximum to sustain level"},
+        {"name": "Env_Sustain", "display": "Sustain", "range": [0, 1], "default_norm": 0.5, "description": "Amplitude while gate source is active"},
+        {"name": "Env_Release", "display": "Release", "range": [0, 1], "default_norm": 0, "description": "Time to go back to 0 after gate stops"},
+        {"name": "Env_AttackCurve", "display": "Attack Curve", "enum_values": ["Default", "Quick"]},
+        {"name": "Env_DecayCurve", "display": "Decay Curve", "enum_values": ["Default", "Percussive"]},
+        {"name": "Env_ReleaseCurve", "display": "Release Curve", "enum_values": ["Default", "Percussive"]}
+      ]
+    },
+    "cycling_envelope": {
+      "prefix": "CycEnv_",
+      "params": [
+        {"name": "CycEnv_Rise", "display": "Rise", "range": [0, 1], "default_norm": 0, "description": "Time to reach maximum value"},
+        {"name": "CycEnv_Fall", "display": "Fall", "range": [0, 1], "default_norm": 0.5, "description": "Time to go back to 0"},
+        {"name": "CycEnv_Hold", "display": "Hold", "range": [0, 1], "default_norm": 0, "description": "Time to stay at constant value"},
+        {"name": "CycEnv_Mode", "display": "Mode", "enum_values": ["Env", "Run", "Loop"]},
+        {"name": "CycEnv_RiseCurve", "display": "Rise Curve", "range": [20, -20], "default_norm": 0.5},
+        {"name": "CycEnv_FallCurve", "display": "Fall Curve", "range": [-20, 20], "default_norm": 0.5},
+        {"name": "CycEnv_StageOrder", "display": "Stage Order", "enum_values": ["Rise Hold Fall", "Rise Fall Hold", "Hold Rise Fall"]},
+        {"name": "CycEnv_TempoSync", "display": "Tempo Sync", "enum_values": ["Off", "On"]},
+        {"name": "CycEnv_RetrigSrc", "display": "Retrig Src", "enum_values": ["Poly Kbd", "Mono Kbd", "Legato Kbd", "LFO1", "LFO2"]}
+      ]
+    },
+    "lfo": {
+      "params": {
+        "LFO1": {
+          "wave": {"name": "LFO1_Wave", "display": "LFO1 Wave", "enum_values": ["Sin", "Tri", "Saw", "Sqr", "SnH", "SlewSNH", "ExpSaw", "ExpRamp", "Shaper"]},
+          "rate": {"name": "LFO1_Rate", "display": "LFO1 Rate", "range": [0, 1], "default_norm": 0.3},
+          "rate_sync": {"name": "LFO1_RateSync", "display": "LFO1 Rate (Synced)", "enum_values": ["8d","8","4d","8t","4","2d","4t","2","1d","2t","1","1/2d","1t","1/2","1/4d","1/2t","1/4","1/8d","1/4t","1/8","1/16d","1/8t","1/16","1/32d","1/16t","1/32","1/32t"]},
+          "sync_en": {"name": "LFO1_SyncEn", "display": "LFO1 Sync En", "enum_values": ["Off", "On"], "default_norm": 0},
+          "sync_filter": {"name": "LFO1_SyncFilter", "display": "LFO1 Rate Type", "enum_values": ["All", "Straight", "Triplet", "Dotted"]},
+          "loop": {"name": "LFO1_Loop", "enum_values": ["Loop", "OneShot"], "default_norm": 0},
+          "retrig": {"name": "LFO1_Retrig", "display": "LFO1 Retrigger Source", "enum_values": ["Free","Poly Kbd","Mono Kbd","Legato Kbd","One","LFO2","CycEnv","Seq Start"], "default_norm": 0.25}
+        },
+        "LFO2": {
+          "wave": {"name": "LFO2_Wave", "display": "LFO2 Wave", "enum_values": ["Sin", "Tri", "Saw", "Sqr", "SnH", "SlewSNH", "ExpSaw", "ExpRamp", "Shaper"]},
+          "rate": {"name": "LFO2_Rate", "display": "LFO2 Rate", "range": [0, 1], "default_norm": 0.3},
+          "rate_sync": {"name": "LFO2_RateSync", "display": "LFO2 Rate (Synced)", "enum_values": ["8d","8","4d","8t","4","2d","4t","2","1d","2t","1","1/2d","1t","1/2","1/4d","1/2t","1/4","1/8d","1/4t","1/8","1/16d","1/8t","1/16","1/32d","1/16t","1/32","1/32t"]},
+          "sync_en": {"name": "LFO2_SyncEn", "display": "LFO2 Sync En", "enum_values": ["Off", "On"], "default_norm": 1},
+          "sync_filter": {"name": "LFO2_SyncFilter", "display": "LFO2 Rate Type", "enum_values": ["All", "Straight", "Triplet", "Dotted"]},
+          "loop": {"name": "LFO2_Loop", "enum_values": ["Loop", "OneShot"], "default_norm": 0},
+          "retrig": {"name": "LFO2_Retrig", "display": "LFO2 Retrigger Source", "enum_values": ["Free","Poly Kbd","Mono Kbd","Legato Kbd","One","LFO1","CycEnv","Seq Start"], "default_norm": 0}
+        }
+      }
+    },
+    "effects": {
+      "fx_slots": ["FX1", "FX2", "FX3"],
+      "fx_types_by_version": {
+        "V0.0.0": ["Chorus", "Phaser", "Flanger", "Reverb", "Delay", "Distortion", "Bit Crusher", "3 Bands EQ", "Peak EQ", "Multi Comp"],
+        "V1.9.0": ["Chorus", "Phaser", "Flanger", "Reverb", "Delay", "Distortion", "Bit Crusher", "3 Bands EQ", "Peak EQ", "Multi Comp", "SuperUnison"],
+        "V3.9.0": ["Chorus", "Phaser", "Flanger", "Reverb", "Delay", "Distortion", "Bit Crusher", "3 Bands EQ", "Peak EQ", "Multi Comp", "SuperUnison", "Vocoder (Self)", "Vocoder (Ext)"]
+      },
+      "fx_params_per_slot": ["Enable", "Type", "Opt1", "Opt2", "Opt3", "Param1(Time)", "Param2(Intensity)", "Param3(Amount)"],
+      "fx_routing": {
+        "Delay_Routing": ["Insert", "Send"],
+        "Reverb_Routing": ["Insert", "Send"]
+      },
+      "fx_presets": {
+        "Chorus": ["Default", "Lush", "Dark", "Shaded", "Single"],
+        "Phaser": ["Default", "Default Sync", "Space", "Space Sync", "SnH", "SnH Sync"],
+        "StereoDelay": ["Digital", "Digital Sync", "Stereo", "Stereo Sync", "Ping-Pong", "Ping-Pong Sync", "Mono", "Mono Sync", "Filtered", "Filtered Sync", "Filtered Ping-Pong", "Filtered P-P Sync"],
+        "Reverb": ["Default", "Long", "Hall", "Echoes", "Room", "Dark Room"],
+        "MultiComp": ["OPP", "Bass Ctrl", "High Ctrl", "All Up", "Tighter"],
+        "EQ3": ["Default", "Wide", "Mid 1K"],
+        "Disto": ["Classic", "Soft Clip", "Germanium", "Dual Fold", "Climb", "Tape"],
+        "Flanger": ["Default", "Default Sync", "Silly", "Silly Sync"],
+        "SuperUnison": ["Classic", "Ravey", "Soli", "Slow", "Slow Trig", "Wide Trig", "Mono Trig", "Wavy"],
+        "VocoderSelf": ["Clean", "Vintage", "Narrow", "Gated"],
+        "VocoderExt": ["Clean", "Vintage", "Narrow", "Gated"]
+      }
+    },
+    "modulation_matrix": {
+      "description": "7 mod slots, each with 4 values (dest, source, amount, extra) plus 9 assignable destinations",
+      "slots": 7,
+      "values_per_slot": 4,
+      "assignable_dests_per_slot": 9,
+      "total_mod_dots": 91,
+      "macro_count": 2,
+      "macro_dests_per_macro": 4,
+      "mod_sources": ["Velocity", "Aftertouch", "Velo + AT"],
+      "mod_velo_at_param": "Mx_VeloAt"
+    },
+    "voice_engine": {
+      "prefix": "Gen_",
+      "params": [
+        {"name": "Gen_NoteMode", "display": "Voicing", "enum_values": ["Mono", "Unison", "Poly", "Para"], "default_norm": 0.75},
+        {"name": "Gen_RetrigMode", "display": "Retrig Mode", "enum_values": ["Env Reset", "Env Continue"], "default_norm": 1.0},
+        {"name": "Gen_LegatoMode", "display": "Legato Mono", "enum_values": ["Off", "On"]},
+        {"name": "Gen_UnisonCount", "display": "Unison Count", "range": [2, 6], "default_norm": 1},
+        {"name": "Gen_PolyAlloc", "display": "Poly Allocation", "enum_values": ["Cycle", "Reassign", "Reset"]},
+        {"name": "Gen_PolySteal", "display": "Poly Steal Mode", "enum_values": ["Oldest", "Lowest Velo", "None"]},
+        {"name": "Gen_UnisonMode", "display": "Unison Mode", "enum_values": ["Unison", "Uni (Poly)", "Uni (Para)"]},
+        {"name": "Gen_UnisonSpread", "display": "Uni Spread", "range": [0, 1], "default_norm": 0.04172}
+      ],
+      "voice_count": 12
+    },
+    "sequencer": {
+      "prefix": "Seq_",
+      "params": [
+        {"name": "Seq_Gate", "display": "Gate", "range": [1, 99], "default_norm": 0.5},
+        {"name": "Seq_IsRunning", "display": "Seq Play/Stop"},
+        {"name": "Seq_CurentStep", "range": [0, 63]},
+        {"name": "Seq_AutoPlay"},
+        {"name": "Seq_Record", "display": "Seq Rec"},
+        {"name": "Seq_Transpose"},
+        {"name": "Seq_LaunchDice", "display": "Dice", "description": "Randomizes the sequence/arpeggio"}
+      ],
+      "step_count": 64,
+      "step_params_per_step": ["Gate", "Pitch", "Velocity", "Length", "ModState", "StepState"]
+    },
+    "arp": {
+      "prefix": "Arp_",
+      "params": [
+        {"name": "Arp_Mode", "display": "Arp Mode", "enum_values": ["Up", "Down", "UpDown", "Random", "Walk", "Pattern", "Order", "Poly"]},
+        {"name": "Arp_Repeat", "display": "Arp Repeat"},
+        {"name": "Arp_Ratchet", "display": "Arp ratchet"},
+        {"name": "Arp_Mutate", "display": "Arp Mutate"},
+        {"name": "Arp_Rand_Oct", "display": "Arp Random Octave"},
+        {"name": "Arp_Oct", "display": "Octave range", "range": [0, 3]}
+      ]
+    },
+    "master": {
+      "params": [
+        {"name": "MasterVolume", "display": "Master Volume", "range": [-70, 6], "unit": "dB", "mapping": "BipolarVariableCenterInvPow(2,0.5)"},
+        {"name": "Preset_Volume", "display": "Preset Volume", "range_db": [-12, 16]}
+      ]
+    }
+  },
+
+  "modulation_destinations": {
+    "total_count": 140,
+    "core_destinations": [
+      "None", "Osc1 Type", "Osc1 Wave", "Osc1 Timbre", "Osc1 Shape", "Osc1 Volume",
+      "Osc2 Type", "Osc2 Wave", "Osc2 Timbre", "Osc2 Shape", "Osc2 Volume",
+      "Glide", "Cutoff", "Reso", "Env Amt", "VCA",
+      "Attack", "Decay", "Sustain", "Release",
+      "Rise", "Fall", "Hold",
+      "LFO1 Wave", "LFO1 Rate", "LFO1 Rate (Synced)",
+      "LFO2 Wave", "LFO2 Rate", "LFO2 Rate (Synced)",
+      "Macro 1", "Macro 2", "Uni Spread"
+    ],
+    "mod_slot_destinations": "Mod 1:1 through Mod 7:13 (7 slots x 13 dests = 91 matrix points)",
+    "fx_destinations": [
+      "Vib AM", "Pitch 1", "Pitch 2",
+      "LFO1 AM", "LFO2 AM", "CycEnv AM", "Vibrato Rate",
+      "Time 1", "Intensity 1", "Amount 1",
+      "Time 2", "Intensity 2", "Amount 2",
+      "Time 3", "Intensity 3", "Amount 3"
+    ]
+  },
+
+  "automation_destinations": {
+    "total_count": 42,
+    "items": [
+      "None", "Osc1 Type", "Osc1 Wave", "Osc1 Timbre", "Osc1 Shape", "Osc1 Volume",
+      "Osc2 Type", "Osc2 Wave", "Osc2 Timbre", "Osc2 Shape", "Osc2 Volume",
+      "Glide", "Cutoff", "Reso", "Env Amt", "VCA",
+      "Attack", "Decay", "Sustain", "Release",
+      "Rise", "Fall", "Hold",
+      "LFO1 Rate", "LFO1 Rate (Synced)", "LFO2 Rate", "LFO2 Rate (Synced)",
+      "Macro 1", "Macro 2", "Pitch 1", "Pitch 2",
+      "Time 1", "Intensity 1", "Amount 1",
+      "Time 2", "Intensity 2", "Amount 2",
+      "Time 3", "Intensity 3", "Amount 3",
+      "Mod Wheel", "Pitch Wheel"
+    ]
+  },
+
+  "hardware_communication_params": {
+    "calibration": {
+      "CalibCmd": {
+        "display_name": "Calibration",
+        "values": ["Off", "Calib Analog", "Resonance min", "Resonance max", "Calib Cutoff", "VCA min", "VCA max", "VCA offset", "VCA_Offset_Reset"],
+        "description": "Calibration commands sent to hardware"
+      },
+      "CalibStatus": {"display_name": "Calibration status", "range": [0, 1]},
+      "CalibNotif": {"display_name": "Calibration Notification", "values": ["", "Please run a calibration"]},
+      "Exit_Calib": {"description": "Exit calibration mode on hardware"}
+    },
+    "preset_management": {
+      "HwPanic": {"values": ["Load", "User", "Seq"], "description": "Hardware panic/reset command"},
+      "PresetCopy": {"values": ["Current", "Osc1", "Osc2", "FX1", "FX2", "FX3", "Seq", "LFO1 user curve", "LFO2 user curve", "SeqStep"]},
+      "PresetPaste": {"values": ["Current", "Osc1", "Osc2", "SwapOsc", "FX1", "FX2", "FX3", "Swap FX1/FX2", "Swap FX2/FX3", "Swap FX1/FX3", "Seq", "Seq + Mods", "LFO1 user curve", "LFO2 user curve"]},
+      "PresetErase": {"values": ["Preset Init", "Reload Preset", "Matrix", "Seq", "Reload Seq", "Mods", "Macro 1", "Macro 2", "LFO1 user curve", "LFO2 user curve"]},
+      "GetCurrentPresetIndex": {"range": [0, 1]},
+      "NotifyPresetLoadIndex": {"range": [0, 511]},
+      "NotifyPresetBrowseIndex": {"range": [0, 511]},
+      "LoadPresetAt": {"range": [0, 511]},
+      "NotifyPresetSaveIndex": {"range": [0, 511]},
+      "ErasePresetAt": {"range": [0, 511]},
+      "preset_slot_range": [0, 511],
+      "preset_slots_total": 512
+    },
+    "communication_protocol": {
+      "SIBP_In": {"display_name": "Serial Interface Bulk Protocol In", "values": ["Off", "On"], "description": "Enable/disable serial bulk data input"},
+      "SIBP_Out": {"display_name": "Serial Interface Bulk Protocol Out", "values": ["Off", "On"], "description": "Enable/disable serial bulk data output"},
+      "NRPN_Out": {"display_name": "NRPN Out", "values": ["Off", "On"], "description": "Enable/disable NRPN output to hardware"},
+      "Ping": {"values": ["Off", "On"], "description": "Hardware ping/keepalive"},
+      "Reset_Settings": {"values": ["No", "Yes"], "description": "Reset hardware settings"}
+    },
+    "storage": {
+      "Format_FileSystem": {"values": ["No", "Yes"], "description": "Format hardware filesystem"},
+      "GetMemoryUsageFullPartition": {"description": "Query full partition memory usage"},
+      "NotifyMemoryUsageFullPartition": {"description": "Notification of full partition memory usage"},
+      "GetMemoryUsageWavetableFactory": {"description": "Query wavetable factory memory usage"},
+      "NotifyMemoryUsageWavetableFactory": {"description": "Notification of wavetable factory memory usage"},
+      "GetWaveTableFactoryCount": {"description": "Query wavetable factory count"},
+      "NotifyWaveTableFactoryCount": {"range": [0, 31], "description": "Notification of wavetable factory count"}
+    },
+    "automation_protocol": {
+      "Autom_NewVal": {"values": ["Slot 1", "Slot 2", "Slot 3", "Slot 4"], "description": "Automation value slot selection"},
+      "Autom_Full_Slot": {"values": ["Off", "On"], "description": "Automation full slot flag"},
+      "Autom_Loopback": {"range": [0, 1], "description": "Automation loopback test parameter"}
+    },
+    "favorites": {
+      "count": 63,
+      "slot_range": [0, 511],
+      "prefix": "Favorite_Slot_"
+    }
+  },
+
+  "midi_controller_mappings": {
+    "hardware_controller": {
+      "name": "MiniFreak",
+      "midi_name": "MiniFreak MIDI",
+      "open_output": true,
+      "synth": true,
+      "substr": true,
+      "midi_forward": true
+    },
+    "supported_controllers": [
+      "MiniFreak", "KeyLab", "MiniLab mkII", "MiniLab 3", "MicroLab", "MiniLab",
+      "KeyLab Essential", "KeyLab Essential mk3", "KeyLab mkII", "KeyLab mk3"
+    ],
+    "midi_cc_assignments_example_keylab": {
+      "CC 7": "itemid 48",
+      "CC 74": "itemid 1",
+      "CC 71": "itemid 2",
+      "CC 76": "itemid 3",
+      "CC 77": "itemid 4",
+      "CC 93": "itemid 9",
+      "CC 18": "itemid 5",
+      "CC 19": "itemid 6",
+      "CC 16": "itemid 7",
+      "CC 17": "itemid 8",
+      "CC 91": "itemid 10"
+    },
+    "vst3_params": [
+      {"name": "VST3_PitchBend", "display": "PitchBend"},
+      {"name": "VST3_AfterTouch", "display": "AfterTouch"},
+      {"name": "VST3_CtrlModWheel", "display": "ModWheel"},
+      {"name": "VST3_CtrlSustainOnOff", "display": "Hold"},
+      {"name": "VST3_CtrlAllNotesOff", "display": "All Notes Off"},
+      {"name": "VST3_CtrlAllSoundsOff", "display": "All Sounds Off"}
+    ],
+    "program_change_slots": 16
+  },
+
+  "firmware_version_gates": {
+    "description": "Several parameter lists are gated by firmware version, showing the evolution of features",
+    "V0.0.0": "Original release - base oscillator types (15 for Osc1, 21 for Osc2), 10 FX types",
+    "V1.9.0": "Added Wavetable to Osc1, SuperUnison FX, Dummy placeholder for Osc2 expansion",
+    "V2.9.0": "Major Osc1 expansion: Sample, Cloud Grains, Hit Grains, Frozen, Skan, Particle, Lick, Raster (24 total). Osc2 placeholders for future expansion (30 slots)",
+    "V3.9.0": "Added Vocoder (Self) and Vocoder (Ext) to all FX slots. Extended Preset Volume range to +16dB"
+  },
+
+  "lfo_shaper": {
+    "description": "Custom LFO waveform editor with 16 steps per LFO",
+    "steps_per_lfo": 16,
+    "params_per_step": ["Enable", "Slope", "Amp", "Curve"],
+    "modes": ["EditCurve", "EditTension", "Erase"],
+    "wave_modes": ["Rise", "Fall", "Triangle", "Join"]
+  },
+
+  "processor_config": {
+    "instance": "minifreakv",
+    "lib_path": "./",
+    "lib_path_64": "./x64/",
+    "lib_name": "minifreakvProcessor",
+    "description": "DSP processor library - the actual synth engine binary"
+  },
+
+  "sample_management": {
+    "wavetable_param": "Osc1WavetableObject",
+    "wavetable_path_param": "Osc1WavetablePath",
+    "wavetable_default": "Factory/WT/Factory/Basic Waves.raw",
+    "sample_param": "Osc1SampleObject",
+    "sample_path_param": "Osc1SamplePath",
+    "sample_default": "Factory/Samples/Factory/KEY Malloctav.raw12b",
+    "supported_extensions": [".raw", ".RAW", ".raw12b", ".RAW12B"],
+    "full_inapp_export": true
+  },
+
+  "logging_categories": {
+    "synth_engine": ["bundle", "parameters", "process", "description", "preset", "audio_engine", "dsp", "engine_description"],
+    "midi": ["midi"],
+    "gui": ["gui", "gui_event"],
+    "usb_communication": ["comm", "comm.perf", "libusb", "usb", "bulk", "usb.update", "usb.update.cmd", "usb.update.upload"],
+    "hardware_vst": ["instance", "hwvst", "hwvst.init", "hwvst.comm", "hwvst.comm.sync", "hwvst.comm.param.in", "hwvst.comm.param.out", "hwvst.comm.param.details", "hwvst.connection", "hwvst.cmd"],
+    "collage_protocol": ["collage", "collage.app", "collage.comm.ipc", "collage.comm.tcp", "collage.comm.usb", "collage.comm.usb.nopayload", "collage.comm.usb.ll", "collage.channel", "collage.protocol", "collage.protocol.resource", "collage.protocol.system", "collage.protocol.data", "collage.protocol.security"]
+  },
+
+  "key_findings_for_reverse_engineering": {
+    "parameter_id_scheme": "Parameters use hierarchical dot/underscore naming: Category_SubCategory_Property (e.g., Osc1_Param1, LFO1_RateSync, Mx_Dot_0)",
+    "normalization": "All continuous values are normalized 0.0-1.0 internally, with mapping functions for display",
+    "version_gated_features": "item_list elements with version attribute enable firmware-version-dependent behavior",
+    "no_sysex_in_xml": "SysEx message templates are NOT defined in XML files - they are handled in compiled code",
+    "nrpn_protocol": "NRPN_Out param confirms NRPN communication with hardware, but CC mappings are in compiled code",
+    "sibp_protocol": "SIBP_In/SIBP_Out params indicate a Serial Interface Bulk Protocol for large data transfers (presets, samples, firmware)",
+    "512_preset_slots": "Hardware supports 512 preset slots (0-511)",
+    "feedback_mirroring": "Each VST param has a corresponding _Feedback param for hardware state synchronization",
+    "block_arrays": "Sequencer steps, voice tracking, and LFO shaper use <block nbblock=N> for array instantiation",
+    "calibration_commands": "9 calibration commands expose analog circuit calibration interface",
+    "usb_update_categories": "Logging reveals usb.update, usb.update.cmd, usb.update.upload categories - firmware update protocol exists in code"
+  }
+}

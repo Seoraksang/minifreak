@@ -1,0 +1,49 @@
+{
+  "binary": "minifreak_ui_ribbon__fw1_0_0_2229__2025_06_18.bin",
+  "language": "ARM/little/32/Cortex",
+  "image_base": "00000000",
+  "timestamp": "2026-04-21T07:44:05.608417",
+  "memory_blocks": [
+    {
+      "name": "ram",
+      "start": "00000000",
+      "end": "00010e6f",
+      "size": 69232,
+      "rwx": "RWX",
+      "type": "Default"
+    }
+  ],
+  "function_stats": {
+    "total": 186,
+    "named": 0,
+    "unnamed": 186
+  },
+  "named_functions": [],
+  "interesting_strings": [
+    {
+      "address": "00010700",
+      "value": "MedianFilter"
+    },
+    {
+      "address": "00010720",
+      "value": "SMAFilter<3>"
+    },
+    {
+      "address": "00010730",
+      "value": "HysteresisFilter<4095, 32, 1000>"
+    },
+    {
+      "address": "0001076c",
+      "value": "GpioScan"
+    },
+    {
+      "address": "00010ccc",
+      "value": "build version : "
+    },
+    {
+      "address": "00010d2c",
+      "value": "Error- "
+    }
+  ],
+  "total_string_count": 22
+}

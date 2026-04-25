@@ -1,0 +1,125 @@
+{
+  "binary": "minifreak_main_CM7__fw4_0_1_2229__2025_06_18.bin",
+  "language": "ARM/little/32/Cortex",
+  "image_base": "00000000",
+  "timestamp": "2026-04-21T07:41:48.817987",
+  "memory_blocks": [
+    {
+      "name": "ram",
+      "start": "00000000",
+      "end": "0007ff9f",
+      "size": 524192,
+      "rwx": "RWX",
+      "type": "Default"
+    }
+  ],
+  "function_stats": {
+    "total": 284,
+    "named": 11,
+    "unnamed": 266
+  },
+  "named_functions": [
+    {
+      "name": "thunk_EXT_FUN_0805dd48",
+      "address": "000072e8",
+      "size": 4
+    },
+    {
+      "name": "thunk_EXT_FUN_08060b1c",
+      "address": "000072f0",
+      "size": 4
+    },
+    {
+      "name": "thunk_EXT_FUN_0805eab0",
+      "address": "000072f8",
+      "size": 4
+    },
+    {
+      "name": "thunk_EXT_FUN_0805dcc0",
+      "address": "00007310",
+      "size": 4
+    },
+    {
+      "name": "thunk_EXT_FUN_0805ddfc",
+      "address": "00007320",
+      "size": 4
+    },
+    {
+      "name": "thunk_EXT_FUN_0800b2c0",
+      "address": "00007330",
+      "size": 4
+    },
+    {
+      "name": "thunk_EXT_FUN_08060dc8",
+      "address": "00007338",
+      "size": 4
+    },
+    {
+      "name": "thunk_FUN_00034338",
+      "address": "00054280",
+      "size": 4
+    },
+    {
+      "name": "thunk_FUN_00060b18",
+      "address": "0005dfd8",
+      "size": 4
+    },
+    {
+      "name": "thunk_FUN_00060b18",
+      "address": "0005dfdc",
+      "size": 4
+    },
+    {
+      "name": "thunk_FUN_00007f10",
+      "address": "00060e4c",
+      "size": 4
+    }
+  ],
+  "interesting_strings": [
+    {
+      "address": "0006a6c0",
+      "value": "Stack init error"
+    },
+    {
+      "address": "0007cbd4",
+      "value": "build version : "
+    },
+    {
+      "address": "0007cc08",
+      "value": "Error- "
+    },
+    {
+      "address": "0007d580",
+      "value": "*N12_GLOBAL__N_121system_error_categoryE"
+    },
+    {
+      "address": "0007d5a9",
+      "value": "*N12_GLOBAL__N_122generic_error_categoryE"
+    },
+    {
+      "address": "0007d5d3",
+      "value": "NSt3_V214error_categoryE"
+    },
+    {
+      "address": "0007e13f",
+      "value": " REENT malloc succeeded"
+    },
+    {
+      "address": "0007e202",
+      "value": "I/O error"
+    },
+    {
+      "address": "0007e238",
+      "value": "Exec format error"
+    },
+    {
+      "address": "0007e5a5",
+      "value": "Protocol error"
+    },
+    {
+      "address": "0007e844",
+      "value": "Success"
+    }
+  ],
+  "total_string_count": 108
+}

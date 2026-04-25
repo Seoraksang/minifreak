@@ -1,0 +1,53 @@
+{
+  "binary": "minifreak_ui_screen__fw1_0_0_2229__2025_06_18.bin",
+  "language": "ARM/little/32/Cortex",
+  "image_base": "00000000",
+  "timestamp": "2026-04-21T07:42:51.221902",
+  "memory_blocks": [
+    {
+      "name": "ram",
+      "start": "00000000",
+      "end": "0002a53b",
+      "size": 173372,
+      "rwx": "RWX",
+      "type": "Default"
+    }
+  ],
+  "function_stats": {
+    "total": 275,
+    "named": 0,
+    "unnamed": 275
+  },
+  "named_functions": [],
+  "interesting_strings": [
+    {
+      "address": "0001e7e4",
+      "value": "GpioScan"
+    },
+    {
+      "address": "0001e810",
+      "value": "MedianFilter"
+    },
+    {
+      "address": "0001e830",
+      "value": "SMAFilter<3>"
+    },
+    {
+      "address": "0001e840",
+      "value": "HysteresisFilter<4095, 32, 1000>"
+    },
+    {
+      "address": "0002a310",
+      "value": "build version : "
+    },
+    {
+      "address": "0002a370",
+      "value": "Error- "
+    },
+    {
+      "address": "0002a378",
+      "value": "not enough space for format expansion (Please submit full bug report at https://gcc.gnu.org/bugs/):\n    "
+    }
+  ],
+  "total_string_count": 25
+}

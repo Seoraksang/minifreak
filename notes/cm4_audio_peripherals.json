@@ -1,0 +1,233 @@
+{
+  "ADC1": {
+    "xref_count": 2,
+    "functions": [
+      "FUN_081239ec",
+      "FUN_0812421c"
+    ],
+    "decompiled": [
+      {
+        "func": "FUN_081239ec",
+        "size": 13196,
+        "relevance": [
+          "DAC"
+        ],
+        "code": "\nundefined8 FUN_081239ec(undefined4 *param_1,uint *param_2)\n\n{\n  byte bVar1;\n  longlong lVar2;\n  byte bVar3;\n  byte bVar4;\n  byte bVar5;\n  uint *puVar6;\n  uint *puVar7;\n  uint *puVar8;\n  uint uVar9;\n  uint *puVar10;\n  int iVar11;\n  int iVar12;\n  uint uVar13;\n  uint uVar14;\n  uint uVar15;\n  bool bVar16;\n  \n  if (*(char *)(param_1 + 0x14) == '\\x01') {\n    return CONCAT44(param_2,2);\n  }\n  puVar10 = (uint *)*param_1;\n  uVar9 = 1;\n  *(undefined1 *)(param_1 + 0x14) = 1;\n  if ((int)(puVar10[2] << 0x1d) < 0) {\n    param_1[0x15] = param_1[0x15] | 0x20;\n    goto LAB_08123a94;\n  }\n  uVar13 = *param_2;\n  if ((uVar13 & 0xfffff) == 0) {\n    uVar13 = (uVar13 << 1) >> 0x1b;\n    uVar9 = 1 << uVar13;\n  }\n  else {\n    bVar3 = (byte)uVar13;\n    bVar4 = (byte)(uVar13 >> 8);\n    bVar5 = (byte)(uVar13 >> 0x10);\n    bVar1 = (byte)(uVar13 >> 0x18);\n    uVar14 = (uint)(byte)((((((((bVar3 & 1) << 1 | bVar3 >> 1 & 1) << 1 | bVar3 >> 2 & 1) << 1 |\n                             bVar3 >> 3 & 1) << 1 | bVar3 >> 4 & 1) << 1 | bVar3 >> 5 & 1) << 1 |\n                          bVar3 >> 6 & 1) << 1 | bVar3 >> 7) << 0x18 |\n             (uint)(byte)((((((((bVar4 & 1) << 1 | bVar4 >> 1 & 1) << 1 | bVar4 >> 2 & 1) << 1 |\n                             bVar4 >> 3 & 1) << 1 | bVar4 >> 4 & 1) << 1 | bVar4 >> 5 & 1) << 1 |\n                          bVar4 >> 6 & 1) << 1 | bVar4 >> 7) << 0x10 |\n             (uint)(byte)((((((((bVar5 & 1) << 1 | bVar5 >> 1 & 1) << 1 | bVar5 >> 2 & 1) << 1 |\n                             bVar5 >> 3 & 1) << 1 | bVar5 >> 4 & 1) << 1 | bVar5 >> 5 & 1) << 1 |\n                          bVar5 >> 6 & 1) << 1 | bVar5 >> 7) << 8 |\n             (uint)(byte)((((((((bVar1 & 1) << 1 | bVar1 >> 1 & 1) << 1 | bVar1 >> 2 & 1) << 1 |\n                             bVar1 >> 3 & 1) << 1 | bVar1 >> 4 & 1) << 1 | bVar1 >> 5 & 1) << 1 |\n                          bVar1 >> 6 & 1) << 1 | bVar1 >> 7);\n    if (uVar14 != 0) {\n      uVar9 = 1 << LZCOUNT(uVar14);\n    }\n    uVar13 = (uVar13 << 1) >> 0x1b;\n  }\n  uVar14 = param_2[1];\n  uVar15 = uVar14 >> 6 & 0xc;\n  puVar10[7] = uVar9 | puVar10[7];\n  uVar14 = uVar14 & 0x1f;\n  *(uint *)((int)puVar10 + uVar15 + 0x30) =\n       uVar13 << uVar14 | *(uint *)((int)puVar10 + uVar15 + 0x30) & ~(0x1f << uVar14);\n  if ((-1 < (int)(puVar10[2] << 0x1d)) && ((puVar10[2] & 8) == 0)) {\n    uVar13 = *param_2 >> 0x17 & 4;\n    uVar9 = (*param_2 << 7) >> 0x1b;\n    *(uint *)((int)puVar10 + uVar13 + 0x14) =\n         *(uint *)((int)puVar10 + uVar13 + 0x14) & ~(7 << uVar9) | param_2[2] << uVar9;\n    if ((*DAT_08123d94 & 0xf0000000) == 0x10000000) {\n      uVar9 = param_2[5] << (((puVar10[3] << 0x1b) >> 0x1d) << 1);\n    }\n    else {\n      bVar16 = (puVar10[3] & 0x10) == 0;\n      if (bVar16) {\n        uVar9 = (puVar10[3] << 0x1b) >> 0x1d;\n      }\n      else {\n        uVar9 = puVar10[3] >> 1;\n      }\n      if (bVar16) {\n        uVar9 = uVar9 << 1;\n      }\n      else {\n        uVar9 = uVar9 & 8;\n      }\n      uVar9 = param_2[5] << (uVar9 & 0xff);\n    }\n    uVar13 = param_2[4];\n"
+      },
+      {
+        "func": "FUN_0812421c",
+        "size": 3321,
+        "relevance": [],
+        "code": "\nbool FUN_0812421c(int *param_1)\n\n{\n  longlong lVar1;\n  int iVar2;\n  int iVar3;\n  uint uVar4;\n  int iVar5;\n  uint uVar6;\n  bool bVar7;\n  \n  if (param_1 == (int *)0x0) {\n    return true;\n  }\n  if (param_1[0x15] == 0) {\n    FUN_08121394();\n    param_1[0x16] = 0;\n    *(undefined1 *)(param_1 + 0x14) = 0;\n  }\n  iVar3 = *param_1;\n  if (*(int *)(iVar3 + 8) << 2 < 0) {\n    *(uint *)(iVar3 + 8) = *(uint *)(iVar3 + 8) & 0x5fffffc0;\n  }\n  iVar2 = *(int *)(iVar3 + 8) << 3;\n  if (-1 < iVar2) {\n    lVar1 = (ulonglong)DAT_0812442c * (ulonglong)(*DAT_08124428 >> 6);\n    iVar2 = (int)lVar1;\n    *(uint *)(iVar3 + 8) = *(uint *)(iVar3 + 8) & 0x6fffffc0 | 0x10000000;\n    for (iVar5 = (uint)((ulonglong)lVar1 >> 0x26) + 1; iVar5 != 0; iVar5 = iVar5 + -1) {\n    }\n  }\n  bVar7 = *(int *)(iVar3 + 8) << 3 < 0;\n  if (bVar7) {\n    uVar6 = *(uint *)(iVar3 + 8);\n    iVar5 = param_1[0x15];\n  }\n  else {\n    param_1[0x15] = param_1[0x15] | 0x10;\n    param_1[0x16] = param_1[0x16] | 1;\n    uVar6 = *(uint *)(iVar3 + 8);\n    iVar5 = param_1[0x15];\n  }\n  if (((uVar6 & 4) == 0) && (-1 < iVar5 << 0x1b)) {\n    param_1[0x15] = param_1[0x15] & 0xfffffefdU | 2;\n    if (-1 < *(int *)(iVar3 + 8) << 0x1f) {\n      iVar5 = DAT_08124448;\n      if (iVar3 == DAT_08124430) {\n        uVar6 = *(uint *)(iVar3 + 8) | *(uint *)(DAT_08124434 + 8);\n      }\n      else if (iVar3 == DAT_08124434) {\n        uVar6 = *(uint *)(DAT_08124430 + 8) | *(uint *)(iVar3 + 8);\n      }\n      else {\n        uVar6 = *(uint *)(DAT_08124438 + 8);\n        iVar5 = DAT_0812443c;\n      }\n      if (-1 < (int)(uVar6 << 0x1f)) {\n        *(uint *)(iVar5 + 8) = *(uint *)(iVar5 + 8) & 0xffc0ffff | param_1[1];\n      }\n    }\n    uVar6 = FUN_08123934(iVar2);\n    uVar4 = (uint)*(byte *)(param_1 + 7);\n    if ((uVar6 < 0x1004) || (param_1[2] != 0x10)) {\n      uVar6 = uVar4 << 0x10 | (uint)*(byte *)((int)param_1 + 0x15) << 0xd | param_1[0xc] |\n              param_1[2];\n    }\n    else {\n      uVar6 = uVar4 << 0x10 | (uint)*(byte *)((int)param_1 + 0x15) << 0xd | param_1[0xc] | 0x1c;\n    }\n    if (uVar4 == 1) {\n      uVar6 = uVar6 | (param_1[8] + -1) * 0x20000;\n    }\n    if (param_1[9] != 0) {\n      uVar6 = uVar6 | param_1[9] & 0x3e0U | param_1[10];\n    }\n    iVar3 = *param_1;\n    *(uint *)(iVar3 + 0xc) = uVar6 | DAT_08124440 & *(uint *)(iVar3 + 0xc);\n    if ((-1 < *(int *)(iVar3 + 8) << 0x1d) && (-1 < *(int *)(iVar3 + 8) << 0x1c)) {\n      *(uint *)(iVar3 + 0xc) =\n           *(uint *)(iVar3 + 0xc) & 0xffffbffc | (uint)*(byte *)(param_1 + 5) << 0xe | param_1[0xb];\n      if ((char)param_1[0xe] == '\\x01') {\n        *(uint *)(iVar3 + 0x10) =\n             param_1[0x10] | param_1[0x11] | (param_1[0xf] + -1) * 0x10000 | param_1[0x12] |\n             DAT_08124444 & *(uint *)(iVar3 + 0x10) | 1;\n      }\n      else {\n        *(uint *)(iVar3 + 0x10) = *(uint *)(iVar3 + 0x10) & 0xfffffffe;\n      }\n      *(uint *)(iVar3 + 0x10) = *(uint *)(iVar3 + 0x10) & 0xfffffff | param_1[0xd];\n      FUN_08124098(param_1);\n      iVar3 = *param_1;\n    }\n    if (param_1[3] =="
+      }
+    ]
+  },
+  "ADC2": {
+    "xref_count": 2,
+    "functions": [
+      "FUN_081239ec",
+      "FUN_0812421c"
+    ],
+    "decompiled": [
+      {
+        "func": "FUN_081239ec",
+        "size": 13196,
+        "relevance": [
+          "DAC"
+        ],
+        "code": "\nundefined8 FUN_081239ec(undefined4 *param_1,uint *param_2)\n\n{\n  byte bVar1;\n  longlong lVar2;\n  byte bVar3;\n  byte bVar4;\n  byte bVar5;\n  uint *puVar6;\n  uint *puVar7;\n  uint *puVar8;\n  uint uVar9;\n  uint *puVar10;\n  int iVar11;\n  int iVar12;\n  uint uVar13;\n  uint uVar14;\n  uint uVar15;\n  bool bVar16;\n  \n  if (*(char *)(param_1 + 0x14) == '\\x01') {\n    return CONCAT44(param_2,2);\n  }\n  puVar10 = (uint *)*param_1;\n  uVar9 = 1;\n  *(undefined1 *)(param_1 + 0x14) = 1;\n  if ((int)(puVar10[2] << 0x1d) < 0) {\n    param_1[0x15] = param_1[0x15] | 0x20;\n    goto LAB_08123a94;\n  }\n  uVar13 = *param_2;\n  if ((uVar13 & 0xfffff) == 0) {\n    uVar13 = (uVar13 << 1) >> 0x1b;\n    uVar9 = 1 << uVar13;\n  }\n  else {\n    bVar3 = (byte)uVar13;\n    bVar4 = (byte)(uVar13 >> 8);\n    bVar5 = (byte)(uVar13 >> 0x10);\n    bVar1 = (byte)(uVar13 >> 0x18);\n    uVar14 = (uint)(byte)((((((((bVar3 & 1) << 1 | bVar3 >> 1 & 1) << 1 | bVar3 >> 2 & 1) << 1 |\n                             bVar3 >> 3 & 1) << 1 | bVar3 >> 4 & 1) << 1 | bVar3 >> 5 & 1) << 1 |\n                          bVar3 >> 6 & 1) << 1 | bVar3 >> 7) << 0x18 |\n             (uint)(byte)((((((((bVar4 & 1) << 1 | bVar4 >> 1 & 1) << 1 | bVar4 >> 2 & 1) << 1 |\n                             bVar4 >> 3 & 1) << 1 | bVar4 >> 4 & 1) << 1 | bVar4 >> 5 & 1) << 1 |\n                          bVar4 >> 6 & 1) << 1 | bVar4 >> 7) << 0x10 |\n             (uint)(byte)((((((((bVar5 & 1) << 1 | bVar5 >> 1 & 1) << 1 | bVar5 >> 2 & 1) << 1 |\n                             bVar5 >> 3 & 1) << 1 | bVar5 >> 4 & 1) << 1 | bVar5 >> 5 & 1) << 1 |\n                          bVar5 >> 6 & 1) << 1 | bVar5 >> 7) << 8 |\n             (uint)(byte)((((((((bVar1 & 1) << 1 | bVar1 >> 1 & 1) << 1 | bVar1 >> 2 & 1) << 1 |\n                             bVar1 >> 3 & 1) << 1 | bVar1 >> 4 & 1) << 1 | bVar1 >> 5 & 1) << 1 |\n                          bVar1 >> 6 & 1) << 1 | bVar1 >> 7);\n    if (uVar14 != 0) {\n      uVar9 = 1 << LZCOUNT(uVar14);\n    }\n    uVar13 = (uVar13 << 1) >> 0x1b;\n  }\n  uVar14 = param_2[1];\n  uVar15 = uVar14 >> 6 & 0xc;\n  puVar10[7] = uVar9 | puVar10[7];\n  uVar14 = uVar14 & 0x1f;\n  *(uint *)((int)puVar10 + uVar15 + 0x30) =\n       uVar13 << uVar14 | *(uint *)((int)puVar10 + uVar15 + 0x30) & ~(0x1f << uVar14);\n  if ((-1 < (int)(puVar10[2] << 0x1d)) && ((puVar10[2] & 8) == 0)) {\n    uVar13 = *param_2 >> 0x17 & 4;\n    uVar9 = (*param_2 << 7) >> 0x1b;\n    *(uint *)((int)puVar10 + uVar13 + 0x14) =\n         *(uint *)((int)puVar10 + uVar13 + 0x14) & ~(7 << uVar9) | param_2[2] << uVar9;\n    if ((*DAT_08123d94 & 0xf0000000) == 0x10000000) {\n      uVar9 = param_2[5] << (((puVar10[3] << 0x1b) >> 0x1d) << 1);\n    }\n    else {\n      bVar16 = (puVar10[3] & 0x10) == 0;\n      if (bVar16) {\n        uVar9 = (puVar10[3] << 0x1b) >> 0x1d;\n      }\n      else {\n        uVar9 = puVar10[3] >> 1;\n      }\n      if (bVar16) {\n        uVar9 = uVar9 << 1;\n      }\n      else {\n        uVar9 = uVar9 & 8;\n      }\n      uVar9 = param_2[5] << (uVar9 & 0xff);\n    }\n    uVar13 = param_2[4];\n"
+      },
+      {
+        "func": "FUN_0812421c",
+        "size": 3321,
+        "relevance": [],
+        "code": "\nbool FUN_0812421c(int *param_1)\n\n{\n  longlong lVar1;\n  int iVar2;\n  int iVar3;\n  uint uVar4;\n  int iVar5;\n  uint uVar6;\n  bool bVar7;\n  \n  if (param_1 == (int *)0x0) {\n    return true;\n  }\n  if (param_1[0x15] == 0) {\n    FUN_08121394();\n    param_1[0x16] = 0;\n    *(undefined1 *)(param_1 + 0x14) = 0;\n  }\n  iVar3 = *param_1;\n  if (*(int *)(iVar3 + 8) << 2 < 0) {\n    *(uint *)(iVar3 + 8) = *(uint *)(iVar3 + 8) & 0x5fffffc0;\n  }\n  iVar2 = *(int *)(iVar3 + 8) << 3;\n  if (-1 < iVar2) {\n    lVar1 = (ulonglong)DAT_0812442c * (ulonglong)(*DAT_08124428 >> 6);\n    iVar2 = (int)lVar1;\n    *(uint *)(iVar3 + 8) = *(uint *)(iVar3 + 8) & 0x6fffffc0 | 0x10000000;\n    for (iVar5 = (uint)((ulonglong)lVar1 >> 0x26) + 1; iVar5 != 0; iVar5 = iVar5 + -1) {\n    }\n  }\n  bVar7 = *(int *)(iVar3 + 8) << 3 < 0;\n  if (bVar7) {\n    uVar6 = *(uint *)(iVar3 + 8);\n    iVar5 = param_1[0x15];\n  }\n  else {\n    param_1[0x15] = param_1[0x15] | 0x10;\n    param_1[0x16] = param_1[0x16] | 1;\n    uVar6 = *(uint *)(iVar3 + 8);\n    iVar5 = param_1[0x15];\n  }\n  if (((uVar6 & 4) == 0) && (-1 < iVar5 << 0x1b)) {\n    param_1[0x15] = param_1[0x15] & 0xfffffefdU | 2;\n    if (-1 < *(int *)(iVar3 + 8) << 0x1f) {\n      iVar5 = DAT_08124448;\n      if (iVar3 == DAT_08124430) {\n        uVar6 = *(uint *)(iVar3 + 8) | *(uint *)(DAT_08124434 + 8);\n      }\n      else if (iVar3 == DAT_08124434) {\n        uVar6 = *(uint *)(DAT_08124430 + 8) | *(uint *)(iVar3 + 8);\n      }\n      else {\n        uVar6 = *(uint *)(DAT_08124438 + 8);\n        iVar5 = DAT_0812443c;\n      }\n      if (-1 < (int)(uVar6 << 0x1f)) {\n        *(uint *)(iVar5 + 8) = *(uint *)(iVar5 + 8) & 0xffc0ffff | param_1[1];\n      }\n    }\n    uVar6 = FUN_08123934(iVar2);\n    uVar4 = (uint)*(byte *)(param_1 + 7);\n    if ((uVar6 < 0x1004) || (param_1[2] != 0x10)) {\n      uVar6 = uVar4 << 0x10 | (uint)*(byte *)((int)param_1 + 0x15) << 0xd | param_1[0xc] |\n              param_1[2];\n    }\n    else {\n      uVar6 = uVar4 << 0x10 | (uint)*(byte *)((int)param_1 + 0x15) << 0xd | param_1[0xc] | 0x1c;\n    }\n    if (uVar4 == 1) {\n      uVar6 = uVar6 | (param_1[8] + -1) * 0x20000;\n    }\n    if (param_1[9] != 0) {\n      uVar6 = uVar6 | param_1[9] & 0x3e0U | param_1[10];\n    }\n    iVar3 = *param_1;\n    *(uint *)(iVar3 + 0xc) = uVar6 | DAT_08124440 & *(uint *)(iVar3 + 0xc);\n    if ((-1 < *(int *)(iVar3 + 8) << 0x1d) && (-1 < *(int *)(iVar3 + 8) << 0x1c)) {\n      *(uint *)(iVar3 + 0xc) =\n           *(uint *)(iVar3 + 0xc) & 0xffffbffc | (uint)*(byte *)(param_1 + 5) << 0xe | param_1[0xb];\n      if ((char)param_1[0xe] == '\\x01') {\n        *(uint *)(iVar3 + 0x10) =\n             param_1[0x10] | param_1[0x11] | (param_1[0xf] + -1) * 0x10000 | param_1[0x12] |\n             DAT_08124444 & *(uint *)(iVar3 + 0x10) | 1;\n      }\n      else {\n        *(uint *)(iVar3 + 0x10) = *(uint *)(iVar3 + 0x10) & 0xfffffffe;\n      }\n      *(uint *)(iVar3 + 0x10) = *(uint *)(iVar3 + 0x10) & 0xfffffff | param_1[0xd];\n      FUN_08124098(param_1);\n      iVar3 = *param_1;\n    }\n    if (param_1[3] =="
+      }
+    ]
+  },
+  "codec_strings": [
+    {
+      "string": "MedianFilter",
+      "address": "081a9da0",
+      "referenced_by": []
+    },
+    {
+      "string": "SMAFilter<3>",
+      "address": "081a9dd4",
+      "referenced_by": []
+    },
+    {
+      "string": "SMAFilter<4>",
+      "address": "081a9e10",
+      "referenced_by": []
+    },
+    {
+      "string": "No Audio In\nSignal Detected",
+      "address": "081ae274",
+      "referenced_by": [
+        "FUN_0816345c",
+        "FUN_0816365c"
+      ]
+    },
+    {
+      "string": "Cutoff",
+      "address": "081aec98",
+      "referenced_by": []
+    },
+    {
+      "string": "Envelope > Cutoff\n%d",
+      "address": "081aeebc",
+      "referenced_by": [
+        "FUN_08174700",
+        "FUN_08174700"
+      ]
+    },
+    {
+      "string": "Master Volume\n%d",
+      "address": "081aeee8",
+      "referenced_by": []
+    },
+    {
+      "string": "Resonance min",
+      "address": "081af2a8",
+      "referenced_by": []
+    },
+    {
+      "string": "Resonance max",
+      "address": "081af2b8",
+      "referenced_by": []
+    },
+    {
+      "string": "Calib Cutoff",
+      "address": "081af2c8",
+      "referenced_by": [
+        "FUN_08179fb0"
+      ]
+    },
+    {
+      "string": "Multi Filter",
+      "address": "081af41c",
+      "referenced_by": []
+    },
+    {
+      "string": "Surgeon Filter",
+      "address": "081af42c",
+      "referenced_by": []
+    },
+    {
+      "string": "Comb Filter",
+      "address": "081af43c",
+      "referenced_by": []
+    },
+    {
+      "string": "Phaser Filter",
+      "address": "081af448",
+      "referenced_by": []
+    },
+    {
+      "string": "Audio In",
+      "address": "081af468",
+      "referenced_by": []
+    },
+    {
+      "string": "Preset Volume",
+      "address": "081af71c",
+      "referenced_by": []
+    },
+    {
+      "string": "Volume 1",
+      "address": "081af778",
+      "referenced_by": []
+    },
+    {
+      "string": "Volume 2",
+      "address": "081af7b4",
+      "referenced_by": []
+    },
+    {
+      "string": "LFO1 Sync Filter",
+      "address": "081af8a8",
+      "referenced_by": []
+    },
+    {
+      "string": "LFO2 Sync Filter",
+      "address": "081af8e4",
+      "referenced_by": []
+    },
+    {
+      "string": "Preset filter",
+      "address": "081afb18",
+      "referenced_by": []
+    },
+    {
+      "string": "Pre Master Volume",
+      "address": "081afb38",
+      "referenced_by": []
+    },
+    {
+      "string": "Volume",
+      "address": "081b0814",
+      "referenced_by": []
+    },
+    {
+      "string": "Resonance",
+      "address": "081b08dc",
+      "referenced_by": []
+    },
+    {
+      "string": "Filtered",
+      "address": "081b0bd4",
+      "referenced_by": []
+    },
+    {
+      "string": "Filtered Sync",
+      "address": "081b0be0",
+      "referenced_by": []
+    },
+    {
+      "string": "Filtered Ping-Pong",
+      "address": "081b0bf0",
+      "referenced_by": []
+    },
+    {
+      "string": "Filtered P-P Sync",
+      "address": "081b0c04",
+      "referenced_by": []
+    },
+    {
+      "string": "Input Gain",
+      "address": "081b228c",
+      "referenced_by": []
+    },
+    {
+      "string": "Hey Marco, you're back! Let's do something freakin' awesome again today :D",
+      "address": "081b2d70",
+      "referenced_by": []
+    },
+    {
+      "string": "Punk against war",
+      "address": "081b2e18",
+      "referenced_by": []
+    },
+    {
+      "string": "As if easter eggs were important. I delegated it to our intern ...what's his name again, Gaston L?",
+      "address": "081b32e8",
+      "referenced_by": []
+    },
+    {
+      "string": "Have you tried turning me off and on again?",
+      "address": "081b3bfc",
+      "referenced_by": []
+    },
+    {
+      "string": "AUDIO Config",
+      "address": "081b5cd4",
+      "referenced_by": []
+    },
+    {
+      "string": "AUDIO Interface",
+      "address": "081b5ce4",
+      "referenced_by": []
+    }
+  ]
+}

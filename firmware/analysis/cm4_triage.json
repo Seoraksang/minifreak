@@ -1,0 +1,737 @@
+{
+  "binary": "minifreak_main_CM4__fw4_0_1_2229__2025_06_18.bin",
+  "language": "ARM/little/32/Cortex",
+  "image_base": "00000000",
+  "timestamp": "2026-04-21T07:40:31.651923",
+  "memory_blocks": [
+    {
+      "name": "ram",
+      "start": "00000000",
+      "end": "000976bf",
+      "size": 620224,
+      "rwx": "RWX",
+      "type": "Default"
+    }
+  ],
+  "function_stats": {
+    "total": 1101,
+    "named": 3,
+    "unnamed": 1098
+  },
+  "named_functions": [
+    {
+      "name": "thunk_FUN_000884d8",
+      "address": "00085fec",
+      "size": 4
+    },
+    {
+      "name": "thunk_FUN_000884d8",
+      "address": "00085ff0",
+      "size": 4
+    },
+    {
+      "name": "thunk_FUN_00002694",
+      "address": "000887a8",
+      "size": 4
+    }
+  ],
+  "interesting_strings": [
+    {
+      "address": "00089da0",
+      "value": "MedianFilter"
+    },
+    {
+      "address": "00089dd4",
+      "value": "SMAFilter<3>"
+    },
+    {
+      "address": "00089de4",
+      "value": "PotChainCalib"
+    },
+    {
+      "address": "00089e10",
+      "value": "SMAFilter<4>"
+    },
+    {
+      "address": "00089e20",
+      "value": "SensorChainCalib"
+    },
+    {
+      "address": "0008a14c",
+      "value": "MNF_MidiOut"
+    },
+    {
+      "address": "0008b280",
+      "value": "Flash"
+    },
+    {
+      "address": "0008c2e0",
+      "value": "void CvCalib::setCalibVcaClickValue(eVcfType, uint8_t, bool, uint16_t)"
+    },
+    {
+      "address": "0008c33c",
+      "value": "void CvCalib::setCalibrated(eCvKind, uint8_t, bool, bool)"
+    },
+    {
+      "address": "0008c378",
+      "value": "void CvCalib::setCalibCutValue(int8_t, int16_t, uint16_t)"
+    },
+    {
+      "address": "0008c3d8",
+      "value": "void CvCalib::setCalibMaxValue(eCvKind, uint8_t, uint16_t)"
+    },
+    {
+      "address": "0008c414",
+      "value": "void CvCalib::setCalibMinValue(eCvKind, uint8_t, uint16_t)"
+    },
+    {
+      "address": "0008c450",
+      "value": "uint16_t CvCalib::getCalibMinValue(eCvKind, uint8_t)"
+    },
+    {
+      "address": "0008c488",
+      "value": "uint16_t CvCalib::getCalibMaxValue(eCvKind, uint8_t)"
+    },
+    {
+      "address": "0008c4c0",
+      "value": "uint16_t CvCalib::getCalibVcaClickValue(eVcfType, uint8_t, bool)"
+    },
+    {
+      "address": "0008c504",
+      "value": "uint16_t CvCalib::getCalibCutValue(int8_t, int16_t)"
+    },
+    {
+      "address": "0008c538",
+      "value": "bool CvCalib::getCalibrated(eCvKind, uint8_t)"
+    },
+    {
+      "address": "0008c568",
+      "value": "uint16_t CvCalib::getCvCalibrated(eCvKind, uint8_t, uint16_t)"
+    },
+    {
+      "address": "0008c730",
+      "value": "bool Preset::set(eSynthParams, Preset::value_t)"
+    },
+    {
+      "address": "0008c760",
+      "value": "Preset::value_t Preset::get(eSynthParams)"
+    },
+    {
+      "address": "0008c78c",
+      "value": "bool Preset::set(eFXParams, Preset::value_t)"
+    },
+    {
+      "address": "0008c7bc",
+      "value": "Preset::value_t Preset::get(eFXParams)"
+    },
+    {
+      "address": "0008c7e4",
+      "value": "bool Preset::set(eCtrlParams, Preset::value_t)"
+    },
+    {
+      "address": "0008c814",
+      "value": "Preset::value_t Preset::get(eCtrlParams)"
+    },
+    {
+      "address": "0008c840",
+      "value": "bool Preset::set(eSeqParams, Preset::value_t)"
+    },
+    {
+      "address": "0008c870",
+      "value": "Preset::value_t Preset::get(eSeqParams)"
+    },
+    {
+      "address": "0008c898",
+      "value": "MNF_Preset get(eStepIdx): Should never be accessed"
+    },
+    {
+      "address": "0008c8cc",
+      "value": "bool Preset::set(eSeqStepParams, Preset::seqdatavalue_t)"
+    },
+    {
+      "address": "0008c908",
+      "value": "Preset::seqdatavalue_t Preset::get(eSeqStepParams)"
+    },
+    {
+      "address": "0008c93c",
+      "value": "MNF_Preset get(eAutomIdx): Should never be accessed"
+    },
+    {
+      "address": "0008c970",
+      "value": "bool Preset::set(eSeqAutomParams, Preset::value_t)"
+    },
+    {
+      "address": "0008c9a4",
+      "value": "Preset::value_t Preset::get(eSeqAutomParams)"
+    },
+    {
+      "address": "0008c9d4",
+      "value": "bool Preset::set(eShaperParams, Preset::value_t)"
+    },
+    {
+      "address": "0008ca08",
+      "value": "Preset::value_t Preset::get(eShaperParams)"
+    },
+    {
+      "address": "0008de20",
+      "value": "io error"
+    },
+    {
+      "address": "0008e028",
+      "value": "callback error"
+    },
+    {
+      "address": "0008e1ec",
+      "value": "VoiceAllocator"
+    },
+    {
+      "address": "0008e274",
+      "value": "No Audio In\nSignal Detected"
+    },
+    {
+      "address": "0008e314",
+      "value": "Preset not valid"
+    },
+    {
+      "address": "0008e328",
+      "value": "Osc Types\nnot compatible"
+    },
+    {
+      "address": "0008e344",
+      "value": "Can't have more\nthan 1 Reverb\nand 1 Delay"
+    },
+    {
+      "address": "0008e3a8",
+      "value": "Formatting error"
+    },
+    {
+      "address": "0008e3bc",
+      "value": "Preset load error!"
+    },
+    {
+      "address": "0008e3d0",
+      "value": "Preset save error!"
+    },
+    {
+      "address": "0008e3e4",
+      "value": "Preset corrupted"
+    },
+    {
+      "address": "0008e424",
+      "value": "Preset Init"
+    },
+    {
+      "address": "0008e430",
+      "value": "Reload Preset"
+    },
+    {
+      "address": "0008e458",
+      "value": "LFO1 user curve"
+    },
+    {
+      "address": "0008e468",
+      "value": "LFO2 user curve"
+    },
+    {
+      "address": "0008e490",
+      "value": "SwapOsc"
+    },
+    {
+      "address": "0008eb80",
+      "value": "Preset %d"
+    },
+    {
+      "address": "0008ebcc",
+      "value": "Samples"
+    },
+    {
+      "address": "0008ebd4",
+      "value": "Wavetables"
+    },
+    {
+      "address": "0008ec00",
+      "value": "Spice"
+    },
+    {
+      "address": "0008ec98",
+      "value": "Cutoff"
+    },
+    {
+      "address": "0008eca0",
+      "value": "Error"
+    },
+    {
+      "address": "0008ee0c",
+      "value": "Rename Preset"
+    },
+    {
+      "address": "0008ee1c",
+      "value": "Please run a calibration"
+    },
+    {
+      "address": "0008ee38",
+      "value": "Press preset encoder"
+    },
+    {
+      "address": "0008ee50",
+      "value": "Calibration\nfail"
+    },
+    {
+      "address": "0008ee64",
+      "value": "Calibration\nsuccess"
+    },
+    {
+      "address": "0008eebc",
+      "value": "Envelope > Cutoff\n%d"
+    },
+    {
+      "address": "0008f068",
+      "value": "LFO1 Rate"
+    },
+    {
+      "address": "0008f074",
+      "value": "LFO2 Sync"
+    },
+    {
+      "address": "0008f080",
+      "value": "LFO1 Sync"
+    },
+    {
+      "address": "0008f08c",
+      "value": "LFO2 Rate"
+    },
+    {
+      "address": "0008f128",
+      "value": "Preset Shaper"
+    },
+    {
+      "address": "0008f194",
+      "value": "Strum Envelope"
+    },
+    {
+      "address": "0008f298",
+      "value": "Calib Analog"
+    },
+    {
+      "address": "0008f2a8",
+      "value": "Resonance min"
+    },
+    {
+      "address": "0008f2b8",
+      "value": "Resonance max"
+    },
+    {
+      "address": "0008f2c8",
+      "value": "Calib Cutoff"
+    },
+    {
+      "address": "0008f308",
+      "value": "Chorus"
+    },
+    {
+      "address": "0008f310",
+      "value": "Phaser"
+    },
+    {
+      "address": "0008f318",
+      "value": "Flanger"
+    },
+    {
+      "address": "0008f320",
+      "value": "Reverb"
+    },
+    {
+      "address": "0008f328",
+      "value": "Distortion"
+    },
+    {
+      "address": "0008f388",
+      "value": "Basic Waves"
+    },
+    {
+      "address": "0008f394",
+      "value": "SuperWave"
+    },
+    {
+      "address": "0008f3a8",
+      "value": "KarplusStr"
+    },
+    {
+      "address": "0008f3bc",
+      "value": "Waveshaper"
+    },
+    {
+      "address": "0008f3c8",
+      "value": "Two Op. FM"
+    },
+    {
+      "address": "0008f3f4",
+      "value": "Noise"
+    },
+    {
+      "address": "0008f41c",
+      "value": "Multi Filter"
+    },
+    {
+      "address": "0008f42c",
+      "value": "Surgeon Filter"
+    },
+    {
+      "address": "0008f43c",
+      "value": "Comb Filter"
+    },
+    {
+      "address": "0008f448",
+      "value": "Phaser Filter"
+    },
+    {
+      "address": "0008f468",
+      "value": "Audio In"
+    },
+    {
+      "address": "0008f474",
+      "value": "Wavetable"
+    },
+    {
+      "address": "0008f480",
+      "value": "Sample"
+    },
+    {
+      "address": "0008f668",
+      "value": "Delay Routing"
+    },
+    {
+      "address": "0008f6b8",
+      "value": "Reverb Routing"
+    },
+    {
+      "address": "0008f71c",
+      "value": "Preset Volume"
+    },
+    {
+      "address": "0008f75c",
+      "value": "Wave 1"
+    },
+    {
+      "address": "0008f798",
+      "value": "Wave 2"
+    },
+    {
+      "address": "0008f88c",
+      "value": "LFO1 Wave"
+    },
+    {
+      "address": "0008f898",
+      "value": "LFO1 Sync En"
+    },
+    {
+      "address": "0008f8a8",
+      "value": "LFO1 Sync Filter"
+    },
+    {
+      "address": "0008f8bc",
+      "value": "LFO1 Retrig"
+    },
+    {
+      "address": "0008f8c8",
+      "value": "LFO2 Wave"
+    },
+    {
+      "address": "0008f8d4",
+      "value": "LFO2 Sync En"
+    },
+    {
+      "address": "0008f8e4",
+      "value": "LFO2 Sync Filter"
+    },
+    {
+      "address": "0008f8f8",
+      "value": "LFO2Retrig"
+    },
+    {
+      "address": "0008f9c4",
+      "value": "Osc1 Mod Quant"
+    },
+    {
+      "address": "0008f9d4",
+      "value": "Osc2 Mod Quant"
+    },
+    {
+      "address": "0008f9f4",
+      "value": "Osc Mix Non-Lin"
+    },
+    {
+      "address": "0008fa40",
+      "value": "Osc Free Run"
+    },
+    {
+      "address": "0008fa6c",
+      "value": "Osc Sel"
+    },
+    {
+      "address": "0008fa7c",
+      "value": "Lfo Sel"
+    },
+    {
+      "address": "0008fb18",
+      "value": "Preset filter"
+    },
+    {
+      "address": "000907f4",
+      "value": "Wavefold"
+    },
+    {
+      "address": "000908b8",
+      "value": "Waveform"
+    },
+    {
+      "address": "000908dc",
+      "value": "Resonance"
+    },
+    {
+      "address": "0009094c",
+      "value": "Preset"
+    },
+    {
+      "address": "00090bd4",
+      "value": "Filtered"
+    },
+    {
+      "address": "00090be0",
+      "value": "Filtered Sync"
+    },
+    {
+      "address": "00090bf0",
+      "value": "Filtered Ping-Pong"
+    },
+    {
+      "address": "00090c04",
+      "value": "Filtered P-P Sync"
+    },
+    {
+      "address": "00090e34",
+      "value": "Voices"
+    },
+    {
+      "address": "0009101c",
+      "value": "USB Only"
+    },
+    {
+      "address": "00091028",
+      "value": "MIDI DIN Only"
+    },
+    {
+      "address": "00091038",
+      "value": "USB and MIDI DIN"
+    },
+    {
+      "address": "00091be8",
+      "value": "Env / Voice"
+    },
+    {
+      "address": "00091bf4",
+      "value": "Voice"
+    },
+    {
+      "address": "00091bfc",
+      "value": "Envelope"
+    },
+    {
+      "address": "00091c0c",
+      "value": "Sample Select"
+    },
+    {
+      "address": "00091c1c",
+      "value": "Wavetable Select"
+    },
+    {
+      "address": "000920f4",
+      "value": "Debug"
+    },
+    {
+      "address": "0009214c",
+      "value": "Calib"
+    },
+    {
+      "address": "00092160",
+      "value": "Preset Operations"
+    },
+    {
+      "address": "0009219c",
+      "value": "FW version"
+    },
+    {
+      "address": "00092328",
+      "value": "Knob Send CC"
+    },
+    {
+      "address": "00092348",
+      "value": "MIDI Seq/Synth"
+    },
+    {
+      "address": "00092358",
+      "value": "MIDI To"
+    },
+    {
+      "address": "00092360",
+      "value": "MIDI From"
+    },
+    {
+      "address": "0009238c",
+      "value": "Preset Erase"
+    },
+    {
+      "address": "0009239c",
+      "value": "Preset Paste"
+    },
+    {
+      "address": "000923ac",
+      "value": "Preset Copy"
+    },
+    {
+      "address": "00092d08",
+      "value": "SUPERCALIFRAGILISTICMINIFREAKOUS"
+    },
+    {
+      "address": "000939b4",
+      "value": ", I am MiniFreak, fluent in over 6,000,000 forms of madness."
+    },
+    {
+      "address": "00093a9d",
+      "value": ", I can't mine crypto for you. But I CAN make a whole lot of noise."
+    },
+    {
+      "address": "00094057",
+      "value": ", sometimes your MiniFreak is just having a really good day."
+    },
+    {
+      "address": "000940d8",
+      "value": "The MiniFreak is as reliable as it is powerful, but it suffers from high recoil."
+    },
+    {
+      "address": "00094250",
+      "value": "If a machine, a MiniFreak, can learn the value of human life, maybe we can, too."
+    },
+    {
+      "address": "000949a4",
+      "value": "Paraphony On\nOsc 2 not available"
+    },
+    {
+      "address": "00094a24",
+      "value": "Preset %d\n added to favorites"
+    },
+    {
+      "address": "00094cec",
+      "value": "Unable to get preset"
+    },
+    {
+      "address": "00094d68",
+      "value": "Preset saved"
+    },
+    {
+      "address": "00095038",
+      "value": "Only for Wavetable\nOsc1 Type"
+    },
+    {
+      "address": "00095058",
+      "value": "Only for Granular\nOsc1 Type"
+    },
+    {
+      "address": "00095718",
+      "value": "SpiceDice"
+    },
+    {
+      "address": "00095840",
+      "value": "SyncMidiIn"
+    },
+    {
+      "address": "0009584c",
+      "value": "SyncMidiOut"
+    },
+    {
+      "address": "000959a4",
+      "value": "build version : "
+    },
+    {
+      "address": "000959fc",
+      "value": "Error- "
+    },
+    {
+      "address": "00095cc0",
+      "value": "MiniFreak"
+    },
+    {
+      "address": "00095ccc",
+      "value": "Arturia"
+    },
+    {
+      "address": "00095cd4",
+      "value": "AUDIO Config"
+    },
+    {
+      "address": "00095ce4",
+      "value": "AUDIO Interface"
+    },
+    {
+      "address": "00095cf4",
+      "value": "Firmware Updater"
+    },
+    {
+      "address": "00095d08",
+      "value": "MiniFreak MIDI"
+    },
+    {
+      "address": "00095d18",
+      "value": "MiniFreak VST"
+    },
+    {
+      "address": "00095d28",
+      "value": "MiniFreak MIDI 3 In"
+    },
+    {
+      "address": "00095d3c",
+      "value": "MiniFreak MIDI 3 Out"
+    },
+    {
+      "address": "00095d54",
+      "value": "MiniFreak MIDI 4 In"
+    },
+    {
+      "address": "00095d68",
+      "value": "MiniFreak MIDI 4 Out"
+    },
+    {
+      "address": "000961e1",
+      "value": "not enough space for format expansion (Please submit full bug report at https://gcc.gnu.org/bugs/):\n    "
+    },
+    {
+      "address": "000962c0",
+      "value": "*N12_GLOBAL__N_121system_error_categoryE"
+    },
+    {
+      "address": "000962e9",
+      "value": "*N12_GLOBAL__N_122generic_error_categoryE"
+    },
+    {
+      "address": "00096313",
+      "value": "NSt3_V214error_categoryE"
+    },
+    {
+      "address": "00096910",
+      "value": "I/O error"
+    },
+    {
+      "address": "00096946",
+      "value": "Exec format error"
+    },
+    {
+      "address": "00096cb3",
+      "value": "Protocol error"
+    },
+    {
+      "address": "00096f52",
+      "value": "Success"
+    }
+  ],
+  "total_string_count": 875
+}

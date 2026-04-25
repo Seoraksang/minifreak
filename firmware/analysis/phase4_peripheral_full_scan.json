@@ -1,0 +1,1449 @@
+{
+  "CM7": {
+    "peripheral_access": {
+      "RCC": [
+        {
+          "from_func": "FUN_08009028",
+          "from_addr": "08009042",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009028",
+          "from_addr": "08009048",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009028",
+          "from_addr": "080090f0",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009028",
+          "from_addr": "080090f6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009168",
+          "from_addr": "08009176",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009168",
+          "from_addr": "08009182",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009168",
+          "from_addr": "08009168",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009168",
+          "from_addr": "08009196",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009168",
+          "from_addr": "08009220",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009168",
+          "from_addr": "08009228",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009168",
+          "from_addr": "0800921e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009168",
+          "from_addr": "0800923c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "0800864c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008656",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008658",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "0800865e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "0800864a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008676",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080086a8",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080086b0",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080086a6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080086c6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080086fe",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008734",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "0800873c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008732",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008752",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008772",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "0800877c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008764",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008796",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008a32",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008ac6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008acc",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008ae2",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080088e8",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008b56",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008b9c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008978",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008980",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008976",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008994",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008950",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "0800899e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080089a6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "0800899c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080089ba",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "0800886c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "0800888e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080087b0",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080087bc",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080087c6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080087ba",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080087dc",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "0800881a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008824",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008818",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008838",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080089c6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080089ce",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080089c4",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080089e2",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008b4a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008b4c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008b52",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008924",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "0800892c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "0800892e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008934",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008922",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "08008948",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080088a2",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080088a8",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "080088a0",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008610",
+          "from_addr": "0800884c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009260",
+          "from_addr": "0800926e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009260",
+          "from_addr": "0800927a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009260",
+          "from_addr": "08009260",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009260",
+          "from_addr": "0800928e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009260",
+          "from_addr": "08009318",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009260",
+          "from_addr": "08009320",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009260",
+          "from_addr": "08009316",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009260",
+          "from_addr": "08009334",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009534",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800953c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009526",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009552",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "080095d8",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "080095de",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "080095f4",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "080096c0",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "080096c8",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009684",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "080096b2",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "080096de",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009764",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800976a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009780",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a3b8",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a3c0",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "080097a6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a3aa",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a3e0",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a466",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a46c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a482",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009e96",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800adec",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800adf4",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800adde",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ae0a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ae90",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ae96",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800aeac",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a98a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a992",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800985c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a97c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a9a8",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800aa2e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800aa34",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800aa4a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800aa66",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800aa6e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800988c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800aa58",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800aa84",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ab0a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ab10",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ab26",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "080098fa",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009902",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "080098be",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "080098ec",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009920",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "080099a6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "080099ac",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "080099c2",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009a24",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009a2c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "080099e8",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009a16",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009a42",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009ac8",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009ace",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009ae4",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009b46",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009b4e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009b0a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009b38",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009b64",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009bea",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009bf0",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009c06",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009ce2",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009cea",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009c6e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009cd4",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009d00",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009d86",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009d8c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009da2",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009f8e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009f96",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009dbe",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009f80",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009fae",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a038",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a03e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a054",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a092",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a0a2",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800af0a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800af12",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800aefc",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800af30",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800afb6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800afbc",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800afd2",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800b0cc",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800b0d4",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800b0be",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800b0e8",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800b16e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800b174",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800b188",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800aee0",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800aff0",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800aff8",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800afe2",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800b00e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800b094",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800b09a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800b0b0",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a80a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a812",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a7fc",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a82a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a8b4",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a8ba",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a8d0",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a2e2",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a2ea",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a2d4",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a300",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a386",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a38c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a3a2",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a20c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a214",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a1fe",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a22a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a2b0",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a2b6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a2cc",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a49c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a4a4",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a48e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a4ba",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a540",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a546",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a55c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ac1a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ac22",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ac0c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ac40",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800acc6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800accc",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ace2",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ab44",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ab4c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ab36",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ab62",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008bdc",
+          "from_addr": "08008cb4",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800abe8",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800abee",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008bdc",
+          "from_addr": "08008ccc",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ac04",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008bdc",
+          "from_addr": "08008e22",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008bdc",
+          "from_addr": "08008e28",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ad10",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ad18",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ad02",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800ad2e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008bdc",
+          "from_addr": "08008ef2",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08008bdc",
+          "from_addr": "08008ef8",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800adb4",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800adba",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800add0",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "08009ee6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a12a",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a132",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a11c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a150",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a1d6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a1dc",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a1f2",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a64c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a654",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a63e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a674",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a6fa",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a700",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a716",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a574",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a57c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a566",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a592",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a618",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a61e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a634",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a72e",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a736",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a720",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a74c",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a7d2",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a7d8",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08009358",
+          "from_addr": "0800a7ee",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08007bf4",
+          "from_addr": "08007cb8",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08007bf4",
+          "from_addr": "08007cb0",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_08007bf4",
+          "from_addr": "08007e42",
+          "offset": "0x0"
+        }
+      ],
+      "MDMA": [
+        {
+          "from_func": "FUN_080082c4",
+          "from_addr": "080083c6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_080082c4",
+          "from_addr": "080083d8",
+          "offset": "0x0"
+        }
+      ],
+      "EXTI": [
+        {
+          "from_func": "FUN_080082c4",
+          "from_addr": "080083c6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_080082c4",
+          "from_addr": "080083d8",
+          "offset": "0x0"
+        }
+      ],
+      "SYSCFG": [
+        {
+          "from_func": "FUN_080082c4",
+          "from_addr": "080083c6",
+          "offset": "0x0"
+        },
+        {
+          "from_func": "FUN_080082c4",
+          "from_addr": "080083d8",
+          "offset": "0x0"
+        }
+      ]
+    },
+    "functions_by_peripheral": {
+      "RCC": 

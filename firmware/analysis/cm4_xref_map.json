@@ -1,0 +1,16 @@
+{
+  "image_base": "0x8100000",
+  "total_refs": 0,
+  "categories": {
+    "rtti_class": [],
+    "preset": [],
+    "oscillator": [],
+    "fx": [],
+    "filter": [],
+    "midi": [],
+    "usb": [],
+    "protobuf": [],
+    "calibration": [],
+    "other": []
+  }
+}
