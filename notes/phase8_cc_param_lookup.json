@@ -1,0 +1,263 @@
+{
+  "param_setter": "\nvoid FUN_08164efc(int param_1,undefined4 param_2,int param_3,int param_4)\n\n{\n  short sVar1;\n  short sVar2;\n  int iVar3;\n  uint uVar4;\n  uint uVar5;\n  uint uVar6;\n  int iVar7;\n  int iVar8;\n  undefined4 local_34;\n  undefined4 uStack_30;\n  undefined4 uStack_2c;\n  undefined4 uStack_28;\n  undefined4 local_24;\n  \n  sVar1 = (short)param_4;\n  switch(param_2) {\n  case 6:\n    if (param_3 == 2) {\n      iVar3 = 7;\nLAB_08164ff0:\n      local_34 = *DAT_08165140;\n      uStack_30 = DAT_08165140[1];\n      uStack_2c = DAT_08165140[2];\n      uStack_28 = DAT_08165140[3];\n      local_24 = DAT_08165140[4];\n      if (param_4 < 1) {\n        param_4 = 0;\n      }\n      else if (param_4 != 0x7fff) {\n        uVar4 = 4;\n        uVar5 = 0;\n        do {\n          while( true ) {\n            uVar6 = uVar5 + (uVar4 - uVar5 >> 1);\n            iVar8 = uVar6 * 2;\n            iVar7 = (int)*(short *)((int)&uStack_2c + uVar6 * 2 + 2);\n            if (iVar7 == param_4) goto LAB_081650ae;\n            if (param_4 <= iVar7) break;\n            uVar5 = uVar6 + 1;\n            if (uVar4 < uVar5) goto LAB_081650aa;\n          }\n          uVar4 = uVar6 - 1;\n        } while (uVar5 <= uVar4);\nLAB_081650aa:\n        iVar8 = uVar5 << 1;\n        uVar6 = uVar5;\nLAB_081650ae:\n        if (3 < uVar6 - 1) {\n          FUN_081a8764(0xb);\n        }\n        if (3 < uVar6) {\n          FUN_081a8764(0xb);\n        }\n        iVar7 = (uVar6 - 1) * 2;\n        sVar2 = *(short *)((int)&uStack_2c + iVar8 + 2) - sVar1;\n        sVar1 = sVar1 - *(short *)((int)&uStack_2c + iVar7 + 2);\n        param_4 = (int)(short)(((int)sVar1 * (int)*(short *)((int)&local_34 + iVar8) +\n                               (int)*(short *)((int)&local_34 + iVar7) * (int)sVar2) /\n                              ((int)sVar1 + (int)sVar2));\n      }\n      *(short *)(param_1 + iVar3 * 2 + 4) = (short)param_4;\n      return;\n    }\n    break;\n  case 0xe:\n    if (param_3 == 0) {\n      iVar3 = 0xd;\n      goto LAB_08164ff0;\n    }\n    break;\n  case 0xf:\n    if (param_3 == 2) {\n      iVar3 = 8;\n      goto LAB_08164ff0;\n    }\n    break;\n  case 0x10:\n    if (param_3 == 2) {\n      local_34 = *DAT_0816513c;\n      uStack_30 = DAT_0816513c[1];\n      uStack_2c = DAT_0816513c[2];\n      uStack_28 = DAT_0816513c[3];\n      local_24 = DAT_0816513c[4];\n      if (param_4 < 1) {\n        param_4 = 0;\n      }\n      else if (param_4 != 0x7fff) {\n        uVar4 = 4;\n        uVar5 = 0;\n        do {\n          while( true ) {\n            uVar6 = uVar5 + (uVar4 - uVar5 >> 1);\n            iVar7 = uVar6 * 2;\n            iVar3 = (int)*(short *)((int)&uStack_2c + uVar6 * 2 + 2);\n            if (iVar3 == param_4) goto LAB_08164f64;\n            if (param_4 <= iVar3) break;\n            uVar5 = uVar6 + 1;\n            if (uVar4 < uVar5) goto LAB_08164f60;\n          }\n          uVar4 = uVar6 - 1;\n        } while (uVar5 <= uVar4);\nLAB_08164f60:\n        iVar7 = uVar5 << 1;\n        uVar6 = uVar5;\nLAB_08164f64:\n        if (3 < uVar6 - 1) {\n          FUN_081a8764(0xb);\n        }\n        if (3 < uVar6) {\n          FUN_081a8764(0xb);\n        }\n        iVar3 = (uVar6 - 1) * 2;\n        sVar2 = *(short *)((int)&uStack_2c + iVar7 + 2) - sVar1;\n        sVar1 = sVar1 - *(short *)((int)&uStack_2c + iVar3 + 2);\n        param_4 = (int)(short)(((int)sVar1 * (int)*(short *)((int)&local_34 + iVar7) +\n                               (int)*(short *)((int)&local_34 + iVar3) * (int)sVar2) /\n                              ((int)sVar1 + (int)sVar2));\n      }\n      *(short *)(param_1 + 0x1a) = (short)param_4;\n    }\n    break;\n  case 0x14:\n    if (param_3 == 1) {\n      local_34 = *DAT_0816513c;\n      uStack_30 = DAT_0816513c[1];\n      uStack_2c = DAT_0816513c[2];\n      uStack_28 = DAT_0816513c[3];\n      local_24 = DAT_0816513c[4];\n      if (param_4 < 1) {\n        param_4 = 0;\n      }\n      else if (param_4 != 0x7fff) {\n        uVar4 = 4;\n        uVar5 = 0;\n        do {\n          while( true ) {\n            uVar6 = uVar5 + (uVar4 - uVar5 >> 1);\n            iVar7 = uVar6 * 2;\n            iVar3 = (int)*(short *)((int)&uStack_2c + uVar6 * 2 + 2);\n            if (iVar3 == param_4) goto LAB_08165046;\n            if (param_4 <= iVar3) break;\n            uVar5 = uVar6 + 1;\n            if (uVar4 < uVar5) goto LAB_08165042;\n          }\n          uVar4 = uVar6 - 1;\n        } while (uVar5 <= uVar4);\nLAB_08165042:\n        iVar7 = uVar5 << 1;\n        uVar6 = uVar5;\nLAB_08165046:\n        if (3 < uVar6 - 1) {\n          FUN_081a8764(0xb);\n        }\n        if (3 < uVar6) {\n          FUN_081a8764(0xb);\n        }\n        iVar3 = (uVar6 - 1) * 2;\n        sVar2 = *(short *)((int)&uStack_2c + iVar7 + 2) - sVar1;\n        sVar1 = sVar1 - *(short *)((int)&uStack_2c + iVar3 + 2);\n        param_4 = (int)(short)(((int)sVar1 * (int)*(short *)((int)&local_34 + iVar7) +\n                               (int)*(short *)((int)&local_34 + iVar3) * (int)sVar2) /\n                              ((int)sVar1 + (int)sVar2));\n      }\n      *(short *)(param_1 + 0x18) = (short)param_4;\n      return;\n    }\n  }\n  return;\n}\n\n",
+  "midi_dispatch": "\nundefined4 FUN_08165794(int param_1,int param_2,uint param_3,undefined4 param_4,undefined1 param_5)\n\n{\n  undefined4 uVar1;\n  int iVar2;\n  int iVar3;\n  int iVar4;\n  uint uVar5;\n  \n  iVar4 = *(int *)(param_1 + 0x65c);\n  if (iVar4 != 0) {\n    iVar2 = (uint)*(byte *)(iVar4 + 0x54) * 8 + 0x584;\n    iVar3 = *(int *)(*DAT_081657f0 + iVar2);\n    if ((iVar3 == param_2) &&\n       ((uVar5 = *(uint *)(*DAT_081657f0 + iVar2 + 4), uVar5 == param_3 ||\n        ((iVar3 == 0 && (-1 < (int)((param_3 | uVar5) << 0x1f))))))) {\n      FUN_081a1234(iVar4);\n      return 1;\n    }\n  }\n  uVar1 = FUN_08140d30(param_1,param_2,param_3,param_4,param_5);\n  return uVar1;\n}\n\n",
+  "midi_cc_handler": "\n/* WARNING: Instruction at (ram,0x0816744c) overlaps instruction at (ram,0x0816744a)\n    */\n\nvoid FUN_08166810(int param_1,ushort *param_2)\n\n{\n  char cVar1;\n  short sVar2;\n  undefined1 uVar3;\n  uint *puVar4;\n  uint *puVar5;\n  int iVar6;\n  int *piVar7;\n  undefined4 *puVar8;\n  int iVar9;\n  undefined4 *puVar10;\n  undefined4 *puVar11;\n  uint uVar12;\n  undefined4 uVar13;\n  uint uVar14;\n  code *pcVar15;\n  int iVar16;\n  int iVar17;\n  uint *extraout_r3;\n  uint *puVar18;\n  int *piVar19;\n  ushort uVar20;\n  uint uVar21;\n  uint *puVar22;\n  int *piVar23;\n  bool bVar24;\n  bool bVar25;\n  bool bVar26;\n  undefined8 uVar27;\n  undefined4 local_28;\n  \n  uVar20 = *param_2;\n  piVar19 = (int *)*DAT_081669ec;\n  iVar6 = FUN_08178848(piVar19[3]);\n  if ((((iVar6 != 0) && (iVar6 = (**(code **)(*(int *)piVar19[0xc] + 0x28))(), iVar6 != 0)) &&\n      (*(byte *)(iVar6 + 8) >> 1 == 1)) &&\n     ((*(ushort *)(iVar6 + 10) == uVar20 && (FUN_0817bd34(piVar19[3]), *param_2 != 0xcc)))) {\n    return;\n  }\n  iVar6 = FUN_081626b0(param_1);\n  puVar5 = DAT_081679e0;\n  puVar4 = DAT_08167804;\n  puVar8 = DAT_081677fc;\n  puVar18 = DAT_0816739c;\n  puVar22 = DAT_081670d8;\n  puVar11 = DAT_08166e30;\n  uVar21 = (uint)*param_2;\n  switch(uVar21) {\n  case 1:\n  case 2:\n  case 0xb:\n  case 0xc:\n    puVar18 = DAT_08166e00;\n    if (iVar6 == 0) break;\n    iVar6 = piVar19[3];\n    uVar13 = DAT_08166e18;\nLAB_08166cac:\n    FUN_08165794(iVar6,uVar13,0,3000,2);\n    puVar22 = DAT_08166e00;\n    goto LAB_08166c8e;\n  case 3:\n    goto switchD_0004684e_caseD_3;\n  case 4:\n    if ((*DAT_081670d8 & 0xc) != 0) {\n      iVar17 = piVar19[0x1c];\n      iVar9 = (**(code **)(*(int *)*DAT_081670dc + 0xc))((int *)*DAT_081670dc,3);\n      if (iVar9 < 0) {\n        iVar16 = -0xb;\n      }\n      else {\n        iVar16 = 0xb;\n      }\n      iVar16 = (short)iVar9 * 0x18 + iVar16;\n      if (iVar16 < 0) {\n        iVar16 = iVar16 + 0x7fff;\n      }\n      FUN_08164efc(iVar17,(uint)(iVar16 << 1) >> 0x10,0,(int)(short)param_2[1]);\n    }\n    puVar18 = puVar22;\n    if (iVar6 != 0) {\n      iVar6 = piVar19[3];\nLAB_08166ff4:\n      FUN_08165794(iVar6,DAT_081670e4,0,3000,2);\n      goto LAB_08166c8e;\n    }\n    break;\n  case 5:\n    if ((*DAT_0816739c & 0xc) != 0) {\n      iVar17 = piVar19[0x1c];\n      iVar9 = (**(code **)(*(int *)*DAT_08167394 + 0xc))((int *)*DAT_08167394,3);\n      if (iVar9 < 0) {\n        iVar16 = -0xb;\n      }\n      else {\n        iVar16 = 0xb;\n      }\n      iVar16 = (short)iVar9 * 0x18 + iVar16;\n      if (iVar16 < 0) {\n        iVar16 = iVar16 + 0x7fff;\n      }\n      FUN_08164efc(iVar17,(uint)(iVar16 << 1) >> 0x10,1,(int)(short)param_2[1]);\n    }\n    if (iVar6 != 0) {\n      iVar6 = piVar19[3];\n      puVar22 = puVar18;\n      goto LAB_08166ff4;\n    }\n    break;\n  case 6:\n    if ((*DAT_0816739c & 0xc) != 0) {\n      iVar17 = piVar19[0x1c];\n      iVar9 = (**(code **)(*(int *)*DAT_08167394 + 0xc))((int *)*DAT_08167394,3);\n      if (iVar9 < 0) {\n        iVar16 = -0xb;\n      }\n      else {\n        iVar16 = 0xb;\n      }\n      iVar16 = (short)iVar9 * 0x18 + iVar16;\n      if (iVar16 < 0) {\n        iVar16 = iVar16 + 0x7fff;\n      }\n      FUN_08164efc(iVar17,(uint)(iVar16 << 1) >> 0x10,2,(int)(short)param_2[1]);\n    }\n    if (iVar6 != 0) {\n      iVar6 = piVar19[3];\n      puVar22 = puVar18;\n      goto LAB_08166ff4;\n    }\n    break;\n  default:\n    goto switchD_0004684e_caseD_7;\n  case 10:\n  case 0x14:\n    puVar18 = DAT_08166e00;\n    if (iVar6 == 0) break;\n    if (uVar21 == 0x14) {\n      iVar6 = (**(code **)(*(int *)*DAT_08166e24 + 0xc))((int *)*DAT_08166e24,0xd);\n      if (iVar6 < 0) {\n        iVar9 = -0xe;\n      }\n      else {\n        iVar9 = 0xe;\n      }\n      iVar9 = (short)iVar6 * 0x1e + iVar9;\n      if (iVar9 < 0) {\n        iVar9 = iVar9 + 0x7fff;\n      }\n      if (((iVar9 >> 0xf) - 0x10U & 0xffff) < 5) {\n        iVar6 = piVar19[3];\n        uVar13 = DAT_08166e28;\n        goto LAB_08166cac;\n      }\n    }\n    iVar9 = piVar19[3];\n    iVar6 = DAT_08167810;\n    goto LAB_08166c54;\n  case 0xd:\n    iVar9 = (**(code **)(*(int *)*DAT_081670d4 + 0xc))((int *)*DAT_081670d4,3);\n    iVar9 = iVar9 * 2;\n    if (iVar9 < 0) {\n      iVar9 = iVar9 + 0x7fff;\n    }\n    if ((uint)(iVar9 << 1) >> 0x10 == 1) {\n      puVar11 = (undefined4 *)*piVar19;\n      if ((short)param_2[1] < 0) {\n        iVar9 = -0xe;\n      }\n      else {\n        iVar9 = 0xe;\n      }\n      iVar9 = (short)param_2[1] * 0x1e + iVar9;\n      if (iVar9 < 0) {\n        iVar9 = iVar9 + 0x7fff;\n      }\n      if (((iVar9 >> 0xf) - 0x10U & 0xffff) < 5) {\n        (**(code **)*puVar11)(puVar11,0x5f,*DAT_081679e4);\n        puVar8 = (undefined4 *)*piVar19;\n        puVar11 = DAT_081679e8;\n      }\n      else {\n        (**(code **)*puVar11)(puVar11,0x5f,*DAT_081670cc);\n        puVar8 = (undefined4 *)*piVar19;\n        puVar11 = DAT_081670d0;\n      }\n      (**(code **)*puVar8)(puVar8,0x55,*puVar11);\n    }\nswitchD_0004684e_caseD_3:\n    iVar9 = (**(code **)(*(int *)piVar19[0xc] + 0x28))();\n    if (((iVar9 != 0) && (-1 < (int)((uint)*(byte *)(iVar9 + 8) << 0x1f))) &&\n       ((*(byte *)(iVar9 + 8) >> 1 == 0xe && (iVar9 = FUN_081854c8(), iVar9 == 0)))) {\n      FUN_0816aa68(param_1,0);\n    }\n    puVar22 = DAT_081670d8;\n    puVar18 = DAT_08166e00;\n    if (iVar6 == 0) break;\n    FUN_0817be10(piVar19[3]);\nLAB_08166c8e:\n    FUN_081652bc(param_1 + 0x60,param_2);\n    goto LAB_08166a66;\n  case 0xe:\n    if ((*DAT_081670d8 & 0xc) != 0) {\n      iVar17 = piVar19[0x1c];\n      iVar9 = (**(code **)(*(int *)*DAT_081670dc + 0xc))((int *)*DAT_081670dc,0xd);\n      if (iVar9 < 0) {\n        iVar16 = -0xe;\n      }\n      else {\n        iVar16 = 0xe;\n      }\n      iVar16 = (short)iVar9 * 0x1e + iVar16;\n      if (iVar16 < 0) {\n        iVar16 = iVar16 + 0x7fff;\n      }\n      FUN_08165144(iVar17,(uint)(iVar16 << 1) >> 0x10,0,(int)(short)param_2[1]);\n    }\n    puVar18 = puVar22;\n    if (iVar6 != 0) {\n      iVar6 = piVar19[3];\n      goto LAB_08166ff4;\n    }\n    break;\n  case 0xf:\n    if ((*DAT_081670d8 & 0xc) != 0) {\n      iVar17 = piVar19[0x1c];\n      iVar9 = (**(code **)(*(int *)*DAT_081670dc + 0xc))((int *)*DAT_081670dc,0xd);\n      if (iVar9 < 0) {\n        iVar16 = -0xe;\n      }\n      else {\n        iVar16 = 0xe;\n      }\n      iVar16 = (short)iVar9 * 0x1e + iVar16;\n      if (iVar16 < 0) {\n        iVar16 = iVar16 + 0x7fff;\n      }\n      FUN_08165144(iVar17,(uint)(iVar16 << 1) >> 0x10,1,(int)(short)param_2[1]);\n    }\n    puVar18 = puVar22;\n    if (iVar6 != 0) {\n      iVar6 = piVar19[3];\n      goto LAB_08166ff4;\n    }\n    break;\n  case 0x10:\n    if ((*DAT_0816739c & 0xc) != 0) {\n      iVar17 = piVar19[0x1c];\n      iVar9 = (**(code **)(*(int *)*DAT_08167394 + 0xc))((int *)*DAT_08167394,0xd);\n      if (iVar9 < 0) {\n        iVar16 = -0xe;\n      }\n      else {\n        iVar16 = 0xe;\n      }\n      iVar16 = (short)iVar9 * 0x1e + iVar16;\n      if (iVar16 < 0) {\n        iVar16 = iVar16 + 0x7fff;\n      }\n      FUN_08165144(iVar17,(uint)(iVar16 << 1) >> 0x10,2,(int)(short)param_2[1]);\n    }\n    if (iVar6 != 0) {\n      iVar6 = piVar19[3];\n      puVar22 = puVar18;\n      goto LAB_08166ff4;\n    }\n    break;\n  case 0x15:\n  case 0xc3:\n    puVar18 = DAT_08166e00;\n    if (iVar6 != 0) {\n      iVar6 = piVar19[3];\n      uVar13 = DAT_08166e20;\n      goto LAB_08166cac;\n    }\n    break;\n  case 0x18:\n    puVar10 = (undefined4 *)*piVar19;\n    if ((short)param_2[1] < 0) {\n      iVar9 = -3;\n    }\n    else {\n      iVar9 = 3;\n    }\n    iVar9 = (short)param_2[1] * 7 + iVar9;\n    if (iVar9 < 0) {\n      iVar9 = iVar9 + 0x7fff;\n    }\n    uVar21 = (uint)(iVar9 << 1) >> 0x10;\n    pcVar15 = *(code **)*puVar10;\n    if (uVar21 == 0) {\n      (*pcVar15)(puVar10,0x65,*DAT_081677f4);\n      (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x66,*puVar8);\n      puVar8 = (undefined4 *)*piVar19;\n      pcVar15 = *(code **)*puVar8;\n      puVar11 = DAT_081677fc;\n    }\n    else {\n      if ((uVar21 - 3 < 2) || (uVar21 == 6)) {\n        (*pcVar15)(puVar10,0x65,*DAT_081677f4);\n        puVar8 = (undefined4 *)*piVar19;\n        pcVar15 = *(code **)*puVar8;\n      }\n      else {\n        (*pcVar15)(puVar10,0x65,*DAT_08166e30);\n        puVar8 = (undefined4 *)*piVar19;\n        pcVar15 = *(code **)*puVar8;\n        if (uVar21 == 1) {\n          (*pcVar15)(puVar8,0x66,*DAT_08166e04);\n          puVar8 = (undefined4 *)*piVar19;\n          pcVar15 = *(code **)*puVar8;\n          goto LAB_08166d46;\n        }\n      }\n      puVar11 = DAT_081677f4;\n      if (uVar21 - 4 < 3) {\n        (*pcVar15)(puVar8,0x66,*DAT_081677f4);\n        puVar8 = (undefined4 *)*piVar19;\n        pcVar15 = *(code **)*puVar8;\n        if (uVar21 != 5) goto LAB_08167736;\n      }\n      else {\n        (*pcVar15)(puVar8,0x66,*DAT_081677fc);\n        puVar8 = (undefined4 *)*piVar19;\n        pcVar15 = *(code **)*puVar8;\n        if ((uVar21 != 2) && (uVar21 != 3)) {\nLAB_08167736:\n          puVar11 = DAT_081677fc;\n          if (uVar21 != 6) goto LAB_08166d46;\n        }\n        puVar11 = DAT_081677f4;\n      }\n    }\nLAB_08166d46:\n    (*pcVar15)(puVar8,0x67,*puVar11);\n  case 0x19:\n  case 0x1a:\n    puVar18 = DAT_08166e00;\n    if (iVar6 == 0) break;\n    iVar9 = piVar19[3];\n    iVar6 = DAT_08166e1c;\nLAB_08166c54:\n    iVar17 = *(int *)(iVar9 + 0x65c);\n    if (((iVar17 == 0) ||\n        (iVar16 = (uint)*(byte *)(iVar17 + 0x54) * 8 + 0x584,\n        *(int *)(*DAT_08166e0c + iVar16) != iVar6)) || (*(int *)(iVar16 + *DAT_08166e0c + 4) != 0))\n    {\n      FUN_08140d30(iVar9,iVar6,0,3000,2);\n      puVar22 = DAT_08166e00;\n    }\n    else {\n      FUN_081a1234(iVar17);\n      puVar22 = DAT_08167804;\n    }\n    goto LAB_08166c8e;\n  case 0x1b:\n    puVar18 = DAT_08166e00;\n    if (iVar6 != 0) {\n      iVar6 = piVar19[3];\n      uVar13 = DAT_081670e8;\n      goto LAB_08166cac;\n    }\n    break;\n  case 0x1d:\n  case 0x1e:\n  case 0x1f:\n  case 0x20:\n    puVar18 = DAT_08166e00;\n    if (iVar6 != 0) {\n      iVar6 = piVar19[3];\n      uVar13 = DAT_08166e14;\n      goto LAB_08166cac;\n    }\n    break;\n  case 0x26:\n    puVar10 = (undefined4 *)*piVar19;\n    if ((short)param_2[1] < 0) {\n      iVar9 = -1;\n    }\n    else {\n      iVar9 = 1;\n    }\n    iVar9 = (short)param_2[1] * 3 + iVar9;\n    if (iVar9 < 0) {\n      iVar9 = iVar9 + 0x7fff;\n    }\n    uVar21 = (uint)(iVar9 << 1) >> 0x10;\n    if (uVar21 == 0) {\n      (**(code **)*puVar10)(puVar10,0x68,*DAT_081677f4);\n      puVar10 = (undefined4 *)*piVar19;\n      uVar13 = *puVar8;\n      pcVar15 = *(code **)*puVar10;\nLAB_08166c36:\n      (*pcVar15)(puVar10,0x69,uVar13);\n      puVar11 = (undefined4 *)*piVar19;\n      pcVar15 = *(code **)*puVar11;\n    }\n    else {\n      (**(code **)*puVar10)(puVar10,0x68,*DAT_08166e30);\n      puVar10 = (undefined4 *)*piVar19;\n      pcVar15 = *(code **)*puVar10;\n      puVar8 = puVar11;\n      if (uVar21 == 1) {\n        uVar13 = *DAT_08166e04;\n        goto LAB_08166c36;\n      }\n      (*pcVar15)(puVar10,0x69,*puVar11);\n      puVar11 = (undefined4 *)*piVar19;\n      if (uVar21 == 2) {\n        puVar8 = DAT_081677f4;\n      }\n      pcVar15 = *(code **)*puVar11;\n    }\n    (*pcVar15)(puVar11,0x6a,*puVar8);\n  case 0x27:\n  case 0x28:\n  case 0x29:\n  case 0x2a:\n  case 0x2b:\n  case 0x2c:\n  case 0x2d:\n  case 0x2e:\n    puVar18 = DAT_08166e00;\n    if (iVar6 == 0) break;\n    iVar9 = piVar19[3];\n    iVar6 = DAT_08166e08;\n    goto LAB_08166c54;\n  case 0x2f:\n  case 0x30:\n  case 0x31:\n  case 0x35:\n  case 0x36:\n  case 0x37:\n  case 0x38:\n  case 0x3c:\n    puVar18 = DAT_08166e00;\n    if (iVar6 != 0) {\n      iVar6 = piVar19[3];\n      uVar13 = DAT_08166e10;\n      goto LAB_08166cac;\n    }\n    break;\n  case 0x32:\n    iVar9 = (short)param_2[1] * 2;\n    if (iVar9 < 0) {\n      iVar9 = iVar9 + 0x7fff;\n    }\n    uVar21 = (uint)(iVar9 << 1) >> 0x10;\n    iVar9 = (**(code **)(*(int *)*DAT_08167388 + 0xc))((int *)*DAT_08167388,5);\n    iVar9 = iVar9 * 2;\n    if (iVar9 < 0) {\n      iVar9 = iVar9 + 0x7fff;\n    }\n    if ((uint)(iVar9 << 1) >> 0x10 == 0) {\n      puVar11 = DAT_08167390;\n      if (uVar21 != 1) {\n        puVar11 = DAT_0816738c;\n      }\n      (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x50,*puVar11);\n    }\n    if (iVar6 != 0) {\n      FUN_08165794(piVar19[3],DAT_081679d4,0,3000,2);\n    }\n    piVar7 = (int *)piVar19[0x19];\n    pcVar15 = *(code **)(*piVar7 + 0x18);\n    if (uVar21 == 1) {\n      uVar13 = 0x31;\n    }\n    else {\n      uVar13 = 0x30;\n    }\n    uVar13 = (**(code **)(*(int *)*DAT_08167394 + 0xc))((int *)*DAT_08167394,uVar13);\n    (*pcVar15)(piVar7,0x55,uVar13);\n    goto switchD_0004684e_caseD_7;\n  case 0x39:\n    iVar9 = (short)param_2[1] * 2;\n    if (iVar9 < 0) {\n      iVar9 = iVar9 + 0x7fff;\n    }\n    uVar21 = (uint)(iVar9 << 1) >> 0x10;\n    iVar9 = (**(code **)(*(int *)*DAT_08167388 + 0xc))((int *)*DAT_08167388,5);\n    iVar9 = iVar9 * 2;\n    if (iVar9 < 0) {\n      iVar9 = iVar9 + 0x7fff;\n    }\n    if ((uint)(iVar9 << 1) >> 0x10 == 1) {\n      puVar11 = DAT_08167390;\n      if (uVar21 != 1) {\n        puVar11 = DAT_0816738c;\n      }\n      (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x50,*puVar11);\n    }\n    if (iVar6 != 0) {\n      iVar9 = *(int *)(piVar19[3] + 0x65c);\n      if (((iVar9 == 0) ||\n          (iVar17 = (uint)*(byte *)(iVar9 + 0x54) * 8 + 0x584,\n          *(int *)(*DAT_081679d0 + iVar17) != DAT_081679d4)) ||\n         (*(int *)(iVar17 + *DAT_081679d0 + 4) != 0)) {\n        FUN_08140d30(piVar19[3],DAT_081679d4,0,3000,2);\n      }\n      else {\n        FUN_081a1234(iVar9);\n      }\n    }\n    piVar7 = (int *)piVar19[0x19];\n    pcVar15 = *(code **)(*piVar7 + 0x18);\n    if (uVar21 == 1) {\n      uVar13 = 0x38;\n    }\n    else {\n      uVar13 = 0x37;\n    }\n    uVar13 = (**(code **)(*(int *)*DAT_08167394 + 0xc))((int *)*DAT_08167394,uVar13);\n    (*pcVar15)(piVar7,0x57,uVar13);\n    goto switchD_0004684e_caseD_7;\n  case 0x3d:\n  case 0x3e:\n    puVar18 = DAT_08166e00;\n    if (iVar6 != 0) {\n      bVar26 = uVar21 - 0x3d == 0;\n      uVar27 = CONCAT44(uVar21 - 0x3d,piVar19[3]);\n      puVar22 = DAT_08166e00;\ncode_r0x08166df4:\n      uVar13 = (undefined4)((ulonglong)uVar27 >> 0x20);\n      if (!bVar26) {\n        uVar13 = 1;\n      }\n      FUN_0817ce9c((int)uVar27,uVar13);\n      goto LAB_08166c8e;\n    }\n    break;\n  case 0x4f:\n    if ((short)param_2[1] < 0) {\n      iVar9 = -1;\n    }\n    else {\n      iVar9 = 1;\n    }\n    puVar22 = (uint *)(iVar9 + (short)param_2[1] * 4);\n    bVar25 = (int)puVar22 < 0;\n    if (bVar25) {\n      puVar22 = puVar22 + 0x1fe0;\n    }\n    if (bVar25) {\n      puVar22 = (uint *)((int)puVar22 + 0x7f);\n    }\n    uVar27 = (**(code **)(*(int *)*DAT_081673a4 + 0xc))((int *)*DAT_081673a4,0x1f);\n    puVar11 = (undefined4 *)uVar27;\n    bVar25 = (int)puVar11 < 0;\n    bVar24 = false;\n    puVar18 = extraout_r3;\n    if (!bVar25) {\n      puVar18 = (uint *)0x1;\n    }\ncode_r0x08167330:\n    if (bVar25 != bVar24) {\n      puVar18 = (uint *)0xffffffff;\n    }\n    uVar13 = 3;\n    iVar9 = (int)puVar18 + (short)uVar27 * 3;\n    if (iVar9 < 0) {\n      iVar9 = iVar9 + 0x7fff;\n    }\n    puVar22 = (uint *)((uint)((int)puVar22 << 1) >> 0x10);\n    uVar3 = (undefined1)((ulonglong)uVar27 >> 0x20);\n    if ((uint)(iVar9 << 1) >> 0x10 == 0) goto code_r0x08167352;\n    bVar24 = SBORROW4((int)puVar22,3);\n    bVar25 = (int)puVar22 + -3 < 0;\n    bVar26 = puVar22 == (uint *)0x3;\n    puVar18 = &switchD_00047478::switchdataD_0004747c;\n    switch(puVar22) {\n    case (uint *)0x0:\n      goto code_r0x08167330;\n    case (uint *)0x1:\n      *(undefined1 *)(param_1 + 0xc) = uVar3;\n      *(char *)((int)puVar22 + 0x11) = (char)piVar19;\n      piVar19 = piRam0000005c;\n      *(char *)((int)((ulonglong)uVar27 >> 0x20) + 0x11) = (char)piRam0000005c;\n      puVar8 = puRam081674f4;\n      param_1 = 0;\n      (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x71,*puRam081674f4);\n      (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x72,*puVar8);\n      (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x73,*puRam081674f8);\n      puVar11 = (undefined4 *)*piVar19;\n      uVar13 = *puVar8;\n      puVar18 = *(uint **)*puVar11;\n      puVar22 = DAT_081674fc;\n      goto code_r0x081673da;\n    case (uint *)0x2:\n      goto code_r0x08166df4;\n    case (uint *)0x3:\n      param_2[8] = (ushort)((ulonglong)uVar27 >> 0x20);\n      goto code_r0x0816744e;\n    default:\n      goto switchD_0004735a_default;\n    }\n  case 0x56:\n  case 0xca:\n    puVar18 = DAT_08166e00;\n    if (iVar6 != 0) {\n      FUN_08165794(piVar19[3],DAT_08166e2c,0,3000,2);\n      puVar22 = DAT_08166e00;\n      goto LAB_08166c8e;\n    }\n    break;\n  case 0x57:\n  case 0x58:\n  case 0x59:\n  case 0x5a:\n  case 0x5b:\n  case 0x5c:\n  case 0x5d:\n  case 0x5e:\n  case 0x5f:\n    puVar18 = DAT_08166e00;\n    if (iVar6 != 0) {\n      FUN_0817c670(piVar19[3],uVar21 - 0x57 & 0xff);\n      puVar22 = puVar4;\n      goto LAB_08166c8e;\n    }\n    break;\n  case 0x60:\n  case 0x61:\n  case 0x62:\n  case 99:\n  case 100:\n  case 0x65:\n  case 0x66:\n  case 0x67:\n  case 0x68:\n  case 0x69:\n  case 0x6a:\n  case 0x6b:\n  case 0x6c:\n  case 0x6d:\n  case 0x6e:\n  case 0x6f:\n  case 0x70:\n  case 0x71:\n  case 0x72:\n  case 0x73:\n  case 0x74:\n  case 0x75:\n  case 0x76:\n  case 0x77:\n  case 0x78:\n  case 0x79:\n  case 0x7a:\n  case 0x7b:\n  case 0x7c:\n  case 0x7d:\n  case 0x7e:\n  case 0x7f:\n  case 0x80:\n  case 0x81:\n  case 0x82:\n  case 0x83:\n  case 0x84:\n  case 0x85:\n  case 0x86:\n  case 0x87:\n  case 0x88:\n  case 0x89:\n  case 0x8a:\n  case 0x8b:\n  case 0x8c:\n  case 0x8d:\n  case 0x8e:\n  case 0x8f:\n  case 0x90:\n  case 0x91:\n  case 0x92:\n  case 0x93:\n  case 0x94:\n  case 0x95:\n  case 0x96:\n  case 0x97:\n  case 0x98:\n  case 0x99:\n  case 0x9a:\n  case 0x9b:\n  case 0x9c:\n  case 0x9d:\n  case 0x9e:\n  case 0x9f:\n  case 0xa0:\n  case 0xa1:\n  case 0xa2:\n  case 0xa3:\n  case 0xa4:\n  case 0xa5:\n  case 0xa6:\n  case 0xa7:\n  case 0xa8:\n  case 0xa9:\n  case 0xaa:\n  case 0xab:\n  case 0xac:\n  case 0xad:\n  case 0xae:\n  case 0xaf:\n  case 0xb0:\n  case 0xb1:\n  case 0xb2:\n  case 0xb3:\n  case 0xb4:\n  case 0xb5:\n  case 0xb6:\n  case 0xb7:\n  case 0xb8:\n  case 0xb9:\n  case 0xba:\n    iVar9 = (**(code **)(*(int *)*DAT_08166a8c + 0xc))((int *)*DAT_08166a8c,1);\n    uVar12 = uVar21 - 0x60;\n    if (iVar9 < 0) {\n      iVar17 = -1;\n    }\n    else {\n      iVar17 = 1;\n    }\n    if ((uVar12 & 0xffff) < 0x1c) {\n      uVar21 = (uVar12 & 3) + (uVar12 * 0x1000000 >> 0x1a) * 7 & 0xff;\n    }\n    else {\n      uVar21 = uVar21 - 0x7c;\n      uVar12 = uVar21 + (uint)((ulonglong)DAT_08167808 * (ulonglong)uVar21 >> 0x21) * -9;\n      iVar17 = (short)iVar9 * 3 + iVar17;\n      if (iVar17 < 0) {\n        iVar17 = iVar17 + 0x7fff;\n      }\n      uVar14 = (uint)((ulonglong)DAT_0816780c * (ulonglong)uVar12 >> 0x21);\n      if (uVar14 == (uint)(iVar17 << 9) >> 0x18) {\n        uVar21 = uVar14 * -3 + uVar12 +\n                 (uint)((ulonglong)DAT_081679d8 * (ulonglong)uVar21 >> 0x21) * 7 + 4 & 0xff;\n      }\n      else {\n        uVar21 = 0xff;\n      }\n    }\n    if ((iVar6 != 0) &&\n       ((**(code **)(*(int *)piVar19[1] + 0x14))((int *)piVar19[1],0,uVar21),\n       -1 < *(int *)(param_1 + 0x598) << 0x13)) {\n      FUN_0817cbd8(piVar19[3],1);\n    }\n    (*(code *)**(undefined4 **)piVar19[1])((undefined4 *)piVar19[1],uVar21,param_2[1] != 0);\nswitchD_0004684e_caseD_7:\n    FUN_081652bc(param_1 + 0x60,param_2);\n    puVar22 = DAT_08166a90;\n    puVar18 = DAT_08166a90;\n    if (iVar6 != 0) {\nLAB_08166a66:\n      *(ushort *)(piVar19[3] + 0x6b0) = *param_2;\n      puVar18 = puVar22;\n    }\n    goto LAB_08166a6e;\n  case 0xc1:\n    puVar18 = DAT_08166e00;\n    if (iVar6 != 0) {\n      if (param_2[1] == 0) {\n        FUN_0817bda8(piVar19[3],DAT_081679dc);\n        puVar22 = puVar5;\n      }\n      else {\ncode_r0x0816744e:\n        puVar22 = DAT_081674fc;\n        FUN_0817bda8(piVar19[3],DAT_08167504,0);\n      }\n      goto LAB_08166c8e;\n    }\n    break;\n  case 0xc6:\n    puVar18 = DAT_08166e00;\n    if (iVar6 != 0) {\n      iVar6 = piVar19[3];\n      uVar13 = DAT_08167398;\n      goto LAB_08166cac;\n    }\n    break;\n  case 0xcc:\nswitchD_0004684e_caseD_cc:\n    piVar7 = (int *)*DAT_081670dc;\n    iVar9 = (**(code **)(*piVar7 + 0xc))(piVar7,0x4f);\n    if (iVar9 < 0) {\n      iVar17 = -1;\n    }\n    else {\n      iVar17 = 1;\n    }\n    iVar17 = iVar17 + iVar9 * 4;\n    if (iVar17 < 0) {\n      iVar17 = iVar17 + 0x7fff;\n    }\n    puVar18 = DAT_081670d8;\n    if ((uint)(iVar17 << 1) >> 0x10 == 1) {\n      iVar9 = (**(code **)(*piVar7 + 0xc))(piVar7,3);\n      if (iVar9 < 0) {\n        iVar17 = -0xb;\n      }\n      else {\n        iVar17 = 0xb;\n      }\n      iVar17 = (short)iVar9 * 0x18 + iVar17;\n      if (iVar17 < 0) {\n        iVar17 = iVar17 + 0x7fff;\n      }\n      if ((uint)(iVar17 << 1) >> 0x10 == 0xe) {\n        iVar9 = (**(code **)(*piVar7 + 0xc))(piVar7,0xcc);\n        if (iVar9 < 0) {\n          iVar17 = -1;\n        }\n        else {\n          iVar17 = 1;\n        }\n        iVar17 = (short)iVar9 * 3 + iVar17;\n        if (iVar17 < 0) {\n          iVar17 = iVar17 + 0x7fff;\n        }\n        if ((uint)(iVar17 << 1) >> 0x10 == 2) {\n          (**(code **)(*piVar7 + 8))(piVar7,0xcc,0);\n        }\n      }\n      piVar23 = (int *)*DAT_081677f0;\n      uVar13 = *DAT_081677f4;\n      iVar9 = (**(code **)(*piVar23 + 0xc))(piVar23,0x20);\n      if (iVar9 < 0) {\n        iVar17 = -0x32;\n      }\n      else {\n        iVar17 = 0x32;\n      }\n      iVar17 = (short)iVar9 * 0x65 + iVar17;\n      if (iVar17 < 0) {\n        iVar17 = iVar17 + 0x7fff;\n      }\n      local_28 = CONCAT31((int3)((uint)uVar13 >> 8),\n                          'l' - (char)(int)((longlong)DAT_081677f8 *\n                                            (longlong)(int)(((uint)(iVar17 << 9) >> 0x18) * 3) >>\n                                           0x21));\n      iVar9 = (**(code **)(*piVar23 + 0xc))(piVar23,0x1f);\n      if (iVar9 < 0) {\n        iVar17 = -1;\n      }\n      else {\n        iVar17 = 1;\n      }\n      iVar17 = (short)iVar9 * 3 + iVar17;\n      if (iVar17 < 0) {\n        iVar17 = iVar17 + 0x7fff;\n      }\n      if ((uint)(iVar17 << 1) >> 0x10 == 0) {\n        iVar9 = (**(code **)(*piVar7 + 0xc))(piVar7,0xcc);\n        puVar8 = DAT_081679e8;\n        puVar11 = DAT_081677fc;\n        if (iVar9 < 0) {\n          iVar17 = -1;\n        }\n        else {\n          iVar17 = 1;\n        }\n        iVar17 = (short)iVar9 * 3 + iVar17;\n        if (iVar17 < 0) {\n          iVar17 = iVar17 + 0x7fff;\n        }\n        uVar21 = (uint)(iVar17 << 1) >> 0x10;\n        if (uVar21 == 1) {\n          (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x71,*DAT_081679e8);\n          puVar10 = (undefined4 *)*piVar19;\n        }\n        else {\n          if (uVar21 == 2) {\n            (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x71,*DAT_081679e8);\n            (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x73,*puVar8);\n            puVar11 = (undefined4 *)*piVar19;\n            pcVar15 = *(code **)*puVar11;\n            uVar13 = 0x74;\nLAB_0816795a:\n            (*pcVar15)(puVar11,uVar13,local_28);\n            piVar23 = (int *)*DAT_081679ec;\n            iVar9 = (**(code **)(*piVar23 + 0xc))(piVar23,3);\n            iVar9 = iVar9 * 2;\n            if (iVar9 < 0) {\n              iVar9 = iVar9 + 0x7fff;\n            }\n            *(short *)(param_1 + 0x5a4) = (short)(iVar9 >> 0xf);\n            goto LAB_08167616;\n          }\n          if (uVar21 != 0) {\n            return;\n          }\n          (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x71,local_28);\n          puVar10 = (undefined4 *)*piVar19;\n          local_28 = *puVar11;\n          puVar8 = puVar11;\n        }\n        (**(code **)*puVar10)(puVar10,0x73,local_28);\n        (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x74,*puVar8);\n        piVar23 = (int *)*DAT_08167800;\n      }\n      else {\n        iVar9 = (**(code **)(*piVar7 + 0xc))(piVar7,0xcc);\n        puVar8 = DAT_081679e8;\n        puVar11 = DAT_081677fc;\n        if (iVar9 < 0) {\n          iVar17 = -1;\n        }\n        else {\n          iVar17 = 1;\n        }\n        iVar17 = (short)iVar9 * 3 + iVar17;\n        if (iVar17 < 0) {\n          iVar17 = iVar17 + 0x7fff;\n        }\n        uVar21 = (uint)(iVar17 << 1) >> 0x10;\n        if (uVar21 == 1) {\n          (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x71,*DAT_081679e8);\n          puVar10 = (undefined4 *)*piVar19;\n        }\n        else {\n          if (uVar21 == 2) {\n            (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x71,*DAT_081679e8);\n            (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x72,*puVar8);\n            puVar11 = (undefined4 *)*piVar19;\n            uVar13 = 0x73;\n            pcVar15 = *(code **)*puVar11;\n            goto LAB_0816795a;\n          }\n          if (uVar21 != 0) {\n            return;\n          }\n          (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x71,local_28);\n          puVar10 = (undefined4 *)*piVar19;\n          local_28 = *puVar11;\n          puVar8 = puVar11;\n        }\n        (**(code **)*puVar10)(puVar10,0x72,local_28);\n        (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x73,*puVar8);\n        piVar23 = (int *)*DAT_08167800;\n      }\nLAB_08167616:\n      puVar18 = DAT_08167804;\n      pcVar15 = *(code **)(*piVar7 + 0xc);\n      *DAT_08167804 = *DAT_08167804 | 8;\n      iVar9 = (*pcVar15)(piVar7,0xcc);\n      if (iVar9 < 0) {\n        iVar17 = -1;\n      }\n      else {\n        iVar17 = 1;\n      }\n      iVar17 = (short)iVar9 * 3 + iVar17;\n      if (iVar17 < 0) {\n        iVar17 = iVar17 + 0x7fff;\n      }\n      if ((uint)(iVar17 << 1) >> 0x10 == 2) {\n        (**(code **)(*piVar23 + 8))(piVar23,3,0);\n      }\n      else {\n        (**(code **)(*piVar23 + 8))(piVar23,3,(int)(short)(*(short *)(param_1 + 0x5a4) * 0x7fff));\n      }\n      *puVar18 = *puVar18 & 0xfffffff7;\n    }\n    if (iVar6 != 0) {\n      iVar6 = *(int *)(piVar19[3] + 0x65c);\n      puVar22 = puVar18;\n      if (((iVar6 == 0) ||\n          (iVar9 = (uint)*(byte *)(iVar6 + 0x54) * 8 + 0x584,\n          *(int *)(*DAT_081670e0 + iVar9) != DAT_081670ec)) ||\n         (*(int *)(iVar9 + *DAT_081670e0 + 4) != 0)) {\n        FUN_08140d30(piVar19[3],DAT_081670ec,0,3000,2);\n      }\n      else {\n        FUN_081a1234(iVar6);\n      }\n      goto LAB_08166c8e;\n    }\n  }\n  FUN_081652bc(param_1 + 0x60,param_2);\nLAB_08166a6e:\n  uVar20 = *param_2;\n  if ((((*puVar18 & 0xc) != 0) && ((ushort)(uVar20 - 1) < 0xc6)) &&\n     (cVar1 = *(char *)(DAT_08166a94 + (uint)(ushort)(uVar20 - 1)), cVar1 != -1)) {\n    piVar7 = (int *)piVar19[0x19];\n    switch(uVar20) {\n    case 1:\n    case 2:\n    case 0xb:\n    case 0xc:\n    case 0x1b:\n    case 0x47:\n    case 0x48:\n    case 0x49:\n    case 0x4a:\n    case 0x4b:\n    case 0x4c:\n    case 0x4d:\n    case 0x4e:\n    case 0x60:\n    case 0x61:\n    case 0x62:\n    case 99:\n    case 100:\n    case 0x65:\n    case 0x66:\n    case 0x67:\n    case 0x68:\n    case 0x69:\n    case 0x6a:\n    case 0x6b:\n    case 0x6c:\n    case 0x6d:\n    case 0x6e:\n    case 0x6f:\n    case 0x70:\n    case 0x71:\n    case 0x72:\n    case 0x73:\n    case 0x74:\n    case 0x75:\n    case 0x76:\n    case 0x77:\n    case 0x78:\n    case 0x79:\n    case 0x7a:\n    case 0x7b:\n    case 0x7c:\n    case 0x7d:\n    case 0x7e:\n    case 0x7f:\n    case 0x80:\n    case 0x81:\n    case 0x82:\n    case 0x83:\n    case 0x84:\n    case 0x85:\n    case 0x86:\n    case 0x87:\n    case 0x88:\n    case 0x89:\n    case 0x8a:\n    case 0x8b:\n    case 0x8c:\n    case 0x8d:\n    case 0x8e:\n    case 0x8f:\n    case 0x90:\n    case 0x91:\n    case 0x92:\n    case 0x93:\n    case 0x94:\n    case 0x95:\n    case 0x96:\n    case 0x97:\n    case 0x98:\n    case 0x99:\n    case 0x9a:\n    case 0x9b:\n    case 0x9c:\n    case 0x9d:\n    case 0x9e:\n    case 0x9f:\n    case 0xa0:\n    case 0xa1:\n    case 0xa2:\n    case 0xa3:\n    case 0xa4:\n    case 0xa5:\n    case 0xa6:\n    case 0xa7:\n    case 0xa8:\n    case 0xa9:\n    case 0xaa:\n    case 0xab:\n    case 0xac:\n    case 0xad:\n    case 0xae:\n    case 0xaf:\n    case 0xb0:\n    case 0xb1:\n    case 0xb2:\n    case 0xb3:\n    case 0xb4:\n    case 0xb5:\n    case 0xb6:\n    case 0xb7:\n    case 0xb8:\n    case 0xb9:\n    case 0xba:\n    case 0xc4:\n    case 0xc5:\n      pcVar15 = *(code **)(*piVar7 + 0x18);\n      iVar6 = ((short)param_2[1] + 0x8000) * 0x8000 >> 0x10;\n      break;\n    default:\n      iVar6 = (int)(short)param_2[1];\n      pcVar15 = *(code **)(*piVar7 + 0x18);\n    }\n    (*pcVar15)(piVar7,cVar1,iVar6);\n    uVar20 = *param_2;\n  }\n  iVar6 = FUN_08178848(piVar19[3]);\n  if ((((iVar6 != 0) && (iVar6 = (**(code **)(*(int *)piVar19[0xc] + 0x28))(), iVar6 != 0)) &&\n      (*(byte *)(iVar6 + 8) >> 1 == 1)) && (*(ushort *)(iVar6 + 10) == uVar20)) {\n    FUN_0817bd34(piVar19[3]);\n    return;\n  }\n  return;\ncode_r0x08167352:\n  bVar24 = SBORROW4((int)puVar22,3);\n  bVar25 = (int)puVar22 + -3 < 0;\n  bVar26 = puVar22 == (uint *)0x3;\n  puVar18 = &switchD_0004735a::switchdataD_00047360;\n  switch(puVar22) {\n  case (uint *)0x0:\n    goto code_r0x08167330;\n  case (uint *)0x1:\n    goto code_r0x08166df4;\n  case (uint *)0x2:\ncode_r0x081673da:\n    (*(code *)puVar18)(puVar11,0x74,uVar13);\n    piVar7 = (int *)*puRam08167500;\n    iVar9 = (**(code **)(*piVar7 + 0xc))(piVar7,3);\n    iVar9 = iVar9 * 2;\n    uVar21 = *puVar22;\n    if (iVar9 < 0) {\n      iVar9 = iVar9 + 0x7fff;\n    }\n    pcVar15 = *(code **)(*piVar7 + 8);\n    *(short *)(param_1 + 0x5a4) = (short)(iVar9 >> 0xf);\n    *puVar22 = uVar21 | 8;\n    (*pcVar15)(piVar7,3,0);\n    break;\n  case (uint *)0x3:\n    UINT_0816736c._3_1_ = 0x60;\n    *(undefined1 *)((int)piVar19 + 0xd) = uVar3;\n    puVar11 = DAT_0816738c;\n    param_1 = 0;\n    (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x71,*DAT_08167390);\n    (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x72,*puVar11);\n    (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x73,*puVar11);\n    (*(code *)**(undefined4 **)*piVar19)((undefined4 *)*piVar19,0x74,*puVar11);\n  default:\nswitchD_0004735a_default:\n    puVar22 = DAT_081670d8;\n    piVar7 = (int *)*DAT_081670d4;\n    sVar2 = *(short *)(param_1 + 0x5a4);\n    pcVar15 = *(code **)(*piVar7 + 8);\n    *DAT_081670d8 = *DAT_081670d8 | 8;\n    (*pcVar15)(piVar7,3,(int)(short)(sVar2 * 0x7fff));\n  }\n  *puVar22 = *puVar22 & 0xfffffff7;\n  goto switchD_0004684e_caseD_cc;\n}\n\n",
+  "dat_values": {
+    "DAT_08166e00": {
+      "address": "0x8166e00",
+      "type": "undefined4",
+      "value": "0x100010f8"
+    },
+    "DAT_08166e04": {
+      "address": "0x8166e04",
+      "type": "undefined4",
+      "value": "0x10011e20"
+    },
+    "DAT_08166e08": {
+      "address": "0x8166e08",
+      "type": "undefined4",
+      "value": "0x81707f9"
+    },
+    "DAT_08166e0c": {
+      "address": "0x8166e0c",
+      "type": "undefined4",
+      "value": "0x10001730"
+    },
+    "DAT_08166e10": {
+      "address": "0x8166e10",
+      "type": "undefined4",
+      "value": "0x8177bbd"
+    },
+    "DAT_08166e14": {
+      "address": "0x8166e14",
+      "type": "undefined4",
+      "value": "0x8170621"
+    },
+    "DAT_08166e18": {
+      "address": "0x8166e18",
+      "type": "undefined4",
+      "value": "0x8173c7d"
+    },
+    "DAT_08166e1c": {
+      "address": "0x8166e1c",
+      "type": "undefined4",
+      "value": "0x8170d55"
+    },
+    "DAT_08166e20": {
+      "address": "0x8166e20",
+      "type": "undefined4",
+      "value": "0x817283d"
+    },
+    "DAT_08166e24": {
+      "address": "0x8166e24",
+      "type": "undefined4",
+      "value": "0x81ab1dc"
+    },
+    "DAT_08166e28": {
+      "address": "0x8166e28",
+      "type": "undefined4",
+      "value": "0x81718a5"
+    },
+    "DAT_08166e2c": {
+      "address": "0x8166e2c",
+      "type": "undefined4",
+      "value": "0x8174e01"
+    },
+    "DAT_08166e30": {
+      "address": "0x8166e30",
+      "type": "undefined4",
+      "value": "0x10011e1c"
+    },
+    "DAT_081670cc": {
+      "address": "0x81670cc",
+      "type": "undefined4",
+      "value": "0x10011e1c"
+    },
+    "DAT_081670d0": {
+      "address": "0x81670d0",
+      "type": "undefined4",
+      "value": "0x10011e20"
+    },
+    "DAT_081670d4": {
+      "address": "0x81670d4",
+      "type": "undefined4",
+      "value": "0x81ab1d8"
+    },
+    "DAT_081670d8": {
+      "address": "0x81670d8",
+      "type": "undefined4",
+      "value": "0x100010f8"
+    },
+    "DAT_081670dc": {
+      "address": "0x81670dc",
+      "type": "undefined4",
+      "value": "0x81ab1dc"
+    },
+    "DAT_081670e0": {
+      "address": "0x81670e0",
+      "type": "undefined4",
+      "value": "0x10001730"
+    },
+    "DAT_081670e4": {
+      "address": "0x81670e4",
+      "type": "undefined4",
+      "value": "0x81714e5"
+    },
+    "DAT_081670e8": {
+      "address": "0x81670e8",
+      "type": "undefined4",
+      "value": "0x8174591"
+    },
+    "DAT_081670ec": {
+      "address": "0x81670ec",
+      "type": "undefined4",
+      "value": "0x8170621"
+    },
+    "DAT_08167388": {
+      "address": "0x8167388",
+      "type": "undefined4",
+      "value": "0x81ab1d8"
+    },
+    "DAT_0816738c": {
+      "address": "0x816738c",
+      "type": "undefined4",
+      "value": "0x10011e1c"
+    },
+    "DAT_08167390": {
+      "address": "0x8167390",
+      "type": "undefined4",
+      "value": "0x10011e20"
+    },
+    "DAT_08167394": {
+      "address": "0x8167394",
+      "type": "undefined4",
+      "value": "0x81ab1dc"
+    },
+    "DAT_08167398": {
+      "address": "0x8167398",
+      "type": "undefined4",
+      "value": "0x81745f5"
+    },
+    "DAT_0816739c": {
+      "address": "0x816739c",
+      "type": "undefined4",
+      "value": "0x100010f8"
+    },
+    "DAT_081673a4": {
+      "address": "0x81673a4",
+      "type": "undefined4",
+      "value": "0x81ab1f4"
+    },
+    "DAT_081674fc": {
+      "address": "0x81674fc",
+      "type": "undefined4",
+      "value": "0x100010f8"
+    },
+    "DAT_08167504": {
+      "address": "0x8167504",
+      "type": "undefined4",
+      "value": "0x81ae3b8"
+    },
+    "DAT_081677f0": {
+      "address": "0x81677f0",
+      "type": "undefined4",
+      "value": "0x81ab1f4"
+    },
+    "DAT_081677f4": {
+      "address": "0x81677f4",
+      "type": "undefined4",
+      "value": "0x10011e20"
+    },
+    "DAT_081677f8": {
+      "address": "0x81677f8",
+      "type": "undefined4",
+      "value": "0x66666667"
+    },
+    "DAT_081677fc": {
+      "address": "0x81677fc",
+      "type": "undefined4",
+      "value": "0x10011e1c"
+    },
+    "DAT_08167800": {
+      "address": "0x8167800",
+      "type": "undefined4",
+      "value": "0x81ab1d8"
+    },
+    "DAT_08167804": {
+      "address": "0x8167804",
+      "type": "undefined4",
+      "value": "0x100010f8"
+    },
+    "DAT_08167808": {
+      "address": "0x8167808",
+      "type": "undefined4",
+      "value": "0x38e38e39"
+    },
+    "DAT_0816780c": {
+      "address": "0x816780c",
+      "type": "undefined4",
+      "value": "-0x55555555"
+    },
+    "DAT_08167810": {
+      "address": "0x8167810",
+      "type": "undefined4",
+      "value": "0x81714e5"
+    },
+    "DAT_081679d0": {
+      "address": "0x81679d0",
+      "type": "undefined4",
+      "value": "0x10001730"
+    },
+    "DAT_081679d4": {
+      "address": "0x81679d4",
+      "type": "undefined4",
+      "value": "0x8177bbd"
+    },
+    "DAT_081679d8": {
+      "address": "0x81679d8",
+      "type": "undefined4",
+      "value": "0x38e38e39"
+    },
+    "DAT_081679dc": {
+      "address": "0x81679dc",
+      "type": "undefined4",
+      "value": "0x81ae3c4"
+    },
+    "DAT_081679e0": {
+      "address": "0x81679e0",
+      "type": "undefined4",
+      "value": "0x100010f8"
+    },
+    "DAT_081679e4": {
+      "address": "0x81679e4",
+      "type": "undefined4",
+      "value": "0x10011e20"
+    },
+    "DAT_081679e8": {
+      "address": "0x81679e8",
+      "type": "undefined4",
+      "value": "0x10011e1c"
+    },
+    "DAT_081679ec": {
+      "address": "0x81679ec",
+      "type": "undefined4",
+      "value": "0x81ab1d8"
+    },
+    "DAT_08166a8c": {
+      "address": "0x8166a8c",
+      "type": "undefined4",
+      "value": "0x81ab1d8"
+    },
+    "DAT_08166a90": {
+      "address": "0x8166a90",
+      "type": "undefined4",
+      "value": "0x100010f8"
+    },
+    "DAT_08166a94": {
+      "address": "0x8166a94",
+      "type": "undefined4",
+      "value": "0x81ae644"
+    }
+  },
+  "table_scan": {}
+}

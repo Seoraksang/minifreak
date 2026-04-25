@@ -1,5 +1,8 @@
 # Arturia MiniFreak — MIDI Implementation Chart
 
+> ⚠️ **DEPRECATED** — Phase 8에서 전면 폐기됨. CC 매핑이 대부분 잘못됨.
+> 정정판: **`PHASE6_MIDI_CHART_v2.md`** 사용할 것.
+
 **Phase 6-3** | 2026-04-24 | 펌웨어 역공학 기반
 
 ---

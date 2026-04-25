@@ -62,6 +62,7 @@ class Engine {
 ```
 
 ### 13 Oscillator VTables (binary offsets 0x37CB4~0x386D4)
+> ⚠️ Phase 8 정정: 초기 13 vtable. 실제 Osc1=24종, Osc2=21+9 dummy. PHASE8_FX_OSC_ENUMS.md 참조.
 | Idx | VTable (abs) | Init Func | Group | Engine | Plaits Equivalent |
 |-----|-------------|-----------|-------|--------|-------------------|
 | 0 | 0x081B7CB4 | ? (default) | — | **VAnalog** | VirtualAnalogEngine |

@@ -1,0 +1,101 @@
+{
+  "cc_handler": {
+    "total_cases": 161,
+    "cc86_186_count": 101,
+    "cc86_186_range": [
+      86,
+      186
+    ],
+    "all_present": true
+  },
+  "nrpn_handler": {
+    "cases": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      10
+    ],
+    "count": 7
+  },
+  "fx_types": {
+    "cluster_start": "0x081AF308",
+    "count_in_cluster": 11,
+    "additional": [
+      "Vocoder Ext (0x081AF37C)",
+      "Destroy (0x081AF458)",
+      "Delay (0x081AE368)"
+    ],
+    "total": 14
+  },
+  "fx_param_strings": {
+    "FX1 Type": 135984676,
+    "FX3 Type": 135984840,
+    "FX1": 135980184,
+    "FX2": 135980188,
+    "FX3": 135980192,
+    "Time": 135985211,
+    "Amount": 135982291,
+    "Feedback": 135989400,
+    "Rate": 135981744,
+    "Depth": 135985548,
+    "Mix": 135983040,
+    "Wet": 135982052,
+    "Send Level": 135989672,
+    "Insert": 135989188,
+    "Routing": 135982255,
+    "FX Slots": 135982060,
+    "Delay Routing": 135984744,
+    "Reverb Routing": 135984824
+  },
+  "cc86_186_mapping": {
+    "fx1": {
+      "cc_range": "86-94",
+      "params": [
+        "FX1 Type",
+        "FX1 Param1",
+        "FX1 Param2",
+        "FX1 Param3",
+        "FX1 Param4",
+        "FX1 Param5",
+        "FX1 Param6",
+        "FX1 Mix",
+        "FX1 Routing"
+      ]
+    },
+    "fx2": {
+      "cc_range": "95-103",
+      "params": [
+        "FX2 Type",
+        "FX2 Param1",
+        "FX2 Param2",
+        "FX2 Param3",
+        "FX2 Param4",
+        "FX2 Param5",
+        "FX2 Param6",
+        "FX2 Mix",
+        "FX2 Routing"
+      ]
+    },
+    "fx3": {
+      "cc_range": "104-112",
+      "params": [
+        "FX3 Type",
+        "FX3 Param1",
+        "FX3 Param2",
+        "FX3 Param3",
+        "FX3 Param4",
+        "FX3 Param5",
+        "FX3 Param6",
+        "FX3 Mix",
+        "FX3 Routing"
+      ]
+    },
+    "extended": {
+      "cc_range": "113-186",
+      "count": 74
+    }
+  }
+}

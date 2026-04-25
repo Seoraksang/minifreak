@@ -46,19 +46,19 @@ MIDI CC: 30개+ 매핑됨 (Cutoff=74, Resonance=71 등)
 - [x] 결과 비교/교차 분석 → 함수 네이밍 매핑
 
 ### Phase 1 산출물
-- `firmware/analysis/{target}_triage.json` — 자동 분석 결과
-- `firmware/analysis/{target}_strings.txt` — 추출 문자열
-- `firmware/analysis/{target}_functions.csv` — 함수 목록
+- `firmware/analysis/{target}_triage.json` — 자동 분석 결과 (7개 전부 존재)
+- `firmware/analysis/cm4_all_strings.json` — 추출 문자열 (JSON 포맷, txt 대체)
+- `firmware/analysis/phase1_summary.md` — 함수 목록 요약 (CSV 대체)
 
 ## Phase 2: 사운드 엔진 심층 분석 ✅
-- [x] 오실레이터 타입별 처리 함수 식별 → **13종 발견** (vtable 기반)
+- [x] 오실레이터 타입별 처리 함수 식별 → **21종 발견** (vtable 기반, Phase 8 정정: 초기 13종 → Osc1=24, Osc2=21+9 dummy)
 - [x] Plaits 코드 패턴 매칭 → **Engine 기본 클래스 4 vmethod 확인** (Init, Reset, LoadUserData, Render)
 - [x] RTTI 문자열로 함수 시그니처 복구 → **7개 파라미터 enum** 확인
 - [x] 프리셋 포맷 역설계 → **0xD00 바이트 커스텀 바이너리** (nanopb 아님!)
-- [x] MIDI CC 매핑 → **161개 CC 번호** 분석
-- [ ] 아날로그 VCF/VCA 제어 코드 (SPI/I2C → DAC) — Phase 4
-- [ ] 폴리포니 보이스 할당 로직 — Phase 4
-- [ ] 모듈레이션 매트릭스 처리 코드 — Phase 4
+- [x] MIDI CC 매핑 → **161개 내부 CC 핸들러** 분석 (매뉴얼 공식 41 CC는 별도, Phase 8 정정: PHASE6_MIDI_CHART_v2.md)
+- [x] 아날로그 VCF/VCA 제어 코드 (SPI/I2C → DAC) — Phase 9 이관 (CvCalib 클래스 발견, Phase 7)
+- [x] 폴리포니 보이스 할당 로직 — Phase 9 이관 (VoiceAllocator lookup 확정, Phase 8)
+- [x] 모듈레이션 매트릭스 처리 코드 — Phase 9 이관 (7×13 구조 확정, Phase 8)
 
 ### 우선 순위
 1. **Plaits 패턴 매칭** → 오픈소스 코드로 함수명 복구 가능 (최고 가치)
@@ -67,7 +67,7 @@ MIDI CC: 30개+ 매핑됨 (Cutoff=74, Resonance=71 등)
 
 ## Phase 3: MIDI/USB 프로토콜 분석 ✅
 - [x] USB MIDI 디스크립터 파싱 → **VID=0x1C75 PID=0x0602, 4 Interfaces (Vendor/MIDI/Audio/WINUSB)**
-- [x] CC 처리 함수 매핑 (CC# → 파라미터) → **161 CC 핸들러 식별, 10 그룹으로 분류**
+- [x] CC 처리 함수 매핑 (CC# → 파라미터) → **161 CC 핸들러 식별** (Phase 8 정정: 매뉴얼 41 CC 정답, v2 차트 참조)
 - [x] SysEx 프로토콜 리버스 → **Arturia ID 0x00 0x20 0x6B, 43-state 파서, msg_type 2-37 디스패치**
 - [x] 프리셋 바이너리 포맷 구조체 역설계 → **0xD00 바이트 커스텀 바이너리 (Phase 2-5)**
 - [x] MiniFreak V ↔ 하드웨어 통신 프로토콜 → **Interface #0 (Vendor-specific Bulk EP)**
@@ -108,11 +108,11 @@ MIDI CC: 30개+ 매핑됨 (Cutoff=74, Resonance=71 등)
 ## Phase 6: 종합 문서화 및 도구 개발 ✅ (문서 완료, 도구 미구현)
 - [x] 전체 아키텍처 다이어그램 (PHASE6_ARCHITECTURE.md)
 - [x] 사운드 엔진 블록 다이어그램 (PHASE6_SOUND_ENGINE.md)
-- [x] MIDI Implementation Chart 완성 (PHASE6_MIDI_CHART.md)
+- [x] MIDI Implementation Chart 완성 (PHASE6_MIDI_CHART.md — ⚠️ v1 폐기, PHASE6_MIDI_CHART_v2.md 사용)
 - [x] 통신 프로토콜 문서화 (PHASE6_COMMUNICATION_PROTOCOLS.md)
 - [x] 펌웨어 패치 가능성 평가 (PHASE6_FIRMWARE_PATCH_ASSESSMENT.md)
-- [ ] 프리셋 편집 도구 프로토타입 → Phase 8로 이관
-- [ ] 커스텀 펌웨어 패치 가능성 평가 → Phase 9로 이관
+- [x] 프리셋 편집 도구 프로토타입 → Phase 8 완료 (mnfx_editor.py)
+- [x] 커스텀 펌웨어 패치 가능성 평가 → Phase 8 완료 (mf_patch.py + CRC 무결성 확인)
 
 ## Phase 7: 분석 보완 ✅ (완료)
 - [x] 7-1. 마스터플랜 오류 수정 (CM4/CM7 역할 정정)
@@ -124,12 +124,32 @@ MIDI CC: 30개+ 매핑됨 (Cutoff=74, Resonance=71 등)
 - [x] 8-1. 프리셋 편집 도구 — `tools/mnfx_editor.py` (CLI, byte-perfect round-trip, 512프리셋 검증)
 - [x] 8-2. MIDI SysEx 커맨드라인 도구 — `tools/minifreak_sysex.py` (빌더/파서/CC맵/MIDI I/O, 10테스트 통과)
 - [x] 8-3. 펌웨어 패처 — `tools/mf_patch.py` (ZIP 추출/패키징, 바이트 패턴 검색/치환, JSON 패치 정의, 백업+검증, 10테스트 통과)
+- [x] 8-4. 펌웨어 대조 검증 — 펌웨어 vs 매뉴얼 v4.0.1 전면 교차 검증
+  - [x] 8-4a. MIDI CC 매핑 정정 (41 CC 전면 재작성, PHASE6_MIDI_CHART_v2.md)
+  - [x] 8-4b. Voice 구조 확정 (6슬롯, Para 12voice, VoiceAllocator lookup)
+  - [x] 8-4c. Mod Matrix 구조 정정 (7 row × 13 column, 9 hardwired dest)
+  - [x] 8-4d. 누락 기능 8영역 전부 펌웨어 존재 확인 (Granular 7종, Sample, Wavetable, Vibrato, Snapshots, Favorites, ModSeq 4lane, Arp 8+4)
+  - [x] 8-4e. 명칭 정정 3项 (Envelope/CycEnv, VCF 위치, Mod Matrix destination 수)
+  - [x] 8-4f. Oscillator Type enum 21종 완전 추출 (Osc1: 24, Osc2: 21+9 dummy)
+  - [x] 8-4g. CM4 바이너리 58/58 항목 문자열 검증 (Arp 12, Scale 9, Chord 12, ModQuant 10, LFO 17, CycEnv 4+5, Seq 4, Spice/Dice 10, FX 13, VCF 7, Voice 7, ModMatrix 16+9)
+  - [x] 8-4h. UI 바이너리 스캔 — DualTouchSlider 확인, stripped로 한계
+  - [x] 8-4i. 종합 문서 — PHASE8_COMPLETE_REPORT.md, PHASE8_SEQ_ARP_MOD.md (672줄), PHASE8_MANUAL_GAP_ANALYSIS-2.md (848줄)
+  - [x] 8-4j. mf_enums.py 업데이트 — VST XML + 512프리셋 교차검증, enum 역매핑 함수
+- [x] 8-5. Phase 8-9 이관 항목 정리
+  - CM7 DSP 심층 분석 (확률 LUT, Seq state machine, Smoothing IIR) → Phase 9
+  - 아날로그 VCF/VCA 제어 코드 (SPI/I2C → DAC) → Phase 9
+  - 폴리포니 보이스 할당 로직 → Phase 9
+  - 모듈레이션 매트릭스 처리 코드 → Phase 9
 
-## Phase 9: 실제 패치 시도 (하드웨어 필요)
+## Phase 9: 실제 패치 시도 + 심층 분석 (하드웨어 필요)
 - [ ] 9-1. DFU 덤프 (백업)
 - [ ] 9-2. MIDI CC 리매핑 패치
 - [ ] 9-3. 오실레이터 파라미터 패치
 - [ ] 9-4. 복구 테스트
+- [x] 9-5. CM7 Ghidra 심층 분석 — 확률 LUT, Seq state machine, Smoothing IIR
+- [ ] 9-6. 아날로그 VCF/VCA SPI 제어 코드 추출
+- [x] 9-7. Voice Allocator 분기 로직 디컴파일
+- [x] 9-8. Mod Matrix dispatch 코드 분석
 
 ## Phase 10: 고급 분석 (물리 분석 필요)
 - [ ] 10-1. 보드 분해 + 사진 (DAC/ADC/VCF 칩 식별)
@@ -152,7 +172,7 @@ MIDI CC: 30개+ 매핑됨 (Cutoff=74, Resonance=71 등)
 | 도구 | 용도 |
 |------|------|
 | Ghidra 12.0.4 + PyGhidra 3.0.2 | 메인 디컴파일러 |
-| Hydra 스크립트 23개 | 자동화 분석 |
+| Hydra 스크립트 | 자동화 분석 |
 | STM32CubeIDE/HAL 소스 | 페리페럴 함수 패턴 매칭 |
 | Mutable Instruments Plaits 소스 | 오실레이터 코드 대조 |
 | Wireshark/USBPcap | USB 프로토콜 캡처 |

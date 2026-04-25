@@ -10,7 +10,7 @@
                          FUN_080359f4 (18,232B)
                     ╔══════════════════════════╗
                     ║   MAIN AUDIO RENDER LOOP ║
-                    ║   12-voice polyphonic    ║
+                    ║   6-voice poly (Para: 12) ║
                     ║   float/NEON/VectorFloat ║
                     ╚════╤═══════════╤═════════╝
                          │           │
@@ -24,12 +24,11 @@
           │                                          │
           │  ┌───────────────────────────────────┐   │
           │  │  OSC Engine (vtable dispatch)     │   │
-          │  │  13 types via Engine::Render()    │   │
+          │  │  Osc1: 16+ types, Osc2: 21 types  │   │
           │  │                                   │   │
           │  │  ┌─────────────┐ ┌─────────────┐ │   │
           │  │  │  OSC 1      │ │  OSC 2      │ │   │
-          │  │  │  Group A/C: │ │  Group A/C: │ │   │
-          │  │  │  11 types   │ │  30 types   │ │   │
+          │  │  │  16+ types  │ │  21 types   │ │   │
           │  │  │             │ │             │ │   │
           │  │  │  Init:      │ │  Init:      │ │   │
           │  │  │  G-A:78 instr│ │  G-A:78 instr│ │  │
@@ -52,21 +51,36 @@
           │  └──────────────────┬────────────────┘   │
           │                     │                    │
           │  ┌──────────────────▼────────────────┐   │
-          │  │  VCF — Digital Filter              │   │
+          │  │  Analog VCF (SEM-style)            │   │
           │  │  FUN_0803c2bc (9,250B)             │   │
           │  │  float + short, struct pointers    │   │
           │  │  audio_score = 6                   │   │
           │  │                                    │   │
-          │  │  Filter Types:                     │   │
-          │  │  ├─ Multi Filter                   │   │
-          │  │  ├─ Surgeon Filter                 │   │
-          │  │  ├─ Comb Filter                    │   │
-          │  │  └─ Phaser Filter                  │   │
+          │  │  Filter Types (3):                 │   │
+          │  │  ├─ LP (Low Pass)                  │   │
+          │  │  ├─ BP (Band Pass)                 │   │
+          │  │  └─ HP (High Pass)                 │   │
+          │  │  고정 12 dB/oct 슬로프             │   │
+          │  │  Self-oscillation 가능             │   │
           │  │                                    │   │
           │  │  Parameters:                       │   │
-          │  │  Cutoff (CC#24), Resonance (CC#25) │   │
-          │  │  EnvAmt (CC#26), KeyTrack (CC#27)  │   │
-          │  │  Type (CC#29), Drive (CC#30)       │   │
+          │  │  Cutoff (CC#74), Resonance (CC#71) │   │
+          │  │  VCF Env Amt (CC#24)               │   │
+          │  │  Velocity Env Mod (CC#94)          │   │
+          │  └──────────────────┬────────────────┘   │
+          │                     │                    │
+          │  ┌──────────────────▼────────────────┐   │
+          │  │  Osc 2 Audio Processor (디지털)    │   │
+          │  │  (Osc 2를 필터/이펙터로 사용 시)  │   │
+          │  │                                    │   │
+          │  │  Types:                            │   │
+          │  │  ├─ Multi Filter (LP/BP/HP/Notch   │   │
+          │  │  │   + 6/12/24/36 dB/oct)         │   │
+          │  │  ├─ Surgeon Filter (Parametric EQ) │   │
+          │  │  ├─ Comb Filter (KB tracking)      │   │
+          │  │  ├─ Phaser Filter (2~12 pole)      │   │
+          │  │  └─ Destroy (Wavefolder+Crusher)   │   │
+          │  │  Osc 2 Volume = Dry/Wet 밸런스     │   │
           │  └──────────────────┬────────────────┘   │
           │                     │                    │
           │  ┌──────────────────▼────────────────┐   │
@@ -75,9 +89,13 @@
           │  │  float + short + VectorFloat       │   │
           │  │  audio_score = 11                  │   │
           │  │                                    │   │
-          │  │  Env1: A/D/S/R + Loop + Curve      │   │
-          │  │  Env2: A/D/S/R + Velocity          │   │
-          │  │  CycEnv: Cycling envelope          │   │
+          │  │  Envelope (ADSR): VCA hardwired    │   │
+          │  │    CC#80(A) / 81(D) / 82(S) / 83(R)│   │
+          │  │  Cycling Envelope (RHF): 3-stage   │   │
+          │  │    Rise/Fall/Hold + Sustain        │   │
+          │  │    CC#68(RiseShape) / 76(Rise) /   │   │
+          │  │    77(Fall) / 78(Hold) / 69(FallShp)│   │
+          │  │  Vibrato LFO (제3 LFO, 별도 구현)  │   │
           │  └──────────────────┬────────────────┘   │
           │                     │                    │
           │  ┌──────────────────▼────────────────┐   │
@@ -92,7 +110,8 @@
                                 │
                     ┌───────────▼───────────────┐
                     │  Voice Summing Bus         │
-                    │  12 voices → stereo mix    │
+                    │  6 voices → stereo mix     │
+                    │  (12 in Para mode)          │
                     └───────────┬───────────────┘
                                 │
           ┌─────────────────────▼─────────────────────┐
@@ -101,11 +120,14 @@
           │  float + short + VectorFloat              │
           │  audio_score = 12                         │
           │                                           │
-          │  Sources: LFO1, LFO2, Env1, Env2,         │
-          │           Velocity, ModWheel, PitchWheel, │
-          │           Macro1, Macro2, Seq Step        │
+          │  7 Source Rows:                           │
+          │    CycEnv, LFO1, LFO2, Velo+AT,          │
+          │    Wheel, Keyboard, Mod Seq               │
           │                                           │
-          │  Destinations: 140 mod dests (XML)       │
+          │  13 Columns (destinations):               │
+          │    4 hardwired + 9 assignable             │
+          │    (3 pages × 3 assignable)               │
+          │  Dest enum: ~30+ assignable destinations  │
           │  Mx_Dots, Mx_Assign, Mx_Col (101 params) │
           └─────────────────────┬─────────────────────┘
                                 │
@@ -134,19 +156,21 @@
           └───────┼────────────┼────────────┼───────┘
                   │            │            │
           ┌───────▼────────────▼────────────▼───────┐
-          │  FX DSP Core (Separate Binary, 120KB)    │
-          │  Target: DSP56362                        │
-          │                                          │
-          │  ┌──────────────────────────────────┐    │
-          │  │  FX Types (13 per slot):          │    │
-          │  │  Chorus, Phaser, Flanger,         │    │
-          │  │  Reverb, Distortion, Delay,       │    │
-          │  │  Stereo, BitCrush, etc.           │    │
-          │  └──────────────────────────────────┘    │
-          │                                          │
-          │  Routing:                                │
-          │  ├─ Delay Routing (serial/parallel)      │
-          │  └─ Reverb Routing (send/insert)         │
+          │  FX DSP Core (CM7 내부 함수, 524KB)
+          │  Target: STM32H745 CM7 코어
+          │
+          │  ┌──────────────────────────────────┐
+          │  │  FX Types (10+2 per slot):       │
+          │  │  Chorus, Phaser, Flanger,         │
+          │  │  Reverb, Delay, Distortion,       │
+          │  │  BitCrusher, 3 Bands EQ,          │
+          │  │  Peak EQ, Multi Comp,              │
+          │  │  Vocoder EXT In, Vocoder Self     │
+          │  └──────────────────────────────────┘
+          │
+          │  Routing:
+          │  ├─ Delay/Reverb: Send 모드 가능
+          │  └─ 기타 FX: Insert 라우팅
           └──────────────────┬───────────────────────┘
                              │
                     ┌────────▼────────┐
@@ -165,10 +189,10 @@
 
 | 함수 | 크기 | Score | 특징 | 추정 역할 |
 |------|------|-------|------|-----------|
-| `FUN_080359f4` | 18,232B | ? | CM7 최대 함수 | **Main Audio Render** (12-voice poly 루프) |
+| `FUN_080359f4` | 18,232B | ? | CM7 최대 함수 | **Main Audio Render** (6-voice poly, 12-voice Para) |
 | `FUN_0803e6f8` | 10,332B | 12 | float+short+VectorFloat | **Oscillator Mix / Voice Body** |
 | `FUN_080321d4` | 8,350B | 11 | float+short+VectorFloat | **Envelope Generator** |
-| `FUN_0803c2bc` | 9,250B | 6 | float+short, struct ptrs | **VCF (Filter Processing)** |
+| `FUN_0803c2bc` | 9,250B | 6 | float+short, struct ptrs | **VCF Filter Coeff / Osc2 Processor** |
 | `FUN_0803a490` | 7,610B | 12 | float+short+VectorFloat, 9 globals | **VCA / Voice Output** |
 | `FUN_08054708` | 7,480B | 12 | float+short+VectorFloat | **Modulation Matrix** |
 | `FUN_0805a040` | 3,840B | 10 | float+VectorFloat, 23 globals | **LFO + Shaper** |
@@ -394,36 +418,41 @@ USB MIDI IN (EP02)
                          │
               ┌──────────▼──────────┐
               │  Voice Allocator    │
-              │  Max 12 voices      │
+              │  6 voices (Poly/Mono/Uni) │
+              │  12 voices (Para)   │
               │  Modes:             │
-              │  ├─ Poly (steal)    │
-              │  ├─ Poly2Mono       │
-              │  ├─ Legato          │
-              │  └─ Unison (1-16)   │
+              │  ├─ Mono (1 voice)  │
+              │  ├─ Poly (6 voice)  │
+              │  ├─ Para (12 voice) │
+              │  │  (Osc2 비활성,  │
+              │  │   6 pair × 2)   │
+              │  └─ Uni (2-6 voice)│
+              │     + Legato 옵션  │
+              │  FUN_0812d0dc      │
+              │  Voice steal: 5-tick│
+              │  timeout           │
               └──────────┬──────────┘
                          │
          ┌───────────────▼───────────────┐
-         │  Voice Pool (×12 max)        │
+         │  Voice Pool (×6 max, ×12 Para)      │
          │                               │
          │  Each Voice:                 │
          │  ┌─────────────────────┐     │
-         │  │ OSC1 → Shaper       │     │
-         │  │ OSC2 → Shaper       │     │
-         │  │   ↓                 │     │
+         │  │ OSC1 → (optional)   │     │
+         │  │   → Osc2 Processor  │     │
          │  │ Osc Mix (level/pan) │     │
          │  │   ↓                 │     │
-         │  │ VCF (filter)        │     │
+         │  │ Analog VCF (SEM)    │     │
+         │  │ LP/BP/HP 12dB/oct   │     │
          │  │   ↓                 │     │
-         │  │ VCA (amp+vel)       │     │
+         │  │ Analog VCA (ADSR)   │     │
          │  │   ↓                 │     │
          │  │ Voice Output        │     │
          │  └─────────────────────┘     │
          │                               │
          │  All voices → Sum Bus        │
-         │  Sum Bus → Mod Matrix        │
-         │  Mod Matrix → FX Send        │
-         │  FX Send → FX Core           │
-         │  FX Core → Master Out        │
+         │  Sum Bus → FX Send (3 slots) │
+         │  FX → Master Out             │
          └───────────────────────────────┘
 ```
 
@@ -431,27 +460,24 @@ USB MIDI IN (EP02)
 
 ## 7. 모듈레이션 매트릭스
 
+> ⚠️ Phase 8 정정: 이 섹션의 source/destination 목록은 Phase 8에서 재검증됨.
+> 아래는 정정된 내용.
+
 ```
-    SOURCES                    DESTINATIONS (140)
-    ─────────                  ──────────────────
-    LFO1 ───────┐              Osc1 Pitch
-    LFO2 ───────┤              Osc1 Shape
-    Env1 ───────┤              Osc1 Timbre
-    Env2 ───────┤              Osc2 Pitch
-    Velocity ───┤              Osc2 Shape
-    ModWheel ───┤              Osc2 Timbre
-    PitchWheel ─┤              VCF Cutoff
-    AfterTouch ─┤              VCF Resonance
-    Macro1 ─────┤              VCA Level
-    Macro2 ─────┤              FX1 Param1-3
-    Seq Step ───┘              FX2 Param1-3
-                               FX3 Param1-3
-                               Env1 A/D/S/R
-                               Env2 A/D/S/R
-                               LFO1 Rate
-                               LFO2 Rate
-                               Pan
-                               ... (140 total)
+    7 SOURCE ROWS              13 COLUMNS (destinations)
+    ─────────                  ──────────────────────────
+    CycEnv ──────┐             4 hardwired:
+    LFO1 ────────┤               Vib Rate, Vib AM, VCA,
+    LFO2 ────────┤               LFO1 AM, LFO2 AM,
+    Velo+AT ─────┤               CycEnv AM, Uni Spread
+    Wheel ───────┤             9 assignable (3 pages × 3):
+    Keyboard ────┤               ~30+ destination 풀에서 선택
+    Mod Seq ─────┘
+
+    Macro M1/M2는 Mod Matrix source가 아님.
+    PitchWheel은 Mod Matrix source가 아님.
+    Envelope (ADSR)은 Mod Matrix row가 아님 (VCA hardwired).
+    Macro는 터치스트립 또는 CC#117/118로 직접 제어.
 
     Mx_Dots[N]    ── Boolean enable per routing
     Mx_Assign[N]  ── Source assignment

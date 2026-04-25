@@ -1,0 +1,151 @@
+{
+  "fx_types": [
+    {
+      "index": 0,
+      "name": "Chorus",
+      "addr": "0x081AF308"
+    },
+    {
+      "index": 1,
+      "name": "Phaser",
+      "addr": "0x081AF310"
+    },
+    {
+      "index": 2,
+      "name": "Flanger",
+      "addr": "0x081AF318"
+    },
+    {
+      "index": 3,
+      "name": "Reverb",
+      "addr": "0x081AF320"
+    },
+    {
+      "index": 4,
+      "name": "Distortion",
+      "addr": "0x081AF328"
+    },
+    {
+      "index": 5,
+      "name": "Bit Crusher",
+      "addr": "0x081AF334"
+    },
+    {
+      "index": 6,
+      "name": "3 Bands EQ",
+      "addr": "0x081AF340"
+    },
+    {
+      "index": 7,
+      "name": "Peak EQ",
+      "addr": "0x081AF34C"
+    },
+    {
+      "index": 8,
+      "name": "Multi Comp",
+      "addr": "0x081AF354"
+    },
+    {
+      "index": 9,
+      "name": "SuperUnison",
+      "addr": "0x081AF360"
+    },
+    {
+      "index": 10,
+      "name": "Vocoder Self",
+      "addr": "0x081AF36C"
+    }
+  ],
+  "osc_types": [
+    {
+      "index": 0,
+      "name": "Basic Waves",
+      "addr": "0x081AF388"
+    },
+    {
+      "index": 1,
+      "name": "SuperWave",
+      "addr": "0x081AF394"
+    }
+  ],
+  "chord_modes": [
+    {
+      "index": 0,
+      "name": "12"
+    },
+    {
+      "index": 1,
+      "name": "Saw"
+    },
+    {
+      "index": 2,
+      "name": "Sine"
+    }
+  ],
+  "voice_modes": [
+    {
+      "index": 0,
+      "name": "ussive"
+    },
+    {
+      "index": 1,
+      "name": "Sustain"
+    },
+    {
+      "index": 2,
+      "name": "[X]"
+    },
+    {
+      "index": 3,
+      "name": "Tune"
+    }
+  ],
+  "insert_send": [
+    {
+      "addr": "0x081B07C4",
+      "name": "Insert"
+    },
+    {
+      "addr": "0x081B07CC",
+      "name": "Send"
+    }
+  ],
+  "kbd_src_modes": [
+    {
+      "addr": "0x081B0E10",
+      "name": "m9"
+    },
+    {
+      "addr": "0x081B0E14",
+      "name": "m11"
+    },
+    {
+      "addr": "0x081B0E18",
+      "name": "69"
+    },
+    {
+      "addr": "0x081B0E1C",
+      "name": "M9"
+    },
+    {
+      "addr": "0x081B0E20",
+      "name": "M7"
+    },
+    {
+      "addr": "0x081B0E24",
+      "name": "S Curve"
+    },
+    {
+      "addr": "0x081B0E2C",
+      "name": "Random"
+    },
+    {
+      "addr": "0x081B0E34",
+      "name": "Voices"
+    },
+    {
+      "addr": "0x081B0E3C",
+      "name": "Poly Kbd"
+    }
+  ]
+}

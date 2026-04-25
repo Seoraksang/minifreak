@@ -1,0 +1,304 @@
+{
+  "functions": {
+    "0x8124990": {
+      "name": "FUN_08124990",
+      "addr": "0x8124990",
+      "size": 948,
+      "code": "\n/* WARNING: Instruction at (ram,0x08124baa) overlaps instruction at (ram,0x08124ba8)\n    */\n\nundefined4 FUN_08124990(undefined4 *param_1)\n\n{\n  ulonglong uVar1;\n  int iVar2;\n  undefined4 uVar3;\n  uint *puVar4;\n  uint uVar5;\n  uint uVar6;\n  int iVar7;\n  uint *puVar8;\n  undefined4 *puVar9;\n  uint uVar10;\n  uint uVar11;\n  \n  iVar2 = FUN_08123904();\n  if (param_1 == (undefined4 *)0x0) {\n    return 1;\n  }\n  puVar8 = (uint *)*param_1;\n  if (((((((puVar8 == DAT_08124c94) || (puVar8 == DAT_08124c94 + 6)) ||\n         (puVar8 == DAT_08124c94 + 0xc)) ||\n        ((puVar8 == DAT_08124c94 + 0x12 || (puVar8 == DAT_08124c94 + 0x18)))) ||\n       (puVar8 == DAT_08124c94 + 0x1e)) ||\n      (((puVar8 == DAT_08124c94 + 0x24 || (puVar8 == DAT_08124c94 + 0x2a)) ||\n       ((puVar8 == DAT_08124c94 + 0x100 ||\n        (((puVar8 == DAT_08124c94 + 0x106 || (puVar8 == DAT_08124c94 + 0x10c)) ||\n         (puVar8 == DAT_08124c94 + 0x112)))))))) ||\n     (((puVar8 == DAT_08124c94 + 0x118 || (puVar8 == DAT_08124c94 + 0x11e)) ||\n      ((puVar8 == DAT_08124c94 + 0x124 || (puVar8 == DAT_08124c94 + 0x12a)))))) {\n    *(undefined1 *)((int)param_1 + 0x35) = 2;\n    *(undefined1 *)(param_1 + 0xd) = 0;\n    *puVar8 = *puVar8 & 0xfffffffe;\n    while ((int)(*puVar8 << 0x1f) < 0) {\n      iVar7 = FUN_08123904();\n      if (5 < (uint)(iVar7 - iVar2)) {\n        param_1[0x15] = 0x20;\n        *(undefined1 *)((int)param_1 + 0x35) = 3;\n        return 1;\n      }\n      puVar8 = (uint *)*param_1;\n    }\n    puVar4 = (uint *)param_1[6];\n    uVar11 = param_1[9];\n    uVar5 = param_1[2] | param_1[3] | param_1[4] | param_1[5] | (uint)puVar4 | param_1[7] |\n            param_1[8] | DAT_08124ca0 & *puVar8;\n    if (uVar11 == 4) {\n      uVar10 = param_1[0xb];\n      uVar5 = uVar5 | param_1[0xc] | uVar10;\n      if ((*DAT_08124ca4 & 0xffff0000) < 0x20000000) {\n        *puVar8 = uVar5;\n        uVar6 = puVar8[5] & 0xfffffff8 | 4;\n        goto LAB_08124bce;\n      }\nLAB_08124ba6:\n      uVar6 = param_1[1];\n      if (uVar6 - 0x29 < 0x20) {\n        if (-1 < (int)((DAT_08124ca8 >> (uVar6 - 0x29 & 0xff)) << 0x1f)) goto LAB_08124bba;\n        goto LAB_08124bb6;\n      }\ncode_r0x08124bb0:\n      if (uVar6 - 0x4f < 4) {\nLAB_08124bb6:\n        uVar5 = uVar5 | 0x100000;\n      }\nLAB_08124bba:\n      *puVar8 = uVar5;\n      uVar6 = puVar8[5] & 0xfffffff8 | uVar11;\n      if (uVar11 != 4) goto switchD_00004ce0_default;\n      uVar10 = param_1[0xb];\nLAB_08124bce:\n      uVar5 = param_1[10];\n      uVar6 = uVar6 | uVar5;\n      if (uVar10 == 0) goto switchD_00004ce0_default;\n      if (puVar4 == (uint *)0x0) {\n        if (uVar5 == 1) {\n          if (uVar10 == 0x1800000) goto LAB_08124bf0;\n        }\n        else if ((uVar5 & 0xfffffffd) == 0) {\nLAB_08124bea:\n          if ((int)(uVar10 << 7) < 0) {\nLAB_08124bf0:\n            param_1[0x15] = 0x40;\n            *(undefined1 *)((int)param_1 + 0x35) = 1;\n            return 1;\n          }\n        }\n        goto switchD_00004ce0_default;\n      }\n      if (puVar4 != (uint *)0x2000) {\n        if (uVar5 < 3) goto LAB_08124bf0;\n        if (uVar5 == 3) goto LAB_08124bea;\n        goto switchD_00004ce0_default;\n      }\n      puVar4 = &switchD_00004ce0::switchdataD_00004ce4;\n      switch(uVar5) {\n      case 0:\n      case 2:\n        goto code_r0x08124bb0;\n      case 1:\n        goto code_r0x08124baa;\n      case 3:\n        goto LAB_08124cb4;\n      default:\n        goto switchD_00004ce0_default;\n      }\n    }\n    if (0x1fffffff < (*DAT_08124ca4 & 0xffff0000)) goto LAB_08124ba6;\n    *puVar8 = uVar5;\n    uVar6 = puVar8[5] & 0xfffffff8 | uVar11;\nswitchD_00004ce0_default:\n    puVar8[5] = uVar6;\n    iVar2 = FUN_08124818(param_1);\n    *(int *)(iVar2 + 8) = 0x3f << (param_1[0x17] & 0x1f);\n  }\n  else {\n    if ((((puVar8 != DAT_08124c98) && (puVar8 != DAT_08124c9c)) &&\n        ((puVar8 != DAT_08124c9c + 5 &&\n         (((puVar8 != DAT_08124c9c + 10 && (puVar8 != DAT_08124c9c + 0xf)) &&\n          (puVar8 != DAT_08124c9c + 0x14)))))) &&\n       ((puVar8 != DAT_08124c9c + 0x19 && (puVar8 != DAT_08124c9c + 0x1e)))) {\n      param_1[0x15] = 0x40;\n      *(undefined1 *)((int)param_1 + 0x35) = 3;\n      return 1;\n    }\n    *(undefined1 *)((int)param_1 + 0x35) = 2;\n    *(undefined1 *)(param_1 + 0xd) = 0;\n    if (param_1[2] == 0x40) {\n      uVar5 = 0x10;\n    }\n    else if (param_1[2] == 0x80) {\n      uVar5 = 0x4000;\n    }\n    else {\n      uVar5 = 0;\n    }\n    uVar11 = DAT_08124d7c + (int)puVar8;\n    uVar1 = (ulonglong)DAT_08124d80;\n    *puVar8 = (uint)(param_1[4] | param_1[3] | param_1[5] | param_1[6] | param_1[7]) >> 3 |\n              (uint)param_1[8] >> 4 | *puVar8 & 0xfffe000f | uVar5;\n    param_1[0x17] = (uint)(uVar1 * uVar11 >> 0x24) << 2;\n    iVar2 = FUN_08124818(param_1);\n    *(int *)(iVar2 + 4) = 1 << (param_1[0x17] & 0x1f);\n  }\n  puVar8 = (uint *)*param_1;\n  if (((((puVar8 == DAT_08124c94) || (puVar8 == DAT_08124c94 + 6)) ||\n       ((puVar8 == DAT_08124c94 + 0xc ||\n        ((((puVar8 == DAT_08124c94 + 0x12 || (puVar8 == DAT_08124c94 + 0x18)) ||\n          (puVar8 == DAT_08124c94 + 0x1e)) ||\n         ((puVar8 == DAT_08124c94 + 0x24 || (puVar8 == DAT_08124c94 + 0x2a)))))))) ||\n      ((puVar8 == DAT_08124c94 + 0x100 ||\n       ((puVar8 == DAT_08124c94 + 0x106 || (puVar8 == DAT_08124c94 + 0x10c)))))) ||\n     (((puVar8 == DAT_08124c94 + 0x112 ||\n       (((puVar8 == DAT_08124c94 + 0x118 || (puVar8 == DAT_08124c94 + 0x11e)) ||\n        (puVar8 == DAT_08124c94 + 0x124)))) ||\n      (((((puVar8 == DAT_08124c94 + 0x12a || (puVar8 == DAT_08124c98)) ||\n         (puVar8 == DAT_08124c98 + 5)) ||\n        ((puVar8 == DAT_08124c98 + 10 || (puVar8 == DAT_08124c98 + 0xf)))) ||\n       ((puVar8 == DAT_08124c98 + 0x14 ||\n        (((puVar8 == DAT_08124c98 + 0x19 || (puVar8 == DAT_08124c98 + 0x1e)) ||\n         (puVar8 == DAT_08124c98 + 0x23)))))))))) {\n    FUN_081248e0(param_1);\n    if (param_1[2] == 0x80) {\n      iVar2 = param_1[0x19];\n      uVar3 = param_1[0x1a];\n      param_1[1] = 0;\n      *(undefined4 *)param_1[0x18] = 0;\n      *(undefined4 *)(iVar2 + 4) = uVar3;\n    }\n    else {\n      uVar11 = param_1[1];\n      uVar3 = param_1[0x1a];\n      iVar2 = param_1[0x19];\n      uVar5 = uVar11 & 0xff;\n      *(uint *)param_1[0x18] = uVar5;\n      *(undefined4 *)(iVar2 + 4) = uVar3;\n      if (uVar11 - 1 < 8) {\n        puVar4 = (uint *)(uVar5 - 1);\n        if (puVar4 < (uint *)0x8) {\n          puVar8 = (uint *)*param_1;\n          if ((((puVar8 == DAT_08124c98) || (puVar8 == DAT_08124c98 + 5)) ||\n              (((puVar8 == DAT_08124c98 + 10 ||\n                ((puVar8 == DAT_08124c98 + 0xf || (puVar8 == DAT_08124c98 + 0x14)))) ||\n               (puVar8 == DAT_08124c98 + 0x19)))) ||\n             ((puVar8 == DAT_08124c98 + 0x1e || (puVar8 == DAT_08124c98 + 0x23)))) {\nLAB_08124cb4:\n            iVar7 = DAT_08124d74 + uVar5;\n            iVar2 = DAT_08124d78;\n          }\n          else {\n            iVar7 = DAT_08124cac + uVar5;\n            iVar2 = DAT_08124cb0;\n          }\n          puVar9 = (undefined4 *)(iVar7 * 4);\n          iVar7 = 1 << ((uint)puVar4 & 0xff);\n          param_1[0x1b] = puVar9;\n          param_1[0x1c] = iVar2;\n          param_1[0x1d] = iVar7;\n        }\n        else {\n          puVar9 = (undefined4 *)param_1[0x1b];\n          iVar2 = param_1[0x1c];\n          iVar7 = param_1[0x1d];\n        }\n        *puVar9 = 0;\n        *(int *)(iVar2 + 4) = iVar7;\n        goto LAB_08124b9a;\n      }\n    }\n    param_1[0x1b] = 0;\n    param_1[0x1c] = 0;\n    param_1[0x1d] = 0;\n  }\nLAB_08124b9a:\n  param_1[0x15] = 0;\n  *(undefined1 *)((int)param_1 + 0x35) = 1;\n  return 0;\ncode_r0x08124baa:\n  goto LAB_08124ba6;\n}\n\n"
+    },
+    "0x8124d84": {
+      "name": "FUN_08124d84",
+      "addr": "0x8124d84",
+      "size": 1008,
+      "code": "\nundefined4 FUN_08124d84(int *param_1,uint param_2,uint param_3,uint param_4)\n\n{\n  uint *puVar1;\n  uint *puVar2;\n  int iVar3;\n  uint *puVar4;\n  uint *puVar5;\n  int iVar6;\n  bool bVar7;\n  \n  if (param_1 == (int *)0x0) {\n    return 1;\n  }\n  if ((char)param_1[0xd] == '\\x01') {\n    return 2;\n  }\n  *(undefined1 *)(param_1 + 0xd) = 1;\n  puVar5 = DAT_0812500c;\n  if (*(char *)((int)param_1 + 0x35) != '\\x01') {\n    *(undefined1 *)(param_1 + 0xd) = 0;\n    param_1[0x15] = 0x800;\n    return 1;\n  }\n  puVar2 = (uint *)*param_1;\n  *(undefined1 *)((int)param_1 + 0x35) = 2;\n  param_1[0x15] = 0;\n  if (puVar2 == puVar5) {\n    iVar3 = param_1[0x19];\n    puVar5 = (uint *)param_1[0x1b];\n    *puVar2 = *puVar2 & 0xfffffffe;\n    iVar6 = param_1[0x16];\n    *(int *)(iVar3 + 4) = param_1[0x1a];\n    if (puVar5 != (uint *)0x0) {\n      *(int *)(param_1[0x1c] + 4) = param_1[0x1d];\n    }\nLAB_08124efa:\n    iVar3 = param_1[2];\n    *(int *)(iVar6 + 8) = 0x3f << (param_1[0x17] & 0x1fU);\n    *puVar2 = *puVar2 & 0xfffbffff;\n    puVar2[1] = param_4;\n    puVar4 = DAT_0812500c;\n    if (iVar3 == 0x40) {\n      puVar2[2] = param_3;\n      puVar2[3] = param_2;\n    }\n    else {\n      puVar2[2] = param_2;\n      puVar2[3] = param_3;\n    }\n    puVar1 = DAT_081251ac;\n    if (((((puVar2 == puVar4) || (puVar2 == puVar4 + 6)) || (puVar2 == puVar4 + 0xc)) ||\n        ((puVar2 == puVar4 + 0x12 || (puVar2 == puVar4 + 0x18)))) ||\n       ((puVar2 == puVar4 + 0x1e || ((puVar2 == puVar4 + 0x24 || (puVar2 == puVar4 + 0x2a)))))) {\nLAB_08124f8a:\n      iVar3 = param_1[0x10];\n      *puVar2 = *puVar2 & 0xffffffe1 | 0x16;\n      if (iVar3 != 0) {\n        *puVar2 = *puVar2 | 8;\n      }\n    }\n    else if (puVar2 == puVar4 + 0x100) {\n      iVar3 = param_1[0x10];\n      *puVar2 = *puVar2 & 0xffffffe1 | 0x16;\n      if (iVar3 != 0) {\n        *DAT_081251a8 = *DAT_081251a8 | 8;\n      }\n    }\n    else {\n      if (puVar2 != puVar4 + 0x106) {\n        if ((((puVar2 != puVar4 + 0x10c) && (puVar2 != puVar4 + 0x112)) &&\n            (puVar2 != puVar4 + 0x118)) &&\n           (((puVar2 != puVar4 + 0x11e && (puVar2 != puVar4 + 0x124)) && (puVar2 != puVar4 + 0x12a))\n           )) goto LAB_08124e90;\n        goto LAB_08124f8a;\n      }\n      iVar3 = param_1[0x10];\n      *DAT_081251ac = *DAT_081251ac & 0xffffffe1 | 0x16;\n      if (iVar3 != 0) {\n        *puVar1 = *puVar1 | 8;\n      }\n    }\n  }\n  else {\n    if ((((puVar2 == puVar5 + 6) || (puVar2 == puVar5 + 0xc)) || (puVar2 == puVar5 + 0x12)) ||\n       ((puVar2 == puVar5 + 0x18 || (puVar2 == puVar5 + 0x1e)))) {\nLAB_08125030:\n      iVar3 = param_1[0x19];\n      puVar5 = (uint *)param_1[0x1b];\n      *puVar2 = *puVar2 & 0xfffffffe;\n      iVar6 = param_1[0x16];\n      *(int *)(iVar3 + 4) = param_1[0x1a];\n      if (puVar5 != (uint *)0x0) {\nLAB_0812504a:\n        puVar4 = DAT_081251b0;\n        *(int *)(param_1[0x1c] + 4) = param_1[0x1d];\n        if ((((((puVar2 != puVar4) && (puVar2 != DAT_08125198)) &&\n              ((puVar2 != DAT_08125198 + 6 &&\n               (((puVar2 != DAT_08125198 + 0xc && (puVar2 != DAT_08125198 + 0x12)) &&\n                (puVar2 != DAT_08125198 + 0x18)))))) &&\n             ((puVar2 != DAT_08125198 + 0x1e && (puVar2 != DAT_08125198 + 0xf4)))) &&\n            (puVar2 != DAT_08125198 + 0xfa)) &&\n           (((puVar2 != DAT_08125198 + 0x100 && (puVar2 != DAT_08125198 + 0x106)) &&\n            ((puVar2 != DAT_08125198 + 0x10c &&\n             (((puVar2 != DAT_08125198 + 0x112 && (puVar2 != DAT_08125198 + 0x118)) &&\n              (puVar2 != DAT_08125198 + 0x11e)))))))) {\n          if (((puVar2 == DAT_0812519c) || (puVar2 == DAT_081251a0)) ||\n             ((puVar2 == DAT_081251a0 + 5 ||\n              (((puVar2 == DAT_081251a0 + 10 || (puVar2 == DAT_081251a0 + 0xf)) ||\n               ((puVar2 == DAT_081251a0 + 0x14 ||\n                ((puVar2 == DAT_081251a0 + 0x19 || (puVar2 == DAT_081251a0 + 0x1e)))))))))) {\nLAB_081250f6:\n            iVar3 = param_1[2];\n            *(int *)(iVar6 + 4) = 1 << (param_1[0x17] & 0x1fU);\n            puVar2[1] = param_4;\n            if (iVar3 == 0x40) {\n              puVar2[2] = param_3;\n              puVar2[3] = param_2;\n            }\n            else {\n              puVar2[2] = param_2;\n              puVar2[3] = param_3;\n            }\n          }\n          goto LAB_08124e90;\n        }\n      }\n      goto LAB_08124efa;\n    }\n    if (puVar2 == puVar5 + 0x24) {\n      iVar3 = param_1[0x19];\n      puVar5 = (uint *)param_1[0x1b];\n      *DAT_081251a4 = *DAT_081251a4 & 0xfffffffe;\n      iVar6 = param_1[0x16];\n      *(int *)(iVar3 + 4) = param_1[0x1a];\n      if (puVar5 == (uint *)0x0) goto LAB_08124efa;\n      goto LAB_0812504a;\n    }\n    if (((puVar2 == puVar5 + 0x2a) || (puVar2 == puVar5 + 0x100)) ||\n       ((puVar2 == puVar5 + 0x106 ||\n        (((((puVar2 == puVar5 + 0x10c || (puVar2 == puVar5 + 0x112)) || (puVar2 == puVar5 + 0x118))\n          || ((puVar2 == puVar5 + 0x11e || (puVar2 == puVar5 + 0x124)))) ||\n         (puVar2 == puVar5 + 0x12a)))))) goto LAB_08125030;\n    iVar6 = param_1[0x16];\n    bVar7 = puVar2 == DAT_08125010;\n    *puVar2 = *puVar2 & 0xfffffffe;\n    if (((bVar7) || (puVar2 == DAT_08125014)) ||\n       (((puVar2 == DAT_08125014 + 5 ||\n         (((puVar2 == DAT_08125014 + 10 || (puVar2 == DAT_08125014 + 0xf)) ||\n          (puVar2 == DAT_08125014 + 0x14)))) ||\n        ((puVar2 == DAT_08125014 + 0x19 || (puVar2 == DAT_08125014 + 0x1e)))))) {\n      puVar5 = (uint *)param_1[0x1b];\n      *(int *)(param_1[0x19] + 4) = param_1[0x1a];\n      if (puVar5 != (uint *)0x0) goto LAB_0812504a;\n      goto LAB_081250f6;\n    }\nLAB_08124e90:\n    iVar3 = param_1[0x10];\n    *puVar2 = *puVar2 & 0xfffffff1 | 10;\n    if (iVar3 != 0) {\n      *puVar2 = *puVar2 | 4;\n    }\n    if ((((puVar2 != DAT_08125010) && (puVar2 != DAT_08125014)) &&\n        ((puVar2 != DAT_08125018 &&\n         (((puVar2 != DAT_0812501c && (puVar2 != DAT_08125020)) && (puVar2 != DAT_08125024)))))) &&\n       ((puVar2 != DAT_08125028 && (puVar2 != DAT_0812502c)))) goto LAB_08125000;\n    puVar5 = (uint *)param_1[0x1b];\n  }\n  puVar4 = (uint *)param_1[0x18];\n  if ((int)(*puVar4 << 0xf) < 0) {\n    *puVar4 = *puVar4 | 0x100;\n  }\n  if (puVar5 != (uint *)0x0) {\n    *puVar5 = *puVar5 | 0x100;\n  }\nLAB_08125000:\n  *puVar2 = *puVar2 | 1;\n  return 0;\n}\n\n"
+    },
+    "0x81251b4": {
+      "name": "FUN_081251b4",
+      "addr": "0x81251b4",
+      "size": 548,
+      "code": "\nundefined4 FUN_081251b4(undefined4 *param_1)\n\n{\n  int iVar1;\n  int iVar2;\n  undefined4 uVar3;\n  uint *puVar4;\n  uint uVar5;\n  uint *puVar6;\n  uint *puVar7;\n  bool bVar8;\n  \n  iVar1 = FUN_08123904();\n  puVar7 = DAT_081253e4;\n  if (param_1 == (undefined4 *)0x0) {\n    return 1;\n  }\n  if (*(char *)((int)param_1 + 0x35) != '\\x02') {\n    *(undefined1 *)(param_1 + 0xd) = 0;\n    param_1[0x15] = 0x80;\n    return 1;\n  }\n  puVar6 = (uint *)*param_1;\n  if ((((puVar6 == DAT_081253d8) || (puVar6 == DAT_081253d8 + 6)) || (puVar6 == DAT_081253d8 + 0xc))\n     || (((puVar6 == DAT_081253d8 + 0x12 || (puVar6 == DAT_081253d8 + 0x18)) ||\n         ((puVar6 == DAT_081253d8 + 0x1e || (puVar6 == DAT_081253d8 + 0x24)))))) {\nLAB_08125286:\n    uVar5 = *puVar6;\nLAB_08125288:\n    puVar7 = (uint *)param_1[0x18];\n    *puVar6 = uVar5 & 0xffffffe1;\n    puVar6[5] = puVar6[5] & 0xffffff7f;\n    *puVar7 = *puVar7 & 0xfffffeff;\n    puVar7 = puVar6;\n  }\n  else {\n    if (puVar6 != DAT_081253d8 + 0x2a) {\n      if (((puVar6 == DAT_081253d8 + 0x100) || (puVar6 == DAT_081253d8 + 0x106)) ||\n         ((puVar6 == DAT_081253d8 + 0x10c ||\n          ((((puVar6 == DAT_081253d8 + 0x112 || (puVar6 == DAT_081253d8 + 0x118)) ||\n            (puVar6 == DAT_081253d8 + 0x11e)) || (puVar6 == DAT_081253d8 + 0x124))))))\n      goto LAB_08125286;\n      uVar5 = *puVar6;\n      if (puVar6 != DAT_081253d8 + 0x12a) {\n        bVar8 = puVar6 == DAT_081253dc;\n        *puVar6 = uVar5 & 0xfffffff1;\n        if (((((bVar8) || (puVar6 == DAT_081253e0)) ||\n             ((puVar6 == DAT_081253e0 + 5 ||\n              ((puVar6 == DAT_081253e0 + 10 || (puVar6 == DAT_081253e0 + 0xf)))))) ||\n            (puVar6 == DAT_081253e0 + 0x14)) ||\n           ((puVar6 == DAT_081253e0 + 0x19 || (puVar7 = puVar6, puVar6 == DAT_081253e0 + 0x1e)))) {\n          *(uint *)param_1[0x18] = *(uint *)param_1[0x18] & 0xfffffeff;\n          puVar7 = puVar6;\n        }\n        goto LAB_081252a2;\n      }\n      goto LAB_08125288;\n    }\n    puVar4 = (uint *)param_1[0x18];\n    *DAT_081253e4 = *DAT_081253e4 & 0xffffffe1;\n    puVar7[5] = puVar7[5] & 0xffffff7f;\n    *puVar4 = *puVar4 & 0xfffffeff;\n  }\nLAB_081252a2:\n  *puVar6 = *puVar6 & 0xfffffffe;\n  while ((int)(*puVar7 << 0x1f) < 0) {\n    iVar2 = FUN_08123904();\n    if (5 < (uint)(iVar2 - iVar1)) {\n      param_1[0x15] = 0x20;\n      *(undefined1 *)(param_1 + 0xd) = 0;\n      *(undefined1 *)((int)param_1 + 0x35) = 3;\n      return 1;\n    }\n  }\n  puVar7 = (uint *)*param_1;\n  if (((((((puVar7 == DAT_081253d8) || (puVar7 == DAT_081253d8 + 6)) ||\n         (puVar7 == DAT_081253d8 + 0xc)) ||\n        (((puVar7 == DAT_081253d8 + 0x12 || (puVar7 == DAT_081253d8 + 0x18)) ||\n         ((puVar7 == DAT_081253d8 + 0x1e ||\n          ((puVar7 == DAT_081253d8 + 0x24 || (puVar7 == DAT_081253d8 + 0x2a)))))))) ||\n       ((puVar7 == DAT_081253d8 + 0x100 ||\n        (((puVar7 == DAT_081253d8 + 0x106 || (puVar7 == DAT_081253d8 + 0x10c)) ||\n         (puVar7 == DAT_081253d8 + 0x112)))))) ||\n      ((puVar7 == DAT_081253d8 + 0x118 || (puVar7 == DAT_081253d8 + 0x11e)))) ||\n     ((puVar7 == DAT_081253d8 + 0x124 || (puVar7 == DAT_081253d8 + 0x12a)))) {\n    *(int *)(param_1[0x16] + 8) = 0x3f << (param_1[0x17] & 0x1f);\n  }\n  else {\n    bVar8 = puVar7 != DAT_081253dc;\n    *(int *)(param_1[0x16] + 4) = 1 << (param_1[0x17] & 0x1f);\n    if (((bVar8) && (puVar7 != DAT_081253e0)) &&\n       ((puVar7 != DAT_081253e0 + 5 &&\n        ((((puVar7 != DAT_081253e0 + 10 && (puVar7 != DAT_081253e0 + 0xf)) &&\n          (puVar7 != DAT_081253e0 + 0x14)) &&\n         ((puVar7 != DAT_081253e0 + 0x19 && (puVar7 != DAT_081253e0 + 0x1e))))))))\n    goto LAB_0812535e;\n  }\n  puVar7 = (uint *)param_1[0x1b];\n  *(undefined4 *)(param_1[0x19] + 4) = param_1[0x1a];\n  if (puVar7 != (uint *)0x0) {\n    iVar1 = param_1[0x1c];\n    uVar3 = param_1[0x1d];\n    *puVar7 = *puVar7 & 0xfffffeff;\n    *(undefined4 *)(iVar1 + 4) = uVar3;\n    *(undefined1 *)((int)param_1 + 0x35) = 1;\n    *(undefined1 *)(param_1 + 0xd) = 0;\n    return 0;\n  }\nLAB_0812535e:\n  *(undefined1 *)((int)param_1 + 0x35) = 1;\n  *(undefined1 *)(param_1 + 0xd) = 0;\n  return 0;\n}\n\n"
+    },
+    "0x81253e8": {
+      "name": "FUN_081253e8",
+      "addr": "0x81253e8",
+      "size": 1494,
+      "code": "\nuint * FUN_081253e8(uint *param_1)\n\n{\n  uint *puVar1;\n  uint uVar2;\n  uint uVar3;\n  undefined1 uVar4;\n  uint *puVar5;\n  code *UNRECOVERED_JUMPTABLE;\n  int iVar6;\n  uint uVar7;\n  uint *puVar8;\n  uint uVar9;\n  uint uVar10;\n  uint local_1c;\n  \n  puVar5 = (uint *)*param_1;\n  puVar8 = (uint *)param_1[0x16];\n  local_1c = 0;\n  uVar7 = *puVar8;\n  uVar10 = *DAT_0812566c;\n  uVar2 = *puVar8;\n  puVar1 = param_1;\n  if (puVar5 == DAT_08125668) {\n    uVar3 = param_1[0x17];\n    uVar2 = uVar3 & 0x1f;\n    uVar9 = 8 << uVar2;\n    if ((uVar7 & uVar9) == 0) {\n      if ((int)((uVar7 >> uVar2) << 0x1f) < 0) {\nLAB_08125760:\n        if ((int)(puVar5[5] << 0x18) < 0) {\n          puVar8[2] = 1 << uVar2;\n          param_1[0x15] = param_1[0x15] | 2;\n        }\n        goto LAB_08125778;\n      }\n      uVar9 = 4 << uVar2;\n      if ((uVar7 & uVar9) != 0) goto LAB_08125802;\n      uVar2 = 0x10 << uVar2;\n      if ((uVar7 & uVar2) == 0) goto LAB_081254fe;\n      goto LAB_0812588c;\n    }\nLAB_0812568c:\n    if ((int)(*puVar5 << 0x1d) < 0) {\n      *puVar5 = *puVar5 & 0xfffffffb;\n      puVar8[2] = uVar9;\n      param_1[0x15] = param_1[0x15] | 1;\n    }\n    puVar1 = (uint *)((uVar7 >> uVar2) << 0x1f);\n    if ((int)puVar1 < 0) {\n      if ((((puVar5 == DAT_08125998) || (puVar5 == DAT_08125998 + 6)) ||\n          ((puVar5 == DAT_08125998 + 0xc ||\n           (((puVar5 == DAT_08125998 + 0x12 || (puVar5 == DAT_08125998 + 0x18)) ||\n            (puVar5 == DAT_08125998 + 0x1e)))))) ||\n         (((puVar5 == DAT_08125998 + 0x24 || (puVar5 == DAT_08125998 + 0x2a)) ||\n          ((puVar5 == DAT_08125998 + 0x100 ||\n           (((puVar5 == DAT_08125998 + 0x106 || (puVar5 == DAT_08125998 + 0x10c)) ||\n            ((puVar5 == DAT_08125998 + 0x112 ||\n             ((((puVar5 == DAT_08125998 + 0x118 || (puVar5 == DAT_08125998 + 0x11e)) ||\n               (puVar5 == DAT_08125998 + 0x124)) || (puVar5 == DAT_08125998 + 0x12a))))))))))))\n      goto LAB_08125760;\n      puVar1 = (uint *)*puVar5;\njoined_r0x08125724:\n      uVar2 = 0x10 << uVar2;\n      if ((uVar2 & uVar7) != 0) goto LAB_08125728;\n    }\n    else {\nLAB_08125778:\n      uVar9 = 4 << uVar2;\n      if ((uVar9 & uVar7) != 0) {\n        if (puVar5 != DAT_08125998) goto LAB_08125786;\nLAB_08125802:\n        puVar1 = (uint *)(*puVar5 << 0x1e);\n        if ((int)puVar1 < 0) {\n          puVar8[2] = uVar9;\n          param_1[0x15] = param_1[0x15] | 4;\n        }\n      }\n      uVar2 = 0x10 << uVar2;\n      if ((uVar2 & uVar7) != 0) {\n        if (puVar5 != (uint *)&DAT_40020010) goto LAB_0812582e;\n        goto LAB_0812588c;\n      }\n    }\n  }\n  else {\n    if ((((((puVar5 != DAT_08125668 + 6) && (puVar5 != DAT_08125668 + 0xc)) &&\n          (puVar5 != DAT_08125668 + 0x12)) &&\n         ((puVar5 != DAT_08125668 + 0x18 && (puVar5 != DAT_08125668 + 0x1e)))) &&\n        (((puVar5 != DAT_08125668 + 0x24 &&\n          ((puVar5 != DAT_08125668 + 0x2a && (puVar5 != DAT_08125668 + 0x100)))) &&\n         (puVar5 != DAT_08125668 + 0x106)))) &&\n       ((((puVar5 != DAT_08125668 + 0x10c && (puVar5 != DAT_08125668 + 0x112)) &&\n         (puVar5 != DAT_08125668 + 0x118)) &&\n        (((puVar5 != DAT_08125668 + 0x11e && (puVar5 != DAT_08125668 + 0x124)) &&\n         (puVar5 != DAT_08125668 + 0x12a)))))) {\n      if (((puVar5 != DAT_08125670) && (puVar5 != DAT_08125674)) &&\n         ((puVar5 != DAT_08125674 + 5 &&\n          ((((puVar5 != DAT_08125674 + 10 && (puVar5 != DAT_08125674 + 0xf)) &&\n            (puVar5 != DAT_08125674 + 0x14)) &&\n           ((puVar5 != DAT_08125674 + 0x19 && (puVar5 != DAT_08125674 + 0x1e)))))))) {\n        return param_1;\n      }\n      uVar7 = *puVar5;\n      uVar10 = param_1[0x17] & 0x1f;\n      if (((4 << uVar10 & uVar2) == 0) || (-1 < (int)(uVar7 << 0x1d))) {\n        if (((2 << uVar10 & uVar2) == 0) || (puVar1 = (uint *)(uVar7 << 0x1e), -1 < (int)puVar1)) {\n          if ((8 << uVar10 & uVar2) == 0) {\n            return puVar1;\n          }\n          if (-1 < (int)(uVar7 << 0x1c)) {\n            return puVar1;\n          }\n          UNRECOVERED_JUMPTABLE = (code *)param_1[0x13];\n          *puVar5 = *puVar5 & 0xfffffff1;\n          puVar8[1] = 1 << uVar10;\n          param_1[0x15] = 1;\n          *(undefined1 *)(param_1 + 0xd) = 0;\n          *(undefined1 *)((int)param_1 + 0x35) = 1;\n          if (UNRECOVERED_JUMPTABLE == (code *)0x0) {\n            return puVar1;\n          }\n                    /* WARNING: Could not recover jumptable at 0x08125996. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n          puVar1 = (uint *)(*UNRECOVERED_JUMPTABLE)(param_1);\n          return puVar1;\n        }\n        puVar8[1] = 2 << uVar10;\n        if ((int)(uVar7 << 0x10) < 0) {\n          if (-1 < (int)(uVar7 << 0xf)) {\n            UNRECOVERED_JUMPTABLE = (code *)param_1[0x11];\n            goto joined_r0x081254c2;\n          }\n        }\n        else if ((uVar7 & 0x20) == 0) {\n          *puVar5 = *puVar5 & 0xfffffff5;\n          *(undefined1 *)(param_1 + 0xd) = 0;\n          *(undefined1 *)((int)param_1 + 0x35) = 1;\n        }\n        UNRECOVERED_JUMPTABLE = (code *)param_1[0xf];\n      }\n      else {\n        puVar8[1] = 4 << uVar10;\n        if ((int)(uVar7 << 0x10) < 0) {\n          if (-1 < (int)(uVar7 << 0xf)) {\n            UNRECOVERED_JUMPTABLE = (code *)param_1[0x12];\n            goto joined_r0x081254c2;\n          }\n        }\n        else if (-1 < (int)(uVar7 << 0x1a)) {\n          *puVar5 = *puVar5 & 0xfffffffb;\n        }\n        UNRECOVERED_JUMPTABLE = (code *)param_1[0x10];\n      }\n      goto joined_r0x081254c2;\n    }\n    uVar3 = param_1[0x17];\n    uVar2 = uVar3 & 0x1f;\n    uVar9 = 8 << uVar2;\n    if ((uVar7 & uVar9) != 0) goto LAB_0812568c;\n    puVar1 = (uint *)((uVar7 >> uVar2) << 0x1f);\n    if ((int)puVar1 < 0) goto LAB_08125760;\n    uVar9 = 4 << uVar2;\n    if ((uVar7 & uVar9) != 0) {\nLAB_08125786:\n      if ((((puVar5 == DAT_0812599c) || (puVar5 == DAT_0812599c + 6)) ||\n          ((puVar5 == DAT_0812599c + 0xc ||\n           ((puVar5 == DAT_0812599c + 0x12 || (puVar5 == DAT_0812599c + 0x18)))))) ||\n         (((puVar5 == DAT_0812599c + 0x1e ||\n           (((puVar5 == DAT_0812599c + 0x24 || (puVar5 == DAT_0812599c + 0xfa)) ||\n            (puVar5 == DAT_0812599c + 0x100)))) ||\n          ((((puVar5 == DAT_0812599c + 0x106 || (puVar5 == DAT_0812599c + 0x10c)) ||\n            ((puVar5 == DAT_0812599c + 0x112 ||\n             ((puVar5 == DAT_0812599c + 0x118 || (puVar5 == DAT_0812599c + 0x11e)))))) ||\n           (puVar1 = DAT_0812599c + 0x124, puVar5 == puVar1)))))) goto LAB_08125802;\n      goto joined_r0x08125724;\n    }\n    uVar2 = 0x10 << uVar2;\n    if ((uVar7 & uVar2) == 0) goto LAB_081254fe;\nLAB_0812582e:\n    if ((((((puVar5 == DAT_0812599c) || (puVar5 == DAT_0812599c + 6)) ||\n          (puVar5 == DAT_0812599c + 0xc)) ||\n         ((puVar5 == DAT_0812599c + 0x12 || (puVar5 == DAT_0812599c + 0x18)))) ||\n        (((puVar5 == DAT_0812599c + 0x1e ||\n          ((puVar5 == DAT_0812599c + 0x24 || (puVar5 == DAT_0812599c + 0xfa)))) ||\n         (puVar5 == DAT_0812599c + 0x100)))) ||\n       (((((puVar5 == DAT_0812599c + 0x106 || (puVar5 == DAT_0812599c + 0x10c)) ||\n          (puVar5 == DAT_0812599c + 0x112)) ||\n         ((puVar5 == DAT_0812599c + 0x118 || (puVar5 == DAT_0812599c + 0x11e)))) ||\n        (puVar5 == DAT_0812599c + 0x124)))) {\nLAB_0812588c:\n      iVar6 = *puVar5 << 0x1c;\n    }\n    else {\nLAB_08125728:\n      iVar6 = *puVar5 << 0x1d;\n    }\n    if (iVar6 < 0) {\n      puVar8[2] = uVar2;\n      if ((int)(*puVar5 << 0xd) < 0) {\n        if (-1 < (int)(*puVar5 << 0xc)) goto LAB_0812574c;\n        UNRECOVERED_JUMPTABLE = (code *)param_1[0x12];\n      }\n      else {\n        if (-1 < (int)(*puVar5 << 0x17)) {\n          *puVar5 = *puVar5 & 0xfffffff7;\n        }\nLAB_0812574c:\n        UNRECOVERED_JUMPTABLE = (code *)param_1[0x10];\n      }\n      if (UNRECOVERED_JUMPTABLE != (code *)0x0) {\n        puVar1 = (uint *)(*UNRECOVERED_JUMPTABLE)(param_1);\n        uVar3 = param_1[0x17];\n      }\n    }\n  }\nLAB_081254fe:\n  uVar2 = 0x20 << (uVar3 & 0x1f);\n  if ((uVar2 & uVar7) != 0) {\n    puVar5 = (uint *)*param_1;\n    if ((((((puVar5 == DAT_08125668) || (puVar5 == DAT_08125668 + 6)) ||\n          ((puVar5 == DAT_08125668 + 0xc ||\n           (((puVar5 == DAT_08125668 + 0x12 || (puVar5 == DAT_08125668 + 0x18)) ||\n            (puVar5 == DAT_08125668 + 0x1e)))))) ||\n         ((puVar5 == DAT_08125668 + 0x24 || (puVar5 == DAT_08125668 + 0x2a)))) ||\n        ((puVar5 == DAT_08125668 + 0x100 ||\n         (((puVar5 == DAT_08125668 + 0x106 || (puVar5 == DAT_08125668 + 0x10c)) ||\n          ((puVar5 == DAT_08125668 + 0x112 ||\n           (((puVar5 == DAT_08125668 + 0x118 || (puVar5 == DAT_08125668 + 0x11e)) ||\n            (puVar5 == DAT_08125668 + 0x124)))))))))) || (puVar5 == DAT_08125668 + 0x12a)) {\n      iVar6 = *puVar5 << 0x1b;\n    }\n    else {\n      iVar6 = *puVar5 << 0x1e;\n    }\n    if (iVar6 < 0) {\n      puVar8[2] = uVar2;\n      if (*(char *)((int)param_1 + 0x35) == '\\x04') {\n        uVar2 = param_1[0x10];\n        *puVar5 = *puVar5 & 0xffffffe9;\n        puVar5[5] = puVar5[5] & 0xffffff7f;\n        if ((uVar2 != 0) || (param_1[0x12] != 0)) {\n          *puVar5 = *puVar5 & 0xfffffff7;\n        }\n        UNRECOVERED_JUMPTABLE = (code *)param_1[0x14];\n        puVar8[2] = 0x3f << (uVar3 & 0x1f);\n        *(undefined1 *)((int)param_1 + 0x35) = 1;\n        *(undefined1 *)(param_1 + 0xd) = 0;\n        if (UNRECOVERED_JUMPTABLE == (code *)0x0) {\n          return puVar1;\n        }\n                    /* WARNING: Could not recover jumptable at 0x081258f2. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n        puVar1 = (uint *)(*UNRECOVERED_JUMPTABLE)(param_1);\n        return puVar1;\n      }\n      if ((*puVar5 & 0x40000) == 0) {\n        if ((*puVar5 & 0x100) == 0) {\n          *puVar5 = *puVar5 & 0xffffffef;\n          *(undefined1 *)(param_1 + 0xd) = 0;\n          *(undefined1 *)((int)param_1 + 0x35) = 1;\n        }\nLAB_081255b8:\n        UNRECOVERED_JUMPTABLE = (code *)param_1[0xf];\n      }\n      else {\n        puVar1 = (uint *)(*puVar5 << 0xc);\n        if ((int)puVar1 < 0) goto LAB_081255b8;\n        UNRECOVERED_JUMPTABLE = (code *)param_1[0x11];\n      }\n      if (UNRECOVERED_JUMPTABLE != (code *)0x0) {\n        puVar1 = (uint *)(*UNRECOVERED_JUMPTABLE)(param_1);\n      }\n    }\n  }\n  if (param_1[0x15] == 0) {\n    return puVar1;\n  }\n  if ((int)(param_1[0x15] << 0x1f) < 0) {\n    puVar5 = (uint *)*param_1;\n    *(undefined1 *)((int)param_1 + 0x35) = 4;\n    *puVar5 = *puVar5 & 0xfffffffe;\n    do {\n      local_1c = local_1c + 1;\n      if ((uint)((ulonglong)DAT_08125678 * (ulonglong)uVar10 >> 0x2a) < local_1c) break;\n    } while ((int)(*puVar5 << 0x1f) < 0);\n    if ((int)(*puVar5 << 0x1f) < 0) {\n      uVar4 = 3;\n    }\n    else {\n      uVar4 = 1;\n    }\n    *(undefined1 *)((int)param_1 + 0x35) = uVar4;\n    *(undefined1 *)(param_1 + 0xd) = 0;\n  }\n  UNRECOVERED_JUMPTABLE = (code *)param_1[0x13];\njoined_r0x081254c2:\n  if (UNRECOVERED_JUMPTABLE == (code *)0x0) {\n    return puVar1;\n  }\n                    /* WARNING: Could not recover jumptable at 0x08125664. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  puVar1 = (uint *)(*UNRECOVERED_JUMPTABLE)(param_1);\n  return puVar1;\n}\n\n"
+    },
+    "0x8125fb4": {
+      "name": "FUN_08125fb4",
+      "addr": "0x8125fb4",
+      "size": 168,
+      "code": "\nundefined4 FUN_08125fb4(undefined4 *param_1)\n\n{\n  int iVar1;\n  uint uVar2;\n  uint uVar3;\n  uint *puVar4;\n  uint uVar5;\n  uint uVar6;\n  \n  if (param_1 == (undefined4 *)0x0) {\n    return 1;\n  }\n  if (*(char *)((int)param_1 + 0x41) == '\\0') {\n    *(undefined1 *)(param_1 + 0x10) = 0;\n    FUN_08121bb0();\n  }\n  puVar4 = (uint *)*param_1;\n  iVar1 = param_1[3];\n  *(undefined1 *)((int)param_1 + 0x41) = 0x24;\n  uVar2 = param_1[1];\n  *puVar4 = *puVar4 & 0xfffffffe;\n  puVar4[4] = uVar2 & 0xf0ffffff;\n  puVar4[2] = puVar4[2] & 0xffff7fff;\n  if (iVar1 == 1) {\n    puVar4[2] = param_1[2] | 0x8000;\n  }\n  else {\n    puVar4[2] = param_1[2] | 0x8400;\n    if (iVar1 == 2) {\n      puVar4[1] = 0x800;\n    }\n  }\n  iVar1 = param_1[6];\n  uVar3 = param_1[4];\n  uVar6 = param_1[5];\n  puVar4[1] = puVar4[1] | 0x2008000;\n  uVar2 = param_1[7];\n  uVar5 = param_1[8];\n  puVar4[3] = puVar4[3] & 0xffff7fff;\n  puVar4[3] = uVar3 | uVar6 | iVar1 << 8;\n  *puVar4 = uVar2 | uVar5;\n  *puVar4 = *puVar4 | 1;\n  param_1[0x11] = 0;\n  *(undefined1 *)((int)param_1 + 0x41) = 0x20;\n  param_1[0xc] = 0;\n  *(undefined1 *)((int)param_1 + 0x42) = 0;\n  return 0;\n}\n\n"
+    },
+    "0x812be2c": {
+      "name": "FUN_0812be2c",
+      "addr": "0x812be2c",
+      "size": 526,
+      "code": "\nundefined4 FUN_0812be2c(int param_1,byte *param_2,int param_3)\n\n{\n  uint *puVar1;\n  undefined4 *puVar2;\n  undefined4 *puVar3;\n  uint uVar5;\n  int iVar6;\n  int iVar7;\n  uint uVar8;\n  uint uVar9;\n  byte bVar10;\n  uint uVar11;\n  undefined4 *puVar4;\n  \n  uVar5 = (uint)*param_2;\n  if (param_2[1] != 1) {\n    iVar6 = param_1 + uVar5 * 0x20;\n    iVar7 = *(int *)(param_2 + 0x18);\n    *(uint *)(iVar6 + 0xb10) = *(uint *)(iVar6 + 0xb10) & 0xfff80000;\n    *(uint *)(iVar6 + 0xb10) = *(uint *)(iVar6 + 0xb10) & 0xe007ffff;\n    if (iVar7 == 0) {\n      *(uint *)(iVar6 + 0xb10) = *(uint *)(param_2 + 0xc) & 0x7ffff | *(uint *)(iVar6 + 0xb10);\n      *(uint *)(iVar6 + 0xb10) = *(uint *)(iVar6 + 0xb10) | 0x80000;\n    }\n    else {\n      uVar9 = *(uint *)(param_2 + 0xc);\n      uVar5 = ((iVar7 + uVar9) - 1) / uVar9;\n      *(uint *)(iVar6 + 0xb10) = DAT_0812c03c & uVar5 << 0x13 | *(uint *)(iVar6 + 0xb10);\n      *(uint *)(iVar6 + 0xb10) = uVar9 * (uVar5 & 0xffff) & 0x7ffff | *(uint *)(iVar6 + 0xb10);\n    }\n    if ((param_3 == 1) && (*(int *)(param_2 + 0x10) != 0)) {\n      *(int *)(iVar6 + 0xb14) = *(int *)(param_2 + 0x10);\n    }\n    if (param_2[4] == 1) {\n      if ((*(uint *)(param_1 + 0x808) & 0x100) == 0) {\n        uVar5 = *(uint *)(iVar6 + 0xb00) | 0x20000000;\n      }\n      else {\n        uVar5 = *(uint *)(iVar6 + 0xb00) | 0x10000000;\n      }\n      *(uint *)(iVar6 + 0xb00) = uVar5;\n    }\n    *(uint *)(iVar6 + 0xb00) = *(uint *)(iVar6 + 0xb00) | 0x84000000;\n    return 0;\n  }\n  uVar9 = *(uint *)(param_2 + 0x18);\n  iVar6 = param_1 + uVar5 * 0x20;\n  puVar1 = (uint *)(iVar6 + 0x900);\n  if (uVar9 == 0) {\n    *(uint *)(iVar6 + 0x910) = *(uint *)(iVar6 + 0x910) & 0xe007ffff;\n    *(uint *)(iVar6 + 0x910) = *(uint *)(iVar6 + 0x910) | 0x80000;\n    *(uint *)(iVar6 + 0x910) = *(uint *)(iVar6 + 0x910) & 0xfff80000;\n    bVar10 = param_2[4];\n    if (param_3 != 1) {\n      *(uint *)(iVar6 + 0x900) = *(uint *)(iVar6 + 0x900) | 0x84000000;\n      if (bVar10 != 1) {\n        return 0;\n      }\nLAB_0812bf9c:\n      if ((*(uint *)(param_1 + 0x808) & 0x100) == 0) {\n        uVar8 = *puVar1 | 0x20000000;\n      }\n      else {\n        uVar8 = *puVar1 | 0x10000000;\n      }\n      *puVar1 = uVar8;\n      if ((param_3 == 0) && (uVar9 = (uVar9 & 0xffff) + 3 >> 2, uVar9 != 0)) {\n        puVar2 = *(undefined4 **)(param_2 + 0x10);\n        puVar3 = puVar2;\n        do {\n          puVar4 = puVar3 + 1;\n          *(undefined4 *)(param_1 + uVar5 * 0x1000 + 0x1000) = *puVar3;\n          puVar3 = puVar4;\n        } while (puVar4 != puVar2 + uVar9);\n      }\n      return 0;\n    }\n    iVar7 = *(int *)(param_2 + 0x14);\n    if (iVar7 != 0) goto LAB_0812c018;\nLAB_0812c000:\n    if (bVar10 != 1) goto LAB_0812c004;\n  }\n  else {\n    iVar7 = *(int *)(iVar6 + 0x910);\n    uVar11 = *(uint *)(param_2 + 0xc);\n    *(uint *)(iVar6 + 0x910) = *(uint *)(iVar6 + 0x910) & 0xe007ffff;\n    uVar8 = DAT_0812c03c;\n    *(uint *)(iVar6 + 0x910) = *(uint *)(iVar6 + 0x910) & 0xfff80000;\n    *(uint *)(iVar6 + 0x910) =\n         uVar8 & (uVar9 / uVar11 + 1 + ((uint)(iVar7 << 3) >> 0x16)) * 0x80000 |\n         *(uint *)(iVar6 + 0x910);\n    *(uint *)(iVar6 + 0x910) = *(int *)(iVar6 + 0x910) + uVar9 & 0x7ffff | *(uint *)(iVar6 + 0x910);\n    bVar10 = param_2[4];\n    if (bVar10 != 1) {\n      if (param_3 != 1) {\n        *(uint *)(iVar6 + 0x900) = *(uint *)(iVar6 + 0x900) | 0x84000000;\n        *(uint *)(param_1 + 0x834) = 1 << (uVar5 & 0xf) | *(uint *)(param_1 + 0x834);\n        return 0;\n      }\n      iVar7 = *(int *)(param_2 + 0x14);\n      if (iVar7 == 0) goto LAB_0812c004;\nLAB_0812c018:\n      *(int *)(iVar6 + 0x914) = iVar7;\n      goto LAB_0812c000;\n    }\n    *(uint *)(iVar6 + 0x910) = *(uint *)(iVar6 + 0x910) & 0x9fffffff;\n    *(uint *)(iVar6 + 0x910) = *(uint *)(iVar6 + 0x910) | 0x20000000;\n    if (param_3 != 1) {\n      *(uint *)(iVar6 + 0x900) = *(uint *)(iVar6 + 0x900) | 0x84000000;\n      goto LAB_0812bf9c;\n    }\n    iVar7 = *(int *)(param_2 + 0x14);\n    if (iVar7 != 0) goto LAB_0812c018;\n  }\n  if ((*(uint *)(param_1 + 0x808) & 0x100) == 0) {\n    uVar5 = *puVar1 | 0x20000000;\n  }\n  else {\n    uVar5 = *puVar1 | 0x10000000;\n  }\n  *puVar1 = uVar5;\nLAB_0812c004:\n  *puVar1 = *puVar1 | 0x84000000;\n  return 0;\n}\n\n"
+    },
+    "0x812c040": {
+      "name": "FUN_0812c040",
+      "addr": "0x812c040",
+      "size": 338,
+      "code": "\nundefined4 FUN_0812c040(int param_1,byte *param_2,int param_3)\n\n{\n  uint *puVar1;\n  uint uVar2;\n  int iVar3;\n  uint uVar4;\n  uint uVar5;\n  \n  uVar2 = (uint)*param_2;\n  if (param_2[1] != 1) {\n    param_1 = param_1 + uVar2 * 0x20;\n    iVar3 = *(int *)(param_2 + 0x18);\n    *(uint *)(param_1 + 0xb10) = *(uint *)(param_1 + 0xb10) & 0xfff80000;\n    *(uint *)(param_1 + 0xb10) = *(uint *)(param_1 + 0xb10) & 0xe007ffff;\n    uVar2 = *(uint *)(param_2 + 0xc);\n    if (iVar3 != 0) {\n      *(uint *)(param_2 + 0x18) = uVar2;\n    }\n    *(uint *)(param_1 + 0xb10) = *(uint *)(param_1 + 0xb10) | 0x80000;\n    *(uint *)(param_1 + 0xb10) = uVar2 & 0x7ffff | *(uint *)(param_1 + 0xb10);\n    if ((param_3 == 1) && (*(int *)(param_2 + 0x10) != 0)) {\n      *(int *)(param_1 + 0xb14) = *(int *)(param_2 + 0x10);\n    }\n    *(uint *)(param_1 + 0xb00) = *(uint *)(param_1 + 0xb00) | 0x84000000;\n    return 0;\n  }\n  uVar4 = *(uint *)(param_2 + 0x18);\n  if (uVar4 == 0) {\n    param_1 = param_1 + uVar2 * 0x20;\n    *(uint *)(param_1 + 0x910) = *(uint *)(param_1 + 0x910) & 0xe007ffff;\n    *(uint *)(param_1 + 0x910) = *(uint *)(param_1 + 0x910) | 0x80000;\n    puVar1 = (uint *)(param_1 + 0x900);\n    *(uint *)(param_1 + 0x910) = *(uint *)(param_1 + 0x910) & 0xfff80000;\n    if (param_3 != 1) {\n      *(uint *)(param_1 + 0x900) = *(uint *)(param_1 + 0x900) | 0x84000000;\n      return 0;\n    }\n  }\n  else {\n    iVar3 = param_1 + uVar2 * 0x20;\n    uVar5 = *(uint *)(param_2 + 0xc);\n    *(uint *)(iVar3 + 0x910) = *(uint *)(iVar3 + 0x910) & 0xfff80000;\n    puVar1 = (uint *)(iVar3 + 0x900);\n    *(uint *)(iVar3 + 0x910) = *(uint *)(iVar3 + 0x910) & 0xe007ffff;\n    if (uVar5 < uVar4) {\n      uVar4 = *(uint *)(iVar3 + 0x910);\n      *(uint *)(param_2 + 0x18) = uVar5;\n      *(uint *)(iVar3 + 0x910) = uVar4 | 0x80000;\n      *(uint *)(iVar3 + 0x910) = uVar5 & 0x7ffff | *(uint *)(iVar3 + 0x910);\n      if (param_3 != 1) {\n        *(uint *)(iVar3 + 0x900) = *(uint *)(iVar3 + 0x900) | 0x84000000;\n        if (uVar5 == 0) {\n          return 0;\n        }\nLAB_0812c0fa:\n        *(uint *)(param_1 + 0x834) = 1 << (uVar2 & 0xf) | *(uint *)(param_1 + 0x834);\n        return 0;\n      }\n    }\n    else {\n      *(uint *)(iVar3 + 0x910) = *(uint *)(iVar3 + 0x910) | 0x80000;\n      *(uint *)(iVar3 + 0x910) = uVar4 & 0x7ffff | *(uint *)(iVar3 + 0x910);\n      if (param_3 != 1) {\n        *(uint *)(iVar3 + 0x900) = *(uint *)(iVar3 + 0x900) | 0x84000000;\n        goto LAB_0812c0fa;\n      }\n    }\n  }\n  if (*(uint *)(param_2 + 0x14) != 0) {\n    puVar1[5] = *(uint *)(param_2 + 0x14);\n  }\n  *puVar1 = *puVar1 | 0x84000000;\n  return 0;\n}\n\n"
+    },
+    "0x812d000": {
+      "name": "FUN_0812d000",
+      "addr": "0x812d000",
+      "size": 210,
+      "code": "\nvoid FUN_0812d000(int param_1)\n\n{\n  undefined4 uVar1;\n  int iVar2;\n  \n  uVar1 = DAT_0812d0d4;\n  *(undefined1 *)(param_1 + 4) = 0;\n  iVar2 = param_1 + 0x158;\n  do {\n    *(undefined2 *)(iVar2 + -0xc2) = *(undefined2 *)(iVar2 + -0xbe);\n    *(undefined4 *)(iVar2 + -0xb4) = 0x3fffffff;\n    *(undefined4 *)(iVar2 + -0xb0) = 0x3fffffff;\n    *(undefined4 *)(iVar2 + -0xa0) = uVar1;\n    *(undefined4 *)(iVar2 + -0x9c) = 0x7fffffff;\n    *(undefined4 *)(iVar2 + -0xa8) = 0x7fffffff;\n    *(undefined2 *)(iVar2 + -0xc0) = 0x7fff;\n    *(undefined2 *)(iVar2 + -0xac) = 0;\n    *(undefined2 *)(iVar2 + -0xa4) = 0;\n    *(undefined2 *)(iVar2 + -0xb8) = 0;\n    *(undefined2 *)(iVar2 + -0xb6) = 0;\n    FUN_081a8538(iVar2,0,0xa0);\n    FUN_081a8538(iVar2 + 0xa0,0,0x50);\n    *(undefined2 *)(iVar2 + -0x68) = 0xffff;\n    *(undefined4 *)(iVar2 + -0xbc) = 0;\n    *(undefined4 *)(iVar2 + -0x98) = 0;\n    *(undefined1 *)(iVar2 + -0x93) = 0;\n    *(undefined1 *)(iVar2 + -0x8d) = 0;\n    *(undefined1 *)(iVar2 + -0x8e) = 0;\n    *(undefined1 *)(iVar2 + -0x94) = 0;\n    *(undefined1 *)(iVar2 + -0x4e) = 1;\n    FUN_0812f030(iVar2 + -0x150);\n    *(undefined1 *)(iVar2 + -0x43) = 0;\n    *(undefined1 *)(iVar2 + -0x42) = 0;\n    *(undefined1 *)(iVar2 + -0xd0) = 3;\n    iVar2 = iVar2 + 0x250;\n  } while (iVar2 != param_1 + 0x1188);\n  FUN_0812f334(DAT_0812d0d8,0);\n  FUN_0812f324(DAT_0812d0d8,0x7f);\n                    /* WARNING: Could not recover jumptable at 0x0812d0d0. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  (**(code **)(param_1 + 0x1060))(0,1);\n  return;\n}\n\n"
+    },
+    "0x812d0dc": {
+      "name": "FUN_0812d0dc",
+      "addr": "0x812d0dc",
+      "size": 1070,
+      "code": "\nvoid FUN_0812d0dc(int param_1,short *param_2)\n\n{\n  undefined1 uVar1;\n  short sVar2;\n  undefined2 uVar3;\n  undefined4 uVar4;\n  int iVar5;\n  uint uVar6;\n  uint uVar7;\n  int iVar8;\n  code *pcVar9;\n  \n  iVar5 = DAT_0812d14c;\n  if (*param_2 != 2) {\n    return;\n  }\n  if (param_2[1] < 0) {\n    iVar8 = -4;\n  }\n  else {\n    iVar8 = 4;\n  }\n  iVar8 = param_2[1] * 9 + iVar8;\n  if (iVar8 < 0) {\n    iVar8 = iVar8 + 0x7fff;\n  }\n  switch((uint)(iVar8 << 1) >> 0x10) {\n  case 0:\n    FUN_0812d000();\n    return;\n  default:\n    iVar5 = 0;\n    break;\n  case 2:\n    iVar5 = 1;\n    break;\n  case 3:\n    iVar5 = 2;\n    break;\n  case 4:\n    iVar5 = 3;\n    break;\n  case 5:\n    iVar5 = 4;\n    break;\n  case 6:\n    iVar5 = 5;\n    break;\n  case 7:\n    iVar5 = 6;\n    break;\n  case 8:\n    uVar7 = 0;\n    do {\n      uVar6 = uVar7 & 0xff;\n      FUN_0814d930(iVar5,uVar6,0);\n      FUN_0814d930(iVar5,uVar6,1);\n      FUN_0814d9e8(iVar5,uVar6,0);\n      FUN_0814d9e8(iVar5,uVar6,1);\n      FUN_0814daa0(iVar5,uVar6,0);\n      FUN_0814daa0(iVar5,uVar6,1);\n      iVar8 = uVar7 * 0x118 + iVar5;\n      uVar7 = uVar7 + 1;\n      *(byte *)(iVar8 + 0x10e) = *(byte *)(iVar8 + 0x10e) | 0xe0;\n    } while (uVar7 != 6);\n    return;\n  }\n  pcVar9 = *(code **)(**(int **)(param_1 + 0x105c) + 8);\n  *(undefined2 *)(param_1 + 0x1050) = 0;\n  (*pcVar9)(*(int **)(param_1 + 0x105c),3,0);\n  uVar4 = DAT_0812cfec;\n  *(undefined1 *)(param_1 + 4) = 1;\n  FUN_0812f384(uVar4,8);\n  FUN_0812f334(DAT_0812cfec,1);\n  FUN_0812f324(DAT_0812cfec,0);\n  uVar1 = *(undefined1 *)(param_1 + 0x1064);\n  *(undefined1 *)(param_1 + 0x8d) = uVar1;\n  *(undefined1 *)(param_1 + 0x2dd) = uVar1;\n  *(undefined1 *)(param_1 + 0x52d) = uVar1;\n  *(undefined1 *)(param_1 + 0x77d) = uVar1;\n  *(undefined1 *)(param_1 + 0x9cd) = uVar1;\n  *(undefined1 *)(param_1 + 0xc1d) = uVar1;\n  *(undefined1 *)(param_1 + 0xe6d) = uVar1;\n  *(undefined1 *)(param_1 + 0x1064) = 0x3f;\n  if (iVar5 == 0) {\n    *(undefined2 *)(param_1 + 0x1056) = 6;\n    *(undefined4 *)(param_1 + 0x1052) = 0x10001;\n  }\n  else {\n    uVar3 = (undefined2)iVar5;\n    *(undefined2 *)(param_1 + 0x1056) = uVar3;\n    *(undefined2 *)(param_1 + 0x1054) = uVar3;\n    *(undefined2 *)(param_1 + 0x1052) = uVar3;\n    if (iVar5 - 4U < 3) {\n      iVar5 = param_1 + 0x158;\n      do {\n        uVar4 = DAT_0812cff4;\n        *(undefined2 *)(iVar5 + -0xc2) = *(undefined2 *)(iVar5 + -0xbe);\n        *(undefined4 *)(iVar5 + -0xa0) = uVar4;\n        *(undefined4 *)(iVar5 + -0x9c) = 0x7fffffff;\n        *(undefined4 *)(iVar5 + -0xb4) = 0x3fffffff;\n        *(undefined4 *)(iVar5 + -0xb0) = 0x3fffffff;\n        *(undefined4 *)(iVar5 + -0xa8) = 0x7fffffff;\n        *(undefined2 *)(iVar5 + -0xc0) = 0x7fff;\n        *(undefined2 *)(iVar5 + -0xac) = 0;\n        *(undefined2 *)(iVar5 + -0xa4) = 0;\n        *(undefined2 *)(iVar5 + -0xb8) = 0;\n        *(undefined2 *)(iVar5 + -0xb6) = 0;\n        FUN_081a8538(iVar5,0,0xa0);\n        FUN_081a8538(iVar5 + 0xa0,0,0x50);\n        *(undefined4 *)(iVar5 + -0xbc) = 0;\n        *(undefined4 *)(iVar5 + -0x98) = 0;\n        *(undefined1 *)(iVar5 + -0x93) = 0;\n        *(undefined1 *)(iVar5 + -0x8e) = 0;\n        *(undefined1 *)(iVar5 + -0x94) = 0;\n        *(undefined1 *)(iVar5 + -0x8d) = 0;\n        *(undefined1 *)(iVar5 + -0x4e) = 1;\n        *(undefined2 *)(iVar5 + -0x68) = 0xffff;\n        FUN_0812f030(iVar5 + -0x150);\n        *(undefined1 *)(iVar5 + -0x43) = 0;\n        *(undefined1 *)(iVar5 + -0x42) = 0;\n        *(undefined1 *)(iVar5 + -0xd0) = 3;\n        iVar5 = iVar5 + 0x250;\n      } while (iVar5 != param_1 + 0xf38);\n      *(undefined1 *)(param_1 + 0xde8) = 6;\n      *(undefined2 *)(param_1 + 0xee8) = 0xffff;\n      uVar4 = DAT_0812cff0;\n      *(undefined1 *)(param_1 + 0xded) = 0;\n      *(undefined1 *)(param_1 + 0xdee) = 1;\n      *(undefined4 *)(param_1 + 0xdf4) = 0;\n      *(undefined4 *)(param_1 + 0xdf8) = 0;\n      *(undefined2 *)(param_1 + 0xdfc) = 0;\n      *(undefined4 *)(param_1 + 0xe00) = 0;\n      *(undefined2 *)(param_1 + 0xe04) = 0;\n      *(undefined4 *)(param_1 + 0xe08) = 0;\n      *(undefined4 *)(param_1 + 0xe0c) = 0;\n      *(undefined4 *)(param_1 + 0xe10) = 0;\n      *(undefined4 *)(param_1 + 0xe14) = 0;\n      *(undefined4 *)(param_1 + 0xe24) = 0;\n      *(undefined4 *)(param_1 + 0xe18) = 0;\n      *(undefined4 *)(param_1 + 0xe20) = 0;\n      *(undefined4 *)(param_1 + 0xe2c) = 0;\n      *(undefined4 *)(param_1 + 0xe30) = 0;\n      *(undefined4 *)(param_1 + 0xe34) = 0;\n      *(undefined4 *)(param_1 + 0xe28) = uVar4;\n      *(undefined4 *)(param_1 + 0xe38) = 0;\n      *(undefined4 *)(param_1 + 0xe3c) = 0;\n      *(undefined4 *)(param_1 + 0xe48) = 0xffffffff;\n      *(undefined4 *)(param_1 + 0xe40) = 0;\n      *(undefined2 *)(param_1 + 0xe4c) = 0;\n      *(undefined4 *)(param_1 + 0xe50) = 0;\n      *(undefined2 *)(param_1 + 0xe54) = 0;\n      *(undefined4 *)(param_1 + 0xe58) = 0;\n      *(undefined4 *)(param_1 + 0xe5c) = 0;\n      *(undefined4 *)(param_1 + 0xe44) = 0;\n      *(undefined4 *)(param_1 + 0xe60) = 0;\n      *(undefined1 *)(param_1 + 0xe6c) = 0;\n      *(undefined2 *)(param_1 + 0xdea) = 0x2e9b;\n      iVar5 = *(int *)(param_1 + 0xef0) + 3000;\n      uVar4 = UnsignedSaturate(iVar5,0x1f);\n      UnsignedDoesSaturate(iVar5,0x1f);\n      *(undefined4 *)(param_1 + 0xef0) = uVar4;\n      *(undefined1 *)(param_1 + 0xe68) = 2;\n      *(undefined2 *)(param_1 + 0xe6a) = 0;\n      *(undefined1 *)(param_1 + 0xef5) = 1;\n      *(undefined4 *)(param_1 + 0xf1c) = 0;\n      *(undefined1 *)(param_1 + 0xea4) = 0;\n      if (*(char *)(param_1 + 0xef6) == '\\0') {\n        *(undefined2 *)(param_1 + 0xe70) = 0;\n        *(undefined1 *)(param_1 + 0xe72) = 0;\n      }\n      else {\n        *(undefined1 *)(param_1 + 0xef6) = 0;\n        if ((*(short *)(param_1 + 0xe6e) == *(short *)(param_1 + 0x1052)) &&\n           (*(char *)(param_1 + 0xef4) == '\\x02')) goto LAB_0812ce90;\n      }\n      *(short *)(param_1 + 0xe6e) = *(short *)(param_1 + 0x1052);\n      *(undefined1 *)(param_1 + 0xef4) = 0;\n      goto LAB_0812ce90;\n    }\n  }\n  iVar5 = param_1;\n  do {\n    *(undefined2 *)(param_1 + 0xe78) = 0x7fff;\n    *(undefined2 *)(param_1 + 0xe76) = *(undefined2 *)(param_1 + 0xe7a);\n    *(undefined4 *)(param_1 + 0xe90) = 0x7fffffff;\n    *(undefined2 *)(param_1 + 0xe94) = 0;\n    FUN_081a8538(param_1 + 0xf38,0,0xa0);\n    FUN_081a8538(param_1 + 0xfd8,0,0x50);\n    *(undefined4 *)(param_1 + 0xe84) = 0x3fffffff;\n    *(undefined4 *)(param_1 + 0xe88) = 0x3fffffff;\n    *(undefined2 *)(param_1 + 0xed0) = 0xffff;\n    uVar4 = DAT_0812cff4;\n    *(undefined4 *)(param_1 + 0xe7c) = 0;\n    *(undefined1 *)(param_1 + 0xeea) = 1;\n    *(undefined4 *)(param_1 + 0xe80) = 0;\n    *(undefined2 *)(param_1 + 0xe8c) = 0;\n    *(undefined2 *)(param_1 + 0xeaa) = 0;\n    *(undefined4 *)(param_1 + 0xe98) = uVar4;\n    *(undefined4 *)(param_1 + 0xe9c) = 0x7fffffff;\n    *(undefined4 *)(param_1 + 0xea0) = 0;\n    *(undefined2 *)(param_1 + 0xea4) = 0;\n    FUN_0812f030(param_1 + 0xde8);\n    *(undefined1 *)(param_1 + 0xe68) = 3;\n    *(undefined1 *)(param_1 + 0xef5) = 0;\n    *(undefined1 *)(param_1 + 0xef6) = 0;\n    uVar7 = (uint)*(byte *)(iVar5 + 0x8c);\n    sVar2 = *(short *)(param_1 + 0x1052);\n    if ((((int)(uint)*(byte *)(iVar5 + 0x8d) >> uVar7) << 0x1f < 0) || (5 < uVar7)) {\n      if (uVar7 == 6) {\n        *(undefined1 *)(iVar5 + 0x8c) = 0;\n      }\n      *(undefined1 *)(iVar5 + 0x88) = 2;\n      *(undefined2 *)(iVar5 + 0x8a) = 0;\n      *(undefined4 *)(iVar5 + 0x13c) = 0;\n      *(undefined1 *)(iVar5 + 0xc4) = 0;\n      *(undefined1 *)(iVar5 + 0x115) = 1;\n      if (*(char *)(iVar5 + 0x116) == '\\0') {\n        *(undefined2 *)(iVar5 + 0x90) = 0;\n        *(undefined1 *)(iVar5 + 0x92) = 0;\n      }\n      else {\n        *(undefined1 *)(iVar5 + 0x116) = 0;\n        if ((*(short *)(iVar5 + 0x8e) == sVar2) && (*(char *)(iVar5 + 0x114) == '\\x02'))\n        goto LAB_0812ceea;\n      }\n      *(short *)(iVar5 + 0x8e) = sVar2;\n      *(undefined1 *)(iVar5 + 0x114) = 0;\n    }\nLAB_0812ceea:\n    iVar5 = iVar5 + 0x250;\n  } while (iVar5 != param_1 + 0xde0);\nLAB_0812ce90:\n                    /* WARNING: Could not recover jumptable at 0x0812cea0. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  (**(code **)(param_1 + 0x1060))(1);\n  return;\n}\n\n"
+    },
+    "0x814d930": {
+      "name": "FUN_0814d930",
+      "addr": "0x814d930",
+      "size": 154,
+      "code": "\nvoid FUN_0814d930(int param_1,uint param_2,int param_3)\n\n{\n  undefined4 uVar1;\n  undefined4 uVar2;\n  undefined4 uVar3;\n  undefined4 uVar4;\n  undefined4 uVar5;\n  undefined4 uVar6;\n  undefined4 uVar7;\n  \n  if (5 < param_2) {\n    uVar1 = FUN_081a19cc(DAT_0814d9d0,3,DAT_0814d9cc);\n    uVar6 = 0x46;\n    uVar7 = DAT_0814d9d4;\n    uVar1 = FUN_081a19cc(uVar1,0x46,DAT_0814d9d4);\n    uVar4 = 9;\n    uVar5 = DAT_0814d9d8;\n    uVar1 = FUN_081a19cc(uVar1,9,DAT_0814d9d8);\n    uVar2 = FUN_081a19bc(uVar1,0x95);\n    uVar3 = 3;\n    uVar1 = DAT_0814d9dc;\n    uVar2 = FUN_081a19cc(uVar2,3,DAT_0814d9dc);\n    uVar1 = FUN_081a19cc(uVar2,0x10,DAT_0814d9e0,DAT_0814d9e0,0x10,DAT_0814d9e0,uVar3,uVar1,uVar4,\n                         uVar5,uVar6,uVar7);\n    FUN_081a19cc(uVar1,*DAT_0814d9e4,DAT_0814d9e4[1]);\n  }\n  if (param_3 == 0) {\n    *(undefined2 *)(param_2 * 0x118 + param_1 + 0x118) = 0;\n    return;\n  }\n  *(undefined2 *)(param_2 * 0x118 + param_1 + 0x11a) = 0;\n  return;\n}\n\n"
+    }
+  },
+  "analysis": [],
+  "voiceallocator_raw": "566f696365416c6c6f6361746f7200000001ff02fe03fd04fc05fb0000000000000000000000000001ff02fe03fd04fc05fb06fa0000000000000000e9021608f50216080d0316087513160871021608f8ffffff00000000210316082d031608450316085903160850616e656c000000536176652063616e63656c6c65640000",
+  "Table1_normal": [
+    86,
+    111,
+    105,
+    99,
+    101,
+    65,
+    108,
+    108,
+    111,
+    99,
+    97,
+    116,
+    111,
+    114,
+    0,
+    0
+  ],
+  "Table2_unison": [
+    111,
+    114,
+    0,
+    0,
+    0,
+    1,
+    255,
+    2,
+    254,
+    3,
+    253,
+    4,
+    252,
+    5,
+    251,
+    0
+  ],
+  "voice_heavy_functions": [
+    {
+      "name": "FUN_08124990",
+      "addr": "0x8124990",
+      "size": 948,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_08124d84",
+      "addr": "0x8124d84",
+      "size": 1008,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_081251b4",
+      "addr": "0x81251b4",
+      "size": 548,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_081253e8",
+      "addr": "0x81253e8",
+      "size": 1494,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_08125fb4",
+      "addr": "0x8125fb4",
+      "size": 168,
+      "score": 8,
+      "indicators": [
+        "0x840_buf",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_0812be2c",
+      "addr": "0x812be2c",
+      "size": 526,
+      "score": 8,
+      "indicators": [
+        "0x840_buf",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_0812c040",
+      "addr": "0x812c040",
+      "size": 338,
+      "score": 8,
+      "indicators": [
+        "0x840_buf",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_0812d000",
+      "addr": "0x812d000",
+      "size": 210,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_0812d0dc",
+      "addr": "0x812d0dc",
+      "size": 1070,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_0814d930",
+      "addr": "0x814d930",
+      "size": 154,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_0814d9e8",
+      "addr": "0x814d9e8",
+      "size": 154,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_0814daa0",
+      "addr": "0x814daa0",
+      "size": 154,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_0814db58",
+      "addr": "0x814db58",
+      "size": 168,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_0814dc1c",
+      "addr": "0x814dc1c",
+      "size": 168,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_0814de84",
+      "addr": "0x814de84",
+      "size": 164,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_0814df44",
+      "addr": "0x814df44",
+      "size": 164,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_0814e004",
+      "addr": "0x814e004",
+      "size": 236,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_0814e284",
+      "addr": "0x814e284",
+      "size": 410,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_0814e550",
+      "addr": "0x814e550",
+      "size": 216,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    },
+    {
+      "name": "FUN_0814e644",
+      "addr": "0x814e644",
+      "size": 338,
+      "score": 8,
+      "indicators": [
+        "0x118_stride",
+        "voice_mode"
+      ]
+    }
+  ]
+}
