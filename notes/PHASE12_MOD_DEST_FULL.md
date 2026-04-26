@@ -97,9 +97,9 @@ These are **always connected** for every source row and cannot be changed:
 | 3 | 12 | **Assign 8** | User-selectable | Page 3, Slot 2 |
 | 3 | 13 | **Assign 9** | User-selectable | Page 3, Slot 3 |
 
-### 2.3 Assignable Destination Pool (35 options)
+### 2.3 Assignable Destination Pool (39 options)
 
-The 9 assignable slots can be set to any of these 35 destinations (manual §8.5.5):
+The 9 assignable slots can be set to any of these 39 destinations (manual §8.5.5):
 
 | # | Destination | Category | eSynthParams Idx |
 |---|-------------|----------|-----------------|
@@ -235,7 +235,7 @@ Unique non-zero values: 8 distinct constants
 | 5 | VCF internal resonance offset | — |
 | 6 | VCF internal key tracking | — |
 
-#### 4.2.3 FX Internal Destinations (~15)
+#### 4.2.3 FX Internal Destinations (~16)
 
 | # | Destination | eSynthParams |
 |---|-------------|-------------|
@@ -432,7 +432,7 @@ The 28 matrix enable/disable dots are themselves internal modulation targets:
 | **Custom Assign** | **8** | Sidechain/Meta | Vib Rate/AM, VCA, LFO AMs, CycEnv AM, Uni Spread |
 | **Internal Osc** | **~30** | NRPN/SysEx | Osc sub-params, engine-specific |
 | **Internal VCF** | **~6** | NRPN/SysEx | Filter sub-params |
-| **Internal FX** | **~15** | NRPN/SysEx | FX type, opts, routing |
+| **Internal FX** | **~16** | NRPN/SysEx | FX type, opts, routing |
 | **Internal Env/LFO** | **~25** | NRPN/SysEx | Envelope curves, LFO sub-params |
 | **Internal Voice** | **~12** | NRPN/SysEx | Voice mode, unison, legato |
 | **Internal VeloMod** | **~4** | NRPN/SysEx | Velocity sensitivity |

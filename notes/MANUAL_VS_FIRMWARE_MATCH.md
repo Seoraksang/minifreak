@@ -50,7 +50,7 @@
 - ✅ CM4 VCF 모드 문자열: `LP`, `BP`, `HP`, `Notch`, `LP1`, `HP1`, `Notch2` @ `0x081AF4D0`
 - ✅ **CM4 Multi Filter 14모드 전부 ★★★★★ 확보** @ `0x081B0D90`~`0x081B0DE8`:
   LP6, LP12, LP24, LP36, HP6, HP12, HP24, HP36, BP12, BP24, BP36, N12, N24, N36
-- ✅ 포인터 테이블 @ `0x081B1850` 참조 확인
+- ✅ 포인터 참조: `0x081B1850` 영역에 일부 필터 모드 포인터 존재 (scale names와 혼합)
 - ✅ CM7 20개 IIR smoothing 함수
 - ✅ CM7 Biquad 계수 0.707(1/√2) ×8
 - ⚠️ 아날로그 필터는 하드웨어 회로 (CM4/DAC 제어)
@@ -79,7 +79,7 @@
 - ✅ CM4 LFO Retrig 모드 @ `0x081B0E7C`: 8/8
 - ✅ **Vibrato ★★★★★ 확보** — 6개 CM4 문자열: `Vibrato On`, `Vibrato Off`, `Vibrato` (panel), `Vibrato Depth`, `Vib Rate`, `Vib AM`
 - ✅ Vibrato는 LFO1/LFO2와 완전히 독립된 최상위 모듈 (LFO3 명칭 없음)
-- ✅ Shaper 프리셋 20종 @ `0x081AF128`
+- ✅ Shaper 프리셋 25종 @ `0x081AF128` (1 기본 + 16 빌트인 + 8 사용자)
 
 ### 5. 엔벨로프 — 92% → **97%** ⬆️
 **매뉴얼**: ADSR + Cycling Envelope (Rise/Fall/Hold, 3 Stage Order)
@@ -166,14 +166,14 @@
 |----|------|--------|
 | CORR-01 | Poly Steal Mode: 매뉴얼 4종 → 펌웨어 6종 | ★★★★★ |
 | CORR-02 | Mod Matrix 소스: 매뉴얼 7 → 펌웨어 9 | ★★★★★ |
-| CORR-03 | Arp UpDown 모드 문자열 재사용 | ★★★★★ |
+| CORR-03 | Arp UpDown 모드 — 독립 문자열 (이전 분석 "재사용" 오류 수정) | ★★★★★ |
 | CORR-04 | Unison 하위모드 3종 | ★★★★★ |
 | CORR-05 | LFO 파형명 약어 | ★★★★★ |
 | CORR-06 | Tempo Subdivision 17종 (매뉴얼 11) | ★★★★☆ |
 | CORR-07 | LFO 9파형 매뉴얼 내부 모순 | ★★★★★ |
 
 ### 매뉴얼 보강 권고 (12건) — 상세: `MANUAL_CORRECTION_RECOMMENDATIONS.md`
-- ENH-01~12: Mod Dest 247개, Shaper 20종, deprecated 4종, Vibrato 독립 모듈, CC 161개, Multi Filter 14모드 등
+- ENH-01~12: Mod Dest 247개, Shaper 25종, deprecated 4종, Vibrato 독립 모듈, CC 161개, Multi Filter 14모드 등
 
 ### 신뢰도 격상 완료 (Phase 12-6)
 | 항목 | Phase 11 | Phase 12 |

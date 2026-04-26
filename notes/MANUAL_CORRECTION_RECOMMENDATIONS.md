@@ -93,7 +93,7 @@
 |------|------|
 | **매뉴얼 참조** | §13 Arpeggiator > Arp Mode |
 | **매뉴얼 기술** | 8종: Up / Down / UpDown / Random / Walk / Pattern / Order / Poly |
-| **펌웨어 실제** | 8종이지만 인덱스 2의 표시명이 **"Arp Up" 재사용** (UpDown 아님) |
+| **펌웨어 실제** | 8종이지만 인덱스 2의 표시명이 **"Arp UpDown"** (이전 분석에서 "Arp Up 재사용"으로 잘못 기재) |
 | **펌웨어 주소** | CM4 `0x081AEC3C` ~ `0x081AEC8C` |
 | **신뢰도** | ★★★★★ |
 
@@ -101,7 +101,7 @@
 ```
 0x081AEC3C: 41 72 70 20 55 70 00                     "Arp Up"       [idx 0]
 0x081AEC44: 41 72 70 20 44 6F 77 6E 00               "Arp Down"     [idx 1]
-0x081AEC50: 41 72 70 20 55 70 00                     "Arp Up" ★     [idx 2] ← "Arp Up" 재사용!
+0x081AEC4C: 41 72 70 20 55 70 44 6F 77 6E 00         "Arp UpDown"   [idx 2] ★ 독립 문자열
 0x081AEC5C: 41 72 70 20 52 61 6E 64 00               "Arp Rand"     [idx 3]
 0x081AEC68: 41 72 70 20 57 61 6C 6B 00               "Arp Walk"     [idx 4]
 0x081AEC74: 41 72 70 20 50 61 74 74 65 72 6E 00      "Arp Pattern"  [idx 5]
@@ -110,10 +110,10 @@
 ```
 
 **정정 내용**:
-- 인덱스 2 (UpDown)의 펌웨어 표시 문자열이 "Arp Up"으로 **"Arp Up" 문자열을 재사용**함
-- 펌웨어 내부에서는 별도의 index로 처리하나, **디스플레이 문자열이 중복**될 가능성 (동일 포인터 사용)
-- Random → "Arp Rand"로 약어 표기
-- 매뉴얼 정정: UpDown 모드의 표시명이 펌웨어에서 "Arp Up"과 동일하게 보일 수 있음을 명시
+- 인덱스 2 (UpDown)에 **"Arp UpDown" 독립 문자열이 존재함** (이전 분석에서 "Arp Up 재사용"으로 잘못 기재)
+- 8개 모드 모두 고유한 문자열 보유
+- 펌웨어 enum 인덱스 순서: Up/Down/UpDown/Rand/Walk/Pattern/Order/Poly
+- 매뉴얼 순서: Up/Down/UpDown/Random/Order/Walk/Poly/Pattern — **인덱스 3~7 순서가 상이**
 
 ---
 
@@ -272,21 +272,23 @@ CM7 PI (0x40490FDB) × 16회, 2PI (0x40C90FDB) × 6회
 
 ---
 
-### ENH-02: Shaper 프리셋 20종 (12 빌트인 + 8 사용자)
+### ENH-02: Shaper 프리셋 25종 (1 기본 + 16 빌트인 + 8 사용자)
 **매뉴얼 누락** — LFO Shaper의 프리셋 라이브러리가 상세히 문서화되지 않음
 
 | 항목 | 내용 |
 |------|------|
 | **매뉴얼 참조** | §9 LFO > User Shaper |
 | **매뉴얼 기술** | "16-step user shaper" 기능만 언급 |
-| **펌웨어 실제** | **20종 프리셋**: 12 빌트인 + 8 사용자 정의 Shaper |
+| **펌웨어 실제** | **25종 프리셋**: 1 기본 ("Preset Shaper") + 16 빌트인 + 8 사용자 정의 Shaper |
 | **펌웨어 주소** | CM4 `0x081AF128` ~ `0x081AF288` |
 | **신뢰도** | ★★★★★ |
 
-**펌웨어 프리셋 목록**:
+**펌웨어 프리셋 목록** (CM4 `0x081AF128` ~ `0x081AF288`, 펌웨어 주소 검증 완료):
 ```
-[빌트인 12종]
- 0: Shaper              (기본 사각파)
+[기본 1종]
+ 0: Preset Shaper       (기본 프리셋)
+
+[빌트인 16종]
  1: Asymmetrical Saw    (비대칭 톱니파)
  2: Unipolar Cosine     (단극성 코사인)
  3: Short Pulse         (짧은 펄스)
@@ -308,7 +310,7 @@ CM7 PI (0x40490FDB) × 16회, 2PI (0x40C90FDB) × 6회
 User Shaper 1 ~ User Shaper 8
 ```
 
-> **정정**: 위 12 빌트인은 Phase 11에서 CM4 문자열 스캔으로 확인된 16종에서 "Rhythmic 1~4"와 "Stepped 1~4"를 포함한 목록. 정확한 빌트인/사용자 분류는 Shaper 1 Rate/2 Rate 파라미터와 연동.
+> **검증 완료** (Phase 12 감사): 펌웨어 주소 검증 결과 25개 문자열 확인. 첫 항목은 "Shaper"가 아닌 "Preset Shaper"이며, 빌트인은 12가 아닌 16종 (Rhythmic 1~4, Stepped 1~4 포함).
 
 ---
 
@@ -527,7 +529,7 @@ User Shaper 1 ~ User Shaper 8
 |----|----------|--------|--------|-------------|--------|
 | CORR-01 | Voice | Poly Steal 4종 | **6종** | CM4 `0x081B0F70` | ★★★★★ |
 | CORR-02 | Mod Matrix | 소스 7개 | **9개** | CM4 `0x081B1BCC` | ★★★★★ |
-| CORR-03 | Arp | UpDown 명칭 | **"Arp Up" 재사용** | CM4 `0x081AEC3C` | ★★★★★ |
+| CORR-03 | Arp | UpDown 명칭 | **"Arp UpDown" 독립 문자열** (이전 분석 "재사용" 오류 수정) | CM4 `0x081AEC3C` | ★★★★★ |
 | CORR-04 | Voice | Unison 하위모드 불명확 | **3개 독립 모드** | CM4 `0x081AF500` | ★★★★★ |
 | CORR-05 | LFO | 전체 파형명 | **약어명** (Sin, Tri 등) | CM4 `0x081B0FB0` | ★★★★★ |
 | CORR-06 | Tempo | Subdivision 11종 | **17종** | CM4 `0x081AF0B4`+`0x081AF564` | ★★★★☆ |
@@ -538,7 +540,7 @@ User Shaper 1 ~ User Shaper 8
 | ID | 카테고리 | 매뉴얼 | 펌웨어 (누락된 기능) | 펌웨어 주소 | 신뢰도 |
 |----|----------|--------|---------------------|-------------|--------|
 | ENH-01 | Mod Matrix | ~30 dest | **140개 내부 목적지** | CM7 Mod chain | ★★★★☆ |
-| ENH-02 | LFO | User Shaper만 | **20종 Shaper 프리셋** | CM4 `0x081AF128` | ★★★★★ |
+| ENH-02 | LFO | User Shaper만 | **25종 Shaper 프리셋** (1 기본 + 16 빌트인 + 8 사용자) | CM4 `0x081AF128` | ★★★★★ |
 | ENH-03 | Preset | 언급 없음 | **4종 deprecated 파라미터** | CM4 multiple | ★★★★★ |
 | ENH-04 | CycEnv | 3모드 | **Loop2 (4번째 모드)** | mf_enums.py | ★★★☆☆ |
 | ENH-05 | Voice | 불충분 | **Poly Allocation 3모드** | mf_enums.py | ★★★☆☆ |

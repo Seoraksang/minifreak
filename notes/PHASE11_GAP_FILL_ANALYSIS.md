@@ -30,7 +30,7 @@
 |------|--------|------------|--------|
 | `0x081AEC3C` | `Arp Up` | Up | 0 |
 | `0x081AEC44` | `Arp Down` | Down | 1 |
-| `0x081AEC50` | `Arp Up` | UpDown (Up 재사용) | 2 |
+| `0x081AEC4C` | `Arp UpDown` | UpDown (독립 문자열) | 2 |
 | `0x081AEC5C` | `Arp Rand` | Random | 3 |
 | `0x081AEC68` | `Arp Walk` | Walk | 4 |
 | `0x081AEC74` | `Arp Pattern` | Pattern | 5 |
@@ -402,7 +402,7 @@ Rhythmic 1~4 (4종), Stepped 1~4 (4종),
 User Shaper 1~8 (8종)
 ```
 
-> **확인 상태**: ✅ 20종 프리셋 (12 빌트인 + 8 사용자 정의)
+> **확인 상태**: ✅ 25종 프리셋 (1 기본 "Preset Shaper" + 16 빌트인 + 8 사용자 정의)
 > **Shaper Rate**: `Shaper 1 Rate` @ `0x081AF544`, `Shaper 2 Rate` @ `0x081AF554`
 
 ---

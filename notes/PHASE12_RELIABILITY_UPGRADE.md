@@ -212,7 +212,7 @@ Cycling Envelope = **AHR** (Mode/Hold/Rise/Fall), CM4에서 직접 확인.
 | 13 | `0x081B0DE8` | `N36` | Notch 36dB/oct | ✅ |
 
 > **확인 상태**: ✅ 14/14 모드 전부 CM4에서 직접 확인
-> **포인터 테이블**: `0x081B1850` ~ `0x081B188C` 영역에서 해당 문자열들을 참조하는 포인터 확인
+> **포인터 참조**: `0x081B1850` 영역에 일부 필터 모드 포인터가 존재하나, scale names(Global, Major, Minor 등)와 혼합된 포인터 배열. 순수 14-엔트리 필터 포인터 테이블은 해당 주소에만 존재하지 않음. 필터 모드 문자열 자체는 `0x081B0D90`~`0x081B0DE8`에 순차 배치됨.
 
 **VCF (Analog Filter) Mode enum** (`0x081AF4D0` ~ `0x081AF4EC`):
 
