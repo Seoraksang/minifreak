@@ -164,7 +164,7 @@ MIDI CC: 30개+ 매핑됨 (Cutoff=74, Resonance=71 등)
 - [x] Arp 8모드 enum 완전 식별 (CM4 0x081AEC3C)
 - [x] LFO 7/9 파형 + Retrig 8모드 식별
 - [x] Voice Mode 5종 + Unison 하위모드 3종 + Poly Steal 6모드
-- [x] FX 13타입 enum 완전 식별
+- [x] FX 12타입(CM4)/13타입(VST) enum 완전 식별
 - [x] CycEnv Stage Order 3종
 - [x] Mod Source 9종
 - [x] 일치도 86.4% → 91.8% 상향
@@ -172,7 +172,7 @@ MIDI CC: 30개+ 매핑됨 (Cutoff=74, Resonance=71 등)
 
 ## Phase 12: 정적 분석 완료 + 매뉴얼 정정 권고 ✅ (완료)
 - [x] 12-1. 매뉴얼 정정 권고서 — 7 정정 + 12 보강 (`MANUAL_CORRECTION_RECOMMENDATIONS.md`)
-- [x] 12-2. FX 코어 13타입 × 7SP 매핑 + DSP 11함수 (`PHASE12_FX_CORE_DSP.md`)
+- [x] 12-2. FX 코어 12타입(CM4)/13타입(VST) × 7SP 매핑 + DSP 11함수 (`PHASE12_FX_CORE_DSP.md`)
 - [x] 12-3. 161 CC × 145 param 정밀 매핑 (`PHASE12_CC_FULL_MAPPING.md`)
 - [x] 12-4. Mod Matrix ~247 destination enum (`PHASE12_MOD_DEST_FULL.md`)
 - [x] 12-5. Step Sequencer 64-step buffer layout (`PHASE12_SEQ_BUFFER_LAYOUT.md`)

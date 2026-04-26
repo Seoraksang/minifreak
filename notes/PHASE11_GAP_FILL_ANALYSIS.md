@@ -269,17 +269,18 @@ mf_enums.py에서 확인: Cycle / Reassign / Reset
 | `0x081AF310` | `Phaser` | 1 | ✅ |
 | `0x081AF318` | `Flanger` | 2 | ✅ |
 | `0x081AF320` | `Reverb` | 3 | ✅ (싱글턴) |
-| *(별도)* | `Stereo Delay` | 4 | ✅ (싱글턴, `0x081AE368`에 "Delay" 존재) |
-| `0x081AF328` | `Distortion` | 5 | ✅ |
-| `0x081AF334` | `Bit Crusher` | 6 | ✅ |
-| `0x081AF340` | `3 Bands EQ` | 7 | ✅ |
-| `0x081AF34C` | `Peak EQ` | 8 | ✅ |
-| `0x081AF354` | `Multi Comp` | 9 | ✅ (싱글턴) |
-| `0x081AF360` | `SuperUnison` | 10 | ✅ |
-| `0x081AF36C` | `Vocoder Self` | 11 | ✅ |
-| `0x081AF37C` | `Vocoder Ext` | 12 | ✅ |
+| `0x081AF328` | `Distortion` | 4 | ✅ (VST index 5) |
+| `0x081AF334` | `Bit Crusher` | 5 | ✅ (VST index 6) |
+| `0x081AF340` | `3 Bands EQ` | 6 | ✅ (VST index 7) |
+| `0x081AF34C` | `Peak EQ` | 7 | ✅ (VST index 8) |
+| `0x081AF354` | `Multi Comp` | 8 | ✅ (싱글턴, VST index 9) |
+| `0x081AF360` | `SuperUnison` | 9 | ✅ (VST index 10) |
+| `0x081AF36C` | `Vocoder Self` | 10 | ✅ (VST index 11) |
+| `0x081AF37C` | `Vocoder Ext` | 11 | ✅ (VST index 12) |
+| *(VST only)* | `Stereo Delay` | — | CM4 없음 |
 
 > **확인 상태**: ✅ 12/12 CM4 타입 전부 확인 (VST 13타입, Stereo Delay는 VST 전용)
+> **V3 감사 수정**: index 4 = Distortion (이전: Stereo Delay). CM4 인덱스는 VST와 다름.
 > **FX 코어 바이너리**: UI 문자열 없음 (순수 DSP 코드). FX 타입 선택은 CM4에서 수행 후 FX 코어에 명령 전달.
 
 ### FX 슬롯 구조 (CM4 eEditParams)

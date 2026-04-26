@@ -129,7 +129,7 @@ Phase 12 감사와 완전히 다른 4가지 방법으로 재검증:
 - phase8_midi_cc_extract.json: 161 CC 값 ✅ (문서와 일치)
 - phase8_enum_tables.json: fx_types=11, voice_modes=4 (Phase 8 한계, Phase 11에서 보완됨)
 - mf_enums.py: 13 FX 타입 ✅ (VST 기준, CM4=12종 차이는 정상)
-- 가중치 합산: 96.21% → 96.2% (문서의 96.0%은 반올림 오류 → 수정)
+- 가중치 합산: 96.01% → 96.0% (FX 95% 반영 후 재계산)
 
 ### V2-2: 도구 실제 실행
 - verify_phase11_12_addresses.py: 정상 실행 ✅
@@ -150,8 +150,9 @@ Phase 12 감사와 완전히 다른 4가지 방법으로 재검증:
 1. FX 타입 13→12 (CM4 기준), VST 13타입은 별도 표기
 2. FX 주소 테이블: 8-byte pointer → inline strings로 정정
 3. "Ensemble" 참조 제거 (바이너리 미존재)
-4. 일치도 96.0% → 96.2% (반올림 수정)
+4. 일치도 확인: 96.0% (FX 타입 12종 반영 후 가중치 합산 일치)
 5. phase11_gap_fill_scan.py repo에 추가
+6. Phase 11 FX 테이블 13→12 entries 수정
 
 ---
 

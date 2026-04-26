@@ -154,6 +154,7 @@ ARP_MODES = {
 # Index mapping from float quantization: value ≈ i/5
 # Index 1 not observed in factory presets
 VOICE_MODES = {
+    # Index 1 intentionally skipped (deprecated in firmware)
     0: "Poly",     # Polyphonic
     2: "Mono",     # Monophonic (glide + legato)
     3: "Unison",   # Unison (2-6 voices)
@@ -177,9 +178,14 @@ POLY_ALLOC_MODES = {
 
 # Gen_PolySteal — 3 values
 POLY_STEAL_MODES = {
-    0: "None",        # No stealing
-    1: "Oldest",      # Steal oldest voice
-    2: "Lowest Vel",  # Steal lowest velocity
+    # VST XML: 3 modes (None/Once/Cycle). Firmware CM4: 6 modes (below).
+    # "Once" removed in firmware; Velocity/Aftertouch/Velo+AT added.
+    0: "None",
+    1: "Cycle",       # VST index 2
+    2: "Reassign",    # firmware-only
+    3: "Velocity",    # firmware-only
+    4: "Aftertouch",  # firmware-only
+    5: "Velo + AT",   # firmware-only
 }
 
 # Gen_LegatoMode — 2 values

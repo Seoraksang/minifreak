@@ -662,7 +662,7 @@ Osc Sel → Fx Sel → Lfo Sel
 | Smooth Mod 1~4 | `0x081b1b8c` | Mod Seq 스무딩 |
 | midi_cc_handler | `0x08166810` | 161 CC 처리 |
 | CycEnv Mode enum | mf_enums.py | 4 모드 |
-| Voice Mode enum | `0x081af4f4` ~ `0x081af528` | 7 모드 |
+| Voice Mode enum | `0x081af4f4` ~ `0x081af528` | 5 모드 (Phase 11 보정: 7→5) |
 | Poly Steal Mode | `0x081af974` | 펌웨어 문자열 |
 
 ---
