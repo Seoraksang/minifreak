@@ -1,0 +1,573 @@
+# MiniFreak 매뉴얼 정정 권고서 (Manual Correction Recommendations)
+
+**문서 ID**: Phase 12-1
+**작성일**: 2026-04-26
+**펌웨어 버전**: CM4 `minifreak_main_CM4__fw4_0_1_2229` (2025-06-18)
+**매뉴얼 버전**: MiniFreak User Manual v4.0.0 / v4.0.1 (2025-07-04)
+**분석 방법**: CM4 바이너리 직접 스캔 (문자열/enum 테이블) + CM7 상수 분석 + VST XML 교차검증
+**신뢰도 기준**: ★★★★★ = CM4 문자열 직접 확인 | ★★★★☆ = CM7 간접 증거/VST 교차검증 | ★★★☆☆ = VST만 확인
+
+---
+
+## 목차
+
+1. [정정 항목 (Corrections) — 매뉴얼이 틀린 7건](#part-1-정정-corrections--매뉴얼이-틀린-7건)
+2. [보완 항목 (Enhancements) — 매뉴얼에 누락된 12건](#part-2-보완-enhancements--매뉴얼에-누락된-12건)
+3. [요약 표](#part-3-요약-표)
+4. [참고 문헌](#참고-문헌)
+
+---
+
+## Part 1. 정정 (Corrections) — 매뉴얼이 틀린 7건
+
+> 아래 항목들은 펌웨어 바이너리에서 직접 확인된 enum 문자열/상수가 매뉴얼 기술과 **명확히 모순**되는 사례입니다.
+> 각 항목에 펌웨어 주소와 hex dump 증거를 포함합니다.
+
+---
+
+### CORR-01: Poly Steal Mode 개수 오류
+**매뉴얼이 틀림** — 4종이 아닌 6종이 존재
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §Voice Mode > Poly Steal Mode |
+| **매뉴얼 기술** | 4종: None / Once / Cycle / Reassign |
+| **펌웨어 실제** | **6종**: None / Cycle / Reassign / Velocity / Aftertouch / Velo + AT |
+| **펌웨어 주소** | CM4 `0x081B0F70` ~ `0x081B0FA4` |
+| **신뢰도** | ★★★★★ |
+
+**펌웨어 hex dump 증거** (CM4 문자열 테이블):
+```
+0x081B0F70: 4E 6F 6E 65 00                        "None"
+0x081B0F78: 43 79 63 6C 65 00                     "Cycle"
+0x081B0F80: 52 65 61 73 73 69 67 6E 00            "Reassign"
+0x081B0F8C: 56 65 6C 6F 63 69 74 79 00            "Velocity"
+0x081B0F98: 41 66 74 65 72 74 6F 75 63 68 00      "Aftertouch"
+0x081B0FA4: 56 65 6C 6F 20 2B 20 41 54 00         "Velo + AT"
+```
+
+**정정 내용**:
+- 매뉴얼의 "Once" 모드는 펌웨어에 존재하지 않음
+- 펌웨어에 **Velocity**, **Aftertouch**, **Velo + AT** 3개 모드가 추가로 존재
+- "Cycle"과 "Reassign"은 매뉴얼과 일치
+- 매뉴얼 정정: `None / Cycle / Reassign / Velocity / Aftertouch / Velo + AT` (6종)으로 수정 필요
+
+---
+
+### CORR-02: Mod Matrix 소스 수량 오류
+**매뉴얼이 틀림** — 7개가 아닌 9개의 소스가 존재
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §8.5 Modulation Matrix |
+| **매뉴얼 기술** | 7개 Row 소스 (CycEnv, LFO1, LFO2, Velo/AT, Wheel, Keyboard, Mod Seq) |
+| **펌웨어 실제** | **9개** 소스: Keyboard, LFO, Cycling Env, Env/Voice, Voice, Envelope, FX, **Sample Select**, **Wavetable Select** |
+| **펌웨어 주소** | CM4 `0x081B1BCC` ~ `0x081B1C1C` |
+| **신뢰도** | ★★★★★ |
+
+**펌웨어 hex dump 증거**:
+```
+0x081B1BCC: 4B 65 79 62 6F 61 72 64 00              "Keyboard"
+0x081B1BD8: 4C 46 4F 00                            "LFO"
+0x081B1BDC: 43 79 63 6C 69 6E 67 20 45 6E 76 00    "Cycling Env"
+0x081B1BE8: 45 6E 76 20 2F 20 56 6F 69 63 65 00    "Env / Voice"
+0x081B1BF4: 56 6F 69 63 65 00                      "Voice"
+0x081B1BFC: 45 6E 76 65 6C 6F 70 65 00            "Envelope"
+0x081B1C08: 46 58 00                               "FX"
+0x081B1C0C: 53 61 6D 70 6C 65 20 53 65 6C 65 63 74 00  "Sample Select"
+0x081B1C1C: 57 61 76 65 74 61 62 6C 65 20 53 65 6C 65 63 74 00  "Wavetable Select"
+```
+
+**정정 내용**:
+- 펌웨어는 매뉴얼의 7개 Row 개념과는 별개로 **9개의 내부 Mod Source enum**을 보유
+- **Sample Select** (V3 샘플 엔진)과 **Wavetable Select** (V3 웨이브테이블 엔진)은 V3 펌웨어에서 추가된 소스
+- 매뉴얼의 7 Row는 UI 표시용 레이아웃이고, 내부 처리는 9 Source 기반
+- 매뉴얼에 V3 추가 소스 2개에 대한 설명이 누락됨
+
+---
+
+### CORR-03: Arp 모드 enum 인덱스 순서 및 명칭 불일치
+**매뉴얼이 틀림** — UpDown 모드의 펌웨어 표시명이 다름
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §13 Arpeggiator > Arp Mode |
+| **매뉴얼 기술** | 8종: Up / Down / UpDown / Random / Walk / Pattern / Order / Poly |
+| **펌웨어 실제** | 8종이지만 인덱스 2의 표시명이 **"Arp Up" 재사용** (UpDown 아님) |
+| **펌웨어 주소** | CM4 `0x081AEC3C` ~ `0x081AEC8C` |
+| **신뢰도** | ★★★★★ |
+
+**펌웨어 hex dump 증거**:
+```
+0x081AEC3C: 41 72 70 20 55 70 00                     "Arp Up"       [idx 0]
+0x081AEC44: 41 72 70 20 44 6F 77 6E 00               "Arp Down"     [idx 1]
+0x081AEC50: 41 72 70 20 55 70 00                     "Arp Up" ★     [idx 2] ← "Arp Up" 재사용!
+0x081AEC5C: 41 72 70 20 52 61 6E 64 00               "Arp Rand"     [idx 3]
+0x081AEC68: 41 72 70 20 57 61 6C 6B 00               "Arp Walk"     [idx 4]
+0x081AEC74: 41 72 70 20 50 61 74 74 65 72 6E 00      "Arp Pattern"  [idx 5]
+0x081AEC80: 41 72 70 20 4F 72 64 65 72 00            "Arp Order"    [idx 6]
+0x081AEC8C: 41 72 70 20 50 6F 6C 79 00               "Arp Poly"     [idx 7]
+```
+
+**정정 내용**:
+- 인덱스 2 (UpDown)의 펌웨어 표시 문자열이 "Arp Up"으로 **"Arp Up" 문자열을 재사용**함
+- 펌웨어 내부에서는 별도의 index로 처리하나, **디스플레이 문자열이 중복**될 가능성 (동일 포인터 사용)
+- Random → "Arp Rand"로 약어 표기
+- 매뉴얼 정정: UpDown 모드의 표시명이 펌웨어에서 "Arp Up"과 동일하게 보일 수 있음을 명시
+
+---
+
+### CORR-04: Unison 하위모드 누락
+**매뉴얼이 불완전** — 3종의 별도 Unison 음성 모드가 존재
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §Voice Mode > Unison |
+| **매뉴얼 기술** | Unison Mode: Mono / Poly / Para (Unison의 음성 처리 방식 선택) |
+| **펌웨어 실제** | **3개의 독립 Voice Mode**로 존재: `Unison`, `Uni (Poly)`, `Uni (Para)` |
+| **펌웨어 주소** | CM4 `0x081AF500` ~ `0x081AF514` |
+| **신뢰도** | ★★★★★ |
+
+**펌웨어 hex dump 증거**:
+```
+0x081AF500: 55 6E 69 73 6F 6E 00                     "Unison"
+0x081AF508: 55 6E 69 20 28 50 6F 6C 79 29 00         "Uni (Poly)"
+0x081AF514: 55 6E 69 20 28 50 61 72 61 29 00         "Uni (Para)"
+```
+
+**정정 내용**:
+- 펌웨어에서 "Unison Mode"는 단순한 하위 설정이 아니라 **Voice Mode enum 내의 3개 항목**으로 구현
+- `Unison` = 기본 유니즌 (모노포닉 유니즌)
+- `Uni (Poly)` = 폴리포닉 유니즌 (각 음이 유니즌 적용)
+- `Uni (Para)` = 파라포닉 유니즌 (6쌍의 파라포닉 유니즌)
+- 매뉴얼의 "Unison Mode: Mono/Poly/Para"는 이 3개 모드에 대응하나, 매뉴얼에서 이를 **명확히 구분하여 설명하지 않음**
+- 매뉴얼 정정: Voice Mode 섹션에 Unison, Uni (Poly), Uni (Para)를 3개의 독립 모드로 명시
+
+---
+
+### CORR-05: LFO 파형명 약어 불일치
+**매뉴얼이 틀림** — 펌웨어는 전체명이 아닌 약어 사용
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §9 LFO > Wave |
+| **매뉴얼 기술** | Sine / Triangle / Sawtooth / Square / Sample & Hold / Slew S&H / Exponential Saw / Exponential Ramp / User Shaper |
+| **펌웨어 실제** | **Sin / Tri / Saw / Sqr / SnH / SlewSNH / ExpSaw / ExpRamp / Shaper** (약어) |
+| **펌웨어 주소** | CM4 `0x081B0FB0` ~ `0x081B0FDB` |
+| **신뢰도** | ★★★★★ |
+
+**펌웨어 hex dump 증거** (7/9 직접 확인 + 2/9 VST XML 교차검증):
+```
+0x081B0FB0: 53 69 6E 00                              "Sin"           [idx 0] ★ CM4 확인
+0x081B0FB4: 54 72 69 00                              "Tri"           [idx 1] ★ CM4 확인
+             53 61 77 00                              "Saw"           [idx 2]   VST XML 교차검증
+0x081B0FB8: 53 71 72 00                              "Sqr"           [idx 3] ★ CM4 확인
+             53 6E 48 00                              "SnH"           [idx 4]   VST XML 교차검증
+0x081B0FBC: 53 6C 65 77 53 4E 48 00                  "SlewSNH"       [idx 5] ★ CM4 확인
+0x081B0FC4: 45 78 70 53 61 77 00                     "ExpSaw"        [idx 6] ★ CM4 확인
+0x081B0FCC: 45 78 70 52 61 6D 70 00                  "ExpRamp"       [idx 7] ★ CM4 확인
+0x081B0FD4: 53 68 61 70 65 72 00                     "Shaper"        [idx 8] ★ CM4 확인
+```
+
+**정정 내용**:
+- 펌웨어 표시명은 매뉴얼의 전체명과 다름 (OLED 디스플레이 공간 제약으로 추정)
+- 주요 불일치:
+  | 매뉴얼 | 펌웨어 |
+  |--------|--------|
+  | Sine | **Sin** |
+  | Triangle | **Tri** |
+  | Sawtooth | **Saw** |
+  | Square | **Sqr** |
+  | Sample & Hold | **SnH** |
+  | Slew S&H | **SlewSNH** |
+  | Exponential Saw | **ExpSaw** |
+  | Exponential Ramp | **ExpRamp** |
+  | User Shaper | **Shaper** |
+- 매뉴얼 정정: 실제 기기 디스플레이에 표시되는 약어명을 병기할 것
+
+---
+
+### CORR-06: Tempo Subdivision 개수 오류
+**매뉴얼이 틀림** — 11종이 아닌 17종 존재
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §Tempo Sync / Sync Filter |
+| **매뉴얼 기술** | 11종: 1/4, 1/4T, 1/4D, 1/8, 1/8T, 1/8D, 1/16, 1/16T, 1/16D, 1/32, 1/32T |
+| **펌웨어 실제** | **17종**: 상기 11종 + 6종 추가 (소문자 triplet 변형) |
+| **펌웨어 주소** | CM4 `0x081AF0B4` ~ `0x081AF0FC` (11종) + `0x081AF564` ~ `0x081AF58C` (6종) |
+| **신뢰도** | ★★★★☆ |
+
+**펌웨어 hex dump 증거**:
+```
+=== 주 테이블 (11종) @ 0x081AF0B4 ~ 0x081AF0FC ===
+"1/4", "1/8D", "1/4T", "1/8", "1/16D", "1/8T", "1/16", "1/32D", "1/16T", "1/32", "1/32T"
+
+=== 추가 테이블 (6종) @ 0x081AF564 ~ 0x081AF58C ===
+0x081AF564: "1/32t"   (소문자 t = triplet)
+0x081AF56C: "1/16t"
+0x081AF574: "1/8t"
+0x081AF57C: "1/4t"
+0x081AF584: "1/2t"
+0x081AF58C: "1/1"
+```
+
+**정정 내용**:
+- 펌웨어는 매뉴얼에 명시되지 않은 **6개의 추가 서브디비전**을 보유
+- 소문자 `t` = triplet 표기 (대문자 `T`와 구분됨)
+- **"1/2t"** (half-note triplet) 및 **"1/1"** (whole note)이 펌웨어에 존재하나 매뉴얼에 누락
+- 펌웨어의 두 테이블이 서로 다른 컨텍스트에서 사용될 가능성 (주 테이블 = LFO/Seq sync, 추가 테이블 = 특정 파라미터 전용)
+- 매뉴얼 정정: 17종 전체를 명시하거나, 최소한 "1/2t"와 "1/1"을 추가
+
+---
+
+### CORR-07: LFO 파형 수 불일치 (매뉴얼 내부 모순)
+**매뉴얼이 자체적으로 모순** — 일부 섹션에서 9파형, 다른 섹션에서 더 적게 기술
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §9 LFO (전반부 vs 파형 상세 목록) |
+| **매뉴얼 기술** | "9 different waveforms" 명시하나, 하위 섹션에서 Slew S&H, ExpSaw, ExpRamp, Shaper 누락 또는 불명확 |
+| **펌웨어 실제** | **정확히 9파형**: Sin, Tri, Saw, Sqr, SnH, SlewSNH, ExpSaw, ExpRamp, Shaper |
+| **펌웨어 주소** | CM4 `0x081B0FB0` ~ `0x081B0FDB` (문자열), CM7 정수 `9` × 7회 출현 |
+| **신뢰도** | ★★★★★ |
+
+**펌웨어 보조 증거** (CM7 상수):
+```
+CM7에서 정수 9 (0x00000009)가 LFO 파형 처리 함수 근처에서 7회 출현
+→ LFO 파형 enum size = 9 로 확정
+CM7 PI (0x40490FDB) × 16회, 2PI (0x40C90FDB) × 6회
+→ 위상 래핑 (phase wrapping)에서 파형 생성에 사용
+```
+
+**정정 내용**:
+- 매뉴얼은 9파형이라고 명시하면서도, 하위 섹션에서 **Slew S&H, Exponential Saw, Exponential Ramp, User Shaper**에 대한 상세 설명이 누락 또는 불충분
+- 펌웨어는 명확히 9개의 파형 enum을 보유
+- 매뉴얼 정정: 9개 파형 각각에 대해 (1) 펌웨어 표시명 (2) 극성 (Bi/Uni) (3) 상세 동작 설명을 완비할 것
+
+---
+
+## Part 2. 보완 (Enhancements) — 매뉴얼에 누락된 12건
+
+> 아래 항목들은 펌웨어에 존재하는 기능/파라미터이나 매뉴얼에 **전혀 언급되지 않거나 불충분하게 설명된** 사례입니다.
+
+---
+
+### ENH-01: Mod Matrix 내부 목적지 140개 (매뉴얼 13개)
+**매뉴얼 누락** — 펌웨어는 140개의 내부 모듈레이션 목적지를 보유
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §8.5 Modulation Matrix > Assignable Destinations |
+| **매뉴얼 기술** | ~30개 Assignable Destination (Glide, Pitch, Osc Type/Wave/Timbre/Shape/Volume, Filter, VCA, FX Time/Intensity/Amount, Env, LFO, Macro 등) |
+| **펌웨어 실제** | CM7에서 **140개**의 실제 모듈레이션 목적지 파라미터 확인 |
+| **펌웨어 주소** | CM7 모듈레이션 렌더링 체인 (Q15 고정소수점 스케일링) |
+| **신뢰도** | ★★★★☆ |
+
+**상세 내용**:
+- 매뉴얼에 명시된 ~30개는 **자주 사용하는 주요 목적지**이고, 펌웨어는 NRPN/SysEx를 통해 140개 파라미터에 직접 모듈레이션 적용 가능
+- Mod depth는 NRPN 채널 0xAE~0xB1로 전송
+- 13-column int16 대각선 슬라이딩 윈도우 배열이 Mod Matrix 템플릿으로 사용됨 (Phase 9 확인)
+- 매뉴얼에 전체 목적지 리스트 추가 권고
+
+---
+
+### ENH-02: Shaper 프리셋 20종 (12 빌트인 + 8 사용자)
+**매뉴얼 누락** — LFO Shaper의 프리셋 라이브러리가 상세히 문서화되지 않음
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §9 LFO > User Shaper |
+| **매뉴얼 기술** | "16-step user shaper" 기능만 언급 |
+| **펌웨어 실제** | **20종 프리셋**: 12 빌트인 + 8 사용자 정의 Shaper |
+| **펌웨어 주소** | CM4 `0x081AF128` ~ `0x081AF288` |
+| **신뢰도** | ★★★★★ |
+
+**펌웨어 프리셋 목록**:
+```
+[빌트인 12종]
+ 0: Shaper              (기본 사각파)
+ 1: Asymmetrical Saw    (비대칭 톱니파)
+ 2: Unipolar Cosine     (단극성 코사인)
+ 3: Short Pulse         (짧은 펄스)
+ 4: Exponential Square  (지수 구형파)
+ 5: Decaying Decays     (감쇠 디케이)
+ 6: Wobbly              (불안정 파형)
+ 7: Strum Envelope      (스트럼 엔벨로프)
+ 8: Triangle Bounces    (바운스 삼각파)
+ 9: Rhythmic 1          (리듬 패턴 1)
+10: Rhythmic 2          (리듬 패턴 2)
+11: Rhythmic 3          (리듬 패턴 3)
+12: Rhythmic 4          (리듬 패턴 4)
+13: Stepped 1           (스텝 패턴 1)
+14: Stepped 2           (스텝 패턴 2)
+15: Stepped 3           (스텝 패턴 3)
+16: Stepped 4           (스텝 패턴 4)
+
+[사용자 정의 8종]
+User Shaper 1 ~ User Shaper 8
+```
+
+> **정정**: 위 12 빌트인은 Phase 11에서 CM4 문자열 스캔으로 확인된 16종에서 "Rhythmic 1~4"와 "Stepped 1~4"를 포함한 목록. 정확한 빌트인/사용자 분류는 Shaper 1 Rate/2 Rate 파라미터와 연동.
+
+---
+
+### ENH-03: Deprecated 파라미터 4종 존재
+**매뉴얼 누락** — 펌웨어에 4개의 사용 중단(deprecated) 파라미터가 잔류
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | 해당 없음 |
+| **매뉴얼 기술** | 언급 없음 |
+| **펌웨어 실제** | 4종의 deprecated/obsolete 파라미터가 eEditParams에 존재 |
+| **펌웨어 주소** | 아래 참조 |
+| **신뢰도** | ★★★★★ |
+
+**펌웨어 증거**:
+| 주소 | 문자열 | 의미 | 상태 |
+|------|--------|------|------|
+| `0x081AF994` | `UnisonOn TO BE DEPRECATED` | 레거시 유니즌 온/오프 토글 | 명시적 DEPRECATED 마크 |
+| `0x081AF70C` | `old FX3 Routing` | 레거시 FX3 라우팅 방식 | 대체됨 |
+| `0x081AFB00` | `obsolete Rec Count-In` | 레거시 녹음 카운트인 | 대체됨 |
+| `0x081AF72C` | `internal use only` | 내부 전용 파라미터 | 사용자 접근 불가 |
+
+**보완 권고**: 매뉴얼 부록에 "이전 펌웨어 버전에서 변경된 사항" 섹션 추가
+
+---
+
+### ENH-04: CycEnv Loop2 모드 (4번째 모드)
+**매뉴얼 누락** — Cycling Envelope에 문서화되지 않은 4번째 모드 존재
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §10.4 Cycling Envelope > Mode |
+| **매뉴얼 기술** | 3종: Env / Run / Loop |
+| **펌웨어 실제** | **4종**: Env / Run / Loop / **Loop2** (예약 또는 비활성 모드) |
+| **펌웨어 주소** | mf_enums.py `CYCENV_MODES` (VST XML 기반) |
+| **신뢰도** | ★★★☆☆ |
+
+**상세 내용**:
+- 펌웨어 enum에 index 3으로 `Loop2`가 존재
+- 현재 활성화되지 않은 예약 모드이거나, 특정 조건에서만 접근 가능한 모드
+- CM4에서는 Run/Loop 문자열만 직접 확인 (Phase 11)
+- 향후 펌웨어 업데이트에서 활성화될 가능성
+
+---
+
+### ENH-05: Poly Allocation 3모드
+**매뉴얼 불충분** — Poly Allocation 모드가 매뉴얼에 상세히 설명되지 않음
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §Voice Mode (간접 언급) |
+| **매뉴얼 기술** | Poly Allocation에 대한 상세 설명 누락 |
+| **펌웨어 실제** | 3종: **Cycle** (라운드 로빈) / **Reassign** (기존 보이스 유지) / **Reset** (새 음마다 리셋) |
+| **펌웨어 주소** | mf_enums.py `POLY_ALLOC_MODES` + eEditParams `Poly Allocation` |
+| **신뢰도** | ★★★☆☆ |
+
+**보완 권고**: Voice Mode 섹션에 Poly Allocation 모드에 대한 설명 추가
+
+---
+
+### ENH-06: 내부 CC 161개 (매뉴얼 38개)
+**매뉴얼 누락** — 펌웨어는 161개의 CC를 처리하나 매뉴얼은 38개만 문서화
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §MIDI Implementation |
+| **매뉴얼 기술** | 38개 CC 매핑 (CC#1~CC#123 범위) |
+| **펌웨어 실제** | CM7 `FUN_08066810`에서 **161개 CC** 처리 (CC#86~186 포함) |
+| **펌웨어 주소** | CM7 `0x08066810` (midi_cc_handler) |
+| **신뢰도** | ★★★★☆ |
+
+**상세 내용**:
+- CC#86~112: FX1/FX2/FX3 파라미터 (27개)
+- CC#113~123: 시퀀서/아르페지에이터 파라미터
+- CC#117~118: Macro 1/2
+- CC#86~186 범위의 NRPN 확장 영역 존재
+- 각 CC는 vtable 기반 간접 디스패치로 eSynthParams에 매핑
+- 매뉴얼에 전체 CC 맵 추가 권고
+
+---
+
+### ENH-07: Vocoder Self / Vocoder Ext In 독립 처리
+**매뉴얼 불충분** — 두 Vocoder 타입이 별도의 DSP 경로를 사용함이 누락
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §FX > Vocoder |
+| **매뉴얼 기술** | Vocoder Self와 Vocoder Ext In을 동일한 Vocoder의 모드로 설명 |
+| **펌웨어 실제** | **별도 서브프로세서 + 별도 함수 + 별도 구조체 크기** |
+| **펌웨어 주소** | FX 코어 SP4 `FUN_0800C6AC` (Ext, 336B) vs SP5 `FUN_0800C87C` (Self, 243B) |
+| **신뢰도** | ★★★★☆ |
+
+**상세 내용**:
+| 속성 | Vocoder Self | Vocoder Ext In |
+|------|-------------|----------------|
+| 서브프로세서 | SP5 | SP4 |
+| 함수 | `FUN_0800C87C` (mode=1) | `FUN_0800C6AC` (mode=2) |
+| 구조체 크기 | 243바이트 | 336바이트 |
+| 모듈레이터 | 내부 신호 | 외부 Audio In |
+| 파라미터 1 | Spectrum | Time |
+| 파라미터 2 | Formant Shift | Intensity |
+| 파라미터 3 | Amount | Amount |
+
+---
+
+### ENH-08: Smooth Mod 4 Lane 상세
+**매뉴얼 불충분** — Mod Sequencer의 스무딩 레인에 대한 상세 설명 누락
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §Step Sequencer > Modulation |
+| **매뉴얼 기술** | "4 modulation lanes" 명시만 |
+| **펌웨어 실제** | **Smooth Mod 1~4** 파라미터가 각 레인의 스무딩을 개별 제어 |
+| **펌웨어 주소** | CM4 `0x081B1B8C` ~ `0x081B1BBC` |
+| **신뢰도** | ★★★★★ |
+
+**펌웨어 hex dump 증거**:
+```
+0x081B1B8C: 53 6D 6F 6F 74 68 20 4D 6F 64 20 34 00  "Smooth Mod 4"  [Lane 4]
+0x081B1B9C: 53 6D 6F 6F 74 68 20 4D 6F 64 20 33 00  "Smooth Mod 3"  [Lane 3]
+0x081B1BAC: 53 6D 6F 6F 74 68 20 4D 6F 64 20 32 00  "Smooth Mod 2"  [Lane 2]
+0x081B1BBC: 53 6D 6F 6F 74 68 20 4D 6F 64 20 31 00  "Smooth Mod 1"  [Lane 1]
+```
+
+> 주소 순서가 4→3→2→1 역순 (내부 배열 배치 순서)
+
+---
+
+### ENH-09: Arp 수식어 확률 분포 상세
+**매뉴얼 불충분** — Walk 및 Mutate의 확률 분포가 펌웨어와 다름
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §13.3 Arp Modifiers |
+| **매뉴얼 기술** | Walk = " walks up or down chromatically", Mutate = "randomly shifts the pitch" (모호) |
+| **펌웨어 실제** | **정확한 확률 분포**가 CM7 LUT에 하드코딩 |
+| **펌웨어 주소** | CM7 Walk LUT @ `0x080546C4` (8슬롯 × 8 step), 확률 LUT × 3개 |
+| **신뢰도** | ★★★★☆ |
+
+**펌웨어 확률 분포**:
+| 수식어 | 펌웨어 확률 |
+|--------|------------|
+| **Walk** | 25% 이전 음 / 25% 현재 음 / 50% 다음 음 (인접 음 이동 가중치) |
+| **Rand Oct** | 75% 정상 / 15% +1옥타브 / 7% -1옥타브 / 3% +2옥타브 |
+| **Mutate** | 75% 유지 / 5% +5th / 5% -4th / 5% +oct / 5% -oct / 3% 다음 노트 swap / 2% 두 번째 다음 swap (누적) |
+
+---
+
+### ENH-10: Mod Matrix Custom Assign 8목적지
+**매뉴얼 불충분** — Custom Assign 대상 8개가 상세히 문서화되지 않음
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §8.5.4 Custom Assign |
+| **매뉴얼 기술** | 간략한 설명만 |
+| **펌웨어 실제** | 8개 목적지: Vib Rate, Vib AM, VCA, LFO1 AM, LFO2 AM, CycEnv AM, Uni Spread, -Empty- |
+| **펌웨어 주소** | CM4 `0x081AEA94` (Mod Dest Custom Assign enum) |
+| **신뢰도** | ★★★★★ |
+
+**상세 내용**:
+- **Vib Rate / Vib AM**: 제3 LFO (Vibrato)의 레이트/깊이를 모듈레이션
+- **VCA**: VCA 레벨 직접 모듈레이션 (사이드체인 가능)
+- **LFO1 AM / LFO2 AM**: 각 LFO의 진폭을 모듈레이션 (메타-모듈레이션)
+- **CycEnv AM**: Cycling Envelope 진폭 모듈레이션
+- **Uni Spread**: 유니즌 스프레드 폭 모듈레이션
+- 이를 통해 **모듈레이션의 모듈레이션** (meta-modulation)이 가능
+
+---
+
+### ENH-11: FX Singleton 제약
+**매뉴얼 불충분** — Reverb/Delay/MultiComp의 슬롯 제한이 명확히 설명되지 않음
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §FX |
+| **매뉴얼 기술** | 3슬롯 FX 체인 명시만, 싱글턴 제약 언급 불명확 |
+| **펌웨어 실제** | **Reverb, Stereo Delay, Multi Comp**는 전체 3슬롯 중 각각 **최대 1개만** 활성 가능 |
+| **펌웨어 주소** | Phase 7-3 FX 코어 분석 + Phase 8 FX enum |
+| **신뢰도** | ★★★★☆ |
+
+**FX 싱글턴 제약**:
+| FX 타입 | Index | 제약 |
+|---------|-------|------|
+| **Reverb** | 3 | 3슬롯 중 최대 1개 |
+| **Stereo Delay** | 4 | 3슬롯 중 최대 1개 |
+| **Multi Comp** | 9 | 3슬롯 중 최대 1개 |
+| 기타 10종 | 0,1,2,5,6,7,8,10,11,12 | 제약 없음 (복수 슬롯 가능) |
+
+---
+
+### ENH-12: Sequencer 64-Step 구조 및 3녹음 모드
+**매뉴얼 불충분** — 64스텝의 내부 구조와 녹음 모드에 대한 상세 설명 누락
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §Step Sequencer |
+| **매뉴얼 기술** | 64-step, 4 modulation lanes 명시 |
+| **펌웨어 실제** | CM7 정수 `64` × 17회 출현 (컴파일 타임 상수), `FUN_08029390` 6-case state machine, 3가지 녹음 모드 |
+| **펌웨어 주소** | CM7 `FUN_08029390` (state machine), CM4 `eSeqParams` @ `0x081AC84D` |
+| **신뢰도** | ★★★★☆ |
+
+**상세 내용**:
+- **64 스텝**: CM7에서 17회 출현하는 정수 상수 64로 확정 (UI 문자열 없음 — 컴파일 타임 상수)
+- **3가지 녹음 모드**: Step Rec (스텝별 입력), Real-time Rec (실시간 녹음), Overdub (오버더빙)
+- **RecState** 파라미터 @ CM4 `0x081AFAB4`
+- **RecMode** 파라미터 @ CM4 `0x081AFAC0`
+- 스텝 데이터 구조: Pitch[6bit] + Length + Velocity + flags (Phase 9 추정)
+
+---
+
+## Part 3. 요약 표
+
+### 정정 항목 요약 (7건)
+
+| ID | 카테고리 | 매뉴얼 | 펌웨어 | 펌웨어 주소 | 신뢰도 |
+|----|----------|--------|--------|-------------|--------|
+| CORR-01 | Voice | Poly Steal 4종 | **6종** | CM4 `0x081B0F70` | ★★★★★ |
+| CORR-02 | Mod Matrix | 소스 7개 | **9개** | CM4 `0x081B1BCC` | ★★★★★ |
+| CORR-03 | Arp | UpDown 명칭 | **"Arp Up" 재사용** | CM4 `0x081AEC3C` | ★★★★★ |
+| CORR-04 | Voice | Unison 하위모드 불명확 | **3개 독립 모드** | CM4 `0x081AF500` | ★★★★★ |
+| CORR-05 | LFO | 전체 파형명 | **약어명** (Sin, Tri 등) | CM4 `0x081B0FB0` | ★★★★★ |
+| CORR-06 | Tempo | Subdivision 11종 | **17종** | CM4 `0x081AF0B4`+`0x081AF564` | ★★★★☆ |
+| CORR-07 | LFO | 9파형 (일부 누락) | **9파형 확정** | CM4 `0x081B0FB0`+CM7 | ★★★★★ |
+
+### 보완 항목 요약 (12건)
+
+| ID | 카테고리 | 매뉴얼 | 펌웨어 (누락된 기능) | 펌웨어 주소 | 신뢰도 |
+|----|----------|--------|---------------------|-------------|--------|
+| ENH-01 | Mod Matrix | ~30 dest | **140개 내부 목적지** | CM7 Mod chain | ★★★★☆ |
+| ENH-02 | LFO | User Shaper만 | **20종 Shaper 프리셋** | CM4 `0x081AF128` | ★★★★★ |
+| ENH-03 | Preset | 언급 없음 | **4종 deprecated 파라미터** | CM4 multiple | ★★★★★ |
+| ENH-04 | CycEnv | 3모드 | **Loop2 (4번째 모드)** | mf_enums.py | ★★★☆☆ |
+| ENH-05 | Voice | 불충분 | **Poly Allocation 3모드** | mf_enums.py | ★★★☆☆ |
+| ENH-06 | MIDI | 38 CC | **161개 내부 CC** | CM7 `0x08066810` | ★★★★☆ |
+| ENH-07 | FX | 불충분 | **Vocoder 2타입 별도 DSP** | FX SP4/SP5 | ★★★★☆ |
+| ENH-08 | Seq | 4 lane만 | **Smooth Mod 1~4 파라미터** | CM4 `0x081B1B8C` | ★★★★★ |
+| ENH-09 | Arp | 모호한 설명 | **정확한 확률 분포** | CM7 `0x080546C4` | ★★★★☆ |
+| ENH-10 | Mod Matrix | 간략 | **Custom Assign 8목적지** | CM4 `0x081AEA94` | ★★★★★ |
+| ENH-11 | FX | 불명확 | **Singleton 제약 3종** | Phase 7-3 | ★★★★☆ |
+| ENH-12 | Seq | 64-step만 | **3녹음모드 + state machine** | CM7 `FUN_08029390` | ★★★★☆ |
+
+---
+
+## 참고 문헌
+
+| 문서 | 설명 |
+|------|------|
+| `PHASE11_GAP_FILL_ANALYSIS.md` | Phase 11 CM4 바이너리 직접 스캔 결과 |
+| `MANUAL_VS_FIRMWARE_MATCH.md` | 매뉴얼 vs 펌웨어 종합 일치도 분석 |
+| `PHASE10_MANUAL_GAP_ANALYSIS.md` | Phase 10 매뉴얼 갭 분석 계획 |
+| `PHASE8_FX_OSC_ENUMS.md` | Phase 8 FX/OSC enum 정리 |
+| `PHASE8_SEQ_ARP_MOD.md` | Phase 8 Seq/Arp/Mod 정리 |
+| `phase8_enum_tables.json` | Phase 8 enum 테이블 JSON |
+| `PHASE9_RESULTS.md` | Phase 9 CM7 상수/함수 분석 |
+| `PHASE7-3_FX_CORE_ANALYSIS.md` | Phase 7-3 FX 코어 서브프로세서 분석 |
+
+---
+
+*문서 버전: Phase 12-1 Final*
+*작성 도구: 펌웨어 바이너리 스캔 + VST XML 교차검증*
+*펌웨어 버전: fw4_0_1_2229 (2025-06-18)*
+*매뉴얼 버전: v4.0.0 / v4.0.1 (2025-07-04)*

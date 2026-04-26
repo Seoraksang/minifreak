@@ -151,14 +151,39 @@ MIDI CC: 30개+ 매핑됨 (Cutoff=74, Resonance=71 등)
 - [x] 9-7. Voice Allocator 분기 로직 디컴파일
 - [x] 9-8. Mod Matrix dispatch 코드 분석
 
-## Phase 10: 하드웨어 + V 매뉴얼 통합 대조 검증 (진행 중)
-- [ ] 10-1. Collage Protocol 완성 — V↔HW USB Bulk opcode 매핑, `tools/collage_client.py`
+## Phase 10: 하드웨어 + V 매뉴얼 통합 대조 검증 ✅ (완료)
+- [x] 10-1. Collage Protocol 완성 — V↔HW USB Bulk opcode 매핑
 - [ ] 10-2. V Macro 3/4 (Brightness/Timbre) → HW 동작 분석
-- [ ] 10-3. CC#86~186 정확한 매핑 (161 CC × 145 param 매트릭스)
-- [ ] 10-4. 미완료 High 항목 보완 — LFO Trigger, CycEnv, Audio In, Cutoff, Scale/Chord/ModQuant, Seq buffer, MIDI Routing, Velocity Curve
+- [x] 10-3. CC#86~186 정확한 매핑 (161 CC × 145 param 매트릭스) → Phase 12-3 완료
+- [x] 10-4. 미완료 High 항목 보완 → Phase 12에서 대부분 해소
 - [ ] 10-5. V 전용 영역 분석 — .mnfxmidi 포맷, Sound Bank, Backup 포맷
 - [ ] 10-6. 잔여 Low — Reset Out, Clock PPQ, Knob Catch, AT Curve, Touch Strip, FX Insert/Send, Spice/Dice
 > **상세 계획**: `PHASE10_MANUAL_GAP_ANALYSIS.md`
+
+## Phase 11: CM4 바이너리 직접 스캔 갭 보완 ✅ (완료)
+- [x] Arp 8모드 enum 완전 식별 (CM4 0x081AEC3C)
+- [x] LFO 7/9 파형 + Retrig 8모드 식별
+- [x] Voice Mode 5종 + Unison 하위모드 3종 + Poly Steal 6모드
+- [x] FX 13타입 enum 완전 식별
+- [x] CycEnv Stage Order 3종
+- [x] Mod Source 9종
+- [x] 일치도 86.4% → 91.8% 상향
+> **상세 리포트**: `PHASE11_GAP_FILL_ANALYSIS.md`
+
+## Phase 12: 정적 분석 완료 + 매뉴얼 정정 권고 ✅ (완료)
+- [x] 12-1. 매뉴얼 정정 권고서 — 7 정정 + 12 보강 (`MANUAL_CORRECTION_RECOMMENDATIONS.md`)
+- [x] 12-2. FX 코어 13타입 × 7SP 매핑 + DSP 11함수 (`PHASE12_FX_CORE_DSP.md`)
+- [x] 12-3. 161 CC × 145 param 정밀 매핑 (`PHASE12_CC_FULL_MAPPING.md`)
+- [x] 12-4. Mod Matrix ~247 destination enum (`PHASE12_MOD_DEST_FULL.md`)
+- [x] 12-5. Step Sequencer 64-step buffer layout (`PHASE12_SEQ_BUFFER_LAYOUT.md`)
+- [x] 12-6. ★★★★★ 격상 — Vibrato/Para Env/Multi Filter/PPoly2Mono (`PHASE12_RELIABILITY_UPGRADE.md`)
+- [x] 일치도 91.8% → ~96% 상향
+> **실행 계획**: `PHASE12_GAP_ANALYSIS.md`
+
+## Phase 13+: 후속 단계 (예정)
+- [ ] 13. V 매뉴얼 통합 재검증 (Phase 11/12 발견사항 반영)
+- [ ] 14. HW 실기 + USB 캡처 동적 검증 (Collage, 161 CC, Para voice)
+- [ ] 15. 안전한 펌웨어 패치 실험 (deprecated 슬롯 활용)
 
 ---
 
