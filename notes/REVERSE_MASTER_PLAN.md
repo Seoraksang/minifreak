@@ -151,10 +151,14 @@ MIDI CC: 30개+ 매핑됨 (Cutoff=74, Resonance=71 등)
 - [x] 9-7. Voice Allocator 분기 로직 디컴파일
 - [x] 9-8. Mod Matrix dispatch 코드 분석
 
-## Phase 10: 고급 분석 (물리 분석 필요)
-- [ ] 10-1. 보드 분해 + 사진 (DAC/ADC/VCF 칩 식별)
-- [ ] 10-2. MIDI 캡처 검증
-- [ ] 10-3. JTAG/SWD 런타임 분석
+## Phase 10: 하드웨어 + V 매뉴얼 통합 대조 검증 (진행 중)
+- [ ] 10-1. Collage Protocol 완성 — V↔HW USB Bulk opcode 매핑, `tools/collage_client.py`
+- [ ] 10-2. V Macro 3/4 (Brightness/Timbre) → HW 동작 분석
+- [ ] 10-3. CC#86~186 정확한 매핑 (161 CC × 145 param 매트릭스)
+- [ ] 10-4. 미완료 High 항목 보완 — LFO Trigger, CycEnv, Audio In, Cutoff, Scale/Chord/ModQuant, Seq buffer, MIDI Routing, Velocity Curve
+- [ ] 10-5. V 전용 영역 분석 — .mnfxmidi 포맷, Sound Bank, Backup 포맷
+- [ ] 10-6. 잔여 Low — Reset Out, Clock PPQ, Knob Catch, AT Curve, Touch Strip, FX Insert/Send, Spice/Dice
+> **상세 계획**: `PHASE10_MANUAL_GAP_ANALYSIS.md`
 
 ---
 
