@@ -15,7 +15,7 @@
 | LFO | 75% | **92%** | CM4에서 7/9 파형 문자열 확인, VST XML으로 나머지 2개 교차검증 |
 | 보이스 모드 | 85% | **92%** | CM4 + mf_enums.py에서 5모드 확인, Unison 하위모드 3종 추가 |
 | 스텝 시퀀서 | 80% | **90%** | Smooth Mod 1~4 (4 lane) 확인, CM7에서 64-step 상수 17개 |
-| FX | 80% | **92%** | CM4에서 13타입 문자열 테이블 전부 확인, FX 코어 = 순수 DSP (UI 문자열 없음 확인) |
+| FX | 80% | **92%** | CM4에서 12타입 문자열 테이블 전부 확인 (VST 13타입, Stereo Delay는 CM4 없음), FX 코어 = 순수 DSP (UI 문자열 없음 확인) |
 | 엔벨로프 | 90% | **92%** | CycEnv Stage Order (RHF/RFH/HRF) CM4에서 각 1회 확인 |
 
 ---
@@ -279,7 +279,7 @@ mf_enums.py에서 확인: Cycle / Reassign / Reset
 | `0x081AF36C` | `Vocoder Self` | 11 | ✅ |
 | `0x081AF37C` | `Vocoder Ext` | 12 | ✅ |
 
-> **확인 상태**: ✅ 13/13 타입 전부 CM4에서 확인
+> **확인 상태**: ✅ 12/12 CM4 타입 전부 확인 (VST 13타입, Stereo Delay는 VST 전용)
 > **FX 코어 바이너리**: UI 문자열 없음 (순수 DSP 코드). FX 타입 선택은 CM4에서 수행 후 FX 코어에 명령 전달.
 
 ### FX 슬롯 구조 (CM4 eEditParams)

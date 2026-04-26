@@ -15,7 +15,7 @@ Phase 11 (커밋 `cadd861`)으로 일치도 **86.4% → 91.8%** (+5.4%p) 상승.
 | 문서 | 크기 | 내용 |
 |------|------|------|
 | `MANUAL_CORRECTION_RECOMMENDATIONS.md` | 26.8KB | 매뉴얼 정정 7항 + 보강 12항 |
-| `PHASE12_FX_CORE_DSP.md` | 24.8KB | FX 13타입 DSP 매핑 완성 |
+|| `PHASE12_FX_CORE_DSP.md` | 24.8KB | FX 12타입(CM4)/13타입(VST) DSP 매핑 완성 |
 | `PHASE12_CC_FULL_MAPPING.md` | 19.3KB | 161 CC × 145 param 정밀 매핑 |
 | `PHASE12_MOD_DEST_FULL.md` | 24.9KB | ~247 destination enum (51 user-reachable) |
 | `PHASE12_SEQ_BUFFER_LAYOUT.md` | 15.7KB | 64-step + 4-lane + 6-track buffer layout |
@@ -29,7 +29,7 @@ Phase 11 (커밋 `cadd861`)으로 일치도 **86.4% → 91.8%** (+5.4%p) 상승.
 | Vibrato (3rd LFO) | ★★★☆☆ | **★★★★★** | ↑2 |
 | Para Env 분리 | ★★★☆☆ | **★★★★★** (분리없음 확인) | ↑2 |
 | Multi Filter 모드 | ★★★☆☆ | **★★★★★** (14모드 전부) | ↑2 |
-| FX 코어 DSP | 타입만 | **13타입 × 7SP 매핑** | 완성 |
+|| FX 코어 DSP | 타입만 | **12타입(CM4)/13타입(VST) × 7SP 매핑** | 완성 |
 | CC 매핑 | 41 user CC | **161 CC 전체 매핑** | 완성 |
 | Mod Dest | 13 user | **~247 (51 user-reachable)** | 완성 |
 | Seq buffer | 미확정 | **24 field/step 구조** | 완성 |
@@ -74,7 +74,7 @@ Phase 12 완료 후 전체 산출물에 대해 정합성 감사를 수행 (2026-
 - 펌웨어 주소 + hex dump 포함
 
 ### 1.2 Phase 12-2: FX 코어 DSP ✅ 완료
-- CM4 13 FX 타입 → FX 코어 7 서브프로세서 매핑
+- CM4 12 FX 타입 → FX 코어 7 서브프로세서 매핑
 - Chorus/Flanger/Phaser = SP6 공유, Vocoder = SP4/SP5 이중
 - DSP 핵심 함수 11개 식별
 
@@ -121,4 +121,38 @@ Phase 12 완료 후 전체 산출물에 대해 정합성 감사를 수행 (2026-
 
 ---
 
-*Phase 12 정적 분석 완료. 예상 일치도 ~96%.*
+## V2 독립 검증 (2026-04-26)
+
+Phase 12 감사와 완전히 다른 4가지 방법으로 재검증:
+
+### V2-1: JSON vs MD 크로스체크
+- phase8_midi_cc_extract.json: 161 CC 값 ✅ (문서와 일치)
+- phase8_enum_tables.json: fx_types=11, voice_modes=4 (Phase 8 한계, Phase 11에서 보완됨)
+- mf_enums.py: 13 FX 타입 ✅ (VST 기준, CM4=12종 차이는 정상)
+- 가중치 합산: 96.21% → 96.2% (문서의 96.0%은 반올림 오류 → 수정)
+
+### V2-2: 도구 실제 실행
+- verify_phase11_12_addresses.py: 정상 실행 ✅
+- mf_enums.py import: 정상 동작 ✅
+- parse_mnfx.py: 정상 동작 ✅
+
+### V2-3: CM4 전체 enum 재스캔
+- FX 타입: **12종** 확인 (Chorus~Vocoder Ext). "Stereo Delay" CM4 없음, VST 전용.
+- "Ensemble" 문자열: CM4 바이너리에 존재하지 않음.
+- FX 테이블: inline null-terminated strings, 8-byte pointer 아님 (Phase 12 초기 오류).
+
+### V2-4: 참조 무결성
+- 빈 파일: plaits_source/__init__.py 등 61개 (정상 — Python 패키지 마커)
+- 누락 참조: phase11_gap_fill_scan.py (repo에 없었음 → 복사 추가)
+- Phase 10 계획 파일 8개: 아직 미생성 (정상 — Phase 10은 계획 문서)
+
+### V2 수정사항
+1. FX 타입 13→12 (CM4 기준), VST 13타입은 별도 표기
+2. FX 주소 테이블: 8-byte pointer → inline strings로 정정
+3. "Ensemble" 참조 제거 (바이너리 미존재)
+4. 일치도 96.0% → 96.2% (반올림 수정)
+5. phase11_gap_fill_scan.py repo에 추가
+
+---
+
+*Phase 12 정적 분석 완료. 예상 일치도 ~96.2%.*

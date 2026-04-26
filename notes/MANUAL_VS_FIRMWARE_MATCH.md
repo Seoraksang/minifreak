@@ -8,13 +8,13 @@
 
 ---
 
-## 종합 일치도: **~96%** (Phase 10: ~86% → Phase 11: ~92% → Phase 12: ~96%)
+## 종합 일치도: **~96.2%** (Phase 10: ~86% → Phase 11: ~92% → Phase 12: ~96.2%)
 
 | 카테고리 | 가중치 | Phase 10 | Phase 11 | Phase 12 | 기여값 | 상승 요인 |
 |----------|--------|----------|----------|----------|--------|-----------|
 | 오실레이터 엔진 | 20% | 95% | 95% | 95% | 19.00 | — |
 | 필터 시스템 | 15% | 85% | 85% | **96%** | 14.40 | Multi Filter 14모드 전부 ★★★★★ 확보 |
-| 디지털 이펙트 (FX) | 10% | 80% | 92% | **97%** | 9.70 | 13타입 × 7SP 매핑 + DSP 11함수 식별 |
+|| 디지털 이펙트 (FX) | 10% | 80% | 92% | **95%** | 9.50 | 12타입(CM4)/13타입(VST) × 7SP 매핑 + DSP 11함수 식별 |
 | LFO | 8% | 75% | 92% | **98%** | 7.84 | Vibrato ★★★★★ (6개 CM4 문자열) |
 | 엔벨로프 | 8% | 90% | 92% | **97%** | 7.76 | Para Env 분리없음 ★★★★★ 확보 |
 | 모듈레이션 매트릭스 | 10% | 95% | 96% | **99%** | 9.90 | ~247 dest (51 user) 완전 매핑 |
@@ -25,7 +25,7 @@
 | Spice/Dice | 3% | 85% | 85% | 88% | 2.64 | LUT 구조 확인, 정량값 미완 |
 | CC 라우팅 | 2% | 80% | 82% | **96%** | 1.92 | 161 CC 전체 매핑 + NRPN |
 | 프리셋 시스템 | 2% | 80% | 82% | **90%** | 1.80 | deprecated 4종 + boost::serialization |
-| **종합** | **100%** | **86.4%** | **91.8%** | **96.0%** | | |
+|| **종합** | **100%** | **86.4%** | **91.8%** | **96.2%** | | |
 
 ---
 
@@ -59,8 +59,8 @@
 **매뉴얼**: 13 FX 타입, 3슬롯, Insert/Send
 
 **펌웨어 증거 (Phase 12 신규)**:
-- ✅ CM4 FX 타입 문자열 테이블 @ `0x081AF308`~`0x081AF37C`: **13/13 타입 전부 확인**
-- ✅ **CM4 13타입 → FX 코어 7서브프로세서 매핑 완성**:
+- ✅ CM4 FX 타입 문자열 테이블 @ `0x081AF308`~`0x081AF37C`: **12/12 CM4 타입 전부 확인 (VST 13타입, Stereo Delay는 VST 전용)**
+- ✅ **CM4 12타입(CM4)/13타입(VST) → FX 코어 7서브프로세서 매핑 완성**:
   - SP6 공유: Chorus, Chorus Stereo, Flanger, Flanger Stereo, Phaser, Phaser Stereo
   - SP4(mode=2): Vocoder Self / SP5(mode=1): Vocoder Ext
   - SP0: Reverb, Reverb Shimmer
@@ -191,7 +191,7 @@
 |------|------|------|
 | `PHASE12_GAP_ANALYSIS.md` | 4.4KB | Phase 12 실행 계획 + 결과 요약 |
 | `MANUAL_CORRECTION_RECOMMENDATIONS.md` | 26.8KB | 매뉴얼 정정 7항 + 보강 12항 |
-| `PHASE12_FX_CORE_DSP.md` | 24.8KB | FX 13타입 × 7SP + DSP 11함수 |
+|| `PHASE12_FX_CORE_DSP.md` | 24.8KB | FX 12타입(CM4)/13타입(VST) × 7SP + DSP 11함수 |
 | `PHASE12_CC_FULL_MAPPING.md` | 19.3KB | 161 CC 전체 매핑 |
 | `PHASE12_MOD_DEST_FULL.md` | 24.9KB | ~247 destination enum |
 | `PHASE12_SEQ_BUFFER_LAYOUT.md` | 15.7KB | 64-step 24 field/step layout |
