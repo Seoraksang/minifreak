@@ -523,7 +523,7 @@ User Shaper 1 ~ User Shaper 8
 
 ## Part 3. 요약 표
 
-### 정정 항목 요약 (7건)
+### 정정 항목 요약 (10건)
 
 | ID | 카테고리 | 매뉴얼 | 펌웨어 | 펌웨어 주소 | 신뢰도 |
 |----|----------|--------|--------|-------------|--------|
@@ -534,6 +534,9 @@ User Shaper 1 ~ User Shaper 8
 | CORR-05 | LFO | 전체 파형명 | **약어명** (Sin, Tri 등) | CM4 `0x081B0FB0` | ★★★★★ |
 | CORR-06 | Tempo | Subdivision 11종 | **17종** | CM4 `0x081AF0B4`+`0x081AF564` | ★★★★☆ |
 | CORR-07 | LFO | 9파형 (일부 누락) | **9파형 확정** | CM4 `0x081B0FB0`+CM7 | ★★★★★ |
+| CORR-08 | LFO Shaper | 첫 항목 "Shaper" | **"Preset Shaper"** (25종: 1+16+8) | CM4 `0x081AF128` | ★★★★★ |
+| CORR-09 | Mod Matrix | 간략한 설명 | **Custom Assign 8목적지** 상세 주소 확정 | CM4 `0x081AEA94` | ★★★★★ |
+| CORR-10 | FX | HW/VST 구분 없음 | **Stereo Delay = VST 전용** (CM4 12종, VST 13종) | CM4 `0x081AF308` | ★★★★★ |
 
 ### 보완 항목 요약 (12건)
 
@@ -569,7 +572,7 @@ User Shaper 1 ~ User Shaper 8
 
 ---
 
-*문서 버전: Phase 12-1 Final*
+*문서 버전: Phase 13-3 V4 (CORR-08~10 추가)*
 *작성 도구: 펌웨어 바이너리 스캔 + VST XML 교차검증*
 *펌웨어 버전: fw4_0_1_2229 (2025-06-18)*
 *매뉴얼 버전: v4.0.0 / v4.0.1 (2025-07-04)*

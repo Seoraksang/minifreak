@@ -181,7 +181,7 @@ MIDI CC: 30개+ 매핑됨 (Cutoff=74, Resonance=71 등)
 > **실행 계획**: `PHASE12_GAP_ANALYSIS.md`
 
 ## Phase 13+: 후속 단계 (예정)
-- [ ] 13. V 매뉴얼 통합 재검증 (Phase 11/12 발견사항 반영)
+- [x] 13. V 매뉴얼 통합 재검증 (Phase 11/12 발견사항 반영) → **완료** (3원 교차검증, 일치도 95.7%)
 - [ ] 14. HW 실기 + USB 캡처 동적 검증 (Collage, 161 CC, Para voice)
 - [ ] 15. 안전한 펌웨어 패치 실험 (deprecated 슬롯 활용)
 
