@@ -91,8 +91,8 @@ MIDI CC: 30개+ 매핑됨 (Cutoff=74, Resonance=71 등)
 - [x] UI MCU×4 분석 — 각각 전용 ADC+SPI, AdcScan<N>, HysteresisFilter, PWM<7,5,7>
 - [x] Audio Codec 칩 — 펌웨어에 칩명 없음 (HAL 래퍼만), 물리 보드 필요
 - [x] 하드웨어 아키텍처 문서 완성 → notes/hardware_architecture.md
-- [ ] UI MCU 통신 프로토콜 — 간접 포인터 참조로 추적 불가
-- [ ] SPI 페리페럴 (CM7) — HAL 래퍼 통해 간접 접근, 물리 분석 필요
+|- [x] UI MCU 통신 프로토콜 — **USART2 기반 확정** (Phase 18-5, `PHASE18_UI_COMM_SPI_ANALYSIS.md`)
+|- [x] SPI 페리페럴 (CM7) — **CM7는 페리페럴 전혀 없음** (순수 메모리 기반 DSP, Phase 18-5)
 
 ## Phase 5: 데스크톱 소프트웨어 분석 ✅ (완료)
 - [x] Inno Setup 설치본 추출 (innoextract 1.9, 7,865파일, 715MB)
@@ -141,61 +141,73 @@ MIDI CC: 30개+ 매핑됨 (Cutoff=74, Resonance=71 등)
   - 폴리포니 보이스 할당 로직 → Phase 9
   - 모듈레이션 매트릭스 처리 코드 → Phase 9
 
-## Phase 9: 실제 패치 시도 + 심층 분석 (하드웨어 필요)
-- [ ] 9-1. DFU 덤프 (백업)
-- [ ] 9-2. MIDI CC 리매핑 패치
-- [ ] 9-3. 오실레이터 파라미터 패치
-- [ ] 9-4. 복구 테스트
-- [x] 9-5. CM7 Ghidra 심층 분석 — 확률 LUT, Seq state machine, Smoothing IIR
-- [ ] 9-6. 아날로그 VCF/VCA SPI 제어 코드 추출
-- [x] 9-7. Voice Allocator 분기 로직 디컴파일
-- [x] 9-8. Mod Matrix dispatch 코드 분석
+## Phase 9: 실제 패치 시도 + 심층 분석 (부분 완료, 하드웨어 필요)
+|- [ ] 9-1. DFU 덤프 (백업)
+|- [ ] 9-2. MIDI CC 리매핑 패치
+|- [ ] 9-3. 오실레이터 파라미터 패치
+|- [ ] 9-4. 복구 테스트
+|- [x] 9-5. CM7 Ghidra 심층 분석 — 확률 LUT, Seq state machine, Smoothing IIR
+|- [x] 9-6. 아날로그 VCF/VCA SPI 제어 코드 추출 → **DAC 내장 (SPI 미사용)**, CvCalib 11메서드 (`PHASE18_VCFCVA_SPI_ANALYSIS.md`)
+|- [x] 9-7. Voice Allocator 분기 로직 디컴파일
+|- [x] 9-8. Mod Matrix dispatch 코드 분석
 
 ## Phase 10: 하드웨어 + V 매뉴얼 통합 대조 검증 ✅ (완료)
-- [x] 10-1. Collage Protocol 완성 — V↔HW USB Bulk opcode 매핑
-- [ ] 10-2. V Macro 3/4 (Brightness/Timbre) → HW 동작 분석
-- [x] 10-3. CC#86~186 정확한 매핑 (161 CC × 145 param 매트릭스) → Phase 12-3 완료
-- [x] 10-4. 미완료 High 항목 보완 → Phase 12에서 대부분 해소
-- [ ] 10-5. V 전용 영역 분석 — .mnfxmidi 포맷, Sound Bank, Backup 포맷
-- [ ] 10-6. 잔여 Low — Reset Out, Clock PPQ, Knob Catch, AT Curve, Touch Strip, FX Insert/Send, Spice/Dice
+|- [x] 10-1. Collage Protocol 완성 — V↔HW USB Bulk opcode 매핑
+|- [x] 10-2. V Macro 3/4 (Brightness/Timbre) → HW 동작 분석 → **V 전용 확정, HW에 슬롯 없음** (`PHASE18_MACRO_ANALYSIS.md`)
+|- [x] 10-3. CC#86~186 정확한 매핑 (161 CC × 145 param 매트릭스) → Phase 12-3 완료
+|- [x] 10-4. 미완료 High 항목 보완 → Phase 12에서 대부분 해소
+|- [x] 10-5. V 전용 영역 분석 — MIDI Config=XML, Bank=JSON+디렉토리, Backup=ZIP+JSON+boost (`PHASE18_V_FILE_FORMATS.md`)
+|- [x] 10-6. 잔여 Low — Clock PPQ/Knob Catch/AT Curve/FX Insert-Send/Scale-Chord/Velocity/Audio In ✅, Reset Out⚠️, MIDI Routing⚠️, Touch Strip❌ (`PHASE18_LOW_ITEMS_ANALYSIS.md`)
 > **상세 계획**: `PHASE10_MANUAL_GAP_ANALYSIS.md`
 
 ## Phase 11: CM4 바이너리 직접 스캔 갭 보완 ✅ (완료)
-- [x] Arp 8모드 enum 완전 식별 (CM4 0x081AEC3C)
-- [x] LFO 7/9 파형 + Retrig 8모드 식별
-- [x] Voice Mode 5종 + Unison 하위모드 3종 + Poly Steal 6모드
-- [x] FX 12타입(CM4)/13타입(VST) enum 완전 식별
-- [x] CycEnv Stage Order 3종
-- [x] Mod Source 9종
-- [x] 일치도 86.4% → 91.8% 상향
+|- [x] Arp 8모드 enum 완전 식별 (CM4 0x081AEC3C)
+|- [x] LFO 7/9 파형 + Retrig 8모드 식별
+|- [x] Voice Mode 5종 + Unison 하위모드 3종 + Poly Steal 6모드
+|- [x] FX 12타입(CM4)/13타입(VST) enum 완전 식별
+|- [x] CycEnv Stage Order 3종
+|- [x] Mod Source 9종
+|- [x] 일치도 86.4% → 91.8% 상향
 > **상세 리포트**: `PHASE11_GAP_FILL_ANALYSIS.md`
 
 ## Phase 12: 정적 분석 완료 + 매뉴얼 정정 권고 ✅ (완료)
-- [x] 12-1. 매뉴얼 정정 권고서 — 7 정정 + 12 보강 (`MANUAL_CORRECTION_RECOMMENDATIONS.md`)
-- [x] 12-2. FX 코어 12타입(CM4)/13타입(VST) × 7SP 매핑 + DSP 11함수 (`PHASE12_FX_CORE_DSP.md`)
-- [x] 12-3. 161 CC × 145 param 정밀 매핑 (`PHASE12_CC_FULL_MAPPING.md`)
-- [x] 12-4. Mod Matrix ~247 destination enum (`PHASE12_MOD_DEST_FULL.md`)
-- [x] 12-5. Step Sequencer 64-step buffer layout (`PHASE12_SEQ_BUFFER_LAYOUT.md`)
-- [x] 12-6. ★★★★★ 격상 — Vibrato/Para Env/Multi Filter/PPoly2Mono (`PHASE12_RELIABILITY_UPGRADE.md`)
-- [x] 일치도 91.8% → ~96% 상향
+|- [x] 12-1. 매뉴얼 정정 권고서 — 7 정정 + 12 보강 (`MANUAL_CORRECTION_RECOMMENDATIONS.md`)
+|- [x] 12-2. FX 코어 12타입(CM4)/13타입(VST) × 7SP 매핑 + DSP 11함수 (`PHASE12_FX_CORE_DSP.md`)
+|- [x] 12-3. 161 CC × 145 param 정밀 매핑 (`PHASE12_CC_FULL_MAPPING.md`)
+|- [x] 12-4. Mod Matrix ~247 destination enum (`PHASE12_MOD_DEST_FULL.md`)
+|- [x] 12-5. Step Sequencer 64-step buffer layout (`PHASE12_SEQ_BUFFER_LAYOUT.md`)
+|- [x] 12-6. ★★★★★ 격상 — Vibrato/Para Env/Multi Filter/PPoly2Mono (`PHASE12_RELIABILITY_UPGRADE.md`)
+|- [x] 일치도 91.8% → ~96% 상향
 > **실행 계획**: `PHASE12_GAP_ANALYSIS.md`
 
 ## Phase 13+: 후속 단계 (예정)
-- [x] 13. V 매뉴얼 통합 재검증 (Phase 11/12 발견사항 반영) → **완료** (3원 교차검증, 일치도 95.7%)
-- [x] 14-1. Collage 프로토콜 완전 추출 (62 메시지, 14 enum, VST DLL protobuf descriptor) → **완료** (`PHASE14_COLLAGE_PROTOCOL_ANALYSIS.md`)
-- [x] 14-2. VST↔HW 파라미터 매핑 (148 VST + 1,705 DLL strings, LFO RateSync 27종) → **완료** (`PHASE14_VST_HW_PARAM_MAPPING.md`)
-- [x] 15-1. eEditParams deprecated 슬롯 + CM7→FX 오디오 라우팅 정적 분석 → **완료** (`PHASE15_EDITPARAMS_DEPRECATION.md`, `PHASE15_AUDIO_ROUTING.md`)
-- [x] 15-2. 첫 펌웨어 패치 검증 (7/7 통과, 가역성 확인) → **완료** (`PHASE15_FIRMWARE_PATCH_EXPERIMENT.md`, 커밋 `400a189`)
-- [ ] 15-3. 실제 플래싱 테스트 (하드웨어 필요)
-- [ ] 14/16. HW 실기 + USB 캡처 동적 검증 (Collage, 161 CC, Walk/Mutate LUT)
-- [x] 16-4. Multi Filter 14모드 ↔ DSP 함수 매핑 (정적) → **완료** (`PHASE16_MULTI_FILTER_DSP.md`)
-- [x] 16-5. FX 11 DSP × 12/13 타입 1:1 매핑 정리 → **완료** (`PHASE16_FX_TYPE_TO_DSP.md`)
-- [x] 16-6. 정정 권고서 V5 (CORR-06: 27종, ENH-09: 추정, CORR-11~13 신규) → **완료** (`MANUAL_CORRECTION_RECOMMENDATIONS.md` V5)
+|- [x] 13. V 매뉴얼 통합 재검증 (Phase 11/12 발견사항 반영) → **완료** (3원 교차검증, 일치도 95.7%)
+|- [x] 14-1. Collage 프로토콜 완전 추출 (62 메시지, 14 enum, VST DLL protobuf descriptor) → **완료** (`PHASE14_COLLAGE_PROTOCOL_ANALYSIS.md`)
+|- [x] 14-2. VST↔HW 파라미터 매핑 (148 VST + 1,705 DLL strings, LFO RateSync 27종) → **완료** (`PHASE14_VST_HW_PARAM_MAPPING.md`)
+|- [x] 15-1. eEditParams deprecated 슬롯 + CM7→FX 오디오 라우팅 정적 분석 → **완료** (`PHASE15_EDITPARAMS_DEPRECATION.md`, `PHASE15_AUDIO_ROUTING.md`)
+|- [x] 15-2. 첫 펌웨어 패치 검증 (7/7 통과, 가역성 확인) → **완료** (`PHASE15_FIRMWARE_PATCH_EXPERIMENT.md`, 커밋 `400a189`)
+|- [ ] 15-3. 실제 플래싱 테스트 (하드웨어 필요)
+|- [ ] 14/16. HW 실기 + USB 캡처 동적 검증 (Collage, 161 CC, Walk/Mutate LUT)
+|- [x] 16-4. Multi Filter 14모드 ↔ DSP 함수 매핑 (정적) → **완료** (`PHASE16_MULTI_FILTER_DSP.md`)
+|- [x] 16-5. FX 11 DSP × 12/13 타입 1:1 매핑 정리 → **완료** (`PHASE16_FX_TYPE_TO_DSP.md`)
+|- [x] 16-6. 정정 권고서 V5 (CORR-06: 27종, ENH-09: 추정, CORR-11~13 신규) → **완료** (`MANUAL_CORRECTION_RECOMMENDATIONS.md` V5)
 |- [x] 16-6b. 영문 정정 권고서 V2 → **완료** (`MANUAL_CORRECTION_REPORT_EN.md` V2)
 |- [x] 16-6c. 정정 권고서 V6 (CORR-08~10 상세, ENH-04/05 CM4 검증) → **완료** (`MANUAL_CORRECTION_RECOMMENDATIONS.md` V6, `MANUAL_CORRECTION_REPORT_EN.md` V6)
 |- [x] 17-1. Walk LUT 재판정 + Spice/Dice LUT 식별 오류 정정 → **완료** (Arp 93→95%, S/Dice 83→88%, 종합 95.6→95.9%)
 |- [ ] 16-1~3. USB 캡처 환경 + Walk/Mutate 확률 동적 + 161 CC 동적 (하드웨어 필요)
-- [ ] 16-7. Phase 15-3 실제 플래싱 (하드웨어 필요)
+|- [ ] 16-7. Phase 15-3 실제 플래싱 (하드웨어 필요)
+
+## Phase 18: 잔여 정적 분석 완료 ✅ (완료)
+|- [x] 18-1. V Macro 3/4 (Brightness/Timbre) → **V 전용 확정** (`PHASE18_MACRO_ANALYSIS.md`)
+|- [x] 18-2. V 전용 파일 포맷 — MIDI Config=XML, Bank=JSON+디렉토리, Backup=ZIP (`PHASE18_V_FILE_FORMATS.md`)
+|- [x] 18-3. 잔여 Low 항목 9개 정적 분석 (`PHASE18_LOW_ITEMS_ANALYSIS.md`)
+|- [x] 18-4. VCF/VCA SPI 제어 → **DAC 내장 사용, SPI 미사용** (`PHASE18_VCFCVA_SPI_ANALYSIS.md`)
+|- [x] 18-5. UI MCU 통신 프로토콜 → **USART2 기반** + CM7 페리페럴 없음 확정 (`PHASE18_UI_COMM_SPI_ANALYSIS.md`)
+|- [x] Phase 4 잔여 해소 — UI MCU 통신 ✅, CM7 SPI ✅
+
+### 정적 분석 완료율: **~98%**
+> 소프트웨어 정적 분석으로 도달 가능한 한계에 거의 도달.
+> 잔여 ~2%는 실기 기반 동적 검증이 필요한 항목 (DFU 패치, USB 캡처, Collage opcode, Reset Out GPIO, Touch Strip 모드).
 
 ---
 
