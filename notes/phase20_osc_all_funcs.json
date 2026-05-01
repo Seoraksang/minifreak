@@ -1,0 +1,887 @@
+{
+  "dsp_functions": [
+    {
+      "name": "FUN_080359f4",
+      "address": "0x80359f4",
+      "size": 18232,
+      "called_by": [],
+      "calls": [
+        "FUN_08059fac",
+        "FUN_080544d8",
+        "FUN_080564ac",
+        "FUN_08060b28",
+        "FUN_08060b5c",
+        "FUN_08060cc0",
+        "FUN_08056e84"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0803a490",
+      "address": "0x803a490",
+      "size": 7610,
+      "called_by": [
+        "FUN_0803c2bc"
+      ],
+      "calls": [
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08054708",
+      "address": "0x8054708",
+      "size": 7480,
+      "called_by": [
+        "FUN_0801d89c",
+        "FUN_08014864",
+        "FUN_0801d838"
+      ],
+      "calls": [
+        "FUN_0800795c",
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08034338",
+      "address": "0x8034338",
+      "size": 5046,
+      "called_by": [],
+      "calls": [
+        "FUN_08034298",
+        "FUN_08008118",
+        "FUN_08054228",
+        "FUN_08008170",
+        "FUN_080081e4",
+        "FUN_0800856c",
+        "FUN_080543c4",
+        "FUN_08060b5c",
+        "FUN_0805eaf0"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08029390",
+      "address": "0x8029390",
+      "size": 2748,
+      "called_by": [],
+      "calls": [
+        "FUN_0805dbe0",
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08056528",
+      "address": "0x8056528",
+      "size": 2276,
+      "called_by": [
+        "FUN_08014bb4"
+      ],
+      "calls": [
+        "FUN_0800795c",
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0801b8b0",
+      "address": "0x801b8b0",
+      "size": 2260,
+      "called_by": [],
+      "calls": [
+        "FUN_0805dd00",
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": true,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0801afd0",
+      "address": "0x801afd0",
+      "size": 2244,
+      "called_by": [],
+      "calls": [
+        "FUN_0805dd00",
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": true,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0801da54",
+      "address": "0x801da54",
+      "size": 2244,
+      "called_by": [],
+      "calls": [
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0805b570",
+      "address": "0x805b570",
+      "size": 1716,
+      "called_by": [
+        "FUN_08059adc"
+      ],
+      "calls": [
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0805cfd8",
+      "address": "0x805cfd8",
+      "size": 1086,
+      "called_by": [
+        "FUN_08059cbc"
+      ],
+      "calls": [
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_080301dc",
+      "address": "0x80301dc",
+      "size": 822,
+      "called_by": [],
+      "calls": [
+        "FUN_0805f090",
+        "FUN_08060b5c",
+        "FUN_0805eaf0"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0801e43c",
+      "address": "0x801e43c",
+      "size": 768,
+      "called_by": [],
+      "calls": [
+        "FUN_0805dd00"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": true,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0801e73c",
+      "address": "0x801e73c",
+      "size": 716,
+      "called_by": [],
+      "calls": [
+        "FUN_0805dd00"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": true,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08007bf4",
+      "address": "0x8007bf4",
+      "size": 602,
+      "called_by": [
+        "FUN_08007e6c"
+      ],
+      "calls": [
+        "FUN_08008274",
+        "FUN_08008250",
+        "FUN_08008598",
+        "FUN_08008610",
+        "FUN_08008bdc",
+        "FUN_08008230",
+        "FUN_08008094",
+        "FUN_08008f70",
+        "FUN_08009358",
+        "FUN_08060b5c",
+        "FUN_08008540",
+        "FUN_0800855c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08023608",
+      "address": "0x8023608",
+      "size": 562,
+      "called_by": [],
+      "calls": [
+        "FUN_0805dd00"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": true,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_080544d8",
+      "address": "0x80544d8",
+      "size": 472,
+      "called_by": [
+        "FUN_080359f4"
+      ],
+      "calls": [
+        "FUN_0805f138",
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    }
+  ],
+  "vtable_pointer_refs": {
+    "osc_triplet_1": [],
+    "osc_triplet_2": [],
+    "osc_triplet_3": [],
+    "osc_caller_1": [],
+    "osc_caller_2": [],
+    "osc_caller_3": [],
+    "osc_core": [],
+    "osc_2334B": []
+  },
+  "code_region_funcs_500B_plus": [
+    {
+      "name": "FUN_080359f4",
+      "address": "0x80359f4",
+      "size": 18232,
+      "called_by": [],
+      "calls": [
+        "FUN_08059fac",
+        "FUN_080544d8",
+        "FUN_080564ac",
+        "FUN_08060b28",
+        "FUN_08060b5c",
+        "FUN_08060cc0",
+        "FUN_08056e84"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0803e6f8",
+      "address": "0x803e6f8",
+      "size": 10332,
+      "called_by": [],
+      "calls": [
+        "FUN_0803c2bc",
+        "FUN_080321d4",
+        "FUN_08060b28",
+        "FUN_0805eaf0"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0803c2bc",
+      "address": "0x803c2bc",
+      "size": 9250,
+      "called_by": [
+        "FUN_0803e6f8"
+      ],
+      "calls": [
+        "FUN_0803a490"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_080321d4",
+      "address": "0x80321d4",
+      "size": 8350,
+      "called_by": [
+        "FUN_0803e6f8"
+      ],
+      "calls": [],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08009358",
+      "address": "0x8009358",
+      "size": 7868,
+      "called_by": [
+        "FUN_08007bf4"
+      ],
+      "calls": [
+        "FUN_08009260",
+        "FUN_0800810c",
+        "FUN_08009168"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0803a490",
+      "address": "0x803a490",
+      "size": 7610,
+      "called_by": [
+        "FUN_0803c2bc"
+      ],
+      "calls": [
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08054708",
+      "address": "0x8054708",
+      "size": 7480,
+      "called_by": [
+        "FUN_0801d89c",
+        "FUN_08014864",
+        "FUN_0801d838"
+      ],
+      "calls": [
+        "FUN_0800795c",
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08034338",
+      "address": "0x8034338",
+      "size": 5046,
+      "called_by": [],
+      "calls": [
+        "FUN_08034298",
+        "FUN_08008118",
+        "FUN_08054228",
+        "FUN_08008170",
+        "FUN_080081e4",
+        "FUN_0800856c",
+        "FUN_080543c4",
+        "FUN_08060b5c",
+        "FUN_0805eaf0"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0805a040",
+      "address": "0x805a040",
+      "size": 3840,
+      "called_by": [],
+      "calls": [],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08056ed0",
+      "address": "0x8056ed0",
+      "size": 2766,
+      "called_by": [
+        "FUN_0801d760",
+        "FUN_080149d0",
+        "FUN_0801d7cc"
+      ],
+      "calls": [
+        "FUN_0805f090",
+        "FUN_080079e8",
+        "FUN_0800795c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08029390",
+      "address": "0x8029390",
+      "size": 2748,
+      "called_by": [],
+      "calls": [
+        "FUN_0805dbe0",
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0805c408",
+      "address": "0x805c408",
+      "size": 2700,
+      "called_by": [
+        "FUN_08059cbc"
+      ],
+      "calls": [
+        "FUN_0805c0d4",
+        "FUN_0800b300",
+        "FUN_0805be88"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08016968",
+      "address": "0x8016968",
+      "size": 2334,
+      "called_by": [],
+      "calls": [
+        "FUN_08060b28",
+        "FUN_0805eaf0"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08056528",
+      "address": "0x8056528",
+      "size": 2276,
+      "called_by": [
+        "FUN_08014bb4"
+      ],
+      "calls": [
+        "FUN_0800795c",
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0801b8b0",
+      "address": "0x801b8b0",
+      "size": 2260,
+      "called_by": [],
+      "calls": [
+        "FUN_0805dd00",
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": true,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0801afd0",
+      "address": "0x801afd0",
+      "size": 2244,
+      "called_by": [],
+      "calls": [
+        "FUN_0805dd00",
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": true,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0801da54",
+      "address": "0x801da54",
+      "size": 2244,
+      "called_by": [],
+      "calls": [
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0805b570",
+      "address": "0x805b570",
+      "size": 1716,
+      "called_by": [
+        "FUN_08059adc"
+      ],
+      "calls": [
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08008610",
+      "address": "0x8008610",
+      "size": 1458,
+      "called_by": [
+        "FUN_08007bf4"
+      ],
+      "calls": [
+        "FUN_0800810c",
+        "FUN_0800813c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0805fdf8",
+      "address": "0x805fdf8",
+      "size": 1280,
+      "called_by": [
+        "FUN_0805f4f8"
+      ],
+      "calls": [
+        "FUN_080605b8",
+        "FUN_0805efb0"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0805cfd8",
+      "address": "0x805cfd8",
+      "size": 1086,
+      "called_by": [
+        "FUN_08059cbc"
+      ],
+      "calls": [
+        "FUN_08060b5c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08008bdc",
+      "address": "0x8008bdc",
+      "size": 850,
+      "called_by": [
+        "FUN_08007bf4"
+      ],
+      "calls": [
+        "FUN_08008048",
+        "FUN_0800810c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_080301dc",
+      "address": "0x80301dc",
+      "size": 822,
+      "called_by": [],
+      "calls": [
+        "FUN_0805f090",
+        "FUN_08060b5c",
+        "FUN_0805eaf0"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0801e43c",
+      "address": "0x801e43c",
+      "size": 768,
+      "called_by": [],
+      "calls": [
+        "FUN_0805dd00"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": true,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0805ece8",
+      "address": "0x805ece8",
+      "size": 738,
+      "called_by": [],
+      "calls": [
+        "FUN_0805ecb8",
+        "FUN_0805e6f0"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0801e73c",
+      "address": "0x801e73c",
+      "size": 716,
+      "called_by": [],
+      "calls": [
+        "FUN_0805dd00"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": true,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08059cbc",
+      "address": "0x8059cbc",
+      "size": 702,
+      "called_by": [
+        "FUN_08012c90"
+      ],
+      "calls": [
+        "FUN_0805d45c",
+        "FUN_0805cfd8",
+        "FUN_0805c408"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0805c0d4",
+      "address": "0x805c0d4",
+      "size": 690,
+      "called_by": [
+        "FUN_0805c408"
+      ],
+      "calls": [],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0805d45c",
+      "address": "0x805d45c",
+      "size": 616,
+      "called_by": [
+        "FUN_08059cbc"
+      ],
+      "calls": [],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08007bf4",
+      "address": "0x8007bf4",
+      "size": 602,
+      "called_by": [
+        "FUN_08007e6c"
+      ],
+      "calls": [
+        "FUN_08008274",
+        "FUN_08008250",
+        "FUN_08008598",
+        "FUN_08008610",
+        "FUN_08008bdc",
+        "FUN_08008230",
+        "FUN_08008094",
+        "FUN_08008f70",
+        "FUN_08009358",
+        "FUN_08060b5c",
+        "FUN_08008540",
+        "FUN_0800855c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": true,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08010e7c",
+      "address": "0x8010e7c",
+      "size": 592,
+      "called_by": [],
+      "calls": [
+        "FUN_0800796c"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_080082c4",
+      "address": "0x80082c4",
+      "size": 584,
+      "called_by": [
+        "FUN_08007b34",
+        "FUN_08008f70"
+      ],
+      "calls": [],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0805f4f8",
+      "address": "0x805f4f8",
+      "size": 576,
+      "called_by": [
+        "FUN_0805f090"
+      ],
+      "calls": [
+        "FUN_0805fdf8",
+        "FUN_0805ebdc"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08023608",
+      "address": "0x8023608",
+      "size": 562,
+      "called_by": [],
+      "calls": [
+        "FUN_0805dd00"
+      ],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": true,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_0805be88",
+      "address": "0x805be88",
+      "size": 558,
+      "called_by": [
+        "FUN_0805c408"
+      ],
+      "calls": [],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    },
+    {
+      "name": "FUN_08059bdc",
+      "address": "0x8059bdc",
+      "size": 502,
+      "called_by": [],
+      "calls": [],
+      "calls_osc_core": false,
+      "calls_memset": false,
+      "calls_scale": false,
+      "calls_osc_triplet": false,
+      "calls_osc_caller": false
+    }
+  ]
+}

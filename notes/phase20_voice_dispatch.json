@@ -1,0 +1,233 @@
+{
+  "FUN_08034298": {
+    "address": "0x8034298",
+    "name": "FUN_08034298",
+    "size": 114,
+    "called": [
+      "FUN_0805da18"
+    ],
+    "called_by": [
+      "FUN_08034338"
+    ],
+    "c_preview": "\nvoid FUN_08034298(void)\n\n{\n  int *piVar1;\n  undefined4 uVar2;\n  int *piVar3;\n  int *piVar4;\n  bool bVar5;\n  int local_1010 [1025];\n  \n  piVar1 = DAT_08034318;\n  piVar3 = local_1010;\n  do {\n    piVar4 = piVar3 + 2;\n    *piVar3 = DAT_0803432c;\n    piVar3[1] = DAT_08034330;\n    piVar3 = piVar4;\n  } while (piVar4 != local_1010 + 0x400);\n  bVar5 = local_1010[0] != DAT_08034310;\n  *DAT_08034314 = (int)local_1010;\n  *piVar1 = (int)(local_1010 + 0x3ff);\n  if ((bVar5) || (local_1010[0x3ff] != local_1010[0])) {\n    *(undefined4 *)((int)local_1010 + DAT_0803431c + 0x1000) = 0x10;\n    *(undefined4 *)(&stack0xfffffff4 + DAT_0803431c) = DAT_08034320;\n    uVar2 = FUN_0805da18(DAT_08034324,*(undefined4 *)((int)local_1010 + DAT_0803431c + 0x1000),\n                         *(undefined4 *)(&stack0xfffffff4 + DAT_0803431c));\n    FUN_0805da18(uVar2,*DAT_08034328,DAT_08034328[1]);\n  }\n  return;\n}\n\n",
+    "c_len": 890
+  },
+  "FUN_08054228": {
+    "address": "0x8054228",
+    "name": "FUN_08054228",
+    "size": 52,
+    "called": [
+      "FUN_0806064a"
+    ],
+    "called_by": [
+      "FUN_0805d8cc",
+      "FUN_08034338"
+    ],
+    "c_preview": "\nundefined4 * FUN_08054228(void)\n\n{\n  uint *puVar1;\n  undefined4 *puVar2;\n  undefined4 uVar3;\n  undefined4 uVar4;\n  undefined4 uVar5;\n  \n  uVar3 = DAT_08054264;\n  puVar2 = DAT_08054260;\n  puVar1 = DAT_0805425c;\n  if ((*DAT_0805425c & 1) != 0) {\n    return DAT_08054260;\n  }\n  *(undefined1 *)(DAT_08054260 + 0xe) = 0;\n  *(undefined1 *)(puVar2 + 0x1c) = 0;\n  uVar5 = DAT_0805426c;\n  uVar4 = DAT_08054268;\n  *puVar2 = uVar3;\n  puVar2[1] = uVar4;\n  puVar2[0xf] = uVar5;\n  uVar3 = DAT_08054270;\n  *puVar1 = 1;\n  FUN_0806064a(uVar3);\n  return DAT_08054260;\n}\n\n",
+    "c_len": 554
+  },
+  "FUN_080543c4": {
+    "address": "0x80543c4",
+    "name": "FUN_080543c4",
+    "size": 16,
+    "called": [
+      "FUN_08060b5c"
+    ],
+    "called_by": [
+      "FUN_08034338"
+    ],
+    "c_preview": "\nvoid FUN_080543c4(void)\n\n{\n  undefined4 in_r3;\n  \n  FUN_08060b5c(DAT_080543d4,0,0x600,in_r3,in_r3);\n  return;\n}\n\n",
+    "c_len": 114
+  },
+  "FUN_080543d8": {
+    "address": "0x80543d8",
+    "name": "FUN_080543d8",
+    "size": 82,
+    "called": [
+      "FUN_0805e418",
+      "FUN_0805e346",
+      "FUN_0800b300"
+    ],
+    "called_by": [
+      "FUN_0805e578"
+    ],
+    "c_preview": "\nvoid FUN_080543d8(int *param_1,undefined1 *param_2,int param_3)\n\n{\n  int iVar1;\n  uint unaff_r4;\n  uint local_14;\n  \n  if ((param_2 == (undefined1 *)0x0) && (param_3 != 0)) {\n    FUN_0805e346(DAT_0805442c);\n  }\n  else {\n    unaff_r4 = param_3 - (int)param_2;\n    local_14 = unaff_r4;\n    if (unaff_r4 < 0x10) goto LAB_080543ea;\n  }\n  iVar1 = FUN_0805e418(param_1,&local_14,0);\n  *param_1 = iVar1;\n  param_1[2] = local_14;\nLAB_080543ea:\n  if (unaff_r4 == 1) {\n    *(undefined1 *)*param_1 = *param_2;\n  }\n  else if (unaff_r4 != 0) {\n    FUN_0800b300((undefined1 *)*param_1,param_2,unaff_r4);\n  }\n  param_1[1] = local_14;\n  *(undefined1 *)(*param_1 + local_14) = 0;\n  return;\n}\n\n",
+    "c_len": 677
+  },
+  "FUN_0801d89c": {
+    "address": "0x801d89c",
+    "name": "FUN_0801d89c",
+    "size": 90,
+    "called": [
+      "FUN_0805dd00",
+      "FUN_08054708"
+    ],
+    "called_by": [],
+    "c_preview": "\nvoid FUN_0801d89c(int param_1,undefined4 param_2,undefined4 *param_3,undefined4 param_4)\n\n{\n  undefined4 *puVar1;\n  ushort *puVar2;\n  undefined4 uVar3;\n  \n  FUN_08054708(param_1 + 0x6c,param_1 + 0x28,param_1 + 0x11a,(undefined4 *)(param_1 + 0x110));\n  puVar2 = (ushort *)(param_1 + 0x26);\n  puVar1 = param_3;\n  do {\n    puVar2 = puVar2 + 1;\n    uVar3 = VectorSignedFixedToFloat((uint)*puVar2,0x10,0xf);\n    *puVar1 = uVar3;\n    puVar1 = puVar1 + 1;\n  } while (puVar2 != (ushort *)(param_1 + 0x66));\n  *(undefined4 *)(param_1 + 0x11a) = *(undefined4 *)(param_1 + 0x110);\n  *(undefined4 *)(param_1 + 0x11e) = *(undefined4 *)(param_1 + 0x114);\n  *(undefined2 *)(param_1 + 0x122) = *(undefined2 *)(param_1 + 0x118);\n  FUN_0805dd00(*(undefined4 *)(param_1 + 0x1c),param_3,param_3,0x20,param_4);\n  return;\n}\n\n",
+    "c_len": 804
+  },
+  "FUN_08014864": {
+    "address": "0x8014864",
+    "name": "FUN_08014864",
+    "size": 80,
+    "called": [
+      "FUN_08054708"
+    ],
+    "called_by": [],
+    "c_preview": "\nvoid FUN_08014864(int param_1,undefined4 *param_2)\n\n{\n  ushort *puVar1;\n  undefined4 uVar2;\n  \n  FUN_08054708(param_1 + 0x6c,param_1 + 0x28,param_1 + 0x11a,(undefined4 *)(param_1 + 0x110));\n  puVar1 = (ushort *)(param_1 + 0x26);\n  do {\n    puVar1 = puVar1 + 1;\n    uVar2 = VectorSignedFixedToFloat((uint)*puVar1,0x10,0xf);\n    *param_2 = uVar2;\n    param_2 = param_2 + 1;\n  } while (puVar1 != (ushort *)(param_1 + 0x66));\n  *(undefined4 *)(param_1 + 0x11a) = *(undefined4 *)(param_1 + 0x110);\n  *(undefined4 *)(param_1 + 0x11e) = *(undefined4 *)(param_1 + 0x114);\n  *(undefined2 *)(param_1 + 0x122) = *(undefined2 *)(param_1 + 0x118);\n  return;\n}\n\n",
+    "c_len": 649
+  },
+  "FUN_0801d838": {
+    "address": "0x801d838",
+    "name": "FUN_0801d838",
+    "size": 100,
+    "called": [
+      "FUN_0805dd00",
+      "FUN_08054708"
+    ],
+    "called_by": [],
+    "c_preview": "\nvoid FUN_0801d838(int param_1,undefined4 param_2,undefined4 *param_3,undefined4 param_4)\n\n{\n  ushort *puVar1;\n  undefined4 *puVar2;\n  undefined4 uVar3;\n  \n  FUN_08054708(param_1 + -0xfc,param_1 + -0x140,param_1 + -0x4e,(undefined4 *)(param_1 + -0x58));\n  puVar1 = (ushort *)(param_1 + -0x142);\n  puVar2 = param_3;\n  do {\n    puVar1 = puVar1 + 1;\n    uVar3 = VectorSignedFixedToFloat((uint)*puVar1,0x10,0xf);\n    *puVar2 = uVar3;\n    puVar2 = puVar2 + 1;\n  } while (puVar1 != (ushort *)(param_1 + -0x102));\n  *(undefined4 *)(param_1 + -0x4e) = *(undefined4 *)(param_1 + -0x58);\n  *(undefined4 *)(param_1 + -0x4a) = *(undefined4 *)(param_1 + -0x54);\n  *(undefined2 *)(param_1 + -0x46) = *(undefined2 *)(param_1 + -0x50);\n  FUN_0805dd00(*(undefined4 *)(param_1 + -0x14c),param_3,param_3,0x20,param_4);\n  return;\n}\n\n",
+    "c_len": 813
+  },
+  "FUN_080144f4": {
+    "address": "0x80144f4",
+    "name": "FUN_080144f4",
+    "size": 36,
+    "called": [
+      "FUN_0805dd00"
+    ],
+    "called_by": [],
+    "c_preview": "\nvoid FUN_080144f4(int *param_1,undefined4 param_2,undefined4 param_3)\n\n{\n  (**(code **)(*param_1 + 0x24))(param_1,param_3);\n  FUN_0805dd00(param_1[7],param_3,param_3,0x20);\n  return;\n}\n\n",
+    "c_len": 187
+  },
+  "FUN_0801d760_full": {
+    "address": "0x801d760",
+    "name": "FUN_0801d760",
+    "size": 108,
+    "called": [
+      "FUN_0805dd00",
+      "FUN_08056ed0"
+    ],
+    "called_by": [],
+    "c_preview": "\nvoid FUN_0801d760(int param_1,undefined4 param_2,undefined4 *param_3,undefined4 param_4)\n\n{\n  ushort *puVar1;\n  undefined4 *puVar2;\n  undefined4 uVar3;\n  \n  FUN_08056ed0(param_1 + -0x78,param_1 + -0xbc,param_1 + -0x18,(undefined4 *)(param_1 + -0x2c));\n  puVar1 = (ushort *)(param_1 + -0xbe);\n  puVar2 = param_3;\n  do {\n    puVar1 = puVar1 + 1;\n    uVar3 = VectorSignedFixedToFloat((uint)*puVar1,0x10,0xf);\n    *puVar2 = uVar3;\n    puVar2 = puVar2 + 1;\n  } while (puVar1 != (ushort *)(param_1 + -0x7e));\n  *(undefined4 *)(param_1 + -0x18) = *(undefined4 *)(param_1 + -0x2c);\n  *(undefined4 *)(param_1 + -0x14) = *(undefined4 *)(param_1 + -0x28);\n  *(undefined4 *)(param_1 + -0x10) = *(undefined4 *)(param_1 + -0x24);\n  *(undefined4 *)(param_1 + -0xc) = *(undefined4 *)(param_1 + -0x20);\n  *(undefined4 *)(param_1 + -8) = *(undefined4 *)(param_1 + -0x1c);\n  FUN_0805dd00(*(undefined4 *)(param_1 + -200),param_3,param_3,0x20,param_4);\n  return;\n}\n\n",
+    "c_len": 946
+  },
+  "FUN_0800856c": {
+    "address": "0x800856c",
+    "name": "FUN_0800856c",
+    "size": 10,
+    "called": [],
+    "called_by": [
+      "FUN_08034338"
+    ],
+    "c_preview": "\nvoid FUN_0800856c(uint param_1)\n\n{\n  *DAT_08008578 = param_1 | *DAT_08008578;\n  return;\n}\n\n",
+    "c_len": 92
+  },
+  "FUN_08008118": {
+    "address": "0x8008118",
+    "name": "FUN_08008118",
+    "size": 32,
+    "called": [
+      "FUN_0800810c"
+    ],
+    "called_by": [
+      "FUN_08034338"
+    ],
+    "c_preview": "\nvoid FUN_08008118(uint param_1)\n\n{\n  int iVar1;\n  int iVar2;\n  \n  iVar1 = FUN_0800810c();\n  if (param_1 != 0xffffffff) {\n    param_1 = param_1 + *DAT_08008138;\n  }\n  do {\n    iVar2 = FUN_0800810c();\n  } while ((uint)(iVar2 - iVar1) < param_1);\n  return;\n}\n\n",
+    "c_len": 258
+  },
+  "FUN_08054228_area": {
+    "address": "0x8054228",
+    "name": "FUN_08054228",
+    "size": 52,
+    "called": [
+      "FUN_0806064a"
+    ],
+    "called_by": [
+      "FUN_0805d8cc",
+      "FUN_08034338"
+    ],
+    "c_preview": "\nundefined4 * FUN_08054228(void)\n\n{\n  uint *puVar1;\n  undefined4 *puVar2;\n  undefined4 uVar3;\n  undefined4 uVar4;\n  undefined4 uVar5;\n  \n  uVar3 = DAT_08054264;\n  puVar2 = DAT_08054260;\n  puVar1 = DAT_0805425c;\n  if ((*DAT_0805425c & 1) != 0) {\n    return DAT_08054260;\n  }\n  *(undefined1 *)(DAT_08054260 + 0xe) = 0;\n  *(undefined1 *)(puVar2 + 0x1c) = 0;\n  uVar5 = DAT_0805426c;\n  uVar4 = DAT_08054268;\n  *puVar2 = uVar3;\n  puVar2[1] = uVar4;\n  puVar2[0xf] = uVar5;\n  uVar3 = DAT_08054270;\n  *puVar1 = 1;\n  FUN_0806064a(uVar3);\n  return DAT_08054260;\n}\n\n",
+    "c_len": 554
+  },
+  "FUN_0805e134": {
+    "address": "0x805e134",
+    "name": "FUN_0805e134",
+    "size": 24,
+    "called": [
+      "FUN_0800b300"
+    ],
+    "called_by": [
+      "FUN_0805e14c"
+    ],
+    "c_preview": "\nvoid FUN_0805e134(undefined1 *param_1,undefined1 *param_2,int param_3)\n\n{\n  if (param_3 == 1) {\n    *param_1 = *param_2;\n  }\n  else if (param_3 != 0) {\n    FUN_0800b300();\n    return;\n  }\n  return;\n}\n\n",
+    "c_len": 202
+  },
+  "FUN_0806030c": {
+    "address": "0x806030c",
+    "name": "FUN_0806030c",
+    "size": 380,
+    "called": [
+      "FUN_0805ebdc"
+    ],
+    "called_by": [
+      "FUN_0805f090"
+    ],
+    "c_preview": "\nfloat FUN_0806030c(float param_1,float param_2,int param_3)\n\n{\n  float fVar1;\n  uint in_fpscr;\n  float fVar2;\n  float fVar3;\n  float fVar4;\n  float fVar5;\n  \n  fVar1 = ABS(param_1);\n  fVar2 = param_1;\n  if ((uint)fVar1 < 0x31800000) {\n    if ((int)param_1 == 0) {\n      if (param_3 == -1 && fVar1 == 0.0) {\n        fVar2 = (float)FUN_0805ebdc();\n        return 1.0 / fVar2;\n      }\n      if (param_3 == 1) {\n        return param_1;\n      }\n      return -1.0 / param_1;\n    }\n  }\n  else if (DAT_08060488 <= (int)fVar1) {\n    if ((int)param_1 < 0) {\n      fVar2 = -param_1;\n    }\n    if ((int)param_1 < 0) {\n      param_2 = -param_2;\n    }\n    fVar2 = (DAT_08060490 - param_2) + (DAT_0806048c - fVar2);\n    param_2 = DAT_08060494;\n  }\n  fVar3 = fVar2 * fVar2;\n  fVar4 = fVar3 * fVar3;\n  fVar3 = param_2 + (param_2 +\n                    (DAT_080604b0 +\n                     (DAT_080604ac +\n                     (DAT_080604a8 +\n                     (DAT_080604a4 + (DAT_0806049c + fVar4 * DAT_08060498) * fVar4) * fVar4) * fVar4\n                     ) * fVar4 +\n                    (DAT_080604c4 +\n                    (DAT_080604c0 +\n                    (DAT_080604bc +\n                    (DAT_080604b8 + (DAT_080604b4 + fVar4 * DAT_080604a0) * fVar4) * fVar4) * fVar4)\n                    * fVar4) * fVar3) * fVar2 * fVar3) * fVar3 + fVar2 * fVar3 * DAT_080604c8;\n  fVar4 = fVar2 + fVar3;\n  if ((int)fVar1 < DAT_08060488) {\n    if (param_3 != 1) {\n      fVar1 = (float)(DAT_080604cc & (uint)(-1.0 / fVar4));\n      fVar4 = fVar1 + ((float)((uint)fVar4 & DAT_080604cc) * fVar1 + 1.0 +\n                      (fVar3 - ((float)((uint)fVar4 & DAT_080604cc) - fVar2)) * fVar1) *\n                      (-1.0 / fVar4);\n    }\n  }\n  else {\n    fVar1 = (float)VectorSignedToFloat(param_3,(byte)(in_fpscr >> 0x15) & 3);\n    fVar5 = (float)VectorSignedToFloat(1 - ((int)param_1 >> 0x1e & 2U),(byte)(in_fpscr >> 0x15) & 3)\n    ;\n    fVar4 = fVar5 * (fVar1 + -(fVar2 - ((fVar4 * fVar4) / (fVar4 + fVar1) - fVar3)) * 2.0);\n  }\n  return fVar4;\n}\n\n",
+    "c_len": 2028
+  },
+  "FUN_08060b08": {
+    "address": "0x8060b08",
+    "name": "FUN_08060b08",
+    "size": 10,
+    "called": [
+      "FUN_08060c0c"
+    ],
+    "called_by": [
+      "FUN_08060cc0",
+      "FUN_0805dfe0",
+      "FUN_08061460"
+    ],
+    "c_preview": "\nvoid FUN_08060b08(undefined4 param_1)\n\n{\n  FUN_08060c0c(*DAT_08060b14,param_1);\n  return;\n}\n\n",
+    "c_len": 94
+  },
+  "FUN_08061524": {
+    "address": "0x8061524",
+    "name": "FUN_08061524",
+    "size": 42,
+    "called": [
+      "FUN_0806063c",
+      "FUN_08061580"
+    ],
+    "called_by": [
+      "FUN_08060cc0"
+    ],
+    "c_preview": "\nvoid FUN_08061524(void)\n\n{\n  undefined4 uVar1;\n  \n  uVar1 = *(undefined4 *)(*DAT_08061550 + 0xc);\n  do {\n    FUN_08061580(uVar1,DAT_08061558);\n    uVar1 = FUN_0806063c();\n  } while( true );\n}\n\n",
+    "c_len": 194
+  },
+  "FUN_0805f138": {
+    "address": "0x805f138",
+    "name": "FUN_0805f138",
+    "size": 330,
+    "called": [
+      "FUN_0805e6f0",
+      "FUN_08007770"
+    ],
+    "called_by": [
+      "FUN_080544d8"
+    ],
+    "c_preview": "\nfloat FUN_0805f138(float param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)\n\n{\n  longlong lVar1;\n  uint uVar2;\n  undefined4 uVar3;\n  uint uVar4;\n  uint in_fpscr;\n  undefined4 in_cr0;\n  undefined4 in_cr1;\n  undefined4 in_cr6;\n  undefined4 in_cr7;\n  float fVar5;\n  double dVar6;\n  double dVar7;\n  double dVar8;\n  double in_d6;\n  double dVar9;\n  int iVar10;\n  \n  uVar4 = (uint)((int)param_1 << 1) >> 0x15;\n  coprocessor_function(10,0xb,6,in_cr6,in_cr7,in_cr0);\n  if (uVar4 < 0x3f4) {\n    dVar7 = in_d6 * in_d6;\n    if (uVar4 < 0x398) {\n      if (((uint)param_1 >> 0x14 & 0x7f8) == 0) {\n        coprocessor_function(0xb,0xb,6,in_cr1,in_cr7,in_cr1);\n      }\n      return param_1;\n    }\n    uVar4 = 0;\n    iVar10 = DAT_0805f270;\n  }\n  else if (uVar4 < 0x42f) {\n    iVar10 = VectorFloatToSigned(in_d6 * *(double *)(DAT_0805f270 + 0x20),3);\n    uVar4 = iVar10 + 0x800000 >> 0x18;\n    dVar6 = (double)VectorSignedToFloat(uVar4,(byte)(in_fpscr >> 0x15) & 3);\n    dVar6 = in_d6 + -dVar6 * *(double *)(DAT_0805f270 + 0x28);\n    iVar10 = DAT_0805f270 + 0x70;\n    if ((uVar4 & 2) == 0) {\n      iVar10 = DAT_0805f270;\n    }\n    dVar7 = dVar6 * dVar6;\n    in_d6 = *(double *)(DAT_0805f270 + (uVar4 & 3) * 8) * dVar6;\n  }\n  else {\n    if (0x7f7 < uVar4) {\n      if (!NAN(param_1)) {\n        fVar5 = (float)FUN_0805e6f0(0x21);\n        return fVar5;\n      }\n      return (param_1 - param_1) / (param_1 - param_1);\n    }\n    uVar2 = (uint)((int)param_1 << 2) >> 0x1c;\n    iVar10 = DAT_0805f274 + uVar2 * 4;\n    uVar4 = ((uint)param_1 & 0x7fffff | 0x800000) << ((uint)((int)param_1 << 6) >> 0x1d);\n    lVar1 = (ulonglong)*(uint *)(iVar10 + 0x10) * (ulonglong)uVar4 +\n            CONCAT44(*(int *)(DAT_0805f274 + uVar2 * 4) * uVar4,\n                     (int)((ulonglong)uVar4 * (ulonglong)*(uint *)(iVar10 + 0x20) >> 0x20));\n    uVar3 = (undefined4)lVar1;\n    iVar10 = (int)((ulonglong)lVar1 >> 0x20);\n    dVar6 = (double)FUN_08007770(uVar3,iVar10 - (iVar10 + 0x20000000U & 0xc0000000),uVar3,iVar10,\n                                 param_2,param_3,param_4);\n    uVar4 = iVar10 + 0x20000000U >> 0x1e;\n    uVar2 = uVar4 - ((int)param_1 >> 0x1f);\n    dVar6 = dVar6 * DAT_0805f268;\n    dVar7 = dVar6 * dVar6;\n    iVar10 = DAT_0805f270 + 0x70;\n    if ((uVar2 & 2) == 0) {\n      iVar10 = DAT_0805f270;\n    }\n    in_d6 = *(double *)(DAT_0805f270 + (uVar2 & 3) * 8) * dVar6;\n  }\n  if ((int)(uVar4 << 0x1f) < 0) {\n    dVar8 = dVar7 * dVar7;\n    dVar9 = *(double *)(iVar10 + 0x48) + dVar7 * *(double *)(iVar10 + 0x50);\n    dVar6 = *(double *)(iVar10 + 0x30) + dVar7 * *(double *)(iVar10 + 0x38) +\n            dVar8 * *(double *)(iVar10 + 0x40);\n  }\n  else {\n    dVar8 = dVar7 * in_d6;\n    dVar9 = *(double *)(iVar10 + 0x60) + *(double *)(iVar10 + 0x68) * dVar7;\n    dVar6 = in_d6 + *(double *)(iVar10 + 0x58) * dVar8;\n  }\n  coprocessor_function(0xb,0xb,6,in_cr0,in_cr7,in_cr0);\n  return SUB84(dVar6 + dVar9 * dVar7 * dVar8,0);\n}\n\n",
+    "c_len": 2916
+  },
+  "FUN_0805e948": {
+    "address": "0x805e948",
+    "name": "FUN_0805e948",
+    "size": 346,
+    "called": [
+      "FUN_0805ebdc"
+    ],
+    "called_by": [],
+    "c_preview": "\nfloat FUN_0805e948(float param_1)\n\n{\n  int iVar1;\n  float fVar2;\n  undefined4 in_cr0;\n  undefined4 in_cr7;\n  float fVar3;\n  float fVar4;\n  \n  fVar2 = ABS(param_1);\n  if ((uint)fVar2 < 0x50800000) {\n    if (DAT_0805eaac < (int)fVar2) {\n      fVar4 = (float)FUN_0805ebdc();\n      if (DAT_0805eab4 < (int)fVar2) {\n        if (DAT_0805eae4 < (int)fVar2) {\n          fVar4 = -1.0 / fVar4;\n          iVar1 = 3;\n        }\n        else {\n          iVar1 = 2;\n          fVar4 = (fVar4 - 1.5) / (fVar4 * 1.5 + 1.0);\n        }\n      }\n      else if (DAT_0805eab4 + -0x680000 < (int)fVar2) {\n        iVar1 = 1;\n        fVar4 = (fVar4 - 1.0) / (fVar4 + 1.0);\n      }\n      else {\n        iVar1 = 0;\n        fVar4 = (fVar4 * 2.0 + -1.0) / (fVar4 + 2.0);\n      }\n    }\n    else {\n      if (((uint)fVar2 < 0x31000000) && (1.0 < param_1 + LAB_0805eab0)) {\n        return param_1;\n      }\n      iVar1 = -1;\n      fVar4 = param_1;\n    }\n    fVar2 = fVar4 * fVar4;\n    fVar3 = fVar2 * fVar2;\n    fVar2 = fVar4 * ((DAT_0805eac4 +\n                     (DAT_0805eae0 +\n                     (DAT_0805eadc + (DAT_0805ead8 + fVar3 * DAT_0805eac0) * fVar3) * fVar3) * fVar3\n                     ) * fVar3 +\n                    (DAT_0805ead4 +\n                    (DAT_0805ead0 +\n                    (DAT_0805eacc +\n                    (DAT_0805eac8 + (DAT_0805eabc + fVar3 * DAT_0805eab8) * fVar3) * fVar3) * fVar3)\n                    * fVar3) * fVar2);\n    if (iVar1 == -1) {\n      fVar4 = fVar4 - fVar2;\n    }\n    else {\n      fVar4 = *(float *)(DAT_0805eae8 + iVar1 * 4) -\n              ((fVar2 - *(float *)(DAT_0805eaec + iVar1 * 4)) - fVar4);\n      if ((int)param_1 < 0) {\n        fVar4 = -fVar4;\n      }\n    }\n  }\n  else if ((uint)fVar2 < 0x7f800001) {\n    coprocessor_function2(10,7,4,in_cr7,in_cr7,in_cr0);\n    fVar4 = DAT_0805eaa4;\n  }\n  else {\n    fVar4 = param_1 + param_1;\n  }\n  return fVar4;\n}\n\n",
+    "c_len": 1883
+  }
+}
