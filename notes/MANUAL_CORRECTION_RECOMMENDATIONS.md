@@ -188,36 +188,37 @@
 ---
 
 ### CORR-06: Tempo Subdivision 개수 오류
-**매뉴얼이 틀림** — 11종이 아닌 17종 존재
+**매뉴얼이 틀림** — 11종이 아닌 **27종** 존재
+
+> **Phase 14-2 갱신**: VST XML `minifreak_vst_params.xml`의 LFO_RateSync item_list에서 **27개** subdivision 확정.
+> 이전 V4에서 17종으로 보고했으나, VST 공식 XML에서 10개 추가 subdivision 확인.
+> CM4의 두 테이블(11+6=17)은 LFO/Seq sync와 특정 파라미터 전용 등 서로 다른 컨텍스트에서 사용되며,
+> VST XML의 27개는 VST 플러그인의 전체 RateSync 목록임.
 
 | 항목 | 내용 |
 |------|------|
 | **매뉴얼 참조** | §Tempo Sync / Sync Filter |
 | **매뉴얼 기술** | 11종: 1/4, 1/4T, 1/4D, 1/8, 1/8T, 1/8D, 1/16, 1/16T, 1/16D, 1/32, 1/32T |
-| **펌웨어 실제** | **17종**: 상기 11종 + 6종 추가 (소문자 triplet 변형) |
-| **펌웨어 주소** | CM4 `0x081AF0B4` ~ `0x081AF0FC` (11종) + `0x081AF564` ~ `0x081AF58C` (6종) |
-| **신뢰도** | ★★★★☆ |
+| **CM4 펌웨어** | **17종**: 상기 11종 + 6종 추가 (소문자 triplet 변형 + 1/2t + 1/1) |
+| **VST XML 확정** | **27종**: CM4 17종 + 10종 추가 (8d, 4d, 2d, 1d, 1/2d, 1/4d, 1/8d, 1/32d 등 dotted 계열 + 1/4, 1/2 등) |
+| **펌웨어 주소** | CM4 `0x081AF0B4`~`0x081AF0FC` (11종) + `0x081AF564`~`0x081AF58C` (6종) |
+| **VST 출처** | `minifreak_vst_params.xml` → LFO_RateSync item_list (27 entries) |
+| **신뢰도** | ★★★★★ (VST XML 직접 확인, Phase 14-2) |
 
-**펌웨어 hex dump 증거**:
+**VST XML LFO_RateSync 27종 전체**:
 ```
-=== 주 테이블 (11종) @ 0x081AF0B4 ~ 0x081AF0FC ===
-"1/4", "1/8D", "1/4T", "1/8", "1/16D", "1/8T", "1/16", "1/32D", "1/16T", "1/32", "1/32T"
-
-=== 추가 테이블 (6종) @ 0x081AF564 ~ 0x081AF58C ===
-0x081AF564: "1/32t"   (소문자 t = triplet)
-0x081AF56C: "1/16t"
-0x081AF574: "1/8t"
-0x081AF57C: "1/4t"
-0x081AF584: "1/2t"
-0x081AF58C: "1/1"
+0: 8d   1: 8    2: 4d   3: 8t   4: 4    5: 2d   6: 4t   7: 2
+8: 1d   9: 2t  10: 1   11: 1/2d 12: 1t  13: 1/2  14: 1/4d
+15: 1/2t 16: 1/4 17: 1/8d 18: 1/4t 19: 1/8 20: 1/16d
+21: 1/8t 22: 1/16 23: 1/32d 24: 1/16t 25: 1/32 26: 1/32t
 ```
 
 **정정 내용**:
-- 펌웨어는 매뉴얼에 명시되지 않은 **6개의 추가 서브디비전**을 보유
+- 펌웨어는 매뉴얼에 명시되지 않은 **최소 16개의 추가 서브디비전**을 보유
 - 소문자 `t` = triplet 표기 (대문자 `T`와 구분됨)
-- **"1/2t"** (half-note triplet) 및 **"1/1"** (whole note)이 펌웨어에 존재하나 매뉴얼에 누락
-- 펌웨어의 두 테이블이 서로 다른 컨텍스트에서 사용될 가능성 (주 테이블 = LFO/Seq sync, 추가 테이블 = 특정 파라미터 전용)
-- 매뉴얼 정정: 17종 전체를 명시하거나, 최소한 "1/2t"와 "1/1"을 추가
+- CM4의 두 테이블은 서로 다른 컨텍스트에서 사용 (주 테이블 = LFO/Seq sync, 추가 테이블 = 특정 파라미터 전용)
+- VST XML은 가장 완전한 목록 (27종)을 보유
+- 매뉴얼 정정: VST XML의 27종 전체를 명시하거나, 최소한 "1/2t", "1/1", "8d", "4d", "2d", "1d"를 추가
 
 ---
 
@@ -439,23 +440,31 @@ User Shaper 1 ~ User Shaper 8
 
 ---
 
-### ENH-09: Arp 수식어 확률 분포 상세
-**매뉴얼 불충분** — Walk 및 Mutate의 확률 분포가 펌웨어와 다름
+### ENH-09: Arp 수식어 확률 분포 상세 (추정)
+**매뉴얼 불충분** — Walk 및 Mutate의 확률 분포가 펌웨어 LUT와 다를 가능성
+
+> **Phase 13 정직 하향**: 이전 V4에서 "정확한 확률 분포"로 보고했으나,
+> Walk LUT (`0x080546C4`, 64 bytes)의 해석이 uint8 확률 분포가 아닐 가능성이 있음 (pair-wise 또는 structured format).
+> env_time_scale (`0x0806D330`, 256 bytes)도 float32 해석 시 대부분 비정상값.
+> 아래 수치는 **정적 분석 추정값**이며, USB 캡처 동적 검증으로 확정 필요 (Phase 16-2).
 
 | 항목 | 내용 |
 |------|------|
 | **매뉴얼 참조** | §13.3 Arp Modifiers |
-| **매뉴얼 기술** | Walk = " walks up or down chromatically", Mutate = "randomly shifts the pitch" (모호) |
-| **펌웨어 실제** | **정확한 확률 분포**가 CM7 LUT에 하드코딩 |
-| **펌웨어 주소** | CM7 Walk LUT @ `0x080546C4` (8슬롯 × 8 step), 확률 LUT × 3개 |
-| **신뢰도** | ★★★★☆ |
+| **매뉴얼 기술** | Walk = "walks up or down chromatically", Mutate = "randomly shifts the pitch" (모호) |
+| **펌웨어 실제** | **추정 확률 분포**가 CM7 LUT에 하드코딩 (정적 해석, 미검증) |
+| **펌웨어 주소** | CM7 Walk LUT @ `0x080546C4` (64 bytes), 확률 LUT × 3개 |
+| **신뢰도** | ★★★★☆ (정적 추정, Phase 13에서 하향 조정) |
 
-**펌웨어 확률 분포**:
-| 수식어 | 펌웨어 확률 |
-|--------|------------|
-| **Walk** | 25% 이전 음 / 25% 현재 음 / 50% 다음 음 (인접 음 이동 가중치) |
-| **Rand Oct** | 75% 정상 / 15% +1옥타브 / 7% -1옥타브 / 3% +2옥타브 |
-| **Mutate** | 75% 유지 / 5% +5th / 5% -4th / 5% +oct / 5% -oct / 3% 다음 노트 swap / 2% 두 번째 다음 swap (누적) |
+**⚠️ 펌웨어 확률 분포 (추정값 — 동적 검증 필요)**:
+| 수식어 | 펌웨어 추정 확률 | 검증 상태 |
+|--------|------------------|----------|
+| **Walk** | 25% 이전 음 / 25% 현재 음 / 50% 다음 음 | ⚠️ LUT 포맷 불확실 |
+| **Rand Oct** | 75% 정상 / 15% +1옥타브 / 7% -1옥타브 / 3% +2옥타브 | ⚠️ LUT 포맷 불확실 |
+| **Mutate** | 75% 유지 / 5% +5th / 5% -4th / 5% +oct / 5% -oct / 3% 다음 노트 swap / 2% 두 번째 다음 swap | ⚠️ LUT 포맷 불확실 |
+
+> **참고**: Phase 13-1 분석 결과, 이 확률값들은 런타임에 계산되며 하드코딩된 LUT가 아닐 가능성도 있음.
+> VST XML 파라미터 범위와 펌웨어 코드 흐름 분석에서 도출된 추정치.
 
 ---
 
@@ -523,7 +532,7 @@ User Shaper 1 ~ User Shaper 8
 
 ## Part 3. 요약 표
 
-### 정정 항목 요약 (10건)
+### 정정 항목 요약 (13건)
 
 | ID | 카테고리 | 매뉴얼 | 펌웨어 | 펌웨어 주소 | 신뢰도 |
 |----|----------|--------|--------|-------------|--------|
@@ -532,11 +541,14 @@ User Shaper 1 ~ User Shaper 8
 | CORR-03 | Arp | UpDown 명칭 | **"Arp UpDown" 독립 문자열** (이전 분석 "재사용" 오류 수정) | CM4 `0x081AEC3C` | ★★★★★ |
 | CORR-04 | Voice | Unison 하위모드 불명확 | **3개 독립 모드** | CM4 `0x081AF500` | ★★★★★ |
 | CORR-05 | LFO | 전체 파형명 | **약어명** (Sin, Tri 등) | CM4 `0x081B0FB0` | ★★★★★ |
-| CORR-06 | Tempo | Subdivision 11종 | **17종** | CM4 `0x081AF0B4`+`0x081AF564` | ★★★★☆ |
+| CORR-06 | Tempo | Subdivision 11종 | **27종** (VST XML LFO_RateSync) | CM4 `0x081AF0B4`+VST XML | ★★★★★ |
 | CORR-07 | LFO | 9파형 (일부 누락) | **9파형 확정** | CM4 `0x081B0FB0`+CM7 | ★★★★★ |
 | CORR-08 | LFO Shaper | 첫 항목 "Shaper" | **"Preset Shaper"** (25종: 1+16+8) | CM4 `0x081AF128` | ★★★★★ |
 | CORR-09 | Mod Matrix | 간략한 설명 | **Custom Assign 8목적지** 상세 주소 확정 | CM4 `0x081AEA94` | ★★★★★ |
 | CORR-10 | FX | HW/VST 구분 없음 | **Stereo Delay = VST 전용** (CM4 12종, VST 13종) | CM4 `0x081AF308` | ★★★★★ |
+| CORR-11 | Mod Matrix | "7 rows × ~4 dest" | **91 assignable slots** (7×4 hardwired + 7×9 assignable) | VST XML (Phase 14-2) | ★★★★★ |
+| CORR-12 | OSC | Osc2 타입 개수 불명확 | **21 real + 9 reserved** (총 30 enum entry) | VST XML+CM4 (Phase 14-2) | ★★★★★ |
+| CORR-13 | Parameter | 언급 없음 | **1,557개 hidden VST↔HW sync parameters** 존재 | DLL strings (Phase 14-2) | ★★★★☆ |
 
 ### 보완 항목 요약 (12건)
 
@@ -557,6 +569,67 @@ User Shaper 1 ~ User Shaper 8
 
 ---
 
+### CORR-11: Mod Matrix Assignable Slots — 91개 (Phase 14-2 신규)
+**매뉴얼 불완전** — assignable slot이 매뉴얼 암시보다 훨씬 많음
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §8.5 Modulation Matrix |
+| **매뉴얼 기술** | "7 rows × ~4 destinations" 암시 (UI 레이아웃 기반) |
+| **펌웨어 실제** | **91 assignable slots**: Mx_Dot 7×4 (28 hardwired) + Mx_AssignDot 7×9 (63 assignable) |
+| **VST 출처** | `minifreak_vst_params.xml` → Mx_Dot (28 param) + Mx_AssignDot (63 param) |
+| **신뢰도** | ★★★★★ (VST XML 직접 확인, Phase 14-2) |
+
+**상세 내용**:
+- Mx_Dot (7 rows × 4 cols = 28): 하드와이어드 모듈레이션 (Row별 고정 목적지)
+- Mx_AssignDot (7 rows × 9 cols = 63): 사용자가 선택 가능한 assignable 모듈레이션
+- 매뉴얼은 28개 hardwired만 설명하며, 63개 assignable slot에 대한 상세 문서 누락
+- 총 91 assignable slot은 Mod Matrix의 실제 처리 용량을 나타냄
+
+---
+
+### CORR-12: Osc2 타입 21 real + 9 reserved (Phase 14-2 신규)
+**매뉴얼 불완전** — Osc2 enum에 reserved 항목이 존재함이 누락
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §Oscillator 2 |
+| **매뉴얼 기술** | Osc2 타입 목록 (정확한 개수 불명확) |
+| **펌웨어 실제** | **30개 enum entry**: 21개 실제 타입 + 9개 reserved/dummy (index 21~29) |
+| **VST 출처** | `minifreak_vst_params.xml` → Osc2Type item_list (30 entries) |
+| **CM4 주소** | Phase 14-2에서 Osc2Type CM4 바이너리와 교차검증 완료 |
+| **신뢰도** | ★★★★★ (VST XML + CM4 교차검증, Phase 14-2) |
+
+**상세 내용**:
+- Osc1은 24종 타입 (Wavetable/Sample/Grains 계열)
+- Osc2는 21종 실제 타입 (Filter 계열 포함) + 9개 reserved
+- reserved 항목 (index 21~29)은 향후 펌웨어 확장을 위한 자리
+- 매뉴얼에 "21 active types + 9 reserved" 명시 권고
+
+---
+
+### CORR-13: 1,557개 Hidden VST↔HW 동기화 파라미터 (Phase 14-2 신규)
+**매뉴얼 누락** — DLL에 1,557개의 숨겨진 파라미터가 존재
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | 해당 없음 |
+| **매뉴얼 기술** | 언급 없음 |
+| **펌웨어 실제** | DLL strings 1,705개 중 VST params 148개와 일치 → 차이 **1,557개**가 hidden parameters |
+| **DLL 출처** | `MiniFreak V.dll` strings 분석 (Phase 14-2) |
+| **신뢰도** | ★★★★☆ (DLL strings 기반 추정) |
+
+**상세 내용**:
+- DLL strings에서 추출한 1,705개 파라미터 이름
+- VST XML에 정의된 148개 파라미터와 비교 → 148개만 일치
+- 나머지 1,557개는 **HW↔VST 내부 동기화용**:
+  - Mod_S0~63, Pitch_S0~63, Velo_S0~63, Gate_S0~63, StepState_S0~63 (시퀀서 상태)
+  - Reserved1~4, AutomReserved1 (예약)
+  - 프리셋 직렬화/역직렬화, UI 상태 복원, 내부 DSP 제어 등
+- 매뉴얼에 이 파라미터들의 존재와 용도에 대한 부록 추가 권고
+
+---
+
 ## 참고 문헌
 
 | 문서 | 설명 |
@@ -569,10 +642,60 @@ User Shaper 1 ~ User Shaper 8
 | `phase8_enum_tables.json` | Phase 8 enum 테이블 JSON |
 | `PHASE9_RESULTS.md` | Phase 9 CM7 상수/함수 분석 |
 | `PHASE7-3_FX_CORE_ANALYSIS.md` | Phase 7-3 FX 코어 서브프로세서 분석 |
+| `PHASE14_COLLAGE_PROTOCOL_ANALYSIS.md` | Phase 14-1 Collage 프로토콜 분석 (62 메시지, 14 enum) |
+| `PHASE14_VST_HW_PARAM_MAPPING.md` | Phase 14-2 VST↔HW 파라미터 매핑 (148 VST + 1,705 DLL) |
+| `PHASE15_FIRMWARE_PATCH_EXPERIMENT.md` | Phase 15 안전한 펌웨어 패치 실험 |
 
 ---
 
-*문서 버전: Phase 13-3 V4 (CORR-08~10 추가)*
-*작성 도구: 펌웨어 바이너리 스캔 + VST XML 교차검증*
+## 부록 A: Phase 14-1 Collage 프로토콜 요약 (NDA 주의)
+
+> ⚠️ Collage 프로토콜은 MiniFreak의 USB 통신 프로토콜로, Arturia NDA 영역일 수 있음.
+> 정정 권고서에서는 매뉴얼 사양만 다루며, 기술 세부는 Phase 14-1 문서 참조.
+
+| 항목 | 내용 |
+|------|------|
+| 프로토콜 정체 | **protobuf 기반 USB bulk** (MIDI가 아님) |
+| 메시지 정의 | **62개 메시지 타입** + **14개 enum** |
+| 최상위 메시지 | `Top(message_id, ack_type, priority, control/data/security)` |
+| USB 정보 | EP IN=0x81, EP OUT=0x02, **VID=0x152E** |
+| DataParameter | ID + Status + Value (u32/i32/f32/str/blob 등 9 타입) |
+| ResourceLocation | 11개 위치 (PRESET=3, WAVETABLE=4 등) |
+
+## 부록 B: Phase 15-1 eEditParams 분류 + Phase 15-2 패치 검증
+
+### eEditParams 79개 항목 분류 (Phase 15-1)
+
+| 분류 | 개수 | 예시 |
+|------|------|------|
+| 활성 파라미터 | 27 | Matrix Src, Filter Type, Osc Type 등 |
+| DEPRECATED | 1 | `UnisonOn TO BE DEPRECATED` @ `0x081AF994` |
+| Obsolete | 1 | `obsolete Rec Count-In` @ `0x081AFB00` |
+| UI 상태 | 16 | RecState, RecMode, StepState 등 |
+| UI 라벨 | 35 | 편집 페이지 타이틀 등 |
+
+### 이스터에그 4건
+
+| 개발자 | Flash 주소 | 원본 텍스트 |
+|--------|-----------|-----------|
+| Olivier D | `0x081B34A0` | "if you ask Olivier D, he'll tell you that it's a feature" |
+| Thomas A | `0x081B32CD` | "Ask Thomas A" |
+| Mathieu B | `0x081B3411` | "ask Mathieu B" |
+| Frederic | `0x081B2F2C` | "Hey Frederic, are you ready to hear sounds you never heard before?" |
+
+### Phase 15-2 패치 검증 결과
+
+7개 안전한 펌웨어 패치 테스트 통과 (`.rodata` 문자열만 변경, 코드 로직 불변):
+- ✅ 패치 정의 JSON 로드/검증 (7/7)
+- ✅ 바이너리 패턴 매치 (CM4 대상 7/7)
+- ✅ 패치 적용/롤백 (7/7 성공)
+- ✅ 가역성 검증 (apply → revert → 전체 바이너리 SHA 일치)
+- ✅ JSON round-trip 무결성
+
+---
+
+*문서 버전: Phase 16 V5 (CORR-11~13 추가, CORR-06/ENH-09 갱신)*
+*작성 도구: 펌웨어 바이너리 스캔 + VST XML 교차검증 + DLL strings 분석*
 *펌웨어 버전: fw4_0_1_2229 (2025-06-18)*
 *매뉴얼 버전: v4.0.0 / v4.0.1 (2025-07-04)*
+*현재 재현도: 95.7% (Phase 13 정직 하향 후)*

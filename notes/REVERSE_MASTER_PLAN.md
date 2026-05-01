@@ -182,9 +182,18 @@ MIDI CC: 30개+ 매핑됨 (Cutoff=74, Resonance=71 등)
 
 ## Phase 13+: 후속 단계 (예정)
 - [x] 13. V 매뉴얼 통합 재검증 (Phase 11/12 발견사항 반영) → **완료** (3원 교차검증, 일치도 95.7%)
-- [ ] 14. HW 실기 + USB 캡처 동적 검증 (Collage, 161 CC, Para voice)
-- [x] 15. 안전한 펌웨어 패치 실험 (deprecated 슬롯 활용) → **Phase 15-1/15-2 완료** (7개 패치 정의+테스트 통과, 15-3 플래싱 대기)
+- [x] 14-1. Collage 프로토콜 완전 추출 (62 메시지, 14 enum, VST DLL protobuf descriptor) → **완료** (`PHASE14_COLLAGE_PROTOCOL_ANALYSIS.md`)
+- [x] 14-2. VST↔HW 파라미터 매핑 (148 VST + 1,705 DLL strings, LFO RateSync 27종) → **완료** (`PHASE14_VST_HW_PARAM_MAPPING.md`)
+- [x] 15-1. eEditParams deprecated 슬롯 + CM7→FX 오디오 라우팅 정적 분석 → **완료** (`PHASE15_EDITPARAMS_DEPRECATION.md`, `PHASE15_AUDIO_ROUTING.md`)
+- [x] 15-2. 첫 펌웨어 패치 검증 (7/7 통과, 가역성 확인) → **완료** (`PHASE15_FIRMWARE_PATCH_EXPERIMENT.md`, 커밋 `400a189`)
 - [ ] 15-3. 실제 플래싱 테스트 (하드웨어 필요)
+- [ ] 14/16. HW 실기 + USB 캡처 동적 검증 (Collage, 161 CC, Walk/Mutate LUT)
+- [x] 16-4. Multi Filter 14모드 ↔ DSP 함수 매핑 (정적) → **완료** (`PHASE16_MULTI_FILTER_DSP.md`)
+- [x] 16-5. FX 11 DSP × 12/13 타입 1:1 매핑 정리 → **완료** (`PHASE16_FX_TYPE_TO_DSP.md`)
+- [x] 16-6. 정정 권고서 V5 (CORR-06: 27종, ENH-09: 추정, CORR-11~13 신규) → **완료** (`MANUAL_CORRECTION_RECOMMENDATIONS.md` V5)
+- [x] 16-6b. 영문 정정 권고서 V2 → **완료** (`MANUAL_CORRECTION_REPORT_EN.md` V2)
+- [ ] 16-1~3. USB 캡처 환경 + Walk/Mutate LUT 동적 + 161 CC 동적 (하드웨어 필요)
+- [ ] 16-7. Phase 15-3 실제 플래싱 (하드웨어 필요)
 
 ---
 

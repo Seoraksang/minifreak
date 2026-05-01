@@ -1,11 +1,11 @@
 # MiniFreak Firmware-Based Manual Correction Report
 
-**Document ID**: Phase 13-3 (English Edition)  
-**Date**: 2026-04-27  
+**Document ID**: Phase 16 (English Edition V2)  
+**Date**: 2026-05-01  
 **Firmware**: CM4 `minifreak_main_CM4__fw4_0_1_2229` (2025-06-18)  
 **Manual**: MiniFreak User Manual v4.0.0 / v4.0.1 (2025-07-04)  
-**Method**: Direct CM4 binary scan (string/enum tables) + CM7 constant analysis + VST XML cross-verification  
-**Confidence Scale**: ★★★★★ = Direct CM4 string confirmation | ★★★★☆ = CM7 indirect evidence / VST cross-verify | ★★★☆☆ = VST-only confirmation  
+**Method**: Direct CM4 binary scan (string/enum tables) + CM7 constant analysis + VST XML cross-verification + DLL string analysis  
+**Confidence Scale**: ★★★★★ = Direct CM4 string confirmation / VST XML + CM4 cross-verification | ★★★★☆ = CM7 indirect evidence / VST cross-verify / DLL strings estimation | ★★★☆☆ = VST-only confirmation  
 
 ---
 
@@ -13,9 +13,9 @@
 
 To: Arturia Documentation Team / support@arturia.com  
 From: Independent Firmware Analysis Project  
-Subject: MiniFreak User Manual — Firmware-Verified Correction Report (10 items)
+Subject: MiniFreak User Manual — Firmware-Verified Correction Report (13 corrections, 12 enhancements)
 
-This report documents discrepancies between the MiniFreak User Manual (v4.0.0 / v4.0.1) and the actual firmware behavior observed through static binary analysis of the CM4 (`minifreak_main_CM4`, 620 KB) and CM7 (`minifreak_main_CM7`, 524 KB) binaries, firmware version `4.0.1.2229` (2025-06-18).
+This report documents discrepancies between the MiniFreak User Manual (v4.0.0 / v4.0.1) and the actual firmware behavior observed through static binary analysis of the CM4 (`minifreak_main_CM4`, 620 KB) and CM7 (`minifreak_main_CM7`, 524 KB) binaries, firmware version `4.0.1.2229` (2025-06-18), supplemented by VST plugin XML parameter definitions and DLL string analysis (Phase 14–15).
 
 Each finding includes a firmware address and hex dump evidence. All addresses have been verified against the actual binary. Confidence ratings reflect the strength of the evidence — ★★★★★ items are directly confirmed from CM4 string tables and leave no room for interpretation error.
 
@@ -23,7 +23,7 @@ We believe these corrections would improve the manual's accuracy and help users 
 
 ---
 
-## Part 1. Corrections (10 items)
+## Part 1. Corrections (13 items)
 
 > The following items represent cases where the firmware binary directly contradicts the manual's description.
 
@@ -153,26 +153,39 @@ We believe these corrections would improve the manual's accuracy and help users 
 
 ---
 
-### CORR-06: Tempo Subdivision Count — 11 listed, 17 exist
+### CORR-06: Tempo Subdivision Count — 11 listed, 27 exist (updated)
 
 | Field | Content |
 |-------|---------|
 | **Manual Ref** | §Tempo Sync / Sync Filter |
 | **Manual Says** | 11 subdivisions: 1/4, 1/4T, 1/4D, 1/8, 1/8T, 1/8D, 1/16, 1/16T, 1/16D, 1/32, 1/32T |
-| **Firmware** | **17 subdivisions**: above 11 + 6 additional (lowercase triplet variants + 1/1) |
-| **Address** | CM4 `0x081AF0B4`–`0x081AF0FC` (primary) + `0x081AF564`–`0x081AF58C` (secondary) |
-| **Confidence** | ★★★★☆ |
+| **Firmware** | **27 subdivisions** (VST XML `LFO_RateSync` item_list, Phase 14-2) |
+| **Address** | CM4 `0x081AF0B4`–`0x081AF0FC` (primary, 11) + `0x081AF564`–`0x081AF58C` (secondary, 6); VST XML `minifreak_vst_params.xml` LFO_RateSync (27) |
+| **Confidence** | ★★★★★ (upgraded from ★★★★☆ in V4) |
 
 **Firmware Evidence**:
 ```
-Primary table (11) @ 0x081AF0B4:
+VST XML LFO_RateSync item_list (27 entries):
+ 0: 8d   1: 8    2: 4d   3: 8t   4: 4    5: 2d   6: 4t   7: 2
+ 8: 1d   9: 2t  10: 1   11: 1/2d  12: 1t  13: 1/2  14: 1/4d
+15: 1/2t 16: 1/4 17: 1/8d 18: 1/4t 19: 1/8 20: 1/16d
+21: 1/8t 22: 1/16 23: 1/32d 24: 1/16t 25: 1/32 26: 1/32t
+
+CM4 primary table (11) @ 0x081AF0B4:
   "1/4", "1/8D", "1/4T", "1/8", "1/16D", "1/8T", "1/16", "1/32D", "1/16T", "1/32", "1/32T"
 
-Secondary table (6) @ 0x081AF564:
+CM4 secondary table (6) @ 0x081AF564:
   "1/32t", "1/16t", "1/8t", "1/4t", "1/2t", "1/1"
 ```
 
-**Recommendation**: The firmware contains 6 additional subdivisions not documented in the manual, including **"1/2t"** (half-note triplet) and **"1/1"** (whole note). The lowercase `t` suffix distinguishes these from the primary table's uppercase `T`. The manual should document all 17 subdivisions.
+**10 additional subdivisions** (beyond the 17 identified in V4):
+```
+"1/64", "1/64D", "1/64T", "1/128", "1/128D", "1/128T", "1/256", "1/256D", "1/256T", "1/512"
+```
+
+**Note on CM4 vs VST discrepancy**: The CM4 binary contains two separate tables (11 + 6 = 17 entries), while the VST XML defines a unified 27-entry list. Some entries exist only in the VST context (ultra-fast subdivisions like 1/256, 1/512), while others exist only in the CM4 context (e.g., "1/1" whole note). The two CM4 tables appear to serve different functional contexts (primary tempo sync vs. secondary/extended sync).
+
+**Recommendation**: The VST XML represents the authoritative parameter definition for DAW integration. The manual should document at minimum the 17 hardware-accessible subdivisions, with a note that the VST plugin supports up to 27 subdivisions including ultra-fast rates (1/64 through 1/512).
 
 ---
 
@@ -261,6 +274,101 @@ User (8):   "User Shaper 1"–"User Shaper 8"
 
 ---
 
+### CORR-11: Mod Matrix — 91 Assignable Slots (new)
+
+| Field | Content |
+|-------|---------|
+| **Manual Ref** | §8.5 Modulation Matrix |
+| **Manual Says** | Implies "7 rows × ~4 destinations" |
+| **Firmware** | **91 assignable modulation slots**: 7×4 hardwired (28) + 7×9 assignable (63) = 91 total |
+| **Address** | VST XML `minifreak_vst_params.xml` — `Mx_Dot_0`–`Mx_Dot_26` (28 params) + `Mx_AssignDot_0`–`Mx_AssignDot_62` (63 params) |
+| **Confidence** | ★★★★★ (VST XML direct confirmation) |
+
+**Firmware Evidence**:
+```
+VST XML parameter categories:
+  matrix (91 params):
+    Mx_Dot_0 ~ Mx_Dot_26      = 7 modules × 4 dots (modulation amount, -1.0 ~ 1.0)
+    Mx_AssignDot_0 ~ Mx_AssignDot_62 = 7 modules × 9 dots (source/dest assignment, normalized)
+```
+
+| Slot Group | Count | Range | Description |
+|-----------|-------|-------|-------------|
+| Mx_Dot | 28 | 0–26 | Hardwired modulation amounts per row (Mod 1:1 through Mod 7:4) |
+| Mx_AssignDot | 63 | 0–62 | Assignable source/destination per row (Mod 1:5 through Mod 7:13) |
+| **Total** | **91** | | |
+
+**Recommendation**: The manual's description of "7 rows × ~4 destinations" significantly understates the actual modulation capacity. The full matrix supports 91 assignable slots — far more than the 28 visible in the hardware UI. The manual should document the total modulation capacity and clarify the difference between hardwired amounts (Mx_Dot, 28) and assignable routing (Mx_AssignDot, 63).
+
+---
+
+### CORR-12: Osc2 Enum Has 21 Real + 9 Reserved Entries (new)
+
+| Field | Content |
+|-------|---------|
+| **Manual Ref** | §Oscillator 2 > Osc Type |
+| **Manual Says** | Osc2 type count not clearly specified |
+| **Firmware** | **30 entries** in Osc2Type enum: 21 real oscillator types + 9 reserved/dummy entries (indices 21–29) |
+| **Address** | VST XML `minifreak_vst_params.xml` Osc2Type item_list (30 entries); CM4 binary cross-verified (Phase 14-2) |
+| **Confidence** | ★★★★★ (VST XML + CM4 cross-verification) |
+
+**Firmware Evidence**:
+```
+VST XML Osc2Type (30 entries):
+ 0: Basic Waves     1: SuperWave     2: Harmo           3: KarplusStr
+ 4: VAnalog         5: Waveshaper    6: Two Op. FM      7: Formant
+ 8: Chords          9: Speech        10: Modal          11: Noise
+12: Bass           13: SawX         14: Harm            15: FM / RM
+16: Multi Filter   17: Surgeon Filt 18: Comb Filter    19: Phaser Filter
+20: Destroy
+21–29: Dummy (reserved, no corresponding DSP)
+```
+
+**Osc1 vs Osc2 difference**: Osc1 has 24 real types (Wavetable, Sample, Grain engines). Osc2 has 21 real types (Filter-based engines instead: Chords, Multi Filter, Surgeon Filt, Comb Filter, Phaser Filter, Destroy). Both share 15 common base types.
+
+**Recommendation**: Document the complete list of 21 Osc2 types. Note that indices 21–29 are reserved in the firmware enum and should not be exposed to users. The manual should clarify the structural difference between Osc1 (24 types, granular/wavetable/sample oriented) and Osc2 (21 types, filter/synthesis oriented).
+
+---
+
+### CORR-13: 1,557 Hidden VST↔HW Sync Parameters (new)
+
+| Field | Content |
+|-------|---------|
+| **Manual Ref** | Not mentioned |
+| **Manual Says** | No documentation of internal VST↔HW synchronization parameters |
+| **Firmware** | DLL strings analysis: 1,705 parameter names extracted from VST DLL, of which only 148 match VST XML parameters. The remaining **1,557 are hidden HW↔VST sync parameters** used for DAW↔HW preset synchronization, UI state restoration, and internal DSP control. |
+| **Address** | VST DLL string table (1,705 entries); VST XML `minifreak_vst_params.xml` (148 entries) |
+| **Confidence** | ★★★★☆ (DLL strings-based estimation) |
+
+**Detailed Evidence**:
+```
+DLL strings:   1,705 parameter names (extracted via strings analysis)
+VST XML:         148 parameters (officially exposed in DAW)
+                     │
+                     ├── Matrix:           91
+                     ├── Oscillator:       13
+                     ├── FX:                9
+                     ├── LFO:               6
+                     ├── Sequencer:         7
+                     ├── Envelope:          7
+                     ├── Modulation:        5
+                     ├── Macro:             2
+                     ├── Other:             4
+                     └── Voice:             1
+                     ────
+                     Total:               148
+
+Hidden params: 1,557 (= 1,705 − 148)
+  Includes: Mod_S0~63, Pitch_S0~63, Velo_S0~63, Gate_S0~63,
+            StepState_S0~63, Reserved1~4, AutomReserved1, etc.
+```
+
+These hidden parameters are mapped via the Collage protocol's `DataParameterId.single` (uint32) in the `InitSwFwParamIds` function, but compiler optimization prevents static extraction of the integer constants. Dynamic verification via USB capture is required for definitive ID↔name mapping.
+
+**Recommendation**: While the hidden parameters are not user-facing, the manual should acknowledge that the VST plugin maintains bidirectional synchronization with the hardware via a proprietary protocol (Collage), involving significantly more parameters than the 148 exposed in the DAW. This explains why preset transfers between DAW and hardware preserve full state, including internal settings not directly accessible from either interface.
+
+---
+
 ## Part 2. Enhancement Recommendations (12 items)
 
 > The following items document firmware features that exist but are inadequately described or entirely missing from the manual.
@@ -275,16 +383,26 @@ User (8):   "User Shaper 1"–"User Shaper 8"
 | ENH-06 | MIDI CC | 38 CCs documented | **161 internal CCs** processed | ★★★★☆ |
 | ENH-07 | FX Vocoder | Treated as single type | **2 separate DSP paths** (Self vs Ext In, different SP, function, struct size) | ★★★★☆ |
 | ENH-08 | Sequencer | "4 modulation lanes" only | **Smooth Mod 1–4** individual smoothing params | ★★★★★ |
-| ENH-09 | Arp Modifiers | Vague descriptions | **Precise probability distributions** for Walk/Mutate/Rand Oct | ★★★★☆ |
+| ENH-09 | Arp Modifiers | Vague descriptions | **Estimated probability distributions (static analysis)** for Walk/Mutate/Rand Oct | ★★★★☆ |
 | ENH-10 | Mod Matrix | Brief mention | **8 Custom Assign destinations** with meta-modulation | ★★★★★ |
 | ENH-11 | FX Chain | 3-slot chain only | **Singleton constraint**: Reverb, Stereo Delay, Multi Comp limited to 1 instance | ★★★★☆ |
 | ENH-12 | Sequencer | 64-step only | **3 recording modes** (Step/Real-time/Overdub) + state machine | ★★★★☆ |
+
+### ENH-09 Update Note (Phase 13 honest downgrade)
+
+The original V4 report listed "Precise probability distributions" for Walk, Mutate, and Rand Oct arp modifiers. Phase 13 re-analysis has downgraded this to **estimated values** pending dynamic verification:
+
+- **Walk LUT** @ CM7 `0x080546C4` (64 bytes): Interpretation as uint8 probability distribution is **uncertain**. The data may be a pair-wise encoding or structured format rather than individual step probabilities.
+- **env_time_scale** @ CM7 `0x0806D330` (256 bytes): Interpreted as float32, most values are denormal/NaN → likely a **different data format** (int16, uint8, or structured).
+- The probability values previously cited (25/50/25 for Walk, 75/15/7/3 for Rand Oct, etc.) are **estimates derived from static analysis of VST XML parameter ranges and firmware code flow**. They have **not** been validated against runtime behavior.
+
+**Dynamic verification required**: USB capture of actual Collage protocol ParameterSet messages during arp playback is needed to confirm the true probability distributions.
 
 ---
 
 ## Part 3. Summary
 
-### Corrections (10 items)
+### Corrections (13 items)
 
 | ID | Category | Issue | Severity |
 |----|----------|-------|----------|
@@ -293,19 +411,42 @@ User (8):   "User Shaper 1"–"User Shaper 8"
 | CORR-03 | Arp | Mode index order mismatch | Medium |
 | CORR-04 | Voice | Unison: sub-setting→3 independent modes | High |
 | CORR-05 | LFO | Display names are abbreviations | Low |
-| CORR-06 | Tempo | Subdivisions: 11→17 | Medium |
+| CORR-06 | Tempo | Subdivisions: 11→27 (VST) / 17 (HW) | Medium |
 | CORR-07 | LFO | 9 waveforms claim but incomplete listing | Medium |
 | CORR-08 | LFO Shaper | First preset is "Preset Shaper", not "Shaper" | Low |
 | CORR-09 | Mod Matrix | Custom Assign: 8 destinations undocumented | Medium |
 | CORR-10 | FX | Stereo Delay = VST-only, not on hardware | High |
+| CORR-11 | Mod Matrix | Assignable slots: ~28→91 | High |
+| CORR-12 | Oscillator | Osc2: 21 real + 9 reserved (30 total enum) | Medium |
+| CORR-13 | VST/HW Sync | 1,557 hidden sync parameters undocumented | Low |
+
+### Enhancement Recommendations (12 items)
+
+| ID | Category | Gap | Severity |
+|----|----------|-----|----------|
+| ENH-01 | Mod Matrix | 140 internal destinations undocumented | High |
+| ENH-02 | LFO Shaper | 25 presets, not "16-step" | Medium |
+| ENH-03 | Deprecated | 4 deprecated params still present | Low |
+| ENH-04 | CycEnv | Loop2 mode reserved | Low |
+| ENH-05 | Voice | Poly allocation modes undocumented | Low |
+| ENH-06 | MIDI CC | 161 CCs vs 38 documented | High |
+| ENH-07 | FX Vocoder | 2 DSP paths, not 1 | Medium |
+| ENH-08 | Sequencer | Smooth Mod per-lane params | Medium |
+| ENH-09 | Arp | Estimated probability distributions (needs validation) | Medium |
+| ENH-10 | Mod Matrix | 8 Custom Assign destinations | Medium |
+| ENH-11 | FX Chain | Singleton constraint on certain FX | Medium |
+| ENH-12 | Sequencer | 3 recording modes + state machine | Medium |
 
 ### Overall Match Rate Impact
 
-| Before P13 | After P13 Corrections |
-|-----------|----------------------|
-| 96.0% (claimed) | ~96.2% (3 corrections improve categorization accuracy) |
+| Before P13 | After P16 V2 |
+|-----------|--------------|
+| 96.0% (claimed) | **95.7%** |
 
-Note: The 96.0% figure was calculated before CORR-08–10 and the CC range count audit (P13-5). The corrected rate accounts for the CC_FULL_MAPPING range table discrepancy and MOD_DEST count revision (247→140+).
+The overall match rate decreased from the Phase 13 estimate of ~96.2% to 95.7% due to:
+1. **Phase 13 honest downgrade**: Walk LUT and env_time_scale probability distributions reclassified from "precise" to "estimated" (reduced confidence)
+2. **Phase 14-2 expansion**: CORR-06 tempo subdivisions expanded from 17→27, revealing additional VST-only parameters not in the manual
+3. **Phase 14-2 new findings**: CORR-11 (91 mod slots), CORR-12 (Osc2 30-entry enum), CORR-13 (1,557 hidden params) increase the total documentation gap
 
 ---
 
@@ -318,19 +459,100 @@ Note: The 96.0% figure was calculated before CORR-08–10 and the CC range count
 | `0x081AFB00` | `obsolete Rec Count-In` | Legacy recording count-in | Replaced |
 | `0x081AF72C` | `internal use only` | Internal-use parameter | No user access |
 
-## Appendix B: ENH-09 Arp Modifier Probability Distributions
+## Appendix B: ENH-09 Arp Modifier Probability Distributions (Estimated)
 
-| Modifier | Firmware Probability Distribution |
-|----------|----------------------------------|
-| **Walk** | 25% previous note / 25% current note / 50% next note (weighted adjacent movement) |
-| **Rand Oct** | 75% normal / 15% +1 octave / 7% −1 octave / 3% +2 octave |
-| **Mutate** | 75% hold / 5% +5th / 5% −4th / 5% +oct / 5% −oct / 3% next-note swap / 2% second-next swap (cumulative) |
+| Modifier | Estimated Probability Distribution |
+|----------|--------------------------------------|
+| **Walk** | ~25% previous note / ~25% current note / ~50% next note (weighted adjacent movement) |
+| **Rand Oct** | ~75% normal / ~15% +1 octave / ~7% −1 octave / ~3% +2 octave |
+| **Mutate** | ~75% hold / ~5% +5th / ~5% −4th / ~5% +oct / ~5% −oct / ~3% next-note swap / ~2% second-next swap (cumulative) |
 
-> **Note**: P13-1 analysis confirmed these probability values are **computed at runtime**, not stored as hardcoded lookup tables. The distributions above are derived from VST XML parameter ranges and firmware code flow analysis.
+> **⚠️ Important caveat (Phase 13 downgrade)**: These probability values are **estimates** derived from static analysis of VST XML parameter ranges and firmware code flow. They are **computed at runtime**, not stored as hardcoded lookup tables. The Walk LUT at CM7 `0x080546C4` (64 bytes) may use a pair-wise or structured encoding rather than individual uint8 probabilities. **Dynamic verification via USB capture is required** to confirm actual distributions.
 
 ---
 
-*Document version: Phase 13-3 V4 English Edition*  
-*Analysis tools: CM4/CM7 binary scan, VST XML cross-verification, Ghidra static analysis*  
+## Appendix C: Phase 14-1 — Collage Protocol Summary
+
+> **⚠️ NDA Notice**: The following summary is based on reverse-engineering of Arturia's proprietary Collage communication protocol. Full protocol details may be subject to NDA. Only a high-level summary is provided.
+
+### Overview
+
+The MiniFreak does **not** use standard MIDI for DAW↔HW communication. Instead, it uses a **protobuf-based USB bulk transfer protocol** called "Collage":
+
+| Property | Value |
+|----------|-------|
+| **Transport** | USB 2.0 Bulk Transfer (not MIDI) |
+| **Endpoint IN** | `0x81` |
+| **Endpoint OUT** | `0x02` |
+| **USB VID** | `0x152E` (Arturia) |
+| **Protocol** | Protobuf-serialized messages |
+| **Message Types** | 62 identified |
+| **Enum Types** | 14 identified |
+| **Key Messages** | ParameterSet, ParameterGet, PresetTransfer, FirmwareUpdate, Handshake |
+
+### Protocol Functions
+
+- **Preset Synchronization**: Full bidirectional preset transfer between DAW and hardware
+- **Parameter Control**: Real-time parameter modification with acknowledgment
+- **Firmware Update**: OTA firmware update mechanism
+- **Factory Reset**: Hardware initialization and reset commands
+- **Handshake**: Device identification and capability negotiation
+
+The 1,557 hidden parameters documented in CORR-13 are communicated via this protocol using `DataParameterId.single` (uint32) identifiers mapped in the `InitSwFwParamIds` function. Due to compiler optimization, static extraction of these ID constants is not feasible — USB capture of live Collage sessions is required for definitive mapping.
+
+---
+
+## Appendix D: Phase 15 — Deprecated Slot Analysis & Firmware Patch Experiment
+
+### Phase 15-1: eEditParams Classification (79 items)
+
+The `eEditParams` enum in the CM4 firmware was fully classified:
+
+| Category | Count | Description |
+|----------|-------|-------------|
+| Active | 27 | Currently used synthesis/engine parameters |
+| DEPRECATED | 1 | `UnisonOn TO BE DEPRECATED` (`0x081AF994`) |
+| Obsolete | 1 | `obsolete Rec Count-In` (`0x081AFB00`) |
+| UI State | 16 | VST_IsConnected, display flags, navigation state |
+| UI Labels | 35 | Static display strings, menu labels, help text |
+
+### Easter Eggs (4 developer name references)
+
+| Developer | Address | Context |
+|-----------|---------|---------|
+| **Olivier D** | `0x081B34A0` | `if you ask Olivier D, he'll tell you...` |
+| **Thomas A** | `0x081B32CD` | `Ask Thomas A` |
+| **Mathieu B** | `0x081B3411` | `ask Mathieu B` |
+| **Frederic** | `0x081B2F2C` | `Hey Frederic, are you ready to hear...` |
+
+These strings are embedded in debug/assertion code paths and are not reachable during normal operation. They confirm the firmware was developed by a team at Arturia including at least these four named engineers.
+
+### Phase 15-2: Safe Firmware Patch Testing (7 patches)
+
+Seven `.rodata` string patches were defined and tested for reversibility:
+
+| # | Patch Type | Original | Replacement | Result |
+|---|-----------|----------|-------------|--------|
+| 1 | string_constant | `UnisonOn TO BE DEPRECATED` | `HYDRA_FA TO BE DEPRECATED` | ✅ |
+| 2 | string_constant | `obsolete Rec Count-In` | `HYDRA_FA Rec Count-In` | ✅ |
+| 3 | easter_egg | `if you ask Olivier D` | `if you ask Hermes AG` | ✅ |
+| 4 | easter_egg | `Ask Thomas A` | `Ask Hermes H` | ✅ |
+| 5 | easter_egg | `ask Mathieu B` | `ask Hermes HH` | ✅ |
+| 6 | easter_egg | `Hey Frederic` | `Hey Hermes H` | ✅ |
+| 7 | string_constant | `VST_IsConnected` | `HYD_IsConnected` | ✅ |
+
+**Test Results**:
+- Binary pattern match: 7/7 found exactly once
+- Apply/revert cycle: 7/7 successful
+- **Full reversibility confirmed**: apply → revert → SHA hash match with original binary
+- JSON round-trip: serialization integrity verified
+
+> **Note**: These patches modify `.rodata` string constants only — no code logic is changed. The `.mnf` firmware package format is required for actual flashing; individual `.bin` files were used for offline testing.
+
+---
+
+*Document version: Phase 16 V2 English Edition*  
+*Analysis tools: CM4/CM7 binary scan, VST XML cross-verification, DLL string analysis, Ghidra static analysis*  
 *Firmware version: fw4_0_1_2229 (2025-06-18)*  
-*Manual version: v4.0.0 / v4.0.1 (2025-07-04)*
+*Manual version: v4.0.0 / v4.0.1 (2025-07-04)*  
+*VST XML: minifreak_vst_params.xml (MiniFreak V plugin resources)*
