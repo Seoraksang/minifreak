@@ -1,0 +1,86 @@
+{
+  "audio_render_candidate": {
+    "address": "0x8054708",
+    "name": "FUN_08054708",
+    "size": 7480,
+    "called": [
+      "FUN_0800795c",
+      "FUN_08060b5c"
+    ],
+    "called_by": [
+      "FUN_08014864",
+      "FUN_0801d838",
+      "FUN_0801d89c"
+    ],
+    "c_preview": "\nvoid FUN_08054708(float *param_1,undefined2 *param_2,undefined4 param_3,short *param_4)\n\n{\n  uint uVar1;\n  ushort uVar2;\n  short sVar3;\n  ushort uVar4;\n  ushort uVar5;\n  ushort uVar6;\n  longlong lVar7;\n  short sVar8;\n  short sVar9;\n  undefined2 uVar10;\n  uint uVar11;\n  short sVar12;\n  uint uVar13;\n  int iVar14;\n  int iVar15;\n  undefined4 *puVar16;\n  uint uVar17;\n  undefined4 uVar18;\n  int iVar19;\n  undefined4 uVar20;\n  int iVar21;\n  short *psVar22;\n  int iVar23;\n  short *psVar24;\n  int iVar25;\n  float fVar26;\n  int iVar27;\n  uint uVar28;\n  int iVar29;\n  int iVar30;\n  int iVar31;\n  int iVar32;\n  uint in_fpscr;\n  float fVar33;\n  float fVar34;\n  float fVar35;\n  float fVar36;\n  float fVar37;\n  float fVar38;\n  float fVar39;\n  float fVar40;\n  float fVar41;\n  float fVar42;\n  float fVar43;\n  float fVar44;\n  float fVar45;\n  float fVar46;\n  uint uVar47;\n  float fVar48;\n  float fVar49;\n  float fVar50;\n  float fVar51;\n  float local_7c;\n  float local_70;\n  undefined4 local_6c;\n  short local_68 [16];\n  short asStack_48 [2];\n  \n  if (param_1[1] != 0.0) {\n    param_1[1] = 0.0;\n    FUN_08060b5c(param_2,0,0x40);\n    param_1[0x18] = 0.0;\n    param_1[0x19] = 0.0;\n    param_1[0x1a] = 0.0;\n    param_1[0x1b] = 0.0;\n    FUN_08060b5c(param_1 + 0x1c,0,0x20);\n    param_1[0x25] = 0.0;\n    *(undefined2 *)(param_1 + 0x26) = 0;\n    fVar26 = DAT_08055758;\n    fVar49 = DAT_08055754;\n    sVar9 = *param_4;\n    fVar50 = (float)VectorSignedToFloat((int)param_4[4],(byte)(in_fpscr >> 0x15) & 3);\n    sVar8 = param_4[3];\n    param_1[0x17] = 1.12104e-44;\n    fVar35 = (float)VectorSignedToFloat((int)sVar9,(byte)(in_fpscr >> 0x15) & 3);\n    param_1[0x22] = 0.0;\n    fVar38 = (float)VectorSignedToFloat((int)sVar8,(byte)(in_fpscr >> 0x15) & 3);\n    param_1[3] = param_1[0x28];\n    param_1[0x23] = 0.0;\n    param_1[0x27] = 0.0;\n    fVar49 = (fVar50 * fVar49 + -0.5) * 5.0;\n    fVar26 = fVar49 * fVar26;\n    if (fVar49 < 0.0) {\n      fVar26 = -fVar26;\n    }\n    uVar13 = (uint)fVar26;\n    uVar17 = uVar13;\n    if ((int)uVar13 < 0) {\n      uVar17 = uVar13 + 0x1f;\n    }\n    iVar14 = (int)uVar17 >> 5;\n    VectorSignedToFloat((uVar17 & 0xffffffe0) + (uVar13 & 0x1f),\n                        (byte)((in_fpscr & 0xfffffff) >> 0x15) & 3);\n    FUN_0800795c(1 << (iVar14 + 0x10U & 0xff),\n                 1 << (iVar14 - 0x10U & 0xff) | 1U >> (0x10U - iVar14 & 0xff));\n    uVar17 = (uint)(fVar35 * 7.0);\n    iVar30 = (int)(fVar38 * 7.0);\n    iVar15 = (int)uVar17 >> 0xf;\n    uVar2 = (ushort)((uVar17 << 0x11) >> 0x10);\n    uVar4 = uVar2 >> 1 ^ 0x7fff;\n    iVar21 = iVar15 + 1;\n    iVar14 = iVar30;\n    if (iVar30 < 1) {\n      iVar14 = -iVar30;\n    }\n    iVar19 = iVar14 >> 0xf;\n    uVar2 = uVar2 >> 1;\n    if (iVar14 < 0x40000) {\n      uVar6 = (ushort)((uint)(iVar14 << 0x11) >> 0x10);\n      uVar5 = uVar6 >> 1 ^ 0x7fff;\n      uVar6 = uVar6 >> 1;\n      iVar14 = (int)(short)((int)(short)uVar6 *\n                            (int)*(short *)(DAT_08055c48 + (iVar15 * 9 + iVar19 + 1) * 2) +\n                            (int)*(shor",
+    "c_len": 52118
+  },
+  "main_candidate_5KB": {
+    "address": "0x8034338",
+    "name": "FUN_08034338",
+    "size": 5046,
+    "called": [
+      "FUN_08060b5c",
+      "FUN_08008170",
+      "FUN_0805eaf0",
+      "FUN_080543c4",
+      "FUN_08034298",
+      "FUN_080081e4",
+      "FUN_0800856c",
+      "FUN_08054228",
+      "FUN_08008118"
+    ],
+    "called_by": [],
+    "c_preview": "\nvoid FUN_08034338(void)\n\n{\n  float *pfVar1;\n  char cVar2;\n  ushort uVar3;\n  undefined8 uVar4;\n  ushort uVar5;\n  double dVar6;\n  char *pcVar7;\n  int *piVar8;\n  int iVar9;\n  undefined1 *puVar10;\n  char *pcVar11;\n  undefined2 *puVar12;\n  int iVar13;\n  code *pcVar14;\n  char cVar15;\n  uint uVar16;\n  uint uVar17;\n  undefined4 *puVar18;\n  int iVar19;\n  undefined4 *puVar20;\n  char *pcVar21;\n  int iVar22;\n  undefined4 *puVar23;\n  int iVar24;\n  undefined1 *puVar25;\n  char *pcVar26;\n  int iVar27;\n  int *piVar28;\n  char *pcVar29;\n  float *pfVar30;\n  char *pcVar31;\n  char *pcVar32;\n  double *pdVar33;\n  int *piVar34;\n  byte bVar35;\n  bool bVar36;\n  byte bVar37;\n  char cVar38;\n  uint in_fpscr;\n  undefined4 in_cr6;\n  undefined4 in_cr7;\n  double dVar39;\n  double extraout_d6;\n  double extraout_d6_00;\n  double extraout_d6_01;\n  double extraout_d6_02;\n  double extraout_d6_03;\n  double dVar40;\n  double extraout_d6_04;\n  float fVar41;\n  undefined4 uVar42;\n  float fVar44;\n  float fVar45;\n  double extraout_d7;\n  double extraout_d7_00;\n  double dVar43;\n  float fVar46;\n  double extraout_d7_01;\n  double extraout_d7_02;\n  undefined4 uVar47;\n  int local_60;\n  char *local_58;\n  double *local_54;\n  char *local_50;\n  \n  iVar19 = DAT_08034680;\n  FUN_08034298();\n  piVar8 = (int *)FUN_08054228();\n  iVar24 = iVar19 + 0x1440;\n  (**(code **)(*piVar8 + 0x14))(piVar8,DAT_08034684,0);\n  FUN_0800856c(2);\n  iVar22 = DAT_08034688;\n  FUN_0800856c(4);\n  FUN_080543c4();\n  do {\n    FUN_08060b5c(iVar19,0,0x1ae);\n    FUN_08060b5c(iVar22,0,0x1ae);\n    iVar9 = iVar19 + 0x1b0;\n    iVar19 = iVar19 + 0x360;\n    FUN_08060b5c(iVar9,0,0x1ae);\n    iVar9 = iVar22 + 0x1b0;\n    iVar22 = iVar22 + 0x360;\n    FUN_08060b5c(iVar9,0,0x1ae);\n    iVar9 = DAT_08034694;\n    puVar23 = DAT_0803468c;\n  } while (iVar24 != iVar19);\n  iVar19 = *(int *)((int)DAT_0803468c + DAT_08034690);\n  *(undefined2 *)((int)DAT_0803468c + DAT_08034694) = 0x101;\n  *(undefined2 *)((int)puVar23 + iVar9 + -4) = *(undefined2 *)(iVar19 + 8);\n  *(undefined2 *)((int)puVar23 + iVar9 + -2) = *(undefined2 *)(iVar19 + 0x14);\n  puVar18 = puVar23;\n  do {\n    iVar19 = puVar18[7];\n    puVar18[5] = 0x1010101;\n    puVar18[6] = 0x1010101;\n    pcVar14 = *(code **)*puVar18;\n    *(undefined2 *)(puVar18 + 1) = *(undefined2 *)(iVar19 + 8);\n    *(undefined2 *)((int)puVar18 + 6) = *(undefined2 *)(iVar19 + 0x14);\n    *(undefined2 *)(puVar18 + 2) = *(undefined2 *)(iVar19 + 0x20);\n    *(undefined2 *)((int)puVar18 + 10) = *(undefined2 *)(iVar19 + 0x2c);\n    *(undefined2 *)(puVar18 + 3) = *(undefined2 *)(iVar19 + 0x38);\n    *(undefined2 *)((int)puVar18 + 0xe) = *(undefined2 *)(iVar19 + 0x44);\n    *(undefined2 *)(puVar18 + 4) = *(undefined2 *)(iVar19 + 0x50);\n    *(undefined2 *)((int)puVar18 + 0x12) = *(undefined2 *)(iVar19 + 0x5c);\n    puVar20 = puVar18 + 0xf82;\n    (*pcVar14)(puVar18);\n    puVar18 = puVar20;\n  } while (DAT_08034698 != puVar20);\n  FUN_08060b5c((int)DAT_08034698 + 0x86,1,0x31);\n  iVar22 = *(int *)((int)puVar23 + DAT_0803469c);\n  puVar12 = DAT_080346a0",
+    "c_len": 39687
+  },
+  "osc_caller_1": {
+    "address": "0x8014864",
+    "name": "FUN_08014864",
+    "size": 80,
+    "called": [
+      "FUN_08054708"
+    ],
+    "called_by": [],
+    "c_preview": "\nvoid FUN_08014864(int param_1,undefined4 *param_2)\n\n{\n  ushort *puVar1;\n  undefined4 uVar2;\n  \n  FUN_08054708(param_1 + 0x6c,param_1 + 0x28,param_1 + 0x11a,(undefined4 *)(param_1 + 0x110));\n  puVar1 = (ushort *)(param_1 + 0x26);\n  do {\n    puVar1 = puVar1 + 1;\n    uVar2 = VectorSignedFixedToFloat((uint)*puVar1,0x10,0xf);\n    *param_2 = uVar2;\n    param_2 = param_2 + 1;\n  } while (puVar1 != (ushort *)(param_1 + 0x66));\n  *(undefined4 *)(param_1 + 0x11a) = *(undefined4 *)(param_1 + 0x110);\n  *(undefined4 *)(param_1 + 0x11e) = *(undefined4 *)(param_1 + 0x114);\n  *(undefined2 *)(param_1 + 0x122) = *(undefined2 *)(param_1 + 0x118);\n  return;\n}\n\n",
+    "c_len": 649
+  },
+  "osc_caller_2": {
+    "address": "0x801d838",
+    "name": "FUN_0801d838",
+    "size": 100,
+    "called": [
+      "FUN_08054708",
+      "FUN_0805dd00"
+    ],
+    "called_by": [],
+    "c_preview": "\nvoid FUN_0801d838(int param_1,undefined4 param_2,undefined4 *param_3,undefined4 param_4)\n\n{\n  ushort *puVar1;\n  undefined4 *puVar2;\n  undefined4 uVar3;\n  \n  FUN_08054708(param_1 + -0xfc,param_1 + -0x140,param_1 + -0x4e,(undefined4 *)(param_1 + -0x58));\n  puVar1 = (ushort *)(param_1 + -0x142);\n  puVar2 = param_3;\n  do {\n    puVar1 = puVar1 + 1;\n    uVar3 = VectorSignedFixedToFloat((uint)*puVar1,0x10,0xf);\n    *puVar2 = uVar3;\n    puVar2 = puVar2 + 1;\n  } while (puVar1 != (ushort *)(param_1 + -0x102));\n  *(undefined4 *)(param_1 + -0x4e) = *(undefined4 *)(param_1 + -0x58);\n  *(undefined4 *)(param_1 + -0x4a) = *(undefined4 *)(param_1 + -0x54);\n  *(undefined2 *)(param_1 + -0x46) = *(undefined2 *)(param_1 + -0x50);\n  FUN_0805dd00(*(undefined4 *)(param_1 + -0x14c),param_3,param_3,0x20,param_4);\n  return;\n}\n\n",
+    "c_len": 813
+  },
+  "osc_caller_3": {
+    "address": "0x801d89c",
+    "name": "FUN_0801d89c",
+    "size": 90,
+    "called": [
+      "FUN_08054708",
+      "FUN_0805dd00"
+    ],
+    "called_by": [],
+    "c_preview": "\nvoid FUN_0801d89c(int param_1,undefined4 param_2,undefined4 *param_3,undefined4 param_4)\n\n{\n  undefined4 *puVar1;\n  ushort *puVar2;\n  undefined4 uVar3;\n  \n  FUN_08054708(param_1 + 0x6c,param_1 + 0x28,param_1 + 0x11a,(undefined4 *)(param_1 + 0x110));\n  puVar2 = (ushort *)(param_1 + 0x26);\n  puVar1 = param_3;\n  do {\n    puVar2 = puVar2 + 1;\n    uVar3 = VectorSignedFixedToFloat((uint)*puVar2,0x10,0xf);\n    *puVar1 = uVar3;\n    puVar1 = puVar1 + 1;\n  } while (puVar2 != (ushort *)(param_1 + 0x66));\n  *(undefined4 *)(param_1 + 0x11a) = *(undefined4 *)(param_1 + 0x110);\n  *(undefined4 *)(param_1 + 0x11e) = *(undefined4 *)(param_1 + 0x114);\n  *(undefined2 *)(param_1 + 0x122) = *(undefined2 *)(param_1 + 0x118);\n  FUN_0805dd00(*(undefined4 *)(param_1 + 0x1c),param_3,param_3,0x20,param_4);\n  return;\n}\n\n",
+    "c_len": 804
+  },
+  "FUN_08060674": {
+    "address": "0x8060674",
+    "name": "FUN_08060674",
+    "size": 6,
+    "called": [],
+    "called_by": [
+      "FUN_0805e6f0",
+      "FUN_08007f14",
+      "FUN_08007f28",
+      "FUN_08007f88"
+    ],
+    "c_preview": "\nundefined4 FUN_08060674(void)\n\n{\n  return *DAT_0806067c;\n}\n\n",
+    "c_len": 61
+  }
+}

@@ -1,0 +1,250 @@
+{
+  "osc_core": {
+    "address": "0x805dd00",
+    "name": "FUN_0805dd00",
+    "size": 136,
+    "called": [],
+    "called_by": [
+      "FUN_080145ec",
+      "FUN_0801e73c",
+      "FUN_08014478",
+      "FUN_0801afd0",
+      "FUN_0801468c",
+      "FUN_080144f4",
+      "FUN_080147ac",
+      "FUN_0801d838",
+      "FUN_0801d760",
+      "FUN_080146e4",
+      "FUN_08014518",
+      "FUN_08014610",
+      "FUN_0801b8b0",
+      "FUN_0801d7cc",
+      "FUN_0801d89c",
+      "FUN_08023608",
+      "FUN_08014708",
+      "FUN_08014784",
+      "FUN_0801449c",
+      "FUN_0801e43c",
+      "FUN_08014638",
+      "FUN_08014730",
+      "FUN_080233c4",
+      "FUN_08014420",
+      "FUN_08014594",
+      "FUN_080234f0",
+      "FUN_08014540"
+    ],
+    "c_preview": "\nvoid FUN_0805dd00(float param_1,float *param_2,float *param_3,uint param_4)\n\n{\n  float *pfVar1;\n  float *pfVar2;\n  uint uVar3;\n  uint uVar4;\n  \n  uVar4 = param_4 >> 2;\n  uVar3 = uVar4;\n  pfVar1 = param_3;\n  pfVar2 = param_2;\n  if (uVar4 != 0) {\n    do {\n      uVar3 = uVar3 - 1;\n      *pfVar1 = *pfVar2 * param_1;\n      pfVar1[1] = pfVar2[1] * param_1;\n      pfVar1[2] = pfVar2[2] * param_1;\n      pfVar1[3] = pfVar2[3] * param_1;\n      pfVar1 = pfVar1 + 4;\n      pfVar2 = pfVar2 + 4;\n    } while (uVar3 != 0);\n    param_2 = param_2 + uVar4 * 4;\n    param_3 = param_3 + uVar4 * 4;\n  }\n  param_4 = param_4 & 3;\n  if (((param_4 != 0) && (*param_3 = *param_2 * param_1, param_4 != 1)) &&\n     (param_3[1] = param_2[1] * param_1, param_4 != 2)) {\n    param_3[2] = param_2[2] * param_1;\n  }\n  return;\n}\n\n",
+    "c_len": 800
+  },
+  "memset_wrapper": {
+    "address": "0x8060b5c",
+    "name": "FUN_08060b5c",
+    "size": 16,
+    "called": [],
+    "called_by": [
+      "FUN_08059adc",
+      "FUN_080544d8",
+      "FUN_080564ac",
+      "FUN_080301dc",
+      "FUN_080359f4",
+      "FUN_0801afd0",
+      "FUN_0803a490",
+      "FUN_08060858",
+      "FUN_0805be54",
+      "FUN_0805cfd8",
+      "FUN_08056528",
+      "FUN_08007bf4",
+      "FUN_0801524c",
+      "FUN_08022c32",
+      "FUN_08011bdc",
+      "FUN_080543c4",
+      "FUN_08054708",
+      "FUN_0801b8b0",
+      "FUN_0805b570",
+      "FUN_08022880",
+      "FUN_08060804",
+      "FUN_08034338",
+      "FUN_08060924",
+      "FUN_0800c4a0",
+      "FUN_0801da54",
+      "FUN_0805c398",
+      "FUN_08029390"
+    ],
+    "c_preview": "\nvoid FUN_08060b5c(undefined1 *param_1,undefined1 param_2,int param_3)\n\n{\n  undefined1 *puVar1;\n  \n  puVar1 = param_1 + param_3;\n  for (; param_1 != puVar1; param_1 = param_1 + 1) {\n    *param_1 = param_2;\n  }\n  return;\n}\n\n",
+    "c_len": 223
+  },
+  "calls_top5": {
+    "address": "0x8007bf4",
+    "name": "FUN_08007bf4",
+    "size": 602,
+    "called": [
+      "FUN_08008094",
+      "FUN_08008230",
+      "FUN_08008610",
+      "FUN_08008bdc",
+      "FUN_08008540",
+      "FUN_08008274",
+      "FUN_08008598",
+      "FUN_08008250",
+      "FUN_08060b5c",
+      "FUN_08009358",
+      "FUN_08008f70",
+      "FUN_0800855c"
+    ],
+    "called_by": [
+      "FUN_08007e6c"
+    ],
+    "c_preview": "\n/* WARNING: Type propagation algorithm not settling */\n\nvoid FUN_08007bf4(void)\n\n{\n  uint uVar1;\n  int *piVar2;\n  uint uVar3;\n  int iVar4;\n  int iVar5;\n  uint uVar6;\n  undefined4 local_108;\n  undefined4 uStack_104;\n  undefined4 local_100;\n  undefined4 uStack_fc;\n  undefined4 local_f8;\n  undefined4 uStack_f4;\n  undefined4 local_f0;\n  undefined4 uStack_ec;\n  uint local_e8 [9];\n  undefined4 local_c4;\n  undefined4 local_c0;\n  undefined4 local_bc;\n  undefined4 local_b8;\n  undefined4 local_b4;\n  undefined4 local_b0;\n  undefined4 local_ac;\n  undefined4 local_a8;\n  undefined4 uStack_a4;\n  undefined4 local_a0;\n  undefined4 local_98;\n  undefined4 local_74;\n  undefined4 local_70;\n  undefined4 local_48;\n  \n  local_e8[0] = 0;\n  local_e8[1] = 0;\n  local_e8[2] = 0;\n  local_e8[3] = 0;\n  FUN_08008230();\n  local_e8[0] = CONCAT22(local_e8[0]._2_2_,1);\n  local_e8[3] = 0x100;\n  local_e8[1] = 0x38000000;\n  local_e8[2] = DAT_08007e50;\n  FUN_08008274(local_e8);\n  FUN_08008250(4);\n  iVar5 = DAT_08007e54;\n  if ((*(uint *)(DAT_08007e54 + 0x14) & 0x20000) == 0) {\n    DataSynchronizationBarrier(0xf);\n    InstructionSynchronizationBarrier(0xf);\n    *(undefined4 *)(DAT_08007e54 + 0x250) = 0;\n    DataSynchronizationBarrier(0xf);\n    InstructionSynchronizationBarrier(0xf);\n    *(uint *)(iVar5 + 0x14) = *(uint *)(iVar5 + 0x14) | 0x20000;\n    DataSynchronizationBarrier(0xf);\n    InstructionSynchronizationBarrier(0xf);\n  }\n  iVar5 = DAT_08007e54;\n  if ((*(uint *)(DAT_08007e54 + 0x14) & 0x10000) == 0) {\n    *(undefined4 *)(DAT_08007e54 + 0x84) = 0;\n    DataSynchronizationBarrier(0xf);\n    uVar6 = ((uint)(*(int *)(iVar5 + 0x80) << 4) >> 0x11) << 5;\n    do {\n      uVar3 = (uint)(*(int *)(iVar5 + 0x80) << 0x13) >> 0x16;\n      do {\n        uVar1 = uVar3 << 0x1e;\n        uVar3 = uVar3 - 1;\n        *(uint *)(iVar5 + 0x260) = uVar6 & 0x3fe0 | uVar1;\n      } while (uVar3 != 0xffffffff);\n      uVar6 = uVar6 - 0x20;\n    } while (uVar6 != 0xffffffe0);\n    DataSynchronizationBarrier(0xf);\n    *(uint *)(iVar5 + 0x14) = *(uint *)(iVar5 + 0x14) | 0x10000;\n    DataSynchronizationBarrier(0xf);\n    InstructionSynchronizationBarrier(0xf);\n  }\n  iVar5 = DAT_08007e5c;\n  iVar4 = 0x10000;\n  do {\n    if (-1 < *DAT_08007e58 << 0x10) break;\n    iVar4 = iVar4 + -1;\n  } while (iVar4 != 0);\n  *(uint *)(DAT_08007e5c + 0xc) = *(uint *)(DAT_08007e5c + 0xc) | 0x20000000;\n  *(uint *)(iVar5 + 0xc) = *(uint *)(iVar5 + 0xc) | 0x40000000;\n  *(uint *)(iVar5 + 0xc) = *(uint *)(iVar5 + 0xc) | 0x80000000;\n  FUN_08008094();\n  FUN_08060b5c(local_e8,0,0x4c);\n  FUN_08060b5c(&local_108,0,0x20);\n  FUN_08008598(0x16);\n  iVar4 = DAT_08007e64;\n  iVar5 = DAT_08007e60;\n  *(uint *)(DAT_08007e60 + 0x18) = *(uint *)(DAT_08007e60 + 0x18) | 0xc000;\n  *(uint *)(iVar4 + 0x2c) = *(uint *)(iVar4 + 0x2c) | 1;\n  piVar2 = DAT_08007e58;\n  do {\n  } while (-1 < *(int *)(iVar5 + 0x18) << 0x12);\n  DAT_08007e58[10] = DAT_08007e58[10] & 0xfffffffcU | 2;\n  local_b0 = 0x14;\n  local_bc = 2;\n  local_b4 = 2;\n  local_ac = 2;\n  local_b8 = 0x4e;\n  local_a0 = 0",
+    "c_len": 3926
+  },
+  "called_by_top3": {
+    "address": "0x803a490",
+    "name": "FUN_0803a490",
+    "size": 7610,
+    "called": [
+      "FUN_08060b5c"
+    ],
+    "called_by": [
+      "FUN_0803c2bc"
+    ],
+    "c_preview": "\nvoid FUN_0803a490(int *param_1,int param_2,int param_3,int param_4,int param_5,char *param_6)\n\n{\n  ushort *puVar1;\n  ushort *puVar2;\n  ushort *puVar3;\n  ushort *puVar4;\n  ushort *puVar5;\n  ushort *puVar6;\n  ushort *puVar7;\n  byte bVar8;\n  short sVar9;\n  short sVar10;\n  undefined2 uVar11;\n  undefined2 uVar12;\n  undefined2 uVar13;\n  undefined4 uVar14;\n  undefined4 uVar15;\n  bool bVar16;\n  bool bVar17;\n  bool bVar18;\n  bool bVar19;\n  float fVar20;\n  float fVar21;\n  float fVar22;\n  ushort *puVar23;\n  short sVar24;\n  short sVar25;\n  int iVar26;\n  undefined2 uVar27;\n  int iVar28;\n  uint uVar29;\n  ushort *puVar30;\n  char cVar31;\n  short sVar32;\n  ushort uVar33;\n  short sVar34;\n  uint uVar35;\n  uint uVar36;\n  uint uVar37;\n  int iVar38;\n  int iVar39;\n  int iVar40;\n  int *piVar41;\n  int *piVar42;\n  short *psVar43;\n  int iVar44;\n  int *piVar45;\n  uint uVar46;\n  int iVar47;\n  short *psVar48;\n  ushort uVar49;\n  short sVar50;\n  int iVar51;\n  uint uVar52;\n  ushort *puVar53;\n  short sVar54;\n  uint uVar55;\n  uint uVar56;\n  ushort *puVar57;\n  ushort *puVar58;\n  ushort *puVar59;\n  int iVar60;\n  ushort *puVar61;\n  uint uVar62;\n  int iVar63;\n  int *piVar64;\n  ushort *puVar65;\n  int iVar66;\n  uint in_fpscr;\n  float fVar67;\n  float fVar68;\n  ushort *local_284;\n  uint local_280;\n  int local_270;\n  int *local_268;\n  ushort *local_260;\n  int *local_25c;\n  int *local_258;\n  int *local_24c;\n  int local_200;\n  int local_1d8 [4];\n  int local_1c8;\n  int local_1c4;\n  int local_1c0;\n  int local_1bc;\n  int local_1b8;\n  int local_1b4;\n  int local_1b0;\n  int iStack_1ac;\n  short asStack_1a8 [48];\n  short asStack_148 [48];\n  int aiStack_e8 [49];\n  \n  fVar22 = DAT_0803a7b8;\n  fVar21 = DAT_0803a7b4;\n  fVar20 = DAT_0803a7b0;\n  uVar55 = (uint)(byte)param_6[0xc];\n  iVar28 = (int)(short)(*(short *)(param_2 + 0x6a) << 1);\n  uVar46 = (uint)(byte)param_6[0xd] +\n           (uint)((ulonglong)DAT_0803a7a8 * (ulonglong)(uint)(byte)param_6[0xd] >> 0x22) * -6 & 0xff\n  ;\n  if (iVar28 < 0) {\n    iVar51 = -3;\n  }\n  else {\n    iVar51 = 3;\n  }\n  uVar62 = (uint)(byte)param_6[uVar46 + 6];\n  uVar35 = uVar55 + (uint)((ulonglong)DAT_0803a7a8 * (ulonglong)uVar55 >> 0x22) * -6 & 0xff;\n  iVar51 = iVar51 + iVar28 * 8;\n  uVar36 = (uint)(byte)param_6[uVar35];\n  if (iVar51 < 0) {\n    iVar51 = iVar51 + 0x7fff;\n  }\n  uVar52 = (uint)(iVar51 << 1) >> 0x10;\n  if (uVar52 == 2) {\nLAB_0803be9e:\n    local_284 = (ushort *)*param_1;\n    fVar68 = *(float *)((int)local_284 + 0x330);\nLAB_0803be8a:\n    bVar17 = true;\n    uVar13 = (undefined2)(int)(fVar68 * DAT_0803be68);\n  }\n  else {\n    if (uVar52 == 3) {\n      local_284 = (ushort *)*param_1;\n      fVar68 = *(float *)(uVar62 * 0x174 + param_1[uVar46] + 0x330);\n      goto LAB_0803be8a;\n    }\n    if (uVar52 == 0) goto LAB_0803be9e;\n    local_284 = (ushort *)*param_1;\n    uVar13 = 0;\n    bVar17 = false;\n  }\n  iVar28 = (int)(short)(*(short *)(param_2 + 0x78) << 1);\n  if (iVar28 < 0) {\n    iVar51 = -3;\n  }\n  else {\n    iVar51 = 3;\n  }\n  iVar51 = iVar51 + iVar28 * 8;\n  if (iVar51 < 0",
+    "c_len": 65013
+  },
+  "reset_target": {
+    "address": "0x8007f90",
+    "name": "FUN_08007f88",
+    "size": 56,
+    "called": [
+      "FUN_08060674"
+    ],
+    "called_by": [
+      "FUN_08060d40"
+    ],
+    "c_preview": "\nuint FUN_08007f88(int param_1)\n\n{\n  uint *puVar1;\n  uint uVar2;\n  undefined4 *puVar3;\n  uint uVar4;\n  uint uVar5;\n  \n  uVar2 = DAT_08007fcc;\n  puVar1 = DAT_08007fc0;\n  uVar5 = *DAT_08007fc0;\n  uVar4 = DAT_08007fc4 - DAT_08007fc8;\n  if (uVar5 == 0) {\n    *DAT_08007fc0 = DAT_08007fcc;\n    uVar5 = uVar2;\n  }\n  if (uVar4 < param_1 + uVar5) {\n    puVar3 = (undefined4 *)FUN_08060674();\n    *puVar3 = 0xc;\n    return 0xffffffff;\n  }\n  *puVar1 = param_1 + uVar5;\n  return uVar5;\n}\n\n",
+    "c_len": 478
+  },
+  "big_functions_4KB_plus": [
+    {
+      "name": "FUN_080359f4",
+      "address": "080359f4",
+      "size": 18232,
+      "called_by": [],
+      "calls": [
+        "FUN_08060cc0",
+        "FUN_08059fac",
+        "FUN_080564ac",
+        "FUN_080544d8",
+        "FUN_08060b5c",
+        "FUN_08060b28",
+        "FUN_08056e84"
+      ],
+      "num_callers": 0,
+      "num_calls": 7
+    },
+    {
+      "name": "FUN_0803e6f8",
+      "address": "0803e6f8",
+      "size": 10332,
+      "called_by": [],
+      "calls": [
+        "FUN_0803c2bc",
+        "FUN_0805eaf0",
+        "FUN_080321d4",
+        "FUN_08060b28"
+      ],
+      "num_callers": 0,
+      "num_calls": 4
+    },
+    {
+      "name": "FUN_0803c2bc",
+      "address": "0803c2bc",
+      "size": 9250,
+      "called_by": [
+        "FUN_0803e6f8"
+      ],
+      "calls": [
+        "FUN_0803a490"
+      ],
+      "num_callers": 1,
+      "num_calls": 1
+    },
+    {
+      "name": "FUN_080321d4",
+      "address": "080321d4",
+      "size": 8350,
+      "called_by": [
+        "FUN_0803e6f8"
+      ],
+      "calls": [],
+      "num_callers": 1,
+      "num_calls": 0
+    },
+    {
+      "name": "FUN_08009358",
+      "address": "08009358",
+      "size": 7868,
+      "called_by": [
+        "FUN_08007bf4"
+      ],
+      "calls": [
+        "FUN_08009168",
+        "FUN_0800810c",
+        "FUN_08009260"
+      ],
+      "num_callers": 1,
+      "num_calls": 3
+    },
+    {
+      "name": "FUN_0803a490",
+      "address": "0803a490",
+      "size": 7610,
+      "called_by": [
+        "FUN_0803c2bc"
+      ],
+      "calls": [
+        "FUN_08060b5c"
+      ],
+      "num_callers": 1,
+      "num_calls": 1
+    },
+    {
+      "name": "FUN_08054708",
+      "address": "08054708",
+      "size": 7480,
+      "called_by": [
+        "FUN_08014864",
+        "FUN_0801d838",
+        "FUN_0801d89c"
+      ],
+      "calls": [
+        "FUN_0800795c",
+        "FUN_08060b5c"
+      ],
+      "num_callers": 3,
+      "num_calls": 2
+    },
+    {
+      "name": "FUN_08034338",
+      "address": "08034338",
+      "size": 5046,
+      "called_by": [],
+      "calls": [
+        "FUN_080543c4",
+        "FUN_08008170",
+        "FUN_080081e4",
+        "FUN_08034298",
+        "FUN_08008118",
+        "FUN_0805eaf0",
+        "FUN_08060b5c",
+        "FUN_08054228",
+        "FUN_0800856c"
+      ],
+      "num_callers": 0,
+      "num_calls": 9
+    }
+  ],
+  "reset_chain": [
+    "FUN_08007f88",
+    "FUN_08060674"
+  ]
+}
