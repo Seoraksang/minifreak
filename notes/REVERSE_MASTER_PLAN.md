@@ -191,8 +191,10 @@ MIDI CC: 30개+ 매핑됨 (Cutoff=74, Resonance=71 등)
 - [x] 16-4. Multi Filter 14모드 ↔ DSP 함수 매핑 (정적) → **완료** (`PHASE16_MULTI_FILTER_DSP.md`)
 - [x] 16-5. FX 11 DSP × 12/13 타입 1:1 매핑 정리 → **완료** (`PHASE16_FX_TYPE_TO_DSP.md`)
 - [x] 16-6. 정정 권고서 V5 (CORR-06: 27종, ENH-09: 추정, CORR-11~13 신규) → **완료** (`MANUAL_CORRECTION_RECOMMENDATIONS.md` V5)
-- [x] 16-6b. 영문 정정 권고서 V2 → **완료** (`MANUAL_CORRECTION_REPORT_EN.md` V2)
-- [ ] 16-1~3. USB 캡처 환경 + Walk/Mutate LUT 동적 + 161 CC 동적 (하드웨어 필요)
+|- [x] 16-6b. 영문 정정 권고서 V2 → **완료** (`MANUAL_CORRECTION_REPORT_EN.md` V2)
+|- [x] 16-6c. 정정 권고서 V6 (CORR-08~10 상세, ENH-04/05 CM4 검증) → **완료** (`MANUAL_CORRECTION_RECOMMENDATIONS.md` V6, `MANUAL_CORRECTION_REPORT_EN.md` V6)
+|- [x] 17-1. Walk LUT 재판정 + Spice/Dice LUT 식별 오류 정정 → **완료** (Arp 93→95%, S/Dice 83→88%, 종합 95.6→95.9%)
+|- [ ] 16-1~3. USB 캡처 환경 + Walk/Mutate 확률 동적 + 161 CC 동적 (하드웨어 필요)
 - [ ] 16-7. Phase 15-3 실제 플래싱 (하드웨어 필요)
 
 ---
