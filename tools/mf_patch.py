@@ -473,6 +473,26 @@ def find_string_refs(data: bytes, search_str: str, max_results: int = 5) -> list
     return results
 
 
+def open_standalone_bin(path: str | Path, image_num: int = 0) -> 'FirmwarePackage':
+    """Open a standalone .bin file as a single-image package (for testing without .mnf)."""
+    path = Path(path)
+    if not path.exists():
+        raise FileNotFoundError(f"Binary not found: {path}")
+
+    pkg = FirmwarePackage(path=path)
+    data = path.read_bytes()
+    name = FLASH_MAP.get(image_num, {}).get("name", f"Image#{image_num}")
+
+    img = FirmwareImage(
+        image_num=image_num,
+        filename=path.name,
+        data=data,
+        original_hash=hashlib.sha256(data).hexdigest(),
+    )
+    pkg.images.append(img)
+    return pkg
+
+
 # ═══════════════════════════════════════════════════════════════
 # CLI Commands
 # ═══════════════════════════════════════════════════════════════

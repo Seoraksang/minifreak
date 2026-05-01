@@ -1,0 +1,77 @@
+{
+  "_meta": {
+    "name": "MiniFreak Phase 15 — Safe Patch Definitions",
+    "version": "1.0.2",
+    "date": "2026-05-01",
+    "firmware": "fw4_0_1_2229",
+    "description": "안전한 펌웨어 패치 정의 — deprecated 슬롯 + 이스터에그, 기능 변경 없음",
+    "safety_level": "LOW_RISK",
+    "reversible": true,
+    "reference": "notes/PHASE15_EDITPARAMS_DEPRECATION.md"
+  },
+  "patches": [
+    {
+      "name": "deprecated-string-test",
+      "description": "DEPRECATED 문자열 치환 — 'UnisonOn TO BE DEPRECATED' → 'HYDRA_FA TO BE DEPRECATED' (25B, .rodata null-terminated)",
+      "target": "CM4",
+      "find": "556e69736f6e4f6e20544f2042452044455052454341544544",
+      "replace": "48594452415f464120544f2042452044455052454341544544",
+      "risk": "minimal",
+      "category": "string_constant"
+    },
+    {
+      "name": "obsolete-string-test",
+      "description": "Obsolete 문자열 치환 — 'obsolete Rec Count-In' → 'HYDRA_FA Rec Count-In' (21B, .rodata null-terminated)",
+      "target": "CM4",
+      "find": "6f62736f6c6574652052656320436f756e742d496e",
+      "replace": "48594452415f46412052656320436f756e742d496e",
+      "risk": "minimal",
+      "category": "string_constant"
+    },
+    {
+      "name": "easter-egg-olivier",
+      "description": "이스터에그 수정 — 'if you ask Olivier D' → 'if you ask Hermes AG' (20B, .rodata)",
+      "target": "CM4",
+      "find": "696620796f752061736b204f6c69766965722044",
+      "replace": "696620796f752061736b204865726d6573204147",
+      "risk": "none",
+      "category": "easter_egg"
+    },
+    {
+      "name": "easter-egg-thomas",
+      "description": "이스터에그 수정 — 'Ask Thomas A' → 'Ask Hermes H' (12B, .rodata)",
+      "target": "CM4",
+      "find": "41736b2054686f6d61732041",
+      "replace": "41736b204865726d65732048",
+      "risk": "none",
+      "category": "easter_egg"
+    },
+    {
+      "name": "easter-egg-mathieu",
+      "description": "이스터에그 수정 — 'ask Mathieu B' → 'ask Hermes HH' (13B, .rodata)",
+      "target": "CM4",
+      "find": "61736b204d6174686965752042",
+      "replace": "61736b204865726d6573204848",
+      "risk": "none",
+      "category": "easter_egg"
+    },
+    {
+      "name": "easter-egg-frederic",
+      "description": "이스터에그 수정 — 'Hey Frederic' → 'Hey Hermes H' (12B, .rodata, 66B 전체 문장 중 앞부분만)",
+      "target": "CM4",
+      "find": "486579204672656465726963",
+      "replace": "486579204865726d65732048",
+      "risk": "none",
+      "category": "easter_egg"
+    },
+    {
+      "name": "vst-connected-string",
+      "description": "VST_IsConnected 치환 — 'VST_IsConnected' → 'HYD_IsConnected' (15B, 프리셋 미저장 플래그)",
+      "target": "CM4",
+      "find": "5653545f4973436f6e6e6563746564",
+      "replace": "4859445f4973436f6e6e6563746564",
+      "risk": "minimal",
+      "category": "string_constant"
+    }
+  ]
+}
