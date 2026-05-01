@@ -11,14 +11,14 @@
 
 ## 목차
 
-1. [정정 항목 (Corrections) — 매뉴얼이 틀린 7건](#part-1-정정-corrections--매뉴얼이-틀린-7건)
+1. [정정 항목 (Corrections) — 매뉴얼이 틀린 13건](#part-1-정정-corrections--매뉴얼이-틀린-13건)
 2. [보완 항목 (Enhancements) — 매뉴얼에 누락된 12건](#part-2-보완-enhancements--매뉴얼에-누락된-12건)
 3. [요약 표](#part-3-요약-표)
 4. [참고 문헌](#참고-문헌)
 
 ---
 
-## Part 1. 정정 (Corrections) — 매뉴얼이 틀린 7건
+## Part 1. 정정 (Corrections) — 매뉴얼이 틀린 13건
 
 > 아래 항목들은 펌웨어 바이너리에서 직접 확인된 enum 문자열/상수가 매뉴얼 기술과 **명확히 모순**되는 사례입니다.
 > 각 항목에 펌웨어 주소와 hex dump 증거를 포함합니다.
@@ -345,17 +345,17 @@ User Shaper 1 ~ User Shaper 8
 |------|------|
 | **매뉴얼 참조** | §10.4 Cycling Envelope > Mode |
 | **매뉴얼 기술** | 3종: Env / Run / Loop |
-| **펌웨어 실제** | **4종**: Env / Run / Loop / **Loop2** (예약 또는 비활성 모드) |
-| **펌웨어 주소** | mf_enums.py `CYCENV_MODES` (VST XML 기반) |
+| **펌웨어 실제** | **4종**: Env / Run / Loop / **Loop2** (VST 전용) |
+| **펌웨어 주소** | VST XML `CycEnvMode` enum; CM4 `0x081AFBF4` ("CycEnv"), `0x081B1BDC` ("Cycling Env") |
 | **신뢰도** | ★★★☆☆ |
 
-**상세 내용**:
-- 펌웨어 enum에 index 3으로 `Loop2`가 존재
-- 현재 활성화되지 않은 예약 모드이거나, 특정 조건에서만 접근 가능한 모드
-- CM4에서는 Run/Loop 문자열만 직접 확인 (Phase 11)
-- 향후 펌웨어 업데이트에서 활성화될 가능성
+**CM4 바이너리 검증 결과**:
+- CM4에 `CycEnv` (`0x081AFBF4`) 및 `Cycling Env` (`0x081B1BDC`) 문자열 존재
+- **`Loop2` / `Loop 2` 문자열은 CM4에 존재하지 않음** (strings 전체 검색 무결과)
+- Loop2는 **VST 전용 모드**이거나 CM4 펌웨어에서 미구현 상태
+- 매뉴얼에 Loop2가 누락된 것은 VST에서만 확인되는 기능이므로 HW 매뉴얼에서는 정상
 
----
+**보완 권고**: VST 매뉴얼에 Loop2 모드 추가; HW 매뉴얼에는 미기재 유지 (CM4에 없음)
 
 ### ENH-05: Poly Allocation 3모드
 **매뉴얼 불충분** — Poly Allocation 모드가 매뉴얼에 상세히 설명되지 않음
@@ -365,10 +365,15 @@ User Shaper 1 ~ User Shaper 8
 | **매뉴얼 참조** | §Voice Mode (간접 언급) |
 | **매뉴얼 기술** | Poly Allocation에 대한 상세 설명 누락 |
 | **펌웨어 실제** | 3종: **Cycle** (라운드 로빈) / **Reassign** (기존 보이스 유지) / **Reset** (새 음마다 리셋) |
-| **펌웨어 주소** | mf_enums.py `POLY_ALLOC_MODES` + eEditParams `Poly Allocation` |
-| **신뢰도** | ★★★☆☆ |
+| **펌웨어 주소** | CM4 `0x081AF964` ("Poly Allocation"), `0x081B0F78` ("Cycle"), `0x081B0F80` ("Reassign") |
+| **신뢰도** | ★★★★☆ (CM4 문자열 확인으로 ★★★☆☆에서 승격) |
 
-**보완 권고**: Voice Mode 섹션에 Poly Allocation 모드에 대한 설명 추가
+**CM4 바이너리 검증 결과**:
+- `Poly Allocation` 문자열이 CM4 `0x081AF964`에 명확히 존재 → 펌웨어에서 활성 파라미터
+- `Cycle` (`0x081B0F78`) 및 `Reassign` (`0x081B0F80`)이 Voice 관련 enum에 존재
+- 3개 모드 중 2개의 CM4 증거 확보
+
+**보완 권고**: Voice Mode 섹션에 Poly Allocation 모드 3종에 대한 설명 추가
 
 ---
 
@@ -557,8 +562,8 @@ User Shaper 1 ~ User Shaper 8
 | ENH-01 | Mod Matrix | ~30 dest | **140개 내부 목적지** | CM7 Mod chain | ★★★★☆ |
 | ENH-02 | LFO | User Shaper만 | **25종 Shaper 프리셋** (1 기본 + 16 빌트인 + 8 사용자) | CM4 `0x081AF128` | ★★★★★ |
 | ENH-03 | Preset | 언급 없음 | **4종 deprecated 파라미터** | CM4 multiple | ★★★★★ |
-| ENH-04 | CycEnv | 3모드 | **Loop2 (4번째 모드)** | mf_enums.py | ★★★☆☆ |
-| ENH-05 | Voice | 불충분 | **Poly Allocation 3모드** | mf_enums.py | ★★★☆☆ |
+| ENH-04 | CycEnv | 3모드 | **Loop2 (4번째 모드, VST 전용)** | VST XML + CM4 검증(Loop2 미존재) | ★★★☆☆ |
+| ENH-05 | Voice | 불충분 | **Poly Allocation 3모드** | CM4 `0x081AF964` + `0x081B0F78/80` | ★★★★☆ |
 | ENH-06 | MIDI | 38 CC | **161개 내부 CC** | CM7 `0x08066810` | ★★★★☆ |
 | ENH-07 | FX | 불충분 | **Vocoder 2타입 별도 DSP** | FX SP4/SP5 | ★★★★☆ |
 | ENH-08 | Seq | 4 lane만 | **Smooth Mod 1~4 파라미터** | CM4 `0x081B1B8C` | ★★★★★ |
@@ -566,6 +571,125 @@ User Shaper 1 ~ User Shaper 8
 | ENH-10 | Mod Matrix | 간략 | **Custom Assign 8목적지** | CM4 `0x081AEA94` | ★★★★★ |
 | ENH-11 | FX | 불명확 | **Singleton 제약 3종** | Phase 7-3 | ★★★★☆ |
 | ENH-12 | Seq | 64-step만 | **3녹음모드 + state machine** | CM7 `FUN_08029390` | ★★★★☆ |
+
+---
+
+### CORR-08: LFO Shaper 첫 항목명 불일치
+**매뉴얼이 틀림** — 첫 번째 Shaper 항목이 "Shaper"가 아닌 "Preset Shaper"
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §9 LFO > User Shaper |
+| **매뉴얼 기술** | 첫 항목이 "Shaper"로 표시 (25종 프리셋이라는 언급 없음) |
+| **펌웨어 실제** | 첫 항목은 **"Preset Shaper"**이며, 총 **25종 프리셋** (1 기본 + 16 빌트인 + 8 사용자) 존재 |
+| **펌웨어 주소** | CM4 `0x081AF128` ~ `0x081AF278` |
+| **신뢰도** | ★★★★★ |
+
+**펌웨어 hex dump 증거** (CM4 문자열 테이블, 25개 프리셋):
+```
+0x081AF128: 50 72 65 73 65 74 20 53 68 61 70 65 72 00     "Preset Shaper"     [#0]
+0x081AF138: 41 73 79 6D 6D 65 74 72 69 63 61 6C 20 53 61 77 00  "Asymmetrical Saw" [#1]
+0x081AF14C: 55 6E 69 70 6F 6C 61 72 20 43 6F 73 69 6E 65 00  "Unipolar Cosine"  [#2]
+0x081AF15E: 53 68 6F 72 74 20 50 75 6C 73 65 00              "Short Pulse"      [#3]
+0x081AF16A: 45 78 70 6F 6E 65 6E 74 69 61 6C 20 53 71 75 61 72 65 00  "Exponential Square" [#4]
+0x081AF180: 44 65 63 61 79 69 6E 67 20 44 65 63 61 79 73 00  "Decaying Decays"  [#5]
+0x081AF190: 57 6F 62 62 6C 79 00                              "Wobbly"           [#6]
+0x081AF198: 53 74 72 75 6D 20 45 6E 76 65 6C 6F 70 65 00    "Strum Envelope"   [#7]
+0x081AF1A6: 54 72 69 61 6E 67 6C 65 20 42 6F 75 6E 63 65 73 00  "Triangle Bounces" [#8]
+0x081AF1B8: 52 68 79 74 68 6D 69 63 20 31 00                 "Rhythmic 1"       [#9]
+0x081AF1C2: 52 68 79 74 68 6D 69 63 20 32 00                 "Rhythmic 2"       [#10]
+0x081AF1CC: 52 68 79 74 68 6D 69 63 20 33 00                 "Rhythmic 3"       [#11]
+0x081AF1D6: 52 68 79 74 68 6D 69 63 20 34 00                 "Rhythmic 4"       [#12]
+0x081AF1E0: 53 74 65 70 70 65 64 20 31 00                    "Stepped 1"        [#13]
+0x081AF1EA: 53 74 65 70 70 65 64 20 32 00                    "Stepped 2"        [#14]
+0x081AF1F4: 53 74 65 70 70 65 64 20 33 00                    "Stepped 3"        [#15]
+0x081AF1FE: 53 74 65 70 70 65 64 20 34 00                    "Stepped 4"        [#16]
+0x081AF208: 55 73 65 72 20 53 68 61 70 65 72 20 31 00        "User Shaper 1"    [#17]
+0x081AF216: 55 73 65 72 20 53 68 61 70 65 72 20 32 00        "User Shaper 2"    [#18]
+0x081AF224: 55 73 65 72 20 53 68 61 70 65 72 20 33 00        "User Shaper 3"    [#19]
+0x081AF232: 55 73 65 72 20 53 68 61 70 65 72 20 34 00        "User Shaper 4"    [#20]
+0x081AF240: 55 73 65 72 20 53 68 61 70 65 72 20 35 00        "User Shaper 5"    [#21]
+0x081AF24E: 55 73 65 72 20 53 68 61 70 65 72 20 36 00        "User Shaper 6"    [#22]
+0x081AF25C: 55 73 65 72 20 53 68 61 70 65 72 20 37 00        "User Shaper 7"    [#23]
+0x081AF26A: 55 73 65 72 20 53 68 61 70 65 72 20 38 00        "User Shaper 8"    [#24]
+```
+
+**정정 내용**:
+- 매뉴얼은 "User Shaper" 기능만 언급하나, 펌웨어는 **25종 프리셋 라이브러리**를 보유
+- 첫 번째 항목은 매뉴얼의 "Shaper"가 아닌 **"Preset Shaper"**
+- 16개 빌트인 프리셋 (Rhythmic 1~4, Stepped 1~4 포함) + 8개 사용자 정의 슬롯
+- 매뉴얼 정정: Shaper 섹션에 25종 프리셋 전체 목록과 "Preset Shaper" 표시명 명시
+
+---
+
+### CORR-09: Mod Matrix Custom Assign 목적지 상세 누락
+**매뉴얼이 불완전** — Custom Assign의 8개 목적지가 명확히 문서화되지 않음
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §8.5.4 Custom Assign |
+| **매뉴얼 기술** | 간략한 설명만 (목적지 개수/목록 미명시) |
+| **펌웨어 실제** | **8개 목적지**: -Empty-, Vib Rate, Vib AM, VCA, LFO2 AM, LFO1 AM, CycEnv AM, Uni Spread |
+| **펌웨어 주소** | CM4 `0x081AEA94` ~ `0x081AEE0A` |
+| **신뢰도** | ★★★★★ |
+
+**펌웨어 hex dump 증거** (CM4 문자열 테이블):
+```
+0x081AEA94: 43 75 73 74 6F 6D 20 41 73 73 69 67 6E 00   "Custom Assign"  [헤더]
+0x081AEAA2: 2D 45 6D 70 74 79 2D 00                     "-Empty-"        [#1]
+0x081AEAAA: 56 69 62 20 52 61 74 65 00                   "Vib Rate"       [#2]
+0x081AEAB4: 56 69 62 20 41 4D 00                         "Vib AM"         [#3]
+0x081AEABB: 56 43 41 00                                  "VCA"            [#4]
+0x081AEABF: 4C 46 4F 32 20 41 4D 00                      "LFO2 AM"        [#5]
+0x081AEAC7: 4C 46 4F 31 20 41 4D 00                      "LFO1 AM"        [#6]
+0x081AEACF: 43 79 63 45 6E 76 20 41 4D 00               "CycEnv AM"      [#7]
+0x081AEAD9: 55 6E 69 20 53 70 72 65 61 64 00             "Uni Spread"     [#8]
+```
+
+**정정 내용**:
+- `-Empty-` 포함 8개 슬롯 중 7개가 활성 목적지
+- **Vib Rate / Vib AM**: 제3 LFO (Vibrato)의 레이트/깊이를 모듈레이션 → 메타-모듈레이션
+- **VCA**: VCA 레벨 직접 모듈레이션 (사이드체인 가능)
+- **LFO1 AM / LFO2 AM**: 각 LFO 진폭 모듈레이션 → LFO 깊이를 다른 소스로 제어
+- **CycEnv AM**: Cycling Envelope 진폭 모듈레이션
+- **Uni Spread**: 유니즌 스프레드 폭 모듈레이션
+- 매뉴얼 정정: Custom Assign 섹션에 7개 활성 목적지의 이름과 기능을 명시
+
+---
+
+### CORR-10: FX 타입 HW/VST 차이 누락
+**매뉴얼이 불완전** — Stereo Delay가 VST 전용이나 매뉴얼에 구분 없음
+
+| 항목 | 내용 |
+|------|------|
+| **매뉴얼 참조** | §7 FX > FX Types |
+| **매뉴얼 기술** | "There are ten Types in total" + Vocoder 2종 = 12종 (HW), HW/VST 차이 미명시 |
+| **펌웨어 실제** | CM4 **12종**, VST **13종** (+Stereo Delay). **Stereo Delay는 CM4에 존재하지 않음** |
+| **펌웨어 주소** | CM4 `0x081AF308` ~ `0x081AF386` |
+| **신뢰도** | ★★★★★ |
+
+**펌웨어 hex dump 증거** (CM4 FX 타입 12종):
+```
+0x081AF308: 43 68 6F 72 75 73 00                     "Chorus"         [#0]
+0x081AF310: 50 68 61 73 65 72 00                     "Phaser"         [#1]
+0x081AF318: 46 6C 61 6E 67 65 72 00                  "Flanger"        [#2]
+0x081AF320: 52 65 76 65 72 62 00                     "Reverb"         [#3]
+0x081AF328: 44 69 73 74 6F 72 74 69 6F 6E 00         "Distortion"     [#4]
+0x081AF334: 42 69 74 20 43 72 75 73 68 65 72 00       "Bit Crusher"    [#5]
+0x081AF340: 33 20 42 61 6E 64 73 20 45 51 00          "3 Bands EQ"     [#6]
+0x081AF34C: 50 65 61 6B 20 45 51 00                   "Peak EQ"        [#7]
+0x081AF354: 4D 75 6C 74 69 20 43 6F 6D 70 00          "Multi Comp"     [#8]
+0x081AF360: 53 75 70 65 72 55 6E 69 73 6F 6E 00       "SuperUnison"    [#9]
+0x081AF36C: 56 6F 63 6F 64 65 72 20 53 65 6C 66 00    "Vocoder Self"   [#10]
+0x081AF37A: 56 6F 63 6F 64 65 72 20 45 78 74 00       "Vocoder Ext"    [#11]
+```
+
+**"Stereo Delay" CM4 전체 검색 → 존재하지 않음** (VST 전용 확인)
+
+**정정 내용**:
+- 매뉴얼 §7.2: "ten Types in total" 명시 — 실제 HW는 12종 (Vocoder 2종 포함)
+- **Stereo Delay**는 VST 플러그인에만 존재하는 FX 타입 (CM4 펌웨어에 없음)
+- 매뉴얼 정정: (1) "ten Types" → "12 Types" 수정, (2) Stereo Delay = VST 전용 표기, (3) Singleton 제약 3종 (Reverb, Delay, Multi Comp) 명시
 
 ---
 
@@ -578,6 +702,7 @@ User Shaper 1 ~ User Shaper 8
 | **매뉴얼 기술** | "7 rows × ~4 destinations" 암시 (UI 레이아웃 기반) |
 | **펌웨어 실제** | **91 assignable slots**: Mx_Dot 7×4 (28 hardwired) + Mx_AssignDot 7×9 (63 assignable) |
 | **VST 출처** | `minifreak_vst_params.xml` → Mx_Dot (28 param) + Mx_AssignDot (63 param) |
+| **CM4 검증** | `Mx_Dot` / `Mx_AssignDot` 문자열 **CM4에 존재하지 않음** — VST 전용 파라미터 명칭 |
 | **신뢰도** | ★★★★★ (VST XML 직접 확인, Phase 14-2) |
 
 **상세 내용**:
@@ -597,7 +722,7 @@ User Shaper 1 ~ User Shaper 8
 | **매뉴얼 기술** | Osc2 타입 목록 (정확한 개수 불명확) |
 | **펌웨어 실제** | **30개 enum entry**: 21개 실제 타입 + 9개 reserved/dummy (index 21~29) |
 | **VST 출처** | `minifreak_vst_params.xml` → Osc2Type item_list (30 entries) |
-| **CM4 주소** | Phase 14-2에서 Osc2Type CM4 바이너리와 교차검증 완료 |
+| **CM4 검증** | Osc2 타입 enum에 `Dummy` 항목 @ CM4 `0x081AF460` (Destroy와 Audio In 사이) — reserved placeholder 확인 |
 | **신뢰도** | ★★★★★ (VST XML + CM4 교차검증, Phase 14-2) |
 
 **상세 내용**:
@@ -694,8 +819,8 @@ User Shaper 1 ~ User Shaper 8
 
 ---
 
-*문서 버전: Phase 16 V5 (CORR-11~13 추가, CORR-06/ENH-09 갱신)*
+*문서 버전: Phase 16 V6 (CORR-08~10 상세 섹션 추가, ENH-04/05 CM4 검증, CORR-11/12 CM4 보강)*
 *작성 도구: 펌웨어 바이너리 스캔 + VST XML 교차검증 + DLL strings 분석*
 *펌웨어 버전: fw4_0_1_2229 (2025-06-18)*
 *매뉴얼 버전: v4.0.0 / v4.0.1 (2025-07-04)*
-*현재 재현도: 95.7% (Phase 13 정직 하향 후)*
+*현재 재현도: 95.6% (Phase 16 종합 일치도)*

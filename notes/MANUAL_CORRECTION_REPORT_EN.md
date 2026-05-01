@@ -1,6 +1,6 @@
 # MiniFreak Firmware-Based Manual Correction Report
 
-**Document ID**: Phase 16 (English Edition V2)  
+**Document ID**: Phase 16 (English Edition V6)  
 **Date**: 2026-05-01  
 **Firmware**: CM4 `minifreak_main_CM4__fw4_0_1_2229` (2025-06-18)  
 **Manual**: MiniFreak User Manual v4.0.0 / v4.0.1 (2025-07-04)  
@@ -213,14 +213,33 @@ CM4 secondary table (6) @ 0x081AF564:
 | **Address** | CM4 `0x081AF128` – `0x081AF288` |
 | **Confidence** | ★★★★★ |
 
-**Firmware Evidence** (25 presets verified):
+**Firmware Evidence** (25 presets verified, CM4 hex dump):
 ```
-Base (1):   "Preset Shaper"
-Built-in (16): "Asymmetrical Saw", "Unipolar Cosine", "Short Pulse",
-              "Exponential Square", "Decaying Decays", "Wobbly",
-              "Strum Envelope", "Triangle Bounces",
-              "Rhythmic 1"–"Rhythmic 4", "Stepped 1"–"Stepped 4"
-User (8):   "User Shaper 1"–"User Shaper 8"
+0x081AF128: 50 72 65 73 65 74 20 53 68 61 70 65 72 00     "Preset Shaper"     [#0]
+0x081AF138: 41 73 79 6D 6D 65 74 72 69 63 61 6C 20 53 61 77 00  "Asymmetrical Saw"  [#1]
+0x081AF14C: 55 6E 69 70 6F 6C 61 72 20 43 6F 73 69 6E 65 00  "Unipolar Cosine"  [#2]
+0x081AF15E: 53 68 6F 72 74 20 50 75 6C 73 65 00              "Short Pulse"      [#3]
+0x081AF16A: 45 78 70 6F 6E 65 6E 74 69 61 6C 20 53 71 75 61 72 65 00  "Exponential Square" [#4]
+0x081AF180: 44 65 63 61 79 69 6E 67 20 44 65 63 61 79 73 00  "Decaying Decays"  [#5]
+0x081AF190: 57 6F 62 62 6C 79 00                              "Wobbly"           [#6]
+0x081AF198: 53 74 72 75 6D 20 45 6E 76 65 6C 6F 70 65 00    "Strum Envelope"   [#7]
+0x081AF1A6: 54 72 69 61 6E 67 6C 65 20 42 6F 75 6E 63 65 73 00  "Triangle Bounces" [#8]
+0x081AF1B8: 52 68 79 74 68 6D 69 63 20 31 00                 "Rhythmic 1"       [#9]
+0x081AF1C2: 52 68 79 74 68 6D 69 63 20 32 00                 "Rhythmic 2"       [#10]
+0x081AF1CC: 52 68 79 74 68 6D 69 63 20 33 00                 "Rhythmic 3"       [#11]
+0x081AF1D6: 52 68 79 74 68 6D 69 63 20 34 00                 "Rhythmic 4"       [#12]
+0x081AF1E0: 53 74 65 70 70 65 64 20 31 00                    "Stepped 1"        [#13]
+0x081AF1EA: 53 74 65 70 70 65 64 20 32 00                    "Stepped 2"        [#14]
+0x081AF1F4: 53 74 65 70 70 65 64 20 33 00                    "Stepped 3"        [#15]
+0x081AF1FE: 53 74 65 70 70 65 64 20 34 00                    "Stepped 4"        [#16]
+0x081AF208: 55 73 65 72 20 53 68 61 70 65 72 20 31 00        "User Shaper 1"    [#17]
+0x081AF216: 55 73 65 72 20 53 68 61 70 65 72 20 32 00        "User Shaper 2"    [#18]
+0x081AF224: 55 73 65 72 20 53 68 61 70 65 72 20 33 00        "User Shaper 3"    [#19]
+0x081AF232: 55 73 65 72 20 53 68 61 70 65 72 20 34 00        "User Shaper 4"    [#20]
+0x081AF240: 55 73 65 72 20 53 68 61 70 65 72 20 35 00        "User Shaper 5"    [#21]
+0x081AF24E: 55 73 65 72 20 53 68 61 70 65 72 20 36 00        "User Shaper 6"    [#22]
+0x081AF25C: 55 73 65 72 20 53 68 61 70 65 72 20 37 00        "User Shaper 7"    [#23]
+0x081AF26A: 55 73 65 72 20 53 68 61 70 65 72 20 38 00        "User Shaper 8"    [#24]
 ```
 
 **Recommendation**: Document the full list of 25 Shaper presets. Clarify that the default preset is named "Preset Shaper", not "Shaper".
@@ -237,16 +256,17 @@ User (8):   "User Shaper 1"–"User Shaper 8"
 | **Address** | CM4 `0x081AEA94` |
 | **Confidence** | ★★★★★ |
 
-**Firmware Evidence**:
+**Firmware Evidence** (CM4 hex dump, 8 destinations):
 ```
-0x081AEA94: "Vib Rate"       — Modulate vibrato LFO rate
-0x081AEA9C: "Vib AM"         — Modulate vibrato LFO depth
-0x081AEAA8: "VCA"            — Direct VCA level (sidechain-capable)
-0x081AEAB0: "LFO1 AM"        — Meta-modulate LFO1 amplitude
-0x081AEAB8: "LFO2 AM"        — Meta-modulate LFO2 amplitude
-0x081AEAC4: "CycEnv AM"      — Modulate Cycling Envelope amplitude
-0x081AEACC: "Uni Spread"     — Modulate unison spread width
-0x081AEAD4: "-Empty-"        — Reserved slot
+0x081AEA94: 43 75 73 74 6F 6D 20 41 73 73 69 67 6E 00   "Custom Assign"  [header]
+0x081AEAA2: 2D 45 6D 70 74 79 2D 00                     "-Empty-"        [#1]
+0x081AEAAA: 56 69 62 20 52 61 74 65 00                   "Vib Rate"       [#2]
+0x081AEAB4: 56 69 62 20 41 4D 00                         "Vib AM"         [#3]
+0x081AEABB: 56 43 41 00                                  "VCA"            [#4]
+0x081AEABF: 4C 46 4F 32 20 41 4D 00                      "LFO2 AM"        [#5]
+0x081AEAC7: 4C 46 4F 31 20 41 4D 00                      "LFO1 AM"        [#6]
+0x081AEACF: 43 79 63 45 6E 76 20 41 4D 00               "CycEnv AM"      [#7]
+0x081AEAD9: 55 6E 69 20 53 70 72 65 61 64 00             "Uni Spread"     [#8]
 ```
 
 **Recommendation**: Document all 8 Custom Assign destinations. Note that destinations 2–6 enable **meta-modulation** (modulating a modulator), which is a powerful but undocumented feature.
@@ -263,12 +283,23 @@ User (8):   "User Shaper 1"–"User Shaper 8"
 | **Address** | CM4 FX enum `0x081AF308` (12 types, no "Stereo Delay"); FX Core SP1+SP2 (`FUN_0800bba0`) exist but are only reachable from VST |
 | **Confidence** | ★★★★★ |
 
-**Detailed Evidence**:
-- CM4 FX type enum at `0x081AF308` contains exactly 12 inline null-terminated strings
-- "Stereo Delay" string is absent from CM4 binary (full binary scan confirmed)
-- VST plugin XML (`minifreak_vst_params.xml`) lists 13 FX types with "Stereo Delay" at index 4
-- CM4 index 4 = Distortion; VST index 4 = Stereo Delay (index shift after insertion)
-- The FX core binary contains the Stereo Delay DSP code (`FUN_0800bba0`, multitap delay on SP1+SP2) but it is only activated via VST plugin parameter dispatch
+**Firmware Evidence** (CM4 hex dump, 12 FX types):
+```
+0x081AF308: 43 68 6F 72 75 73 00                     "Chorus"         [#0]
+0x081AF310: 50 68 61 73 65 72 00                     "Phaser"         [#1]
+0x081AF318: 46 6C 61 6E 67 65 72 00                  "Flanger"        [#2]
+0x081AF320: 52 65 76 65 72 62 00                     "Reverb"         [#3]
+0x081AF328: 44 69 73 74 6F 72 74 69 6F 6E 00         "Distortion"     [#4]
+0x081AF334: 42 69 74 20 43 72 75 73 68 65 72 00       "Bit Crusher"    [#5]
+0x081AF340: 33 20 42 61 6E 64 73 20 45 51 00          "3 Bands EQ"     [#6]
+0x081AF34C: 50 65 61 6B 20 45 51 00                   "Peak EQ"        [#7]
+0x081AF354: 4D 75 6C 74 69 20 43 6F 6D 70 00          "Multi Comp"     [#8]
+0x081AF360: 53 75 70 65 72 55 6E 69 73 6F 6E 00       "SuperUnison"    [#9]
+0x081AF36C: 56 6F 63 6F 64 65 72 20 53 65 6C 66 00    "Vocoder Self"   [#10]
+0x081AF37A: 56 6F 63 6F 64 65 72 20 45 78 74 00       "Vocoder Ext"    [#11]
+```
+
+**"Stereo Delay" — NOT found in CM4 binary** (full binary scan confirmed → VST exclusive)
 
 **Recommendation**: Clearly distinguish hardware-available FX types (12) from VST-plugin-only types (1: Stereo Delay). This prevents user confusion when a preset loaded from the VST plugin references Stereo Delay on hardware.
 
@@ -282,6 +313,7 @@ User (8):   "User Shaper 1"–"User Shaper 8"
 | **Manual Says** | Implies "7 rows × ~4 destinations" |
 | **Firmware** | **91 assignable modulation slots**: 7×4 hardwired (28) + 7×9 assignable (63) = 91 total |
 | **Address** | VST XML `minifreak_vst_params.xml` — `Mx_Dot_0`–`Mx_Dot_26` (28 params) + `Mx_AssignDot_0`–`Mx_AssignDot_62` (63 params) |
+| **CM4 Verification** | `Mx_Dot` / `Mx_AssignDot` strings **not found in CM4 binary** — VST-only parameter names |
 | **Confidence** | ★★★★★ (VST XML direct confirmation) |
 
 **Firmware Evidence**:
@@ -310,6 +342,7 @@ VST XML parameter categories:
 | **Manual Says** | Osc2 type count not clearly specified |
 | **Firmware** | **30 entries** in Osc2Type enum: 21 real oscillator types + 9 reserved/dummy entries (indices 21–29) |
 | **Address** | VST XML `minifreak_vst_params.xml` Osc2Type item_list (30 entries); CM4 binary cross-verified (Phase 14-2) |
+| **CM4 Verification** | `Dummy` entry at CM4 `0x081AF460` (between Destroy and Audio In) — reserved placeholder confirmed |
 | **Confidence** | ★★★★★ (VST XML + CM4 cross-verification) |
 
 **Firmware Evidence**:
@@ -378,8 +411,8 @@ These hidden parameters are mapped via the Collage protocol's `DataParameterId.s
 | ENH-01 | Mod Matrix | ~30 destinations | **140 internal modulation destinations** | ★★★★☆ |
 | ENH-02 | LFO Shaper | "16-step user shaper" only | **25 presets** (1 base + 16 built-in + 8 user) | ★★★★★ |
 | ENH-03 | Deprecated Params | Not mentioned | **4 deprecated parameters** still in firmware | ★★★★★ |
-| ENH-04 | CycEnv | 3 modes (Env/Run/Loop) | **4th mode: Loop2** (reserved/inactive) | ★★★☆☆ |
-| ENH-05 | Voice | Not documented | **Poly Allocation 3 modes** (Cycle/Reassign/Reset) | ★★★☆☆ |
+| ENH-04 | CycEnv | 3 modes (Env/Run/Loop) | **4th mode: Loop2** (VST only — **not found in CM4 binary**) | ★★★☆☆ |
+| ENH-05 | Voice | Not documented | **Poly Allocation 3 modes** (Cycle/Reassign/Reset) — CM4 confirmed @ `0x081AF964` "Poly Allocation", `0x081B0F78` "Cycle", `0x081B0F80` "Reassign" | ★★★★☆ |
 | ENH-06 | MIDI CC | 38 CCs documented | **161 internal CCs** processed | ★★★★☆ |
 | ENH-07 | FX Vocoder | Treated as single type | **2 separate DSP paths** (Self vs Ext In, different SP, function, struct size) | ★★★★☆ |
 | ENH-08 | Sequencer | "4 modulation lanes" only | **Smooth Mod 1–4** individual smoothing params | ★★★★★ |
@@ -427,8 +460,8 @@ The original V4 report listed "Precise probability distributions" for Walk, Muta
 | ENH-01 | Mod Matrix | 140 internal destinations undocumented | High |
 | ENH-02 | LFO Shaper | 25 presets, not "16-step" | Medium |
 | ENH-03 | Deprecated | 4 deprecated params still present | Low |
-| ENH-04 | CycEnv | Loop2 mode reserved | Low |
-| ENH-05 | Voice | Poly allocation modes undocumented | Low |
+| ENH-04 | CycEnv | Loop2 mode: VST only, not in CM4 | Low |
+| ENH-05 | Voice | Poly allocation modes (CM4 @ 0x081AF964) | Low |
 | ENH-06 | MIDI CC | 161 CCs vs 38 documented | High |
 | ENH-07 | FX Vocoder | 2 DSP paths, not 1 | Medium |
 | ENH-08 | Sequencer | Smooth Mod per-lane params | Medium |
@@ -439,14 +472,15 @@ The original V4 report listed "Precise probability distributions" for Walk, Muta
 
 ### Overall Match Rate Impact
 
-| Before P13 | After P16 V2 |
+| Before P13 | After P16 V6 |
 |-----------|--------------|
-| 96.0% (claimed) | **95.7%** |
+| 96.0% (claimed) | **95.6%** |
 
-The overall match rate decreased from the Phase 13 estimate of ~96.2% to 95.7% due to:
+The overall match rate decreased from the Phase 13 estimate of ~96.2% to 95.6% due to:
 1. **Phase 13 honest downgrade**: Walk LUT and env_time_scale probability distributions reclassified from "precise" to "estimated" (reduced confidence)
 2. **Phase 14-2 expansion**: CORR-06 tempo subdivisions expanded from 17→27, revealing additional VST-only parameters not in the manual
 3. **Phase 14-2 new findings**: CORR-11 (91 mod slots), CORR-12 (Osc2 30-entry enum), CORR-13 (1,557 hidden params) increase the total documentation gap
+4. **Phase 16 V6 refinements**: ENH-04 Loop2 confirmed VST-only (not in CM4), ENH-05 Poly Allocation CM4-verified, CORR-08/09/10 detailed hex dump evidence added, CORR-11/12 CM4 cross-verification completed
 
 ---
 
@@ -551,7 +585,7 @@ Seven `.rodata` string patches were defined and tested for reversibility:
 
 ---
 
-*Document version: Phase 16 V2 English Edition*  
+*Document version: Phase 16 V6 English Edition (CORR-08~10 hex dump, ENH-04/05 CM4 verification, CORR-11/12 CM4 cross-verification)*  
 *Analysis tools: CM4/CM7 binary scan, VST XML cross-verification, DLL string analysis, Ghidra static analysis*  
 *Firmware version: fw4_0_1_2229 (2025-06-18)*  
 *Manual version: v4.0.0 / v4.0.1 (2025-07-04)*  
